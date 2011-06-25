@@ -1,0 +1,32 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	height: 40px;
+	background-color: #0a0a0a;
+	color: #fff;
+	position: relative;
+	overflow: hidden;
+}
+header h1 {
+	float: left;
+	font-size: 12px;
+	margin: 0 20px;
+	padding: 0;
+	line-height: 40px;
+}
+header nav {
+	overflow: hidden;
+	float: left;
+}
+header nav a {
+	float: left;
+	line-height: 40px;
+	margin-right: 10px;
+}
+#main {
+	margin: 0 20px;
+}

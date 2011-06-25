@@ -1,6 +1,6 @@
 {% extends "SnowcapSiteBundle:Admin:base.html.twig" %}
 {% block body %}
-<h1>Post creation</h1>
+<h2>Post creation</h2>
 <form action="{{ path('admin_posts_create') }}" method="post" {{ form_enctype(form) }}>
 	{{ form_widget(form) }}
 	<p>

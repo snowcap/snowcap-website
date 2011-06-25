@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}SNOWCAP ADMIN{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{% block title %}SNOWCAP ADMIN{% endblock %}</title>
+		{% block stylesheets %}
+		<link href="{{ asset('/assets/css/screen.css') }}" type="text/css" rel="stylesheet" />
+		{% endblock %}
+		<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+	</head>
+	<body>
+		<header>
+			<h1>Snowcap admin</h1>
+			<nav>
+				<a href="">Manage pages</a>
+				<a href="{{ url("admin_posts") }}">Manage posts</a>
+			</nav>
+		</header>
+		<div id="main">
+			{% block body %}{% endblock %}
+		</div>
+		{% block javascripts %}{% endblock %}
+	</body>
 </html>
