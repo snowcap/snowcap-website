@@ -26,7 +26,7 @@ class Post
      * @var string $title
      *
      * @ORM\Column(name="title", type="string", length=255)
-	 * @Assert\MinLength(255)
+	 * @Assert\MinLength(5)
      */
     private $title;
 
