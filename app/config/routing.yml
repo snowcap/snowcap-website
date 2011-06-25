@@ -1,0 +1,5 @@
+SnowcapSiteBundle:
+    resource: "@SnowcapSiteBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
