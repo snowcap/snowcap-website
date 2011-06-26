@@ -178,29 +178,17 @@ class AdminController extends Controller
      * Deletes a Post entity.
      *
      * @Route("/admin/posts/delete/{id}", name="admin_posts_delete")
-     * @Method("post")
+     * @Method("get")
      */
     public function postDeleteAction($id)
     {
-        $form = $this->createDeleteForm($id);
-        $request = $this->getRequest();
-
-        if ('POST' === $request->getMethod()) {
-            $form->bindRequest($request);
-
-            if ($form->isValid()) {
-                $em = $this->getDoctrine()->getEntityManager();
-                $entity = $em->getRepository('SnowcapSiteBundle:Post')->find($id);
-
-                if (!$entity) {
-                    throw $this->createNotFoundException('Unable to find Post entity.');
-                }
-
-                $em->remove($entity);
-                $em->flush();
-            }
+        $em = $this->getDoctrine()->getEntityManager();
+        $entity = $em->getRepository('SnowcapSiteBundle:Post')->find($id);
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Post entity.');
         }
-
+        $em->remove($entity);
+        $em->flush();
         return $this->redirect($this->generateUrl('admin_posts'));
     }
 

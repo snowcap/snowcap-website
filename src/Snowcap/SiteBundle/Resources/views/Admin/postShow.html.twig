@@ -21,20 +21,9 @@
 		</tr>
 	</tbody>
 </table>
-<ul class="record_actions">
-	<li>
-		<a href="{{ path('admin_posts') }}"> Back to the list</a>
-	</li>
-	<li>
-		<a href="{{ path('admin_posts_edit', { 'id': entity.id }) }}"> Edit</a>
-	</li>
-	<li>
-		<form action="{{ path('admin_posts_delete', { 'id': entity.id }) }}" method="post">
-			{{ form_widget(delete_form) }}
-			<button type="submit">
-				Delete
-			</button>
-		</form>
-	</li>
-</ul>
+<nav class="record_actions">
+	<a href="{{ path('admin_posts') }}" class="ui-button ui-icon ui-icon-circle-triangle-w">Back to the list</a>
+	<a href="{{ path('admin_posts_edit', {'id': entity.id }) }}" class="ui-button ui-icon ui-icon-pencil">Edit</a>
+	<a href="{{ path('admin_posts_delete', {'id': entity.id}) }}" class="ui-button ui-icon ui-icon-trash">Delete</a>
+</nav>
 {% endblock %}

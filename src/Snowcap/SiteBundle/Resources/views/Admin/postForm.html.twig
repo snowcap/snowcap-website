@@ -8,12 +8,10 @@
     {{ form_row(form.published_at, { 'widget_attr': {'class': 'datepicker'}}) }}
     {{ form_rest(form) }}
 	<p>
-		<button type="submit">Save</button>
+		<button type="submit" class="ui-icon ui-icon-circle-check">Save</button>
 	</p>
 </form>
-<ul class="record_actions">
-	<li>
-		<a href="{{ path('admin_posts') }}"> Back to the list</a>
-	</li>
-</ul>
+<nav>
+	<a href="{{ path('admin_posts') }}" class="ui-button ui-icon ui-icon-circle-triangle-w">Back to the list</a>
+</nav>
 {% endblock %}
