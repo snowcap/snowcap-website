@@ -1,29 +1,17 @@
 {% extends "SnowcapSiteBundle:Admin:base.html.twig" %}
 {% block body %}
-<h2>Post</h2>
-<table class="record_properties">
-	<tbody>
-		<tr>
-			<th>Id</th>
-			<td>{{ entity.id }}</td>
-		</tr>
-		<tr>
-			<th>Title</th>
-			<td>{{ entity.title }}</td>
-		</tr>
-		<tr>
-			<th>Body</th>
-			<td>{{ entity.body }}</td>
-		</tr>
-		<tr>
-			<th>Published_at</th>
-			<td>{{ entity.publishedat|date('Y-m-d H:i:s') }}</td>
-		</tr>
-	</tbody>
-</table>
-<nav class="record_actions">
-	<a href="{{ path('admin_posts') }}" class="ui-button ui-icon ui-icon-circle-triangle-w">Back to the list</a>
-	<a href="{{ path('admin_posts_edit', {'id': entity.id }) }}" class="ui-button ui-icon ui-icon-pencil">Edit</a>
-	<a href="{{ path('admin_posts_delete', {'id': entity.id}) }}" class="ui-button ui-icon ui-icon-trash">Delete</a>
-</nav>
+<section class="section-700">
+	<h2>{{ entity.title }}</h2>
+	<dl class="detail">
+		<dt>Body</dt>
+		<dd>{{ entity.body }}</dd>
+		<dt>Publication date</dt>
+		<dd>{{ entity.publishedat|date('Y-m-d') }}</dd>
+	</dl>
+	<nav class="record_actions">
+		<a href="{{ path('admin_posts') }}" class="ui-button ui-icon ui-icon-circle-triangle-w">Back to the list</a>
+		<a href="{{ path('admin_posts_edit', {'id': entity.id }) }}" class="ui-button ui-icon ui-icon-pencil">Edit</a>
+		<a href="{{ path('admin_posts_delete', {'id': entity.id}) }}" class="ui-button ui-icon ui-icon-trash">Delete</a>
+	</nav>
+</section>
 {% endblock %}

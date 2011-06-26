@@ -41,7 +41,7 @@ header nav a:hover {
 	color: #8cc622;
 }
 .section-700 {
-	width: 700px;
+	width: 660px;
 }
 .section-700 input, .section-700 textarea {
 	width: 650px;
@@ -51,7 +51,7 @@ header nav a:hover {
 }
 #main section {
 	background: #fff;
-	padding: 10px;
+	padding: 20px;
 	border: 1px solid #c0c0c0;
 }
 #main section h2 {
@@ -59,7 +59,7 @@ header nav a:hover {
 	margin: 0 0 10px 0;
 }
 #main section form {
-	margin: 20px;
+	margin: 0 0 20px 0;
 }
 #main section .form-row {
 	margin: 20px 0;
@@ -78,6 +78,48 @@ header nav a:hover {
 #main section input {
 	height: 20px;
 }
+#main section input.datepicker {
+	width: 80px;
+	text-align: center;
+}
 #main section textarea {
 	height: 200px;
+}
+.listing {
+	width: 100%;
+	margin: 0 0 20px 0;
+	border-collapse: collapse;
+}
+.listing td, .listing th {
+	text-align: right;
+	line-height: 36px;
+	padding: 0 3px;
+}
+.listing thead th {
+	background: #F5F5F5;
+	font-size: 16px;
+	border-bottom: 1px solid #C0C0C0;
+	font-weight: normal;
+}
+.listing tbody td {
+	font-size: 14px;
+}
+.listing tbody tr:not(:last-child) td {
+	border-bottom: 1px solid #C0C0C0;
+}
+
+.detail {
+	margin: 0 0 20px 0;
+}
+.detail dt {
+	display: block;
+	margin: 0 0 5px 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 16px;
+}
+.detail dd {
+	display: block;
+	margin: 0 0 10px 0;
+	padding: 0;
 }
