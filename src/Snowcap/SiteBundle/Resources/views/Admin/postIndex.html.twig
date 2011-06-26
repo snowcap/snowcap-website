@@ -21,20 +21,17 @@
 			<td>{{ entity.body }}</td>
 			<td>{{ entity.publishedat|date('Y-m-d H:i:s') }}</td>
 			<td>
-			<ul>
-				<li>
-					<a href="{{ path('admin_posts_show', { 'id': entity.id }) }}">show</a>
-				</li>
-				<li>
-					<a href="{{ path('admin_posts_edit', { 'id': entity.id }) }}">edit</a>
-				</li>
-			</ul>
+				<nav>
+					<a href="{{ path('admin_posts_show', { 'id': entity.id }) }}" class="ui-button ui-button-icon-only ui-icon ui-icon-zoomin">show</a>
+					<a href="{{ path('admin_posts_edit', { 'id': entity.id }) }}" class="ui-button ui-button-icon-only ui-icon ui-icon-pencil">edit</a>
+					<a href="{{ path('admin_posts_delete', { 'id': entity.id }) }}" class="ui-button ui-button-icon-only ui-icon ui-icon-trash">edit</a>
+				</nav>
 			</td>
 		</tr>
 		{% endfor %}
 	</tbody>
 </table>
 <nav>
-	<a class="button" href="{{ path('admin_posts_new') }}"> Create a new entry</a>
+	<a href="{{ path('admin_posts_new') }}" class="ui-button ui-icon ui-icon-circle-plus"> Create a new entry</a>
 </nav>
 {% endblock %}
