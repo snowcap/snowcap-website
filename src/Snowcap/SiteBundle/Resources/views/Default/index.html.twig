@@ -1,1 +1,14 @@
-<h2>Welcome on Snowcap website !</h2>
+{% extends "SnowcapSiteBundle::base.html.twig" %}
+{% block body %}
+<h1>Snowcap</h1>
+<h2>Post list</h2>
+<ul>
+	{% for entity in entities %}
+		<li>
+			<h3><a href="{{ path('postShow', { 'id': entity.id }) }}">{{ entity.title }}</a></h3>
+			<div>{{ entity.body }}</div>
+			<p>{{ entity.publishedat|date('Y-m-d H:i:s') }}</p>
+		</li>		
+	{% endfor %}
+</ul>
+{% endblock %}
