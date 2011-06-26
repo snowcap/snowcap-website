@@ -12,7 +12,10 @@ class PostType extends AbstractType
         $builder
             ->add('title')
             ->add('body')
-            ->add('published_at')
-        ;
+            ->add('published_at', 'date', array(
+				'input' => 'datetime',
+				'widget' => 'single_text',
+				'format' => \IntlDateFormatter::SHORT
+			));
     }
 }

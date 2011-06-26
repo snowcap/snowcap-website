@@ -4,6 +4,10 @@ body {
 	padding: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
 header {
 	height: 40px;
 	background-color: #0a0a0a;
@@ -12,20 +16,26 @@ header {
 	overflow: hidden;
 }
 header h1 {
+	text-indent: -5000px;
 	float: left;
-	font-size: 12px;
 	margin: 0 20px;
-	padding: 0;
+	padding: 0 0 0 40px;
+	background: url(img/snowcap-white.png) left center no-repeat;
 	line-height: 40px;
 }
 header nav {
 	overflow: hidden;
 	float: left;
+	font-size: 12px;
 }
 header nav a {
+	color: #fff;
 	float: left;
 	line-height: 40px;
 	margin-right: 10px;
+}
+header nav a:hover {
+	color: #8cc622;
 }
 #main {
 	margin: 0 20px;

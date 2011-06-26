@@ -1,17 +1,3 @@
-{% extends "SnowcapSiteBundle:Admin:base.html.twig" %}
-{% block body %}
-<h2>Post creation</h2>
-<form action="{{ path('admin_posts_create') }}" method="post" {{ form_enctype(form) }}>
-	{{ form_widget(form) }}
-	<p>
-		<button type="submit">
-			Create
-		</button>
-	</p>
-</form>
-<ul class="record_actions">
-	<li>
-		<a href="{{ path('admin_posts') }}"> Back to the list</a>
-	</li>
-</ul>
-{% endblock %}
+{% extends "SnowcapSiteBundle:Admin:postForm.html.twig" %}
+{% set form_title = 'Create post' %}
+{% set form_action = 'admin_posts_create' %}

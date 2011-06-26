@@ -126,12 +126,10 @@ class AdminController extends Controller
         }
 
         $editForm = $this->createForm(new PostType(), $entity);
-        $deleteForm = $this->createDeleteForm($id);
 
         return array(
             'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'form'   => $editForm->createView(),
         );
     }
 	

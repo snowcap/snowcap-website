@@ -1,6 +1,8 @@
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
+    snowcap_site_bundle:
+        resource: @SnowcapSiteBundle/Resources/config/config.yml
 
 framework:
     secret:          %secret%

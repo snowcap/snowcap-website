@@ -1,0 +1,19 @@
+{% extends "SnowcapSiteBundle:Admin:base.html.twig" %}
+{% block body %}
+<h2>{{ form_title }}</h2>
+<form action="{{ path(form_action, { 'id': entity.id }) }}" method="post" {{ form_enctype(form) }}>
+	{{ form_errors(form) }}
+	{{ form_row(form.title) }}
+	{{ form_row(form.body) }}
+    {{ form_row(form.published_at, { 'widget_attr': {'class': 'datepicker'}}) }}
+    {{ form_rest(form) }}
+	<p>
+		<button type="submit">Save</button>
+	</p>
+</form>
+<ul class="record_actions">
+	<li>
+		<a href="{{ path('admin_posts') }}"> Back to the list</a>
+	</li>
+</ul>
+{% endblock %}
