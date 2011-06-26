@@ -91,9 +91,12 @@ header nav a:hover {
 	border-collapse: collapse;
 }
 .listing td, .listing th {
-	text-align: right;
+	text-align: left;
 	line-height: 36px;
-	padding: 0 3px;
+	padding: 0 30px 0 10px;
+}
+.listing td:last-child, .listing th:last-child {
+	padding-right: 0;
 }
 .listing thead th {
 	background: #F5F5F5;

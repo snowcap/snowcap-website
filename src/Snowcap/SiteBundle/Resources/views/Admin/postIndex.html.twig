@@ -5,28 +5,22 @@
 	<table class="listing">
 		<thead>
 			<tr>
-				<th>Id</th>
 				<th>Title</th>
 				<th>Body</th>
-				<th>Published_at</th>
+				<th>Publication date</th>
 				<th>Actions</th>
 			</tr>
 		</thead>
 		<tbody>
 			{% for entity in entities %}
 			<tr>
-				<td>
-				<a href="{{ path('admin_posts_show', { 'id': entity.id }) }}">{{ entity.id }}</a>
-				</td>
-				<td>{{ entity.title }}</td>
+				<td><a href="{{ url('admin_posts_show',{'id':entity.id}) }}">{{ entity.title }}</a></td>
 				<td>{{ entity.body }}</td>
-				<td>{{ entity.publishedat|date('Y-m-d H:i:s') }}</td>
-				<td>
-					<nav>
-						<a href="{{ path('admin_posts_show', { 'id': entity.id }) }}" class="ui-button ui-button-icon-only ui-icon ui-icon-zoomin">show</a>
-						<a href="{{ path('admin_posts_edit', { 'id': entity.id }) }}" class="ui-button ui-button-icon-only ui-icon ui-icon-pencil">edit</a>
-						<a href="{{ path('admin_posts_delete', { 'id': entity.id }) }}" class="ui-button ui-button-icon-only ui-icon ui-icon-trash">edit</a>
-					</nav>
+				<td>{{ entity.publishedat|date('Y-m-d') }}</td>
+				<td class="listing-actions">
+					<a href="{{ path('admin_posts_show', { 'id': entity.id }) }}" class="ui-button ui-button-icon-only ui-icon ui-icon-zoomin">show</a>
+					<a href="{{ path('admin_posts_edit', { 'id': entity.id }) }}" class="ui-button ui-button-icon-only ui-icon ui-icon-pencil">edit</a>
+					<a href="{{ path('admin_posts_delete', { 'id': entity.id }) }}" class="ui-button ui-button-icon-only ui-icon ui-icon-trash">edit</a>
 				</td>
 			</tr>
 			{% endfor %}
