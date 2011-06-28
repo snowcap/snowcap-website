@@ -70,7 +70,6 @@ class AdminController extends Controller
     {
         $entity = new Post();
         $form   = $this->createForm(new PostType(), $entity);
-
         return array(
             'entity' => $entity,
             'form'   => $form->createView()

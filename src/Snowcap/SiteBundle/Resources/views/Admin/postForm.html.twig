@@ -2,7 +2,7 @@
 {% block body %}
 <section class="section-700">
 	<h2>{{ form_title }}</h2>
-	<form action="{{ path(form_action, { 'id': entity.id }) }}" method="post" {{ form_enctype(form) }}>
+	<form action="{{ form_action }}" method="post" {{ form_enctype(form) }}>
 		{{ form_errors(form) }}
 		{{ form_row(form.title) }}
 		<div class="form-row">
