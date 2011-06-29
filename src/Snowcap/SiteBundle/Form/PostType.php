@@ -11,6 +11,7 @@ class PostType extends AbstractType
     {
         $builder
             ->add('title')
+			->add('slug')
             ->add('body')
             ->add('published_at', 'date', array(
 				'input' => 'datetime',

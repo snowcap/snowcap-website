@@ -29,7 +29,15 @@ class Post
 	 * @Assert\MinLength(5)
      */
     private $title;
-
+	
+	/**
+	 * @var string
+	 * 
+	 * @ORM\Column(name="slug", type="string", length=255)
+	 * @Assert\MinLength(5)
+	 */
+	private $slug;
+	 
     /**
      * @var text $body
      *
@@ -74,7 +82,27 @@ class Post
     {
         return $this->title;
     }
-
+	
+	/**
+	 * Set slug
+	 * 
+	 * @param string s$lug
+	 */
+	public function setSlug($slug)
+	{
+		$this->slug = $slug;	
+	}
+	
+	/**
+	 * Get slug
+	 * 
+	 * @return string
+	 */
+	public function getSlug()
+	{
+		return $this->slug;
+	}
+	
     /**
      * Set body
      *

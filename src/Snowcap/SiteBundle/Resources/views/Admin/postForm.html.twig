@@ -5,12 +5,13 @@
 	<form action="{{ form_action }}" method="post" {{ form_enctype(form) }}>
 		{{ form_errors(form) }}
 		{{ form_row(form.title) }}
+		{{ form_row(form.slug, {'widget_attr': {'class': 'widget-slug widget-slug-post_title'}}) }}
 		<div class="form-row">
 			{{ form_label(form.body) }}
 			<div id="wmd-button-bar"></div>
-			{{ form_widget(form.body, {'attr': {'id': 'wmd-input'}}) }}
+			{{ form_widget(form.body) }}
 		</div>
-	    {{ form_row(form.published_at, { 'widget_attr': {'class': 'datepicker'}}) }}
+	    {{ form_row(form.published_at, { 'widget_attr': {'class': 'widget-datepicker'}}) }}
 	    {{ form_rest(form) }}
 		<p>
 			<button type="submit" class="ui-icon ui-icon-circle-check">Save</button>
