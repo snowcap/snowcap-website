@@ -37,6 +37,7 @@ class GenerateDoctrineEntityCommand extends GenerateDoctrineCommand
             ->addOption('entity', null, InputOption::VALUE_REQUIRED, 'The entity class name to initialize (shortcut notation)')
             ->addOption('fields', null, InputOption::VALUE_REQUIRED, 'The fields to create with the new entity')
             ->addOption('format', null, InputOption::VALUE_REQUIRED, 'Use the format for configuration files (php, xml, yml, or annotation)', 'annotation')
+            ->addOption('with-repository', null, InputOption::VALUE_NONE, 'Whether to generate the entity repository or not')
             ->setHelp(<<<EOT
 The <info>doctrine:generate:entity</info> task generates a new Doctrine
 entity inside a bundle:
@@ -84,7 +85,7 @@ EOT
         $bundle = $this->getContainer()->get('kernel')->getBundle($bundle);
 
         $generator = $this->getGenerator();
-        $generator->generate($bundle, $entity, $format, $fields);
+        $generator->generate($bundle, $entity, $format, array_values($fields), $input->getOption('with-repository'));
 
         $output->writeln('Generating the entity code: <info>OK</info>');
 
@@ -105,10 +106,25 @@ EOT
             'You must use the shortcut notation like <comment>AcmeBlogBundle:Post</comment>.',
             ''
         ));
-        $entity = $dialog->askAndValidate($output, $dialog->getQuestion('The Entity shortcut name', $input->getOption('entity')), array('Sensio\Bundle\GeneratorBundle\Command\Validators', 'validateEntityName'), false, $input->getOption('entity'));
-        $input->setOption('entity', $entity);
 
-        list($bundle, $entity) = $this->parseShortcutNotation($entity);
+        while (true) {
+            $entity = $dialog->askAndValidate($output, $dialog->getQuestion('The Entity shortcut name', $input->getOption('entity')), array('Sensio\Bundle\GeneratorBundle\Command\Validators', 'validateEntityName'), false, $input->getOption('entity'));
+
+            list($bundle, $entity) = $this->parseShortcutNotation($entity);
+
+            try {
+                $b = $this->getContainer()->get('kernel')->getBundle($bundle);
+
+                if (!file_exists($b->getPath().'/Entity/'.str_replace('\\', '/', $entity).'.php')) {
+                    break;
+                }
+
+                $output->writeln(sprintf('<bg=red>Entity "%s:%s" already exists</>.', $bundle, $entity));
+            } catch (\Exception $e) {
+                $output->writeln(sprintf('<bg=red>Bundle "%s" does not exist.</>', $bundle));
+            }
+        }
+        $input->setOption('entity', $bundle.':'.$entity);
 
         // format
         $output->writeln(array(
@@ -121,6 +137,11 @@ EOT
 
         // fields
         $input->setOption('fields', $this->addFields($input, $output, $dialog));
+
+        // repository?
+        $output->writeln('');
+        $withRepository = $dialog->askConfirmation($output, $dialog->getQuestion('Do you want to generate an empty repository class', $input->getOption('with-repository') ? 'yes' : 'no', '?'), $input->getOption('with-repository'));
+        $input->setOption('with-repository', $withRepository);
 
         // summary
         $output->writeln(array(
@@ -149,7 +170,7 @@ EOT
                 $type = isset($matches[1][0]) ? $matches[1][0] : $type;
                 $length = isset($matches[2][0]) ? $matches[2][0] : null;
 
-                $fields[] = array('fieldName' => $name, 'type' => $type, 'length' => $length);
+                $fields[$name] = array('fieldName' => $name, 'type' => $type, 'length' => $length);
             }
         }
 
@@ -162,7 +183,7 @@ EOT
         $output->writeln(array(
             '',
             'Instead of starting with a blank entity, you can add some fields now.',
-            'Note that the primary key will be added automatically.',
+            'Note that the primary key will be added automatically (named <comment>id</comment>).',
             '',
         ));
         $output->write('<info>Available types:</info> ');
@@ -211,14 +232,20 @@ EOT
 
         while (true) {
             $output->writeln('');
-            $name = $dialog->ask($output, $dialog->getQuestion('New field name (press <return> to stop adding fields)', null));
+            $name = $dialog->askAndValidate($output, $dialog->getQuestion('New field name (press <return> to stop adding fields)', null), function ($name) use ($fields) {
+                if (isset($fields[$name]) || 'id' == $name) {
+                    throw new \InvalidArgumentException(sprintf('Field "%s" is already defined.', $name));
+                }
+
+                return $name;
+            });
             if (!$name) {
                 break;
             }
             $type   = $dialog->askAndValidate($output, $dialog->getQuestion('Field type', 'string'), $fieldValidator, false, 'string');
             $length = $dialog->askAndValidate($output, $dialog->getQuestion('Field length', null), $lengthValidator, false, null);
 
-            $fields[] = array('fieldName' => $name, 'type' => $type, 'length' => $length);
+            $fields[$name] = array('fieldName' => $name, 'type' => $type, 'length' => $length);
         }
 
         return $fields;

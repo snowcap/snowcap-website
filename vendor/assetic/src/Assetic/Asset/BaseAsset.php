@@ -13,6 +13,7 @@ namespace Assetic\Asset;
 
 use Assetic\Filter\FilterCollection;
 use Assetic\Filter\FilterInterface;
+use Assetic\Filter\LastModifiedFilterInterface;
 
 /**
  * A base abstract asset.
@@ -44,6 +45,11 @@ abstract class BaseAsset implements AssetInterface
         $this->loaded = false;
     }
 
+    public function __clone()
+    {
+        $this->filters = clone $this->filters;
+    }
+
     public function ensureFilter(FilterInterface $filter)
     {
         $this->filters->ensure($filter);
@@ -52,6 +58,11 @@ abstract class BaseAsset implements AssetInterface
     public function getFilters()
     {
         return $this->filters->all();
+    }
+
+    public function clearFilters()
+    {
+        $this->filters->clear();
     }
 
     /**
@@ -121,5 +132,48 @@ abstract class BaseAsset implements AssetInterface
     public function setTargetPath($targetPath)
     {
         $this->targetPath = $targetPath;
+    }
+
+    /**
+     * Returns the last modified timestamp according to the filters.
+     *
+     * @return integer|null A UNIX timestamp
+     */
+    protected function getLastModifiedPerFilters()
+    {
+        if (!count($this->filters)) {
+            return;
+        }
+
+        $times = array();
+        $queue  = array();
+
+        foreach ($this->filters as $filter) {
+            if ($filter instanceof LastModifiedFilterInterface) {
+                // lazily setup the asset
+                if (!isset($asset)) {
+                    $asset = clone $this;
+                    $asset->clearFilters();
+                    $asset->load();
+                }
+
+                // flush the filter queue
+                while ($f = array_shift($queue)) {
+                    $f->filterLoad($asset);
+                }
+
+                // check mtime
+                if ($time = $filter->getLastModified($asset)) {
+                    $times[] = $time;
+                }
+            }
+
+            // queue for the next mtime-aware filter
+            $queue[] = $filter;
+        }
+
+        if (0 < count($times)) {
+            return max($times);
+        }
     }
 }
