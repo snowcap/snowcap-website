@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+  <services>
+      <service id="markdown.parser.min" class="Knplabs\Bundle\MarkdownBundle\Parser\Preset\Min" />
+      <service id="markdown.parser.light" class="Knplabs\Bundle\MarkdownBundle\Parser\Preset\Light" />
+      <service id="markdown.parser.medium" class="Knplabs\Bundle\MarkdownBundle\Parser\Preset\Medium" />
+      <service id="markdown.parser.max" class="Knplabs\Bundle\MarkdownBundle\Parser\Preset\Max" />
+  </services>
+
+</container>
