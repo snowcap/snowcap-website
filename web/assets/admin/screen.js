@@ -1,4 +1,100 @@
 (function($){
+	var Slugger = function(element){
+		this.element = $(element);
+		var _this = this;
+		/**
+		 * Append a "lock" button to control slug behaviour (auto or manual)
+		 */
+		this.appendLockButton = function(){
+			_this.lockButton = $('<a>').attr('href', 'unlock').html('unlock');
+			_this.lockButton.button({
+				text: false,
+				icons: {
+					primary: 'ui-icon-unlocked'
+				}
+			});
+			_this.lockButton.click(function(event){
+				event.preventDefault();
+				if(_this.lockButton.attr('href') === 'unlock'){
+					_this.unlock();
+				}
+				else{
+					_this.lock();
+				}
+			});
+			_this.element.after(_this.lockButton);
+		};
+		/**
+		 * Unlock the widget input (manual mode)
+		 * 
+		 */
+		this.unlock = function(){
+			_this.lockButton.attr('href', 'lock');
+			_this.element.removeAttr('readonly');
+			_this.lockButton.button('option', 'icons', {
+				primary: 'ui-icon-locked'
+			});
+		};
+		/**
+		 * Lock the widget input (auto mode)
+		 */
+		this.lock = function(){
+			if(confirm("Are you sure you want to go back to auto mode ? The entered slug will be overriden")){
+				_this.lockButton.attr('href', 'unlock');
+				_this.element.val(_this.makeSlug(_this.target.val()));
+				_this.element.attr('readonly', 'readonly');
+				_this.lockButton.button('option', 'icons', {
+					primary: 'ui-icon-unlocked'
+				});
+			}
+		};
+		/**
+		 * Transform a string into a slug
+		 * 
+		 * @param string string
+		 * @return string
+		 */
+		this.makeSlug = function(string){
+			var lowercased = string.toLowerCase();
+			var hyphenized = lowercased.replace(/\s/g, '-');
+			var slug = hyphenized.replace(/[^a-zA-Z0-9\-]/g, '').replace('--', '-').replace(/\-+$/, '');
+			return slug;
+		};
+		/**
+		 * Observe the target field and slug it
+		 * 
+		 */
+		this.startSlug = function(){
+			_this.target.keyup(function(event){
+				if(_this.element.attr('readonly') === 'readonly'){
+					_this.element.val(_this.makeSlug($(this).val()));
+				}
+			});
+		};
+		/**
+		 * Instance init
+		 */
+		this.init = function(){
+			var targetId = $.grep(_this.element.attr('class').split(' '), function(element, offset){
+				return element.indexOf('widget-slug-') !== -1;
+			}).pop().split('-').pop();
+			_this.target = $('#' + targetId);
+			_this.element.val(_this.makeSlug(_this.target.val()));
+			_this.element.attr('readonly', 'readonly');
+			_this.appendLockButton();
+			_this.startSlug();
+		};
+		this.init();
+	};
+	/**
+	 * Namespace in jQuery
+	 */
+	$.fn.slugger = function(){
+       return this.each(function(){
+           new Slugger(this);
+       });
+	};
+	// DOMREADY
 	$(document).ready(function(event){
 		// Icons / buttons
 		$('button, .ui-button').each(function(offset, element){
@@ -25,44 +121,6 @@
 			dateFormat: 'm/d/y'
 		});
 		// Slugs
-		$('.widget-slug').each(function(offset, slugWidget){
-			var lockButton = $('<a>').attr('href', 'unlock').html('unlock');
-			lockButton.button({
-				text: false,
-				icons: {
-					primary: 'ui-icon-unlocked'
-				}
-			});
-			$(slugWidget).attr('readonly', 'readonly');
-			lockButton.click(function(event){
-				event.preventDefault();
-				if($(this).attr('href') === 'unlock'){
-					$(this).attr('href', 'lock');
-					$(slugWidget).removeAttr('readonly');
-					lockButton.button('option', 'icons', {
-						primary: 'ui-icon-locked'
-					});
-				}
-				else{
-					$(this).attr('href', 'unlock');
-					$(slugWidget).attr('readonly', 'readonly');
-					lockButton.button('option', 'icons', {
-						primary: 'ui-icon-unlocked'
-					});
-				}
-			})
-			$(slugWidget).after(lockButton);
-			var target = $.grep($(slugWidget).attr('class').split(' '), function(element, offset){
-				return element.indexOf('widget-slug-') !== -1;
-			}).pop().split('-').pop();
-			$('#' + target).keyup(function(event){
-				if($(slugWidget).attr('readonly') === 'readonly'){
-					var lowercased = $(this).val().toLowerCase();
-					var hyphenized = lowercased.replace(/\s/g, '-');
-					var slug = hyphenized.replace(/[^a-zA-Z0-9\-]/g, '').replace('--', '-').replace(/\-+$/, '');
-					$(slugWidget).val(slug);
-				}
-			});
-		});
+		$('.widget-slug').slugger();
 	});
 })(jQuery);
