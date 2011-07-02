@@ -1,82 +1,57 @@
-Symfony Standard Edition
+Snowcap public website
 ========================
+
+Working copy setup
+--------------
+
+All credentials has to be defined in your virtualhost configuration
+An example:
+
+    SetEnv framework_secret somesecretvalue
+
+    SetEnv database_host your_host
+    SetEnv database_name your_db_name
+    SetEnv database_user your_user
+    SetEnv database_password your_passwrd
+
+    SetEnv mailer_transport smtp
+    SetEnv mailer_host your_host
+    SetEnv mailer_user your_user
+    SetEnv mailer_password your_password
+
 
 What's inside?
 --------------
 
-Symfony Standard Edition comes pre-configured with the following bundles:
+Snowcap website has been built with Symfony2, and contains the exact, up-to-date, unmodified code we use for our website www.snowcap.be
 
-* FrameworkBundle
-* SensioFrameworkExtraBundle
-* DoctrineBundle
-* TwigBundle
-* SwiftmailerBundle
-* MonologBundle
-* AsseticBundle
-* JMSSecurityExtraBundle
-* WebProfilerBundle (in dev/test env)
-* SensioDistributionBundle (in dev/test env)
-* SensioGeneratorBundle (in dev/test env)
-* AcmeDemoBundle (in dev/test env)
-
-Installation from an Archive
-----------------------------
-
-The easiest way to get started is to download an archive with vendors included
-(http://symfony.com/download). Unpack it somewhere under your web server root
-directory and you're done.
-
-If you have downloaded an archive without the vendors, you must have ``git``
-available to install the vendors:
-
-    php bin/vendors install
 
 Installation from Git
 ---------------------
 
-We highly recommend you that you download the packaged version of this
-distribution. If you still want to use Git, your are on your own.
-
 Run the following commands:
 
-    git clone http://github.com/symfony/symfony-standard.git
-    cd symfony-standard
-    rm -rf .git
-    php bin/vendors install
+    git clone http://github.com/snowcap/snowcap-website.git
 
-.. note::
-
-    Symfony SE does/can not use git submodules as you should not keep the
-    `.git` directory.
 
 Configuration
 -------------
 
-Check that everything is working fine by going to the ``web/config.php`` page
-in a browser and follow the instructions.
+All credentials has to be defined in your virtualhost configuration, like this:
 
-The distribution is configured with the following defaults:
+    SetEnv framework_secret somesecretvalue
 
-* Twig is the only configured template engine;
-* Doctrine ORM/DBAL is configured;
-* Swiftmailer is configured;
-* Annotations for everything are enabled.
+    SetEnv database_host your_host
+    SetEnv database_name your_db_name
+    SetEnv database_user your_user
+    SetEnv database_password your_passwrd
 
-A default bundle, ``AcmeDemoBundle``, shows you Symfony2 in action. After
-playing with it, you can remove it by following these steps:
+    SetEnv mailer_transport smtp
+    SetEnv mailer_host your_host
+    SetEnv mailer_user your_user
+    SetEnv mailer_password your_password
 
-* delete the ``src/Acme`` directory;
-* remove the routing entries referencing AcmeBundle in ``app/config/routing_dev.yml``;
-* remove the AcmeBundle from the registered bundles in ``app/AppKernel.php``;
 
-Configure the distribution by editing ``app/config/parameters.ini`` or by
-accessing ``web/config.php`` in a browser.
-
-A simple controller is configured at ``/hello/{name}``. Access it via
-``web/app_dev.php/demo/hello/Fabien``.
-
-If you want to use the CLI, a console application is available at
-``app/console``. Check first that your PHP is correctly configured for the CLI
-by running ``app/check.php``.
+Look at the Symfony2 documentation for more information about handling cache refreshing, database updates ...
 
 Enjoy!
