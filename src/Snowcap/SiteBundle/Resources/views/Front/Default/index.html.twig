@@ -6,7 +6,7 @@
 	{% for entity in entities %}
 		<li>
 			<h3><a href="{{ path('front_posts_show', { 'id': entity.id }) }}">{{ entity.title }}</a></h3>
-			<div>{{ entity.body }}</div>
+			<div>{{ entity.body | markdown }}</div>
 			<p>{{ entity.publishedat|date('Y-m-d H:i:s') }}</p>
 		</li>		
 	{% endfor %}

@@ -4,7 +4,7 @@
 	<h2>{{ entity.title }}</h2>
 	<dl class="detail">
 		<dt>Body</dt>
-		<dd>{{ entity.body }}</dd>
+		<dd>{{ entity.body | markdown }}</dd>
 		<dt>Publication date</dt>
 		<dd>{{ entity.publishedat|date('Y-m-d') }}</dd>
 	</dl>

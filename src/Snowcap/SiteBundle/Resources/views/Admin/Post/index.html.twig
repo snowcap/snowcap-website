@@ -6,7 +6,6 @@
 		<thead>
 			<tr>
 				<th>Title</th>
-				<th>Body</th>
 				<th>Publication date</th>
 				<th>Actions</th>
 			</tr>
@@ -15,7 +14,6 @@
 			{% for entity in entities %}
 			<tr>
 				<td><a href="{{ url('admin_posts_show',{'id':entity.id}) }}">{{ entity.title }}</a></td>
-				<td>{{ entity.body }}</td>
 				<td>{{ entity.publishedat|date('Y-m-d') }}</td>
 				<td class="listing-actions">
 					<a href="{{ path('admin_posts_show', { 'id': entity.id }) }}" class="ui-button ui-button-icon-only ui-icon ui-icon-zoomin">show</a>
