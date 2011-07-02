@@ -1,6 +1,6 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
 {% block body %}
 <h2>{{ entity.title }}</h2>
-<div>{{ entity.body }}</div>
+<div>{{ entity.body | markdown }}</div>
 <p>{{ entity.publishedat|date('Y-m-d H:i:s') }}</p>
 {% endblock %}
