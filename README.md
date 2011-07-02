@@ -20,7 +20,7 @@ Configuration
 
 All credentials has to be defined in your virtualhost configuration, like this:
 
-<pre>
+
     SetEnv framework_secret somesecretvalue
 
     SetEnv database_host your_host
@@ -32,7 +32,7 @@ All credentials has to be defined in your virtualhost configuration, like this:
     SetEnv mailer_host your_host
     SetEnv mailer_user your_user
     SetEnv mailer_password your_password
-</pre>
+
 
 Look at the Symfony2 documentation for more information about handling cache refreshing, database updates ...
 
