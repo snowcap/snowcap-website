@@ -1,5 +1,10 @@
-SnowcapSiteBundle:
-    resource: "@SnowcapSiteBundle/Controller/"
+SnowcapSiteBundleAdmin:
+    resource: "@SnowcapSiteBundle/Controller/Admin"
+    type:     annotation
+    prefix:   /admin
+
+SnowcapSiteBundleFront:
+    resource: "@SnowcapSiteBundle/Controller/Front"
     type:     annotation
     prefix:   /
 

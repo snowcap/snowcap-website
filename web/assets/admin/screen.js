@@ -25,7 +25,7 @@
 			dateFormat: 'm/d/y'
 		});
 		// Slugs
-		$('.widget-slug').each(function(offset, slugWidget){
+		$('.widget-slugz').each(function(offset, slugWidget){
 			var lockButton = $('<a>').attr('href', 'unlock').html('unlock');
 			lockButton.button({
 				text: false,

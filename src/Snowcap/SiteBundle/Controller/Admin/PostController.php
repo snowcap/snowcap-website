@@ -1,6 +1,6 @@
 <?php
 
-namespace Snowcap\SiteBundle\Controller;
+namespace Snowcap\SiteBundle\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -10,24 +10,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Snowcap\SiteBundle\Entity\Post;
 use Snowcap\SiteBundle\Form\PostType;
 
-class AdminController extends Controller
-{
-	/**
-     * @Route("/admin", name="admin_index")
-     * @Template()
-     */
-    public function indexAction()
-    {
-        return array();
-    }
-	
+class PostController extends Controller
+{	
 	/**
      * Post management
      *
      * @Route("/admin/posts", name="admin_posts")
      * @Template()
      */
-    public function postIndexAction()
+    public function indexAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
 
@@ -42,7 +33,7 @@ class AdminController extends Controller
      * @Route("/admin/posts/show/{id}", name="admin_posts_show")
      * @Template()
      */
-    public function postShowAction($id)
+    public function showAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
@@ -66,7 +57,7 @@ class AdminController extends Controller
      * @Route("/admin/posts/new", name="admin_posts_new")
      * @Template()
      */
-    public function postNewAction()
+    public function newAction()
     {
         $entity = new Post();
         $form   = $this->createForm(new PostType(), $entity);
@@ -81,9 +72,9 @@ class AdminController extends Controller
      *
      * @Route("/admin/posts/create", name="admin_posts_create")
      * @Method("post")
-     * @Template("SnowcapSiteBundle:Admin:postNew.html.twig")
+     * @Template("SnowcapSiteBundle:Admin/Post:new.html.twig")
      */
-    public function postCreateAction()
+    public function createAction()
     {
         $entity  = new Post();
         $request = $this->getRequest();
@@ -114,7 +105,7 @@ class AdminController extends Controller
      * @Route("/admin/posts/edit/{id}", name="admin_posts_edit")
      * @Template()
      */
-    public function postEditAction($id)
+    public function editAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
@@ -137,9 +128,9 @@ class AdminController extends Controller
      *
      * @Route("/admin/posts/update/{id}", name="admin_posts_update")
      * @Method("post")
-     * @Template("SnowcapSiteBundle:Admin:postEdit.html.twig")
+     * @Template("SnowcapSiteBundle:Admin:Post:edit.html.twig")
      */
-    public function postUpdateAction($id)
+    public function updateAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
@@ -179,7 +170,7 @@ class AdminController extends Controller
      * @Route("/admin/posts/delete/{id}", name="admin_posts_delete")
      * @Method("get")
      */
-    public function postDeleteAction($id)
+    public function deleteAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
         $entity = $em->getRepository('SnowcapSiteBundle:Post')->find($id);

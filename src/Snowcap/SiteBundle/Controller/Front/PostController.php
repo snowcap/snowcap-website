@@ -1,47 +1,35 @@
 <?php
-
-namespace Snowcap\SiteBundle\Controller;
+namespace Snowcap\SiteBundle\Controller\Front;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 use Snowcap\SiteBundle\Entity\Post;
 
-class DefaultController extends Controller
+/**
+ * Post controller.
+ *
+ * @Route("/post")
+ */
+class PostController extends Controller
 {
     /**
-     * @Route("/")
-     * @Template()
-     */
-    public function indexAction()
-    {
-		$em = $this->getDoctrine()->getEntityManager();
-
-        $entities = $em->getRepository('SnowcapSiteBundle:Post')->findAll();
-
-        return array('entities' => $entities);    
-	}
-
-	/**
      * Finds and displays a Post entity.
      *
-     * @Route("/post/{id}", name="postShow")
+     * @Route("/post/{id}", name="front_posts_show")
      * @Template()
      */
-    public function postShowAction($id)
+    public function showAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
-
         $entity = $em->getRepository('SnowcapSiteBundle:Post')->find($id);
-
-        if (!$entity) {
+        if (!$entity){
             throw $this->createNotFoundException('Unable to find Post entity.');
         }
-
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
         );
     }
-
 }
