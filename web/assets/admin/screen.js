@@ -25,7 +25,7 @@
 			dateFormat: 'm/d/y'
 		});
 		// Slugs
-		$('.widget-slugz').each(function(offset, slugWidget){
+		$('.widget-slug').each(function(offset, slugWidget){
 			var lockButton = $('<a>').attr('href', 'unlock').html('unlock');
 			lockButton.button({
 				text: false,
@@ -33,19 +33,19 @@
 					primary: 'ui-icon-unlocked'
 				}
 			});
-			$(slugWidget).attr('disabled', 'disabled');
+			$(slugWidget).attr('readonly', 'readonly');
 			lockButton.click(function(event){
 				event.preventDefault();
 				if($(this).attr('href') === 'unlock'){
 					$(this).attr('href', 'lock');
-					$(slugWidget).removeAttr('disabled');
+					$(slugWidget).removeAttr('readonly');
 					lockButton.button('option', 'icons', {
 						primary: 'ui-icon-locked'
 					});
 				}
 				else{
 					$(this).attr('href', 'unlock');
-					$(slugWidget).attr('disabled', 'disabled');
+					$(slugWidget).attr('readonly', 'readonly');
 					lockButton.button('option', 'icons', {
 						primary: 'ui-icon-unlocked'
 					});
@@ -56,7 +56,7 @@
 				return element.indexOf('widget-slug-') !== -1;
 			}).pop().split('-').pop();
 			$('#' + target).keyup(function(event){
-				if($(slugWidget).attr('disabled') === 'disabled'){
+				if($(slugWidget).attr('readonly') === 'readonly'){
 					var lowercased = $(this).val().toLowerCase();
 					var hyphenized = lowercased.replace(/\s/g, '-');
 					var slug = hyphenized.replace(/[^a-zA-Z0-9\-]/g, '').replace('--', '-').replace(/\-+$/, '');
