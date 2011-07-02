@@ -17,12 +17,7 @@ class DefaultController extends Controller
     public function indexAction()
     {
 		$em = $this->getDoctrine()->getEntityManager();
-
-        $entities = $em->getRepository('SnowcapSiteBundle:Post')->findAll();
-
-        return array('entities' => $entities);    
+        $latestPosts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(2);
+        return array('latestPosts' => $latestPosts);    
 	}
-
-	
-
 }

@@ -25,7 +25,7 @@ class PostController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
         $entity = $em->getRepository('SnowcapSiteBundle:Post')->find($id);
-        if (!$entity){
+        if (!$entity) {
             throw $this->createNotFoundException('Unable to find Post entity.');
         }
         return array(

@@ -3,10 +3,10 @@
 <h1>Snowcap</h1>
 <h2>Post list</h2>
 <ul>
-	{% for entity in entities %}
+	{% for post in latestPosts %}
 		<li>
-			<h3><a href="{{ path('front_posts_show', { 'id': entity.id }) }}">{{ entity.title }}</a></h3>
-			<p>{{ entity.publishedat|date('Y-m-d H:i:s') }}</p>
+			<h3><a href="{{ path('front_posts_show', { 'id': post.id }) }}">{{ post.title }}</a></h3>
+			<p>{{ post.publishedat|date('Y-m-d H:i:s') }}</p>
 		</li>		
 	{% endfor %}
 </ul>
