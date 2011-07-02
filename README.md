@@ -33,6 +33,10 @@ All credentials has to be defined in your virtualhost configuration, like this:
     SetEnv mailer_user your_user
     SetEnv mailer_password your_password
 
+If you want to change the path for the administration part, add the following:
+
+    SetEnv admin_path some_path
+
 
 Look at the Symfony2 documentation for more information about handling cache refreshing, database updates ...
 

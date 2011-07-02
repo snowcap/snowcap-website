@@ -15,7 +15,7 @@ class PostController extends Controller
 	/**
      * Post management
      *
-     * @Route("/admin/posts", name="admin_posts")
+     * @Route("/posts", name="admin_posts")
      * @Template()
      */
     public function indexAction()
@@ -30,7 +30,7 @@ class PostController extends Controller
 	/**
      * Finds and displays a Post entity.
      *
-     * @Route("/admin/posts/show/{id}", name="admin_posts_show")
+     * @Route("/posts/show/{id}", name="admin_posts_show")
      * @Template()
      */
     public function showAction($id)
@@ -54,7 +54,7 @@ class PostController extends Controller
 	/**
      * Displays a form to create a new Post entity.
      *
-     * @Route("/admin/posts/new", name="admin_posts_new")
+     * @Route("/posts/new", name="admin_posts_new")
      * @Template()
      */
     public function newAction()
@@ -70,7 +70,7 @@ class PostController extends Controller
 	/**
      * Creates a new Post entity.
      *
-     * @Route("/admin/posts/create", name="admin_posts_create")
+     * @Route("/posts/create", name="admin_posts_create")
      * @Method("post")
      * @Template("SnowcapSiteBundle:Admin/Post:new.html.twig")
      */
@@ -102,7 +102,7 @@ class PostController extends Controller
 	/**
      * Displays a form to edit an existing Post entity.
      *
-     * @Route("/admin/posts/edit/{id}", name="admin_posts_edit")
+     * @Route("/posts/edit/{id}", name="admin_posts_edit")
      * @Template()
      */
     public function editAction($id)
@@ -126,7 +126,7 @@ class PostController extends Controller
 	/**
      * Edits an existing Post entity.
      *
-     * @Route("/admin/posts/update/{id}", name="admin_posts_update")
+     * @Route("/posts/update/{id}", name="admin_posts_update")
      * @Method("post")
      * @Template("SnowcapSiteBundle:Admin:Post:edit.html.twig")
      */
@@ -167,7 +167,7 @@ class PostController extends Controller
 	/**
      * Deletes a Post entity.
      *
-     * @Route("/admin/posts/delete/{id}", name="admin_posts_delete")
+     * @Route("/posts/delete/{id}", name="admin_posts_delete")
      * @Method("get")
      */
     public function deleteAction($id)
