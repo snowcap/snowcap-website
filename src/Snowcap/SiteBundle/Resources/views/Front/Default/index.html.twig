@@ -5,7 +5,7 @@
 <ul>
 	{% for entity in entities %}
 		<li>
-			<h3><a href="{{ path('postShow', { 'id': entity.id }) }}">{{ entity.title }}</a></h3>
+			<h3><a href="{{ path('front_posts_show', { 'id': entity.id }) }}">{{ entity.title }}</a></h3>
 			<div>{{ entity.body }}</div>
 			<p>{{ entity.publishedat|date('Y-m-d H:i:s') }}</p>
 		</li>		
