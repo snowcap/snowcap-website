@@ -13,10 +13,9 @@ class PostType extends AbstractType
             ->add('title')
 			->add('slug')
             ->add('body')
-            ->add('published_at', 'date', array(
+            ->add('published_at', 'datetime', array(
 				'input' => 'datetime',
 				'widget' => 'single_text',
-				'format' => \IntlDateFormatter::SHORT
 			));
     }
 }
