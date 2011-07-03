@@ -6,7 +6,7 @@
 		<dt>Body</dt>
 		<dd>{{ entity.body | markdown }}</dd>
 		<dt>Publication date</dt>
-		<dd>{{ entity.publishedat|date('Y-m-d') }}</dd>
+		<dd>{{ entity.publishedat|date('d/m/y H:i') }}</dd>
 	</dl>
 	<nav class="record_actions">
 		<a href="{{ path('admin_posts') }}" class="ui-button ui-icon ui-icon-circle-triangle-w">Back to the list</a>

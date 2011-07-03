@@ -14,7 +14,7 @@
 			{% for entity in entities %}
 			<tr>
 				<td><a href="{{ url('admin_posts_show',{'id':entity.id}) }}">{{ entity.title }}</a></td>
-				<td>{{ entity.publishedat|date('Y-m-d') }}</td>
+				<td>{{ entity.publishedat|relativeTime }}</td>
 				<td class="listing-actions">
 					<a href="{{ path('admin_posts_show', { 'id': entity.id }) }}" class="ui-button ui-button-icon-only ui-icon ui-icon-zoomin">show</a>
 					<a href="{{ path('admin_posts_edit', { 'id': entity.id }) }}" class="ui-button ui-button-icon-only ui-icon ui-icon-pencil">edit</a>

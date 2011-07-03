@@ -6,7 +6,7 @@
 	{% for post in latestPosts %}
 		<li>
 			<h3><a href="{{ path('front_posts_show', { 'id': post.id }) }}">{{ post.title }}</a></h3>
-			<p>{{ post.publishedat|date('Y-m-d H:i:s') }}</p>
+			<p>{{ post.publishedat|relativeTime }}</p>
 		</li>		
 	{% endfor %}
 </ul>
