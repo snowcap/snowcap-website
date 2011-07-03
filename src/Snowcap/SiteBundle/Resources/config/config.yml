@@ -3,3 +3,9 @@ twig:
         resources:
             - 'form_div_layout.html.twig'
             - 'SnowcapSiteBundle:Admin:forms.html.twig'
+
+services:
+    twig.extension.RelativeTime:
+        class: Snowcap\SiteBundle\Twig\Extension\RelativeTime
+        tags:
+            - { name: twig.extension }
