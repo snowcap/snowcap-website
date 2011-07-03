@@ -120,6 +120,10 @@
 		$('.widget-datepicker').datepicker({
 			dateFormat: 'm/d/y'
 		});
+		// Datetimepicker
+		$('.widget-datetimepicker').datetimepicker({
+			dateFormat: 'm/d/y',
+		});
 		// Slugs
 		$('.widget-slug').slugger();
 	});
