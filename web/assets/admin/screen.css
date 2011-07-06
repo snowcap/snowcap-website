@@ -126,3 +126,14 @@ header nav a:hover {
 	margin: 0 0 10px 0;
 	padding: 0;
 }
+.widget-markdown {
+}
+.markdown_previewer {
+	position: absolute;
+	left: 743px;
+	width: 700px;
+	min-height: 188px;
+	border: solid 1px #aaa;
+	padding: 10px;
+	background-color: #eee;
+}

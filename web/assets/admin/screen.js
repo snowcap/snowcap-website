@@ -1,4 +1,33 @@
 (function($){
+	
+	var MarkdownPreviewer = function(element){
+		this.element = $(element);
+		this.latestPreviewContent = "";
+		var _this = this;
+
+		/**
+		 * Creating the previewer element
+		 */		
+		previewid = "markdown_"+this.element.attr('id');
+		this.element.before('<div id="'+previewid+'" class="markdown_previewer">markdown previewer</div>');
+		this.previewElement = $('#'+previewid);
+		
+		/**
+		 * Checking every second if the content has changed: if yes, a little AJAX call to convert the content into markdown format and update the previewer 
+		 */
+		setInterval( function() {
+			content = _this.element.val();
+			if(_this.latestPreviewContent != content) {
+				$.post('/admin/markdown', { content: content }, function(data) {
+					_this.previewElement.html(data);
+					_this.latestPreviewContent = content;
+				});
+			}
+		}, 1000);
+	};
+	
+	
+	
 	var Slugger = function(element){
 		this.element = $(element);
 		var _this = this;
@@ -94,6 +123,11 @@
            new Slugger(this);
        });
 	};
+	$.fn.markdownPreviewer = function(){
+       return this.each(function(){
+           new MarkdownPreviewer(this);
+       });
+	};
 	// DOMREADY
 	$(document).ready(function(event){
 		// Icons / buttons
@@ -126,5 +160,7 @@
 		});
 		// Slugs
 		$('.widget-slug').slugger();
+		// Markdown previewer
+		$('.widget-markdown').markdownPreviewer();
 	});
 })(jQuery);
