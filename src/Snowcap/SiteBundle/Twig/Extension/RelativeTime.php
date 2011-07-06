@@ -7,8 +7,12 @@ class RelativeTime extends \Twig_Extension {
 		return array('relativeTime' => new \Twig_Filter_Method($this, 'relativeTime'), );
 	}
 
-	public function relativeTime($datetime) {
+	public function relativeTime($datetime = null) {
 
+		if($datetime === null) {
+			return "";
+		}
+		
 		$difference = time() - $datetime->getTimestamp();
 		$periods = array("sec", "min", "hour", "day", "week", "month", "years", "decade");
 		$lengths = array("60", "60", "24", "7", "4.35", "12", "10");
