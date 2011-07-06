@@ -9,7 +9,7 @@
 		<div class="form-row">
 			{{ form_label(form.body) }}
 			<div id="wmd-button-bar"></div>
-			{{ form_widget(form.body) }}
+			{{ form_widget(form.body, { 'attr': {'class': 'widget-markdown'}}) }}
 		</div>
 	    {{ form_row(form.published_at, { 'widget_attr': {'class': 'widget-datetimepicker'}}) }}
 	    {{ form_rest(form) }}
