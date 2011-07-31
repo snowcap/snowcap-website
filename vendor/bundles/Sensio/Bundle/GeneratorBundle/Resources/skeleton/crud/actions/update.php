@@ -3,7 +3,7 @@
      * Edits an existing {{ entity }} entity.
      *
 {% if 'annotation' == format %}
-     * @Route("/{id}/update", name="{{ route_prefix }}_update")
+     * @Route("/{id}/update", name="{{ route_name_prefix }}_update")
      * @Method("post")
      * @Template("{{ bundle }}:{{ entity }}:edit.html.twig")
 {% endif %}
@@ -23,16 +23,13 @@
 
         $request = $this->getRequest();
 
-        if ('POST' === $request->getMethod()) {
-            $editForm->bindRequest($request);
+        $editForm->bindRequest($request);
 
-            if ($editForm->isValid()) {
-                $em = $this->getDoctrine()->getEntityManager();
-                $em->persist($entity);
-                $em->flush();
+        if ($editForm->isValid()) {
+            $em->persist($entity);
+            $em->flush();
 
-                return $this->redirect($this->generateUrl('{{ route_prefix }}_edit', array('id' => $id)));
-            }
+            return $this->redirect($this->generateUrl('{{ route_name_prefix }}_edit', array('id' => $id)));
         }
 
 {% if 'annotation' == format %}

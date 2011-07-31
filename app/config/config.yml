@@ -5,6 +5,8 @@ imports:
         resource: @SnowcapSiteBundle/Resources/config/config.yml
 
 framework:
+    #esi:             ~
+    #translator:      { fallback: en }
     secret:          %secret%
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
@@ -37,6 +39,7 @@ doctrine:
     dbal:
         driver:   %database_driver%
         host:     %database_host%
+        port:     %database_port%
         dbname:   %database_name%
         user:     %database_user%
         password: %database_password%
