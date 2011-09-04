@@ -57,10 +57,10 @@ The command can also generate the corresponding entity repository class with the
 
 <info>php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --with-repository</info>
 
-By default, the command uses YAML for the mapping information; change it
+By default, the command uses annotations for the mapping information; change it
 with <comment>--format</comment>:
 
-<info>php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --format=annotation</info>
+<info>php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --format=yml</info>
 
 To deactivate the interaction mode, simply use the `--no-interaction` option
 whitout forgetting to pass all needed options:
@@ -121,6 +121,13 @@ EOT
             $entity = $dialog->askAndValidate($output, $dialog->getQuestion('The Entity shortcut name', $input->getOption('entity')), array('Sensio\Bundle\GeneratorBundle\Command\Validators', 'validateEntityName'), false, $input->getOption('entity'));
 
             list($bundle, $entity) = $this->parseShortcutNotation($entity);
+
+            // check reserved words
+            $keywordList = $this->getContainer()->get('doctrine')->getConnection()->getDatabasePlatform()->getReservedKeywordsList();
+            if($keywordList->isKeyword($entity)){
+                $output->writeln(sprintf('<bg=red> "%s" is a reserved word</>.', $entity));
+                continue;
+            }
 
             try {
                 $b = $this->getContainer()->get('kernel')->getBundle($bundle);
@@ -242,9 +249,15 @@ EOT
 
         while (true) {
             $output->writeln('');
-            $name = $dialog->askAndValidate($output, $dialog->getQuestion('New field name (press <return> to stop adding fields)', null), function ($name) use ($fields) {
+            $keywordList = $this->getContainer()->get('doctrine')->getConnection()->getDatabasePlatform()->getReservedKeywordsList();
+            $name = $dialog->askAndValidate($output, $dialog->getQuestion('New field name (press <return> to stop adding fields)', null), function ($name) use ($fields,$keywordList) {
                 if (isset($fields[$name]) || 'id' == $name) {
                     throw new \InvalidArgumentException(sprintf('Field "%s" is already defined.', $name));
+                }
+
+                // check reserved words
+                if($keywordList->isKeyword($name)){
+                    throw new \InvalidArgumentException(sprintf('Name "%s" is a reserved word.', $name));
                 }
 
                 return $name;
