@@ -1,4 +1,4 @@
-{% extends "SnowcapSiteBundle::base.html.twig" %}
+{% extends "SnowcapSiteBundle:Front:base.html.twig" %}
 {% block body %}
 <h1>Snowcap</h1>
 <h2>Post list</h2>
@@ -10,4 +10,26 @@
 		</li>		
 	{% endfor %}
 </ul>
+
+<div class="project-thumb">
+    <a class="project-thumb-link" href="#">
+        <img class="project-thumb-front" src="/uploads/projects/wilkinson/ic_front.png" />
+        <img class="project-thumb-back" src="/uploads/projects/wilkinson/ic_back.png" />
+    </a>
+</div>
+
+<div class="project-thumb">
+    <a class="project-thumb-link" href="#">
+        <img class="project-thumb-front" src="/uploads/projects/wilkinson/wab_front.png" />
+        <img class="project-thumb-back" src="/uploads/projects/wilkinson/wab_back.png" />
+    </a>
+</div>
+
+<div class="project-thumb">
+    <a class="project-thumb-link" href="#">
+        <img class="project-thumb-front" src="/uploads/projects/wilkinson/wlk_front.png" />
+        <img class="project-thumb-back" src="/uploads/projects/wilkinson/wlk_back.png" />
+    </a>
+</div>
+
 {% endblock %}
