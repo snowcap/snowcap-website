@@ -18,4 +18,9 @@ class PostType extends AbstractType
 				'widget' => 'single_text',
 			));
     }
+	
+	public function getName()
+	{
+		return 'post';
+	}
 }

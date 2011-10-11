@@ -14,7 +14,6 @@ namespace Symfony\Bundle\AsseticBundle\DependencyInjection;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\DefinitionDecorator;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
@@ -35,14 +34,16 @@ class AsseticExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $parameterBag = $container->getParameterBag();
+        $bundles = $container->getParameter('kernel.bundles');
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('assetic.xml');
         $loader->load('templating_twig.xml');
         $loader->load('templating_php.xml');
 
-        $config = self::processConfigs($configs, $container->getParameter('kernel.debug'), array_keys($container->getParameter('kernel.bundles')));
+        $processor = new Processor();
+        $configuration = new MainConfiguration(array_keys($bundles));
+        $config = $processor->processConfiguration($configuration, $configs);
 
         $container->setParameter('assetic.debug', $config['debug']);
         $container->setParameter('assetic.use_controller', $config['use_controller']);
@@ -69,7 +70,7 @@ class AsseticExtension extends Extension
         // register filters
         foreach ($config['filters'] as $name => $filter) {
             if (isset($filter['resource'])) {
-                $loader->load($parameterBag->resolveValue($filter['resource']));
+                $loader->load($container->getParameterBag()->resolveValue($filter['resource']));
                 unset($filter['resource']);
             } else {
                 $loader->load('filters/'.$name.'.xml');
@@ -106,7 +107,7 @@ class AsseticExtension extends Extension
         $container->setParameter('assetic.twig_extension.functions', $config['twig']['functions']);
 
         // choose dynamic or static
-        if ($parameterBag->resolveValue($parameterBag->get('assetic.use_controller'))) {
+        if ($container->getParameterBag()->resolveValue($container->getParameterBag()->get('assetic.use_controller'))) {
             $loader->load('controller.xml');
             $container->getDefinition('assetic.helper.dynamic')->addTag('templating.helper', array('alias' => 'assetic'));
             $container->removeDefinition('assetic.helper.static');
@@ -116,103 +117,25 @@ class AsseticExtension extends Extension
             $container->removeDefinition('assetic.helper.dynamic');
         }
 
-        // register config resources
-        self::registerFormulaResources($container, $parameterBag->resolveValue($config['bundles']));
-    }
-
-    /**
-     * Merges the user's config arrays.
-     *
-     * @param array   $configs An array of config arrays
-     * @param Boolean $debug   The debug mode
-     * @param array   $bundles An array of all bundle names
-     *
-     * @return array The merged config
-     */
-    static protected function processConfigs(array $configs, $debug, array $bundles)
-    {
-        $processor = new Processor();
-        $configuration = new Configuration($debug, $bundles);
-
-        return $processor->processConfiguration($configuration, $configs);
-    }
-
-    /**
-     * Registers factory resources for certain bundles.
-     *
-     * @param ContainerBuilder $container The container
-     * @param array            $bundles   An array of select bundle names
-     *
-     * @throws InvalidArgumentException If registering resources from a bundle that doesn't exist
-     */
-    static protected function registerFormulaResources(ContainerBuilder $container, array $bundles)
-    {
-        $map = $container->getParameter('kernel.bundles');
-        $am  = $container->getDefinition('assetic.asset_manager');
-
-        // bundle views/ directories and kernel overrides
-        foreach ($bundles as $name) {
-            $rc = new \ReflectionClass($map[$name]);
+        // bundle and kernel resources
+        foreach ($container->getParameterBag()->resolveValue($config['bundles']) as $bundle) {
+            $rc = new \ReflectionClass($bundles[$bundle]);
             foreach (array('twig', 'php') as $engine) {
                 $container->setDefinition(
-                    'assetic.'.$engine.'_directory_resource.'.$name,
-                    self::createDirectoryResourceDefinition($name, $engine, array(
-                        $container->getParameter('kernel.root_dir').'/Resources/'.$name.'/views',
+                    'assetic.'.$engine.'_directory_resource.'.$bundle,
+                    new DirectoryResourceDefinition($bundle, $engine, array(
+                        $container->getParameter('kernel.root_dir').'/Resources/'.$bundle.'/views',
                         dirname($rc->getFileName()).'/Resources/views',
                     ))
                 );
             }
         }
-
-        // kernel views/ directory
         foreach (array('twig', 'php') as $engine) {
             $container->setDefinition(
                 'assetic.'.$engine.'_directory_resource.kernel',
-                self::createDirectoryResourceDefinition('', $engine, array(
-                    $container->getParameter('kernel.root_dir').'/Resources/views',
-                ))
+                new DirectoryResourceDefinition('', $engine, array($container->getParameter('kernel.root_dir').'/Resources/views'))
             );
         }
-    }
-
-    /**
-     * Creates a directory resource definition.
-     *
-     * If more than one directory is provided a coalescing definition will be
-     * returned.
-     *
-     * @param string $bundle A bundle name or empty string
-     * @param string $engine The templating engine
-     * @param array  $dirs   An array of directories to merge
-     *
-     * @return Definition A resource definition
-     */
-    static public function createDirectoryResourceDefinition($bundle, $engine, array $dirs)
-    {
-        $dirResources = array();
-        foreach ($dirs as $dir) {
-            $dirResources[] = $dirResource = new Definition('%assetic.directory_resource.class%');
-            $dirResource
-                ->addArgument(new Reference('templating.loader'))
-                ->addArgument($bundle)
-                ->addArgument($dir)
-                ->addArgument('/^[^.]+\.[^.]+\.'.$engine.'$/')
-                ->setPublic(false);
-        }
-
-        if (1 == count($dirResources)) {
-            // no need to coalesce
-            $definition = $dirResources[0];
-        } else {
-            $definition = new Definition('%assetic.coalescing_directory_resource.class%');
-            $definition
-                ->addArgument($dirResources)
-                ->setPublic(false);
-        }
-
-        return $definition
-            ->addTag('assetic.templating.'.$engine)
-            ->addTag('assetic.formula_resource', array('loader' => $engine));
     }
 
     /**

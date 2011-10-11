@@ -41,7 +41,7 @@ class GenerateBundleCommand extends ContainerAwareCommand
                 new InputOption('namespace', '', InputOption::VALUE_REQUIRED, 'The namespace of the bundle to create'),
                 new InputOption('dir', '', InputOption::VALUE_REQUIRED, 'The directory where to create the bundle'),
                 new InputOption('bundle-name', '', InputOption::VALUE_REQUIRED, 'The optional bundle name'),
-                new InputOption('format', '', InputOption::VALUE_REQUIRED, 'Use the format for configuration files (php, xml, yml, or , annotation)', 'annotation'),
+                new InputOption('format', '', InputOption::VALUE_REQUIRED, 'Use the format for configuration files (php, xml, yml, or annotation)', 'annotation'),
                 new InputOption('structure', '', InputOption::VALUE_NONE, 'Whether to generate the whole directory structure'),
             ))
             ->setDescription('Generates a bundle')
@@ -53,15 +53,14 @@ Any passed option will be used as a default value for the interaction
 (<comment>--namespace</comment> is the only one needed if you follow the
 conventions):
 
-<info>./app/console generate:bundle --namespace=Acme/BlogBundle</info>
+<info>php app/console generate:bundle --namespace=Acme/BlogBundle</info>
 
 Note that you can use <comment>/</comment> instead of <comment>\\</comment> for the namespace delimiter to avoid any
 problem.
 
-If you want to disable any user interaction, use `--no-interaction` but don't
-forget to pass all needed options:
+If you want to disable any user interaction, use <comment>--no-interaction</comment> but don't forget to pass all needed options:
 
-<info>./app/console generate:bundle --namespace=Acme/BlogBundle --dir=src [--bundle-name=...] --no-interaction</info>
+<info>php app/console generate:bundle --namespace=Acme/BlogBundle --dir=src [--bundle-name=...] --no-interaction</info>
 
 Note that the bundle namespace must end with "Bundle".
 EOT
@@ -154,7 +153,7 @@ EOT
         $input->setOption('namespace', $namespace);
 
         // bundle name
-        $bundle = $input->getOption('bundle-name') ?: strtr($namespace, array('\\' => ''));
+        $bundle = $input->getOption('bundle-name') ?: strtr($namespace, array('\\Bundle\\' => '', '\\' => ''));
         $output->writeln(array(
             '',
             'In your code, a bundle is often referenced by its name. It can be the',
@@ -233,15 +232,23 @@ EOT
 
         $output->write('Enabling the bundle inside the Kernel: ');
         $manip = new KernelManipulator($kernel);
-        $ret = $auto ? $manip->addBundle($namespace.'\\'.$bundle) : false;
-        if (!$ret) {
-            $reflected = new \ReflectionObject($kernel);
+        try {
+            $ret = $auto ? $manip->addBundle($namespace.'\\'.$bundle) : false;
 
+            if (!$ret) {
+                $reflected = new \ReflectionObject($kernel);
+
+                return array(
+                    sprintf('- Edit <comment>%s</comment>', $reflected->getFilename()),
+                    '  and add the following bundle in the <comment>AppKernel::registerBundles()</comment> method:',
+                    '',
+                    sprintf('    <comment>new %s(),</comment>', $namespace.'\\'.$bundle),
+                    '',
+                );
+            }
+        } catch (\RuntimeException $e) {
             return array(
-                sprintf('- Edit <comment>%s</comment>', $reflected->getFilename()),
-                '  and add the following bundle in the <comment>AppKernel::registerBundles()</comment> method:',
-                '',
-                sprintf('    <comment>new %s(),</comment>', $namespace.'\\'.$bundle),
+                sprintf('Bundle <comment>%s</comment> is already defined in <comment>AppKernel::registerBundles()</comment>.', $namespace.'\\'.$bundle),
                 '',
             );
         }
@@ -256,20 +263,27 @@ EOT
 
         $output->write('Importing the bundle routing resource: ');
         $routing = new RoutingManipulator($this->getContainer()->getParameter('kernel.root_dir').'/config/routing.yml');
-        $ret = $auto ? $routing->addResource($bundle, $format) : false;
-        if (!$ret) {
-            if ('annotation' === $format) {
-                $help = sprintf("        <comment>resource: \"@%s/Resources/Controller/\"</comment>\n        <comment>type:     annotation</comment>", $bundle);
-            } else {
-                $help = sprintf("        <comment>resource: \"@%s/Resources/config/routing.%s\"</comment>\n", $bundle, $format);
-            }
-            $help .= "        <comment>prefix:   /</comment>\n";
+        try {
+            $ret = $auto ? $routing->addResource($bundle, $format) : false;
+            if (!$ret) {
+                if ('annotation' === $format) {
+                    $help = sprintf("        <comment>resource: \"@%s/Resources/Controller/\"</comment>\n        <comment>type:     annotation</comment>", $bundle);
+                } else {
+                    $help = sprintf("        <comment>resource: \"@%s/Resources/config/routing.%s\"</comment>\n", $bundle, $format);
+                }
+                $help .= "        <comment>prefix:   /</comment>\n";
 
+                return array(
+                    '- Import the bundle\'s routing resource in the app main routing file:',
+                    '',
+                    sprintf('    <comment>%s:</comment>', $bundle),
+                    $help,
+                    '',
+                );
+            }
+        } catch (\RuntimeException $e) {
             return array(
-                '- Import the bundle\'s routing resource in the app main routing file:',
-                '',
-                sprintf('    <comment>%s:</comment>', $bundle),
-                $help,
+                sprintf('Bundle <comment>%s</comment> is already imported.', $bundle),
                 '',
             );
         }

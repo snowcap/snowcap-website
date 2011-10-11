@@ -65,7 +65,7 @@ final class AnnotationReader implements Reader
         'deprec'=> true, 'author'=> true, 'property' => true, 'method' => true,
         'abstract'=> true, 'exception'=> true, 'magic' => true, 'api' => true,
         'final'=> true, 'filesource'=> true, 'throw' => true, 'uses' => true,
-        'usedby'=> true, 'private' => true
+        'usedby'=> true, 'private' => true, 'Annotation' => true,
     );
 
     /**
@@ -130,6 +130,8 @@ final class AnnotationReader implements Reader
      */
     public function __construct()
     {
+        AnnotationRegistry::registerFile(__DIR__ . '/Annotation/IgnoreAnnotation.php');
+        
         $this->parser = new DocParser;
 
         $this->preParser = new DocParser;
@@ -142,7 +144,6 @@ final class AnnotationReader implements Reader
     /**
      * Ignore not imported annotations and not throw an exception.
      *
-     * @deprecated
      * @param bool $bool
      */
     public function setIgnoreNotImportedAnnotations($bool)
@@ -209,42 +210,6 @@ final class AnnotationReader implements Reader
     public function setAnnotationNamespaceAlias($namespace, $alias)
     {
         $this->parser->setAnnotationNamespaceAlias($namespace, $alias);
-    }
-
-    /**
-     * Sets a flag whether to auto-load annotation classes or not.
-     *
-     * NOTE: It is recommended to turn auto-loading on if your auto-loader
-     *       supports silent failing. For this reason, setting this to TRUE
-     *       renders the parser incompatible with {@link ClassLoader}.
-     *
-     * @param boolean $bool Boolean flag.
-     */
-    public function setAutoloadAnnotations($bool)
-    {
-        $this->parser->setAutoloadAnnotations($bool);
-    }
-
-    /**
-     * Gets a flag whether to try to autoload annotation classes.
-     *
-     * @see setAutoloadAnnotations
-     * @return boolean
-     */
-    public function isAutoloadAnnotations()
-    {
-        return $this->parser->isAutoloadAnnotations();
-    }
-
-    /**
-     * Gets a flag whether to try to autoload annotation classes.
-     *
-     * @deprecated Will be removed in 3.0, use {@see isAutoloadAnnotations()} instead.
-     * @return bool
-     */
-    public function getAutoloadAnnotations()
-    {
-        return $this->parser->isAutoloadAnnotations();
     }
 
     /**
@@ -393,11 +358,13 @@ final class AnnotationReader implements Reader
         $imports = self::$globalImports;
         $ignoredAnnotationNames = self::$globalIgnoredNames;
 
-        $annotations = $this->preParser->parse($class->getDocComment());
-        foreach ($annotations as $annotation) {
-            if ($annotation instanceof IgnoreAnnotation) {
-                foreach ($annotation->names AS $annot) {
-                    $ignoredAnnotationNames[$annot] = true;
+        if ($this->enablePhpImports) {
+            $annotations = $this->preParser->parse($class->getDocComment());
+            foreach ($annotations as $annotation) {
+                if ($annotation instanceof IgnoreAnnotation) {
+                    foreach ($annotation->names AS $annot) {
+                        $ignoredAnnotationNames[$annot] = true;
+                    }
                 }
             }
         }
@@ -406,7 +373,7 @@ final class AnnotationReader implements Reader
         $this->imports[$name] = array_merge(
             self::$globalImports,
             ($this->enablePhpImports) ? $this->phpParser->parseClass($class) : array(),
-            array('__NAMESPACE__' => $class->getNamespaceName())
+            ($this->enablePhpImports) ? array('__NAMESPACE__' => $class->getNamespaceName()) : array()
         );
         if ($this->defaultAnnotationNamespace) {
             $this->imports[$name]['__DEFAULT__'] = $this->defaultAnnotationNamespace;

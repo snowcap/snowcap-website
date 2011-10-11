@@ -3,4 +3,5 @@
 .settings
 app/logs/*
 app/cache/*
+.idea
 web/uploads/*
