@@ -68,3 +68,6 @@ snowcap_admin:
       page:
           model_class: Snowcap\SiteBundle\Entity\Page
           admin_class: Snowcap\SiteBundle\Admin\Page
+      project:
+          model_class: Snowcap\SiteBundle\Entity\Project
+          admin_class: Snowcap\SiteBundle\Admin\Project
