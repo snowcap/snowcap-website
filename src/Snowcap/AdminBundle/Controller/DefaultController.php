@@ -16,4 +16,15 @@ class DefaultController extends Controller
     {
         return array();
     }
+
+    /**
+     * Get the navigation for the content
+     * 
+     * @Template()
+     */
+    public function navigationAction() {
+        $navigation = $this->get('snowcap_admin')->getNavigation();
+        
+        return array('navigation' => $navigation);
+    }
 }

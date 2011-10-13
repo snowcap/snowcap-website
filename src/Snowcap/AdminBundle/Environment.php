@@ -16,4 +16,15 @@ class Environment {
         $adminClassName = $this->content[$type]['admin_class'];
         return new $adminClassName;
     }
+    public function getNavigation() {
+        $navigation = array();
+        foreach ($this->content as $type => $config) {
+            $navigation[] = array(
+                'route' => 'content',
+                'type'=> $type
+            );
+        }
+        return $navigation;
+
+    }
 }

@@ -1,0 +1,3 @@
+{% for link in navigation %}
+    <a href="{{ url(link.route, {'type': link.type}) }}">{{ "navigation.link" | trans({'%type%' : link.type}) }}</a>
+{% endfor %}

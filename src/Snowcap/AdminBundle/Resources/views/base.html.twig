@@ -13,8 +13,7 @@
 		<header>
 			<h1>Snowcap admin</h1>
 			<nav>
-				<a href="{{ url('content', {'type': 'page'}) }}">Manage pages</a>
-				<a href="{{ url('content', {'type': 'post'}) }}">Manage posts</a>
+				{% render('SnowcapAdminBundle:Default:Navigation') %}
 			</nav>
 		</header>
 		<div id="main">
