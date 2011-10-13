@@ -1,5 +1,7 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% set body_class = 'home' %}
 {% block body %}
+<<<<<<< HEAD
     <section class="recent-works">
         <h2>{{ "Recent works" | trans }}</h2>
         <ul>
@@ -39,3 +41,9 @@
         <h2>{{ "Two words about..." | trans }}</h2>
     </aside>
 {% endblock %}
+=======
+    <h1>{{ "general.snowcap" | trans }}</h1>
+    <h2>{{ "general.baseline" | trans }}</h2>
+    <p>{{ "general.nutshell" | trans | markdown }}</p>
+{% endblock %}
+>>>>>>> Homepage layout

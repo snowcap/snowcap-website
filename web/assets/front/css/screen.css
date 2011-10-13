@@ -1,11 +1,22 @@
+/* GLOBALS */
 body {
-    background-color: #efefef;
+    color: #0a0a0a;
+    background-color: #fff;
     margin: 0;
     padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Lato, sans-serif;
 }
 a {
     color: #79bd01;
+    text-decoration: none;
 }
+a:hover {
+    text-decoration: underline;
+}
+/* HEADER */
 header {
     background-color: #0a0a0a;
     height: 40px;
@@ -14,7 +25,7 @@ header nav {
     width: 960px;
     margin: 0 auto;
     overflow: hidden;
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-weight: 300;
     font-size: 13px;
 }
@@ -37,6 +48,41 @@ header nav > a {
     line-height: 38px;
     padding: 0 0 2px 0;
     color: #fff;
-    text-decoration: none;
     margin-right: 30px;
+}
+header nav a:hover {
+    color: #79bd01;
+    text-decoration: none;
+}
+/* MAIN SECTION */
+section.main {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 220px;
+}
+.home section.main {
+    background: url(../images/home.jpg) right top no-repeat;
+    min-height: 925px;
+}
+.home section.main h1 {
+    text-indent: -10000px;
+    margin: 90px 0 0 0;
+    padding: 0;
+    width: 271px;
+    height: 102px;
+    background: url(../images/sprites.png) -35px 0 no-repeat;
+}
+.home section.main h2 {
+    margin: 10px 0 0 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: -1px;
+}
+.home section.main p {
+    margin: 30px 0 0 0;
+    width: 375px;
+    color: #a6a6a4;
+}
+.home section.main p strong {
+    color: #333332;
 }
