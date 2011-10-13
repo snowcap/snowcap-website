@@ -6,7 +6,7 @@
 		<thead>
 			<tr>
 				{% for field_name, field_params in admin.gridFields %}
-                    <th>{{ field_name }}</th>
+				    {{ grid_header(field_name, field_params) }}
 				{% endfor %}
 				<th>Actions</th>
 			</tr>
@@ -15,7 +15,7 @@
 			{% for entity in entities %}
 			<tr>
 				{% for field_name, field_params in admin.gridFields %}
-                    {{ column(entity, field_name, field_params) }}
+                    {{ grid_cell(entity, field_name, field_params) }}
 				{% endfor %}
 				<td class="listing-actions">
 					<a href="{{ path('content_show', {'type': type, 'id': entity.id }) }}" class="ui-button ui-button-icon-only ui-icon ui-icon-zoomin">show</a>

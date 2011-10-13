@@ -25,22 +25,17 @@ class AdminExtension extends \Twig_Extension {
     public function getFunctions()
     {
         return array(
-            'column' => new \Twig_Function_Method($this, 'renderColumn', array('pre_escape' => 'html', 'is_safe' => array('html'))),
+            'grid_cell' => new \Twig_Function_Method($this, 'renderCell', array('pre_escape' => 'html', 'is_safe' => array('html'))),
+            'grid_header' => new \Twig_Function_Method($this, 'renderHeader', array('pre_escape' => 'html', 'is_safe' => array('html'))),
         );
     }
-
-    /*public function getFilters()
-    {
-        return array(
-            'pad' => new \Twig_Filter_Method($this, 'pad')
-        );
-    }*/
-    public function renderColumn($entity, $property, $params)
+    
+    public function renderCell($entity, $property, $params)
     {
         $loader = $this->environment->getLoader(); /* @var \Symfony\Bundle\TwigBundle\Loader\FilesystemLoader $loader */
         $loader->addPath(__DIR__ . '/../../Resources/views/');
-        $template = $this->environment->loadTemplate('column.html.twig');
-        $output = 'notimplemented';
+        $template = $this->environment->loadTemplate('grid.html.twig');
+        $output = 'EMPTY';
         if(isset($params['callback'])){
             $output = call_user_func($params['callback'], $entity);
         }
@@ -51,7 +46,18 @@ class AdminExtension extends \Twig_Extension {
             $output = call_user_func(array($entity, 'get' . ucfirst($property)));
         }
         ob_start();
-        $template->displayBlock('column', array('output' => $output));
+        $template->displayBlock('cell', array('output' => $output));
+        $html = ob_get_clean();
+        return $html;
+    }
+    public function renderHeader($property, $params)
+    {
+        $loader = $this->environment->getLoader(); /* @var \Symfony\Bundle\TwigBundle\Loader\FilesystemLoader $loader */
+        $loader->addPath(__DIR__ . '/../../Resources/views/');
+        $template = $this->environment->loadTemplate('grid.html.twig');
+        $output = $property;
+        ob_start();
+        $template->displayBlock('header', array('output' => $output));
         $html = ob_get_clean();
         return $html;
     }
