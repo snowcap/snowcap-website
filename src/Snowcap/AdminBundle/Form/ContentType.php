@@ -4,6 +4,7 @@ namespace Snowcap\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
+use Snowcap\AdminBundle\Admin\Content as ContentAdmin;
 
 class ContentType extends AbstractType
 {
@@ -12,19 +13,19 @@ class ContentType extends AbstractType
      */
     protected $type;
     /**
-     * @var array
+     * @var \Snowcap\AdminBundle\Admin
      */
-    protected $fieldMappings;
+    protected $admin;
     /**
      * Class constructor
      *
      * @param string $type
      * @param array $fieldMappings
      */
-    public function __construct($type, $fieldMappings)
+    public function __construct($type, ContentAdmin $admin)
     {
         $this->type = $type;
-        $this->fieldMappings = $fieldMappings;
+        $this->admin = $admin;
     }
     /**
      * Implements \Symfony\Component\Form\AbstractType::buildForm()
@@ -34,27 +35,13 @@ class ContentType extends AbstractType
      */
     public function buildForm(FormBuilder $builder, array $options)
     {
-        foreach($this->fieldMappings as $field){
-            $fieldParams = array();
-            if(isset($field['id']) && $field['id'] === true) {
-
-            }
-            else{
-                switch($field['type']){
-                    case 'datetime':
-                        $type = 'datetime';
-                        $fieldParams['input'] = 'datetime';
-                        $fieldParams['widget'] = 'single_text';
-                        break;
-                    case 'text':
-                        $type = 'textarea';
-                        break;
-                    default:
-                        $type = 'text';
-                        break;
-                }
-                $builder->add($field['fieldName'], $type, $fieldParams);
-            }
+        foreach($this->admin->getFormFields() as $fieldName => $fieldParams){
+            $defaultFieldParams = array(
+                'type' => 'text',
+                'options' => array(),
+            );
+            $fieldParams = array_merge($defaultFieldParams, $fieldParams);
+            $builder->add($fieldName, $fieldParams['type'], $fieldParams['options']);
         }
     }
 	/**

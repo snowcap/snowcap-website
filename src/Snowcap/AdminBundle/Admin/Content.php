@@ -5,4 +5,5 @@ abstract class Content {
     abstract public function getContentName();
     abstract public function getEntityName();
     abstract public function getGridFields();
+    abstract public function getFormFields();
 }

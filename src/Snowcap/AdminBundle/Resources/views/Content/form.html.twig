@@ -4,7 +4,13 @@
 {% block datetime_widget %}
     {% set attr = attr|merge({'class': 'widget-datetimepicker' }) %}
     {{ block('field_widget') }}
-{% endblock datetime_widget %}
+{% endblock %}
+
+
+{% block slug_widget %}
+    {% set attr = attr|merge({'class': 'widget-slug' }) %}
+    {{ block('field_widget') }}
+{% endblock %}
 
 {% block body %}
 <section class="section-700">

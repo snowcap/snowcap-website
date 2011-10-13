@@ -55,9 +55,8 @@ class ContentController extends Controller {
         $em = $this->get('doctrine')->getEntityManager();
         $entityName = $admin->getEntityName();
         $entity = new $entityName();
-        $metaData = $em->getClassMetaData($admin->getEntityName());
         $request = $this->get('request');
-        $form = $this->createForm(new ContentType($type, $metaData->fieldMappings), $entity);
+        $form = $this->createForm(new ContentType($type, $admin), $entity);
         if ('POST' === $request->getMethod()) {
             $form->bindRequest($request);
             if ($form->isValid()) {
@@ -87,7 +86,7 @@ class ContentController extends Controller {
         $entity = $this->findEntity($id, $admin);
         $metaData = $em->getClassMetaData($admin->getEntityName());
         $request = $this->get('request');
-        $form = $this->createForm(new ContentType($type, $metaData->fieldMappings), $entity);
+        $form = $this->createForm(new ContentType($type, $admin), $entity);
         if ('POST' === $request->getMethod()) {
             $form->bindRequest($request);
             if ($form->isValid()) {
