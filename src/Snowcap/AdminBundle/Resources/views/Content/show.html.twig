@@ -1,0 +1,17 @@
+{% extends "SnowcapAdminBundle::base.html.twig" %}
+{% block body %}
+<section class="section-700">
+	<h2>{{ entity.title }}</h2>
+	<dl class="detail">
+		<dt>Body</dt>
+		<dd>{{ entity.body | markdown }}</dd>
+		<dt>Publication date</dt>
+		<dd>{{ entity.publishedat|date('d/m/y H:i') }}</dd>
+	</dl>
+	<nav class="record_actions">
+		<a href="{{ path('content', {'type': type}) }}" class="ui-button ui-icon ui-icon-circle-triangle-w">Back to the list</a>
+		<a href="{{ path('content_update', {'type': type, 'id': entity.id }) }}" class="ui-button ui-icon ui-icon-pencil">Edit</a>
+		<a href="{{ path('content_delete', {'type': type, 'id': entity.id}) }}" class="ui-button ui-icon ui-icon-trash">Delete</a>
+	</nav>
+</section>
+{% endblock %}

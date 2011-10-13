@@ -1,0 +1,12 @@
+parameters:
+  content: ~
+
+services:
+  snowcap_admin:
+    class: Snowcap\AdminBundle\Environment
+    arguments: [%content%]
+  snowcap_admin_twig:
+    public: false
+    class: Snowcap\AdminBundle\Twig\Extension\AdminExtension
+    tags:
+      -  { name: twig.extension }

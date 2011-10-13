@@ -1,11 +1,11 @@
 <?php
 namespace Snowcap\SiteBundle\Controller\Front;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+use Snowcap\SiteBundle\Controller\BaseController;
 use Snowcap\SiteBundle\Entity\Post;
 
 /**
@@ -13,12 +13,12 @@ use Snowcap\SiteBundle\Entity\Post;
  *
  * @Route("/post")
  */
-class PostController extends Controller
+class PostController extends BaseController
 {
     /**
      * Finds and displays a Post entity.
      *
-     * @Route("/post/{id}", name="front_posts_show")
+     * @Route("/{id}", name="front_posts_show")
      * @Template()
      */
     public function showAction($id)

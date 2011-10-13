@@ -156,7 +156,7 @@
 		});
 		// Datetimepicker
 		$('.widget-datetimepicker').datetimepicker({
-			dateFormat: 'm/d/y',
+			dateFormat: 'm/d/y'
 		});
 		// Slugs
 		$('.widget-slug').slugger();

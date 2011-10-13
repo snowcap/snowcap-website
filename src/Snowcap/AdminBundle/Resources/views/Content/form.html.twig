@@ -1,0 +1,34 @@
+{% extends "SnowcapAdminBundle::base.html.twig" %}
+
+{% form_theme form _self %}
+{% block datetime_widget %}
+    {% set attr = attr|merge({'class': 'widget-datetimepicker' }) %}
+    {{ block('field_widget') }}
+{% endblock %}
+
+
+{% block slug_widget %}
+    {% set attr = attr|merge({'class': 'widget-slug' }) %}
+    {{ block('field_widget') }}
+{% endblock %}
+
+{% block body %}
+<section class="section-700">
+	<h2>{{ form_title }}</h2>
+	<form action="{{ form_action }}" method="post" {{ form_enctype(form) }}>
+		{{ form_errors(form) }}
+		{% for field in form %}
+		    {{ form_row(field) }}
+		{% endfor %}
+	    {{ form_rest(form) }}
+		<p>
+			<button type="submit" class="ui-icon ui-icon-circle-check">Save</button>
+		</p>
+	</form>
+	<nav>
+		<a href="{{ path('admin_posts') }}" class="ui-button ui-icon ui-icon-circle-triangle-w">Back to the list</a>
+	</nav>
+</section>
+{% endblock %}
+
+

@@ -2,17 +2,21 @@
 
 namespace Snowcap\SiteBundle\Controller\Admin;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+use Snowcap\SiteBundle\Controller\BaseController;
 use Snowcap\SiteBundle\Entity\Post;
 use Snowcap\SiteBundle\Form\PostType;
 
-class PostController extends Controller
+class PostController extends BaseController
 {	
-	/**
+	public function init()
+    {
+        
+    }
+    /**
      * Post management
      *
      * @Route("/posts", name="admin_posts")
