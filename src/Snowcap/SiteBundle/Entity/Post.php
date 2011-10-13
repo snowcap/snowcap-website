@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Snowcap\SiteBundle\Repository\PostRepository")
  */
-class Post
+class Post extends Content
 {
     /**
      * @var integer $id
@@ -20,7 +20,7 @@ class Post
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string $title
@@ -28,7 +28,7 @@ class Post
      * @ORM\Column(name="title", type="string", length=255)
 	 * @Assert\MinLength(5)
      */
-    private $title;
+    protected $title;
 	
 	/**
 	 * @var string
@@ -36,21 +36,21 @@ class Post
 	 * @ORM\Column(name="slug", type="string", length=255)
 	 * @Assert\MinLength(5)
 	 */
-	private $slug;
+	protected $slug;
 	 
     /**
      * @var text $body
      *
      * @ORM\Column(name="body", type="text")
      */
-    private $body;
+    protected $body;
 
     /**
      * @var datetime $published_at
      *
      * @ORM\Column(name="published_at", type="datetime")
      */
-    private $published_at;
+    protected $published_at;
 
 
     /**

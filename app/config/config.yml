@@ -59,3 +59,9 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
+
+snowcap_admin:
+  content:
+      post:
+          model_class: Snowcap\SiteBundle\Entity\Post
+          admin_class: Snowcap\SiteBundle\Admin\Post

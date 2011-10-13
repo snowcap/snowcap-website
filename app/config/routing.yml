@@ -1,3 +1,8 @@
+SnowcapAdminBundle:
+    resource: "@SnowcapAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /newadmin
+
 SnowcapSiteBundleAdmin:
     resource: "@SnowcapSiteBundle/Controller/Admin"
     type:     annotation

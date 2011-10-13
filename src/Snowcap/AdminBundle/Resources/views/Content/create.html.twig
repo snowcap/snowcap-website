@@ -1,0 +1,3 @@
+{% extends "SnowcapAdminBundle:Content:form.html.twig" %}
+{% set form_title = 'Create ' ~ content_name %}
+{% set form_action = path('content_create', {'type': type}) %}
