@@ -1,35 +1,41 @@
 {% extends "SnowcapSiteBundle:Front:base.html.twig" %}
 {% block body %}
-<h1>Snowcap</h1>
-<h2>Post list</h2>
-<ul>
-	{% for post in latestPosts %}
-		<li>
-			<h3><a href="{{ path('front_posts_show', { 'id': post.id }) }}">{{ post.title }}</a></h3>
-			<p>{{ post.publishedat|relativeTime }}</p>
-		</li>		
-	{% endfor %}
-</ul>
-
-<div class="project-thumb">
-    <a class="project-thumb-link" href="#">
-        <img class="project-thumb-front" src="/uploads/projects/immocity/ic_front.png" />
-        <img class="project-thumb-back" src="/uploads/projects/immocity/ic_back.png" />
-    </a>
-</div>
-
-<div class="project-thumb">
-    <a class="project-thumb-link" href="#">
-        <img class="project-thumb-front" src="/uploads/projects/walibi/wab_front.png" />
-        <img class="project-thumb-back" src="/uploads/projects/walibi/wab_back.png" />
-    </a>
-</div>
-
-<div class="project-thumb">
-    <a class="project-thumb-link" href="#">
-        <img class="project-thumb-front" src="/uploads/projects/wilkinson/wlk_front.png" />
-        <img class="project-thumb-back" src="/uploads/projects/wilkinson/wlk_back.png" />
-    </a>
-</div>
-
+    <section class="recent-works">
+        <h2>{{ "Recent works" | trans }}</h2>
+        <ul>
+            {% for post in latestPosts %}
+                <li>
+                    <h3><a href="{{ path('front_posts_show', { 'id': post.id }) }}">{{ post.title }}</a></h3>
+                    <p>{{ post.publishedat|relativeTime }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="project-thumb">
+            <a class="project-thumb-link" href="#">
+                <img class="project-thumb-front" src="/uploads/projects/immocity/ic_front.png" />
+                <img class="project-thumb-back" src="/uploads/projects/immocity/ic_back.png" />
+            </a>
+        </div>
+        <div class="project-thumb">
+            <a class="project-thumb-link" href="#">
+                <img class="project-thumb-front" src="/uploads/projects/walibi/wab_front.png" />
+                <img class="project-thumb-back" src="/uploads/projects/walibi/wab_back.png" />
+            </a>
+        </div>
+        <div class="project-thumb">
+            <a class="project-thumb-link" href="#">
+                <img class="project-thumb-front" src="/uploads/projects/wilkinson/wlk_front.png" />
+                <img class="project-thumb-back" src="/uploads/projects/wilkinson/wlk_back.png" />
+            </a>
+        </div>
+    </section>
+    <section class="blog">
+        <h2>{{ "Blog" | trans }}</h2>
+    </section>
+    <section class="last-tweets">
+        <h2>{{ "Last tweets" | trans }}</h2>
+    </section>
+    <aside class="aside">
+        <h2>{{ "Two words about..." | trans }}</h2>
+    </aside>
 {% endblock %}
