@@ -1,9 +1,0 @@
-{% block field_row %}
-{% spaceless %}
-    <div class="form-row">
-        {{ form_label(form) }}
-        {{ form_errors(form) }}
-        {{ form_widget(form, {'attr': widget_attr|default({})}) }}
-    </div>
-{% endspaceless %}
-{% endblock field_row %}

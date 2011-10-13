@@ -1,14 +1,9 @@
 SnowcapAdminBundle:
     resource: "@SnowcapAdminBundle/Controller/"
     type:     annotation
-    prefix:   /newadmin
-
-SnowcapSiteBundleAdmin:
-    resource: "@SnowcapSiteBundle/Controller/Admin"
-    type:     annotation
-    prefix:   <?php echo getenv('admin_path')?'/'.getenv('admin_path'):'/admin'."\n"; ?>
+    prefix:   /admin
 
 SnowcapSiteBundleFront:
-    resource: "@SnowcapSiteBundle/Controller/Front"
+    resource: "@SnowcapSiteBundle/Controller/"
     type:     annotation
     prefix:   /
