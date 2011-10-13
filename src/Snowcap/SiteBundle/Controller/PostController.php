@@ -1,5 +1,5 @@
 <?php
-namespace Snowcap\SiteBundle\Controller\Front;
+namespace Snowcap\SiteBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

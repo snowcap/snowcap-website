@@ -1,0 +1,42 @@
+body {
+    background-color: #efefef;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #79bd01;
+}
+header {
+    background-color: #0a0a0a;
+    height: 40px;
+}
+header nav {
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 13px;
+}
+header nav h1 {
+    margin: 13px 0;
+    padding: 0;
+    float: left;
+    margin-right: 75px;
+}
+header nav h1 a {
+    display: block;
+    background: url(../images/sprites.png) 0 0 no-repeat;
+    width: 35px;
+    height: 14px;
+    text-indent: -10000px;
+    float: none;
+}
+header nav > a {
+    float: left;
+    line-height: 38px;
+    padding: 0 0 2px 0;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 30px;
+}

@@ -1,5 +1,5 @@
 <?php
-namespace Snowcap\SiteBundle\Controller\Front;
+namespace Snowcap\SiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
