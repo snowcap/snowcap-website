@@ -9,9 +9,9 @@
         {% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
-        {% block header %}
-            <header>
+    <body class="{{ body_class | default('default') }}">
+        <header>
+            {% block header %}
                 <nav>
                     <h1><a href="">{{ "Snowcap" | trans }}</a></h1>
                     <a href="">{{ "navigation.home" | trans }}</a>
@@ -22,9 +22,11 @@
                     <a href="">{{ "navigation.cases" | trans }}</a>
                     <a href="">{{ "navigation.contact" | trans }}</a>
                 </nav>
-            </header>
-        {% endblock %}
-        {% block body %}{% endblock %}
+            {% endblock %}
+        </header>
+        <section class="main">
+            {% block body %}{% endblock %}
+        </section>
         {% block javascripts %}
             <script type="text/javascript" src="/assets/vendors/jquery/jquery-1.6.1.min.js"></script>
             <script type="text/javascript" src="/assets/vendors/jquery/jquery-ui-1.8.13.custom.min.js"></script>
