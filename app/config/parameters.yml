@@ -1,0 +1,13 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: 3306
+    database_name: snowcap
+    database_user: dev
+    database_password: dev
+    mailer_transport: smtp
+    mailer_host: localhost
+    mailer_user: dev
+    mailer_password: dev
+    locale: en
+    secret: snwcp23++
