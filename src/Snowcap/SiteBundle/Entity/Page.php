@@ -26,7 +26,7 @@ class Page extends Content
      * @var string $title
      *
      * @ORM\Column(name="title", type="string", length=255)
-	 * @Assert\MinLength(5)
+	 * @Assert\MinLength(3)
      */
     protected $title;
 	
@@ -34,7 +34,7 @@ class Page extends Content
 	 * @var string
 	 * 
 	 * @ORM\Column(name="slug", type="string", length=255)
-	 * @Assert\MinLength(5)
+	 * @Assert\MinLength(3)
 	 */
 	protected $slug;
 	 

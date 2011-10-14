@@ -18,13 +18,13 @@ class PageController extends BaseController
     /**
      * Finds and displays a page entity.
      *
-     * @Route("/{id}", name="front_page_show")
+     * @Route("/{page}", name="front_page_show")
      * @Template()
      */
-    public function showAction($id)
+    public function showAction($page)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $entity = $em->getRepository('SnowcapSiteBundle:Page')->find($id);
+        $entity = $em->getRepository('SnowcapSiteBundle:Page')->findOneBySlug($page);
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Page entity.');
         }

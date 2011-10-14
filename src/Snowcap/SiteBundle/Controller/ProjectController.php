@@ -16,6 +16,17 @@ use Snowcap\SiteBundle\Entity\Post;
 class ProjectController extends BaseController
 {
     /**
+     * Display a list of projects
+     * 
+     * @Route("/", name="front_project_list")
+     * @Template()
+     */
+    public function listAction() {
+        $projects = array();
+        return array('projects' => $projects);
+    }
+
+    /**
      * Finds and displays a Post entity.
      *
      * @Route("/{id}", name="front_project_show")

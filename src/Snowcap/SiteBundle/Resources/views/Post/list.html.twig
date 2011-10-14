@@ -1,0 +1,10 @@
+{% extends "SnowcapSiteBundle::base.html.twig" %}
+{% block body %}
+    <h2>{{ "post.list.title" | trans }}</h2>
+    {% for post in posts %}
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.body | truncate(100) }}</p>
+    {% else %}
+        <p>{{ "post.list.empty" | trans }}</p>
+    {% endfor %}
+{% endblock body %}

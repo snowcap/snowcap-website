@@ -3,8 +3,8 @@ navigation:
   company: Company
   method: Method
   team: Team
-  blog: Blog
-  cases: Cases
+  posts: Blog
+  projects: Cases
   contact: Contact
 general:
   snowcap: Snowcap
@@ -15,10 +15,16 @@ project:
   latest:
     title: Recent works
     empty: No work available
+  list:
+    title: Cases
+    empty: No case available
 post:
   latest:
     title: Blog
     empty: No post available
+  list:
+    title: Blog
+    empty: No post availabale
 widgets:
   tweets:
     title: Last tweets

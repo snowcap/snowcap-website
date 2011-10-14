@@ -11,7 +11,7 @@ use Snowcap\SiteBundle\Entity\Post;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="front")
      * @Template()
      */
     public function indexAction()

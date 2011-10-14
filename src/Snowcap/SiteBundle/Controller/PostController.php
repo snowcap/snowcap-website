@@ -16,6 +16,16 @@ use Snowcap\SiteBundle\Entity\Post;
 class PostController extends BaseController
 {
     /**
+     *
+     * @Route("/", name="front_post_list")
+     * @Template()
+     */
+    public function listAction() {
+        $posts = array();
+
+        return array('posts' => $posts);
+    }
+    /**
      * Finds and displays a Post entity.
      *
      * @Route("/{id}", name="front_post_show")
