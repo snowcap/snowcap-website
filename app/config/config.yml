@@ -62,6 +62,14 @@ jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
 
+services:
+  twig.extension.debug:
+    class: Twig_Extensions_Extension_Debug
+    tags: [ { name: 'twig.extension' } ]
+  twig.extension.text:
+    class: Twig_Extensions_Extension_Text
+    tags: [ { name: 'twig.extension' } ]
+
 snowcap_admin:
   content:
       post:

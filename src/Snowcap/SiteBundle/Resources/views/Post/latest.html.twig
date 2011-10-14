@@ -1,2 +1,7 @@
 <h2>{{ "Blog" | trans }}</h2>
-A blog
+{% for post in latestPosts %}
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.body | truncate(100) }}</p>
+{% else %}
+    <p>{{ "post.latest.empty" | trans }}</p>
+{% endfor %}
