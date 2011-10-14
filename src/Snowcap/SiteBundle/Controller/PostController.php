@@ -32,4 +32,14 @@ class PostController extends BaseController
             'entity' => $entity,
         );
     }
+
+    /**
+     * @Template()
+     */
+    public function LatestAction($limit)
+    {
+		$em = $this->getDoctrine()->getEntityManager();
+        $latestPosts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest($limit);
+        return array('latestPosts' => $latestPosts);
+	}
 }

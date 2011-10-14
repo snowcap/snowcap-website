@@ -5,7 +5,7 @@
     <h2>{{ "general.baseline" | trans }}</h2>
     <p>{{ "general.nutshell" | trans | markdown }}</p>
     <section class="blog">
-        {% render "SnowcapSiteBundle:Blog:Latest" with {'limit': 3} %}
+        {% render "SnowcapSiteBundle:Post:Latest" with {'limit': 3} %}
     </section>
     <section class="tweets">
         {% include "SnowcapSiteBundle:Partials:tweets.html.twig" %}
