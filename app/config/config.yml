@@ -73,3 +73,9 @@ snowcap_admin:
       project:
           model_class: Snowcap\SiteBundle\Entity\Project
           admin_class: Snowcap\SiteBundle\Admin\Project
+      agency:
+          model_class: Snowcap\SiteBundle\Entity\Agency
+          admin_class: Snowcap\SiteBundle\Admin\Agency
+      tag:
+          model_class: Snowcap\SiteBundle\Entity\Tag
+          admin_class: Snowcap\SiteBundle\Admin\Tag

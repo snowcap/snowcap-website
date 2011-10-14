@@ -28,6 +28,14 @@ class Post extends Content {
         return array(
             'title' => array(),
             'slug' => array(),
+            'tags' => array(
+                'type' => 'entity',
+                'options' => array(
+                    'class' => 'SnowcapSiteBundle:Tag',
+                    'property' => 'name',
+                    'multiple' => true
+                )
+            ),
             'body' => array(
                 'type' => 'textarea',
             ),
