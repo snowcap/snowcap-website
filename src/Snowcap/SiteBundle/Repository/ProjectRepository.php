@@ -4,10 +4,10 @@ namespace Snowcap\SiteBundle\Repository;
 use Snowcap\SiteBundle\Entity\Post;
 use Doctrine\ORM\EntityRepository;
 
-class PostRepository extends EntityRepository
+class ProjectRepository extends EntityRepository
 {
 	/**
-	 * Get the latest blog posts
+	 * Get the latest projects
 	 * 
 	 * @return array
 	 */
@@ -17,7 +17,7 @@ class PostRepository extends EntityRepository
 			->getEntityManager()
 			->createQuery('
 				SELECT p
-				FROM SnowcapSiteBundle:Post p
+				FROM SnowcapSiteBundle:Project p
 				ORDER BY p.published_at DESC
 			')
 			->setMaxResults($limit)

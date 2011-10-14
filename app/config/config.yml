@@ -62,15 +62,26 @@ swiftmailer:
 #    secure_controllers:  true
 #    secure_all_services: false
 
+services:
+  twig.extension.debug:
+    class: Twig_Extensions_Extension_Debug
+    tags: [ { name: 'twig.extension' } ]
+  twig.extension.text:
+    class: Twig_Extensions_Extension_Text
+    tags: [ { name: 'twig.extension' } ]
+
 snowcap_admin:
   content:
       post:
+          label: Post
           model_class: Snowcap\SiteBundle\Entity\Post
           admin_class: Snowcap\SiteBundle\Admin\Post
       page:
+          label: Page
           model_class: Snowcap\SiteBundle\Entity\Page
           admin_class: Snowcap\SiteBundle\Admin\Page
       project:
+          label: Case
           model_class: Snowcap\SiteBundle\Entity\Project
           admin_class: Snowcap\SiteBundle\Admin\Project
       agency:

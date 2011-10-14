@@ -14,19 +14,27 @@
             {% block header %}
                 <nav>
                     <h1><a href="">{{ "Snowcap" | trans }}</a></h1>
-                    <a href="">{{ "navigation.home" | trans }}</a>
-                    <a href="">{{ "navigation.company" | trans }}</a>
-                    <a href="">{{ "navigation.method" | trans }}</a>
-                    <a href="">{{ "navigation.team" | trans }}</a>
-                    <a href="">{{ "navigation.blog" | trans }}</a>
-                    <a href="">{{ "navigation.cases" | trans }}</a>
-                    <a href="">{{ "navigation.contact" | trans }}</a>
+                    <a href="{{ url('front') }}">{{ "navigation.home" | trans }}</a>
+                    <a href="{{ url('front_page_show', {'page': 'company'}) }}">{{ "navigation.company" | trans }}</a>
+                    <a href="{{ url('front_page_show', {'page': 'method'}) }}">{{ "navigation.method" | trans }}</a>
+                    <a href="{{ url('front_page_show', {'page': 'team'}) }}">{{ "navigation.team" | trans }}</a>
+                    <a href="{{ url('front_post_list') }}">{{ "navigation.posts" | trans }}</a>
+                    <a href="{{ url('front_project_list') }}">{{ "navigation.projects" | trans }}</a>
+                    <a href="{{ url('front_page_show', {'page': 'contact'}) }}">{{ "navigation.contact" | trans }}</a>
                 </nav>
             {% endblock %}
         </header>
         <section class="main">
             {% block body %}{% endblock %}
         </section>
+        <footer>
+            <address>
+                {% include "SnowcapSiteBundle:Widgets:contact.html.twig" %}
+            </address>
+            <aside class="technology">
+                {% include "SnowcapSiteBundle:Widgets:technology.html.twig" %}
+            </aside>
+        </footer>
         {% block javascripts %}
             <script type="text/javascript" src="/assets/vendors/jquery/jquery-1.6.1.min.js"></script>
             <script type="text/javascript" src="/assets/vendors/jquery/jquery-ui-1.8.13.custom.min.js"></script>

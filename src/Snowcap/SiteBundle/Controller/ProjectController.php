@@ -11,32 +11,33 @@ use Snowcap\SiteBundle\Entity\Post;
 /**
  * Post controller.
  *
- * @Route("/post")
+ * @Route("/project")
  */
-class PostController extends BaseController
+class ProjectController extends BaseController
 {
     /**
-     *
-     * @Route("/", name="front_post_list")
+     * Display a list of projects
+     * 
+     * @Route("/", name="front_project_list")
      * @Template()
      */
     public function listAction() {
-        $posts = array();
-
-        return array('posts' => $posts);
+        $projects = array();
+        return array('projects' => $projects);
     }
+
     /**
      * Finds and displays a Post entity.
      *
-     * @Route("/{id}", name="front_post_show")
+     * @Route("/{id}", name="front_project_show")
      * @Template()
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $entity = $em->getRepository('SnowcapSiteBundle:Post')->find($id);
+        $entity = $em->getRepository('SnowcapSiteBundle:Project')->find($id);
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Post entity.');
+            throw $this->createNotFoundException('Unable to find Project entity.');
         }
         return array(
             'entity' => $entity,
@@ -49,7 +50,7 @@ class PostController extends BaseController
     public function LatestAction($limit)
     {
 		$em = $this->getDoctrine()->getEntityManager();
-        $latestPosts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest($limit);
-        return array('latestPosts' => $latestPosts);
+        $latestProjects = $em->getRepository('SnowcapSiteBundle:Project')->getLatest($limit);
+        return array('latestProjects' => $latestProjects);
 	}
 }
