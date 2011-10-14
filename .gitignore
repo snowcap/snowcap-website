@@ -4,3 +4,4 @@
 /app/logs/*
 /vendor/
 .idea
+.DS_Store
