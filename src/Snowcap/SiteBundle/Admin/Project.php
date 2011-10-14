@@ -38,6 +38,21 @@ class Project extends Content {
 				    'widget' => 'single_text',
                 ),
             ),
+            'agency' => array(
+                'type' => 'entity',
+                'options' => array(
+                    'class' => 'SnowcapSiteBundle:Agency',
+                    'property' => 'name'
+                ),
+            ),
+            'tags' => array(
+                'type' => 'entity',
+                'options' => array(
+                    'class' => 'SnowcapSiteBundle:Tag',
+                    'property' => 'name',
+                    'multiple' => true
+                )
+            )
         );
     }
 
