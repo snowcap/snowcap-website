@@ -9,3 +9,7 @@ services:
         class: Snowcap\SiteBundle\Twig\Extension\RelativeTime
         tags:
             - { name: twig.extension }
+    sitebundle.listener:
+        class: Snowcap\SiteBundle\Event\ControllerListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController, priority: 0 }

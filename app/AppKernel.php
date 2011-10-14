@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Knplabs\Bundle\MarkdownBundle\KnplabsMarkdownBundle(),
             new Snowcap\SiteBundle\SnowcapSiteBundle(),
+            new Snowcap\AdminBundle\SnowcapAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

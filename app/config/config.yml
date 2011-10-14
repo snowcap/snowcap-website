@@ -6,7 +6,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: en }
+    translator:      { fallback: en_US }
     secret:          %secret%
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
@@ -59,3 +59,15 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
+
+snowcap_admin:
+  content:
+      post:
+          model_class: Snowcap\SiteBundle\Entity\Post
+          admin_class: Snowcap\SiteBundle\Admin\Post
+      page:
+          model_class: Snowcap\SiteBundle\Entity\Page
+          admin_class: Snowcap\SiteBundle\Admin\Page
+      project:
+          model_class: Snowcap\SiteBundle\Entity\Project
+          admin_class: Snowcap\SiteBundle\Admin\Project

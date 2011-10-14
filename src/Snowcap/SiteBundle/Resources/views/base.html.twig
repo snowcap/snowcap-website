@@ -3,11 +3,34 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}SNOWCAP{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link href="{{ asset('/assets/front/css/screen.css') }}" type="text/css" rel="stylesheet" />
+            <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+        {% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <body class="{{ body_class | default('default') }}">
+        <header>
+            {% block header %}
+                <nav>
+                    <h1><a href="">{{ "Snowcap" | trans }}</a></h1>
+                    <a href="">{{ "navigation.home" | trans }}</a>
+                    <a href="">{{ "navigation.company" | trans }}</a>
+                    <a href="">{{ "navigation.method" | trans }}</a>
+                    <a href="">{{ "navigation.team" | trans }}</a>
+                    <a href="">{{ "navigation.blog" | trans }}</a>
+                    <a href="">{{ "navigation.cases" | trans }}</a>
+                    <a href="">{{ "navigation.contact" | trans }}</a>
+                </nav>
+            {% endblock %}
+        </header>
+        <section class="main">
+            {% block body %}{% endblock %}
+        </section>
+        {% block javascripts %}
+            <script type="text/javascript" src="/assets/vendors/jquery/jquery-1.6.1.min.js"></script>
+            <script type="text/javascript" src="/assets/vendors/jquery/jquery-ui-1.8.13.custom.min.js"></script>
+			<script type="text/javascript" src="/assets/front/js/screen.js"></script>
+        {% endblock %}
     </body>
 </html>

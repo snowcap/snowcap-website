@@ -1,0 +1,7 @@
+{% extends "SnowcapSiteBundle::base.html.twig" %}
+{% set body_class = 'home' %}
+{% block body %}
+    <h1>{{ "general.snowcap" | trans }}</h1>
+    <h2>{{ "general.baseline" | trans }}</h2>
+    <p>{{ "general.nutshell" | trans | markdown }}</p>
+{% endblock %}
