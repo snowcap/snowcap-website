@@ -1,5 +1,5 @@
 <?php
-namespace Wilkinson\CoreBundle\DataFixtures\ORM;
+namespace Snowcap\SiteBundle\DataFixtures\ORM;
 
 use Doctrine\Common\CommonException as DoctrineException;
 use Doctrine\Common\DataFixtures\FixtureInterface;
