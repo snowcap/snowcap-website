@@ -27,6 +27,14 @@
         <section class="main">
             {% block body %}{% endblock %}
         </section>
+        <footer>
+            <address>
+                {% include "SnowcapSiteBundle:Widgets:contact.html.twig" %}
+            </address>
+            <aside class="technology">
+                {% include "SnowcapSiteBundle:Widgets:technology.html.twig" %}
+            </aside>
+        </footer>
         {% block javascripts %}
             <script type="text/javascript" src="/assets/vendors/jquery/jquery-1.6.1.min.js"></script>
             <script type="text/javascript" src="/assets/vendors/jquery/jquery-ui-1.8.13.custom.min.js"></script>
