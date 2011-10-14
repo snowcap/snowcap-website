@@ -1,6 +1,6 @@
 services:
-    twig.extension.RelativeTime:
-        class: Snowcap\SiteBundle\Twig\Extension\RelativeTime
+    snowcap_core.twig:
+        class: Snowcap\SiteBundle\Twig\Extension\CoreExtension
         tags:
             - { name: twig.extension }
     sitebundle.listener:
