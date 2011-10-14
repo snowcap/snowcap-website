@@ -1,16 +1,14 @@
 <?php
 namespace Snowcap\SiteBundle\Admin;
 use Snowcap\AdminBundle\Admin\Content;
-
+/**
+ * Page admin class
+ * 
+ */
 class Page extends Content {
-    public function getEntityName()
-    {
-        return 'Snowcap\SiteBundle\Entity\Page';
-    }
-    public function getContentName()
-    {
-        return 'Page';
-    }
+    /**
+     * @return array
+     */
     public function getGridFields()
     {
         return array(
@@ -20,7 +18,9 @@ class Page extends Content {
             ),
         );
     }
-
+    /**
+     * @return array
+     */
     public function getFormFields()
     {
         return array(

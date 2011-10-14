@@ -65,11 +65,14 @@ jms_security_extra:
 snowcap_admin:
   content:
       post:
+          label: Post
           model_class: Snowcap\SiteBundle\Entity\Post
           admin_class: Snowcap\SiteBundle\Admin\Post
       page:
+          label: Page
           model_class: Snowcap\SiteBundle\Entity\Page
           admin_class: Snowcap\SiteBundle\Admin\Page
       project:
+          label: Case
           model_class: Snowcap\SiteBundle\Entity\Project
           admin_class: Snowcap\SiteBundle\Admin\Project
