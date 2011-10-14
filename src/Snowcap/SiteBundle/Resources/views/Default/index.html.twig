@@ -4,4 +4,10 @@
     <h1>{{ "general.snowcap" | trans }}</h1>
     <h2>{{ "general.baseline" | trans }}</h2>
     <p>{{ "general.nutshell" | trans | markdown }}</p>
+    <section class="blog">
+        {% render "SnowcapSiteBundle:Blog:Latest" with {'limit': 3} %}
+    </section>
+    <section class="tweets">
+        {% include "SnowcapSiteBundle:Partials:tweets.html.twig" %}
+    </section>
 {% endblock %}
