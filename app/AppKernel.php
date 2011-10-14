@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             //new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
+            new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
             new Snowcap\SiteBundle\SnowcapSiteBundle(),
             new Snowcap\AdminBundle\SnowcapAdminBundle(),
         );
