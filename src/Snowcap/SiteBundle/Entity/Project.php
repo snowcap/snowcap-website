@@ -41,6 +41,13 @@ class Project extends Content
     /**
      * @var text $body
      *
+     * @ORM\Column(name="introduction", type="text")
+     */
+    protected $introduction;
+
+    /**
+     * @var text $body
+     *
      * @ORM\Column(name="body", type="text")
      */
     protected $body;
@@ -51,6 +58,23 @@ class Project extends Content
      * @ORM\Column(name="published_at", type="datetime")
      */
     protected $published_at;
+
+    /**
+     * @var string $website
+     *
+     * @ORM\Column(name="website", type="string", length=255)
+     */
+    private $website;
+
+    /**
+     * @ORM\Column(name="client", type="string", length=255)
+     */
+    protected $client;
+
+    /**
+     * @ORM\Column(name="realisation_period", type="string", length=255)
+     */
+    protected $realisation_period;
 
     /**
      * @ORM\ManyToOne(targetEntity="Agency", inversedBy="projects")
@@ -176,5 +200,57 @@ class Project extends Content
     public function getTags()
     {
         return $this->tags;
+    }
+
+    public function setClient($client)
+    {
+        $this->client = $client;
+    }
+
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * @param \Snowcap\SiteBundle\Entity\text $introduction
+     */
+    public function setIntroduction($introduction)
+    {
+        $this->introduction = $introduction;
+    }
+
+    /**
+     * @return \Snowcap\SiteBundle\Entity\text
+     */
+    public function getIntroduction()
+    {
+        return $this->introduction;
+    }
+
+    public function setRealisationPeriod($realisation_period)
+    {
+        $this->realisation_period = $realisation_period;
+    }
+
+    public function getRealisationPeriod()
+    {
+        return $this->realisation_period;
+    }
+
+    /**
+     * @param string $website
+     */
+    public function setWebsite($website)
+    {
+        $this->website = $website;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->website;
     }
 }

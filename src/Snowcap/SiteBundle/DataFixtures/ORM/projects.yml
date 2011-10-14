@@ -1,0 +1,32 @@
+p1:
+  title: Immocitiz
+  slug: immocitiz
+  introduction: |
+    Immocitiz est un jeu qui se greffe sur la plate-forme immobilière [Immovlan](http://www.immovlan.be "Immovlan"). Les joueurs ont pour mission de bâtir un empire immobilier, en achetant les biens proposés par Immovlan à l’aide d’une monnaie virtuelle.
+  body: |
+    %% Un jeu unique en son genre
+
+    Immocitiz se présente comme une expérience ludique qui vient se greffer sur le site [Immovlan](http://www.immovlan.be "Immovlan").
+
+    Les joueurs ont la possibilité de parcourir les annonces immobilières sur le site, et d’acheter celles qui l’intéressent. Une fois achetée, la propriété génère des revenus virtuels : chaque visite sur la page de la propriété rapporte un certain nombre de “bricks”.
+
+    Au fil de sa progression dans le jeu, le participant est récompensé par une série de badges et de titres honorifiques.
+
+    Connecter une plate-forme ludique à un site immobilier qui génère un traffic important ne fût pas une mince affaire, et nous a offer un double challenge.
+
+    *****
+
+    Un challenge technique en premier lieu, en raison des interactions avancées entre le jeu et le site immobilier
+
+    Une attention toute particulière a également été apportée aux performances, et de nombreuses optimisations ont été mises en place : accélérateur http, caching RAM, optimisations base de données...
+
+    %% Un projet sur mesure
+
+    Afin de mener cette mission a bien, nous avons opté pour une solution custom basés sur le framework Symfony. Nous avons également pu compter sur une série d’outils open-source de qualité impressionante, qui nous ont permis d’offrir un résultat stable, robuste et performant.
+
+  website: http://www.immocitiz.be
+  publishedAt: '2011-08-12 12:24:00'
+  realisationPeriod: 2010-2011
+  client: Immovlan
+  agency: @onemd
+  tags: [php,symfony,varnish,memcache,rabbitMQ,supervisor]
