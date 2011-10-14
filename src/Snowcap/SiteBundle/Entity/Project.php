@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Snowcap\SiteBundle\Entity\Project
  *
- * @ORM\Table()
+ * @ORM\Table(name="project")
  * @ORM\Entity
  */
 class Project extends Content
@@ -52,6 +52,21 @@ class Project extends Content
      */
     protected $published_at;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Agency", inversedBy="projects")
+     * @ORM\JoinColumn(name="agency_id", referencedColumnName="id")
+     */
+    private $agency;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="projects")
+     * @ORM\JoinTable(name="project_tag")
+     */
+    private $tags;
+
+    public function __construct() {
+        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -141,5 +156,25 @@ class Project extends Content
     public function getPublishedAt()
     {
         return $this->published_at;
+    }
+
+    public function setAgency($agency)
+    {
+        $this->agency = $agency;
+    }
+
+    public function getAgency()
+    {
+        return $this->agency;
+    }
+
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+    }
+
+    public function getTags()
+    {
+        return $this->tags;
     }
 }

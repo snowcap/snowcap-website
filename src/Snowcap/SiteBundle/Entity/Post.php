@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Snowcap\SiteBundle\Entity\Post
  *
- * @ORM\Table()
+ * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="Snowcap\SiteBundle\Repository\PostRepository")
  */
 class Post extends Content
@@ -52,6 +52,15 @@ class Post extends Content
      */
     protected $published_at;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts")
+     * @ORM\JoinTable(name="post_tag")
+     */
+    private $tags;
+
+    public function __construct() {
+        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -141,5 +150,15 @@ class Post extends Content
     public function getPublishedAt()
     {
         return $this->published_at;
+    }
+
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+    }
+
+    public function getTags()
+    {
+        return $this->tags;
     }
 }
