@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Snowcap\SiteBundle\Entity\Project
  *
  * @ORM\Table(name="project")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Snowcap\SiteBundle\Repository\ProjectRepository")
  */
 class Project extends Content
 {

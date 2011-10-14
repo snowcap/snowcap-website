@@ -4,8 +4,11 @@
     <h1>{{ "general.snowcap" | trans }}</h1>
     <h2>{{ "general.baseline" | trans }}</h2>
     <p>{{ "general.nutshell" | trans | markdown }}</p>
+    <section class="projects">
+        {% render "SnowcapSiteBundle:Project:Latest" with {'limit': 3} %}
+    </section>
     <section class="blog">
-        {% render "SnowcapSiteBundle:Post:Latest" with {'limit': 3} %}
+        {% render "SnowcapSiteBundle:Post:Latest" with {'limit': 1} %}
     </section>
     <section class="tweets">
         {% include "SnowcapSiteBundle:Widgets:tweets.html.twig" %}
