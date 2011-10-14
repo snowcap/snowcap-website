@@ -18,7 +18,7 @@ class PageController extends BaseController
     /**
      * Finds and displays a page entity.
      *
-     * @Route("/{page}", name="front_page_show")
+     * @Route("/{page}", name="front_page")
      * @Template()
      */
     public function showAction($page)

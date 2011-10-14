@@ -20,4 +20,39 @@ class DefaultController extends Controller
         $latestPosts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(2);
         return array('latestPosts' => $latestPosts);    
 	}
+
+    /**
+     * @Route("/company", name="front_company")
+     * @Template()
+     */
+    public function companyAction() {
+
+        return array();
+    }
+
+    /**
+     * @Route("/method", name="front_method")
+     * @Template()
+     */
+    public function methodAction() {
+
+        return array();
+    }
+    /**
+     * @Route("/team", name="front_team")
+     * @Template()
+     */
+    public function teamAction() {
+
+        return array();
+    }
+
+    /**
+     * @Route("/contact", name="front_contact")
+     * @Template()
+     */
+    public function contactAction() {
+
+        return array();
+    }
 }
