@@ -15,12 +15,12 @@
                 <nav>
                     <h1><a href="">{{ "Snowcap" | trans }}</a></h1>
                     <a href="{{ url('front') }}">{{ "navigation.home" | trans }}</a>
-                    <a href="{{ url('front_page_show', {'page': 'company'}) }}">{{ "navigation.company" | trans }}</a>
-                    <a href="{{ url('front_page_show', {'page': 'method'}) }}">{{ "navigation.method" | trans }}</a>
-                    <a href="{{ url('front_page_show', {'page': 'team'}) }}">{{ "navigation.team" | trans }}</a>
-                    <a href="{{ url('front_post_list') }}">{{ "navigation.posts" | trans }}</a>
-                    <a href="{{ url('front_project_list') }}">{{ "navigation.projects" | trans }}</a>
-                    <a href="{{ url('front_page_show', {'page': 'contact'}) }}">{{ "navigation.contact" | trans }}</a>
+                    <a href="{{ url('front_company') }}">{{ "navigation.company" | trans }}</a>
+                    <a href="{{ url('front_method') }}">{{ "navigation.method" | trans }}</a>
+                    <a href="{{ url('front_team') }}">{{ "navigation.team" | trans }}</a>
+                    <a href="{{ url('front_posts') }}">{{ "navigation.posts" | trans }}</a>
+                    <a href="{{ url('front_projects') }}">{{ "navigation.projects" | trans }}</a>
+                    <a href="{{ url('front_contact') }}">{{ "navigation.contact" | trans }}</a>
                 </nav>
             {% endblock %}
         </header>

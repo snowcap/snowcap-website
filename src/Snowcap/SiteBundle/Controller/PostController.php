@@ -11,13 +11,13 @@ use Snowcap\SiteBundle\Entity\Post;
 /**
  * Post controller.
  *
- * @Route("/post")
+ * @Route("/blog")
  */
 class PostController extends BaseController
 {
     /**
      *
-     * @Route("/", name="front_post_list")
+     * @Route("/", name="front_posts")
      * @Template()
      */
     public function listAction() {
@@ -29,7 +29,7 @@ class PostController extends BaseController
     /**
      * Finds and displays a Post entity.
      *
-     * @Route("/{id}", name="front_post_show")
+     * @Route("/{id}", name="front_post")
      * @Template()
      */
     public function showAction($id)
