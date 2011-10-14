@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Snowcap\SiteBundle\Entity\Page
  *
- * @ORM\Table()
+ * @ORM\Table(name="page")
  * @ORM\Entity
  */
 class Page extends Content
