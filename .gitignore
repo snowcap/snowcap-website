@@ -1,6 +1,7 @@
 .project
 .DS_Store
 .settings
-app/logs/*
-app/cache/*
 .idea
+/web/bundles/
+/app/cache/*
+/app/logs/*
