@@ -3,6 +3,8 @@ imports:
     - { resource: security.yml }
     snowcap_site_bundle:
         resource: @SnowcapSiteBundle/Resources/config/config.yml
+    snowcap_admin_bundle:
+        resource: @SnowcapAdminBundle/Resources/config/config.yml
 
 framework:
     #esi:             ~
