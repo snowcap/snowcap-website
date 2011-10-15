@@ -1,0 +1,11 @@
+<h2>{{ "widgets.tweets.title" | trans }}</h2>
+<ul>
+    {% for tweet in tweets %}
+        <li>
+            <p>{{ tweet.date | date('F Y') }} <span>{{ "By Snowcap" | trans }}</span></p>
+            <p>{{ tweet.text}}</p>
+        </li>
+    {% else %}
+        <p>No tweets available</p>
+    {% endfor %}
+</ul>

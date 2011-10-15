@@ -1,0 +1,17 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: 3306
+    database_name:
+    database_user:
+    database_password:
+    mailer_transport: smtp
+    mailer_host: localhost
+    mailer_user:
+    mailer_password:
+    locale: en
+    secret:
+    twitter_consumer_key:
+    twitter_consumer_secret:
+    twitter_oauth_token:
+    twitter_oauth_secret: 

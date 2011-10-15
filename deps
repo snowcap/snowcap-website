@@ -41,9 +41,9 @@
     git=http://github.com/sensio/SensioFrameworkExtraBundle.git
     target=/bundles/Sensio/Bundle/FrameworkExtraBundle
 
-#[JMSSecurityExtraBundle]
-#    git=http://github.com/schmittjoh/JMSSecurityExtraBundle.git
-#    target=/bundles/JMS/SecurityExtraBundle
+;[JMSSecurityExtraBundle]
+;    git=http://github.com/schmittjoh/JMSSecurityExtraBundle.git
+;    target=/bundles/JMS/SecurityExtraBundle
 
 [SensioDistributionBundle]
     git=http://github.com/sensio/SensioDistributionBundle.git
@@ -68,3 +68,5 @@
 [DoctrineFixturesBundle]
     git=http://github.com/symfony/DoctrineFixturesBundle.git
     target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
+[twitteroauth]
+    git=git://github.com/ruudk/twitteroauth.git
