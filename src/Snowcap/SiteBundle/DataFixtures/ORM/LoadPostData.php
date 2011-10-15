@@ -23,8 +23,8 @@ class LoadPostData implements FixtureInterface {
                         $associatedEntity->setName($tagName);
                         $manager->persist($associatedEntity);
                         $manager->flush();
-                        $newvalue[] = $associatedEntity;
                     }
+                    $newvalue[] = $associatedEntity;
                     call_user_func(array($entity, 'set' . $key), $newvalue);
                 }
             } elseif(!is_array($value)){

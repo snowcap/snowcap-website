@@ -1,5 +1,5 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
 {% set body_class = 'company' %}
 {% block body %}
-In company
+{{ 'company.body' | trans | markdown }}
 {% endblock %}

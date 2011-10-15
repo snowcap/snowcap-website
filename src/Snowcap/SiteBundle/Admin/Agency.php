@@ -3,14 +3,6 @@ namespace Snowcap\SiteBundle\Admin;
 use Snowcap\AdminBundle\Admin\Content;
 
 class Agency extends Content {
-    public function getEntityName()
-    {
-        return 'Snowcap\SiteBundle\Entity\Agency';
-    }
-    public function getContentName()
-    {
-        return 'Agency';
-    }
     public function getGridFields()
     {
         return array(
