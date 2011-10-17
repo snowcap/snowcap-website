@@ -99,16 +99,16 @@ class Project extends Content
     /**
      * @var bool
      *
-     * @ORM\Column(name="active", type="boolean")
+     * @ORM\Column(name="published", type="boolean")
      */
-    protected $active;
+    protected $published;
 
     /**
      * @var bool
      *
      * @ORM\Column(name="hidden", type="boolean")
      */
-    protected $hidden;
+    protected $available_on_list;
 
     /**
      * @var \Snowcap\SiteBundle\Entity\Image
@@ -137,8 +137,8 @@ class Project extends Content
     public function __construct() {
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
         $this->published_at = new \DateTime();
-        $this->active = true;
-        $this->hidden = false;
+        $this->published = true;
+        $this->available_on_list = true;
         $this->images = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -333,19 +333,19 @@ class Project extends Content
     }
 
     /**
-     * @param boolean $active
+     * @param boolean $published
      */
-    public function setActive($active)
+    public function setPublished($published)
     {
-        $this->active = $active;
+        $this->published = $published;
     }
 
     /**
      * @return boolean
      */
-    public function isActive()
+    public function isPublished()
     {
-        return $this->active;
+        return $this->published;
     }
 
     /**
@@ -399,16 +399,16 @@ class Project extends Content
     /**
      * @param boolean $hidden
      */
-    public function setHidden($hidden)
+    public function setAvailableOnList($available_on_list)
     {
-        $this->hidden = $hidden;
+        $this->available_on_list = $available_on_list;
     }
 
     /**
      * @return boolean
      */
-    public function isHidden()
+    public function isAvailableOnList()
     {
-        return $this->hidden;
+        return $this->available_on_list;
     }
 }

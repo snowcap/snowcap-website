@@ -19,7 +19,15 @@ class Project extends Content {
             'published_at' => array(
                 'label' => 'Published',
                 'callback' => function(ProjectEntity $project){return $project->getPublishedAt()->format(\DATE_ATOM);},
-            )
+            ),
+            'published' => array(
+                'label' => 'Published',
+                'callback' => function(ProjectEntity $project) {return $project->isPublished() ? 'Yes' : 'No';},
+            ),
+            'available_on_list' => array(
+                'label' => 'Available on list',
+                'callback' => function(ProjectEntity $project) {return $project->isPublished() ? 'Yes' : 'No';},
+            ),
         );
     }
     /**
@@ -55,8 +63,15 @@ class Project extends Content {
                     'class' => 'SnowcapSiteBundle:Tag',
                     'property' => 'name',
                     'multiple' => true
-                )
-            )
+                ),
+            ),
+            'published' => array(
+                'type' => 'checkbox',
+            ),
+            'available_on_list' => array(
+                'type' => 'checkbox',
+            ),
+
         );
     }
 
