@@ -9,14 +9,16 @@ use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\Config\Definition\Processor;
 
 /**
- * This is the class that loads and manages your bundle configuration
- *
- * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
+ * Extension class for the admin configuration
+ * 
  */
 class SnowcapAdminExtension extends Extension
 {
     /**
-     * {@inheritDoc}
+     * Load the config data for the admin bundle
+     *
+     * @param array $configs
+     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
      */
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -33,7 +35,5 @@ class SnowcapAdminExtension extends Extension
         foreach (array('content') as $attribute) {
             $container->setParameter($attribute , $config[$attribute]);
         }
-
-
     }
 }

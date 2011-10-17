@@ -28,7 +28,7 @@ class Post extends Content {
     {
         return array(
             'title' => array(),
-            'slug' => array(),
+            'slug' => array('type' => 'slug'),
             'tags' => array(
                 'type' => 'entity',
                 'options' => array(
@@ -48,5 +48,10 @@ class Post extends Content {
                 ),
             ),
         );
+    }
+
+    public function getContentTitle($content)
+    {
+        return $content->getTitle();
     }
 }

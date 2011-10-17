@@ -5,8 +5,14 @@ services:
   snowcap_admin:
     class: Snowcap\AdminBundle\Environment
     arguments: [%content%]
-  snowcap_admin_twig:
+
+  snowcap_admin.twig:
     public: false
     class: Snowcap\AdminBundle\Twig\Extension\AdminExtension
     tags:
       -  { name: twig.extension }
+
+  snowcap_admin.slug:
+    class: Snowcap\AdminBundle\Form\Extension\Core\Type\SlugType
+    tags:
+      -  { name: form.type, alias: slug }

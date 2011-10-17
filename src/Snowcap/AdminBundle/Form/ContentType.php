@@ -4,18 +4,25 @@ namespace Snowcap\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
+
 use Snowcap\AdminBundle\Admin\Content as ContentAdmin;
 
+/**
+ * Base Form type for admin content management
+ * 
+ */
 class ContentType extends AbstractType
 {
     /**
      * @var string
      */
     protected $type;
+    
     /**
      * @var \Snowcap\AdminBundle\Admin
      */
     protected $admin;
+
     /**
      * Class constructor
      *
@@ -27,11 +34,9 @@ class ContentType extends AbstractType
         $this->type = $type;
         $this->admin = $admin;
     }
+    
     /**
-     * Implements \Symfony\Component\Form\AbstractType::buildForm()
-     *
-     * @param \Symfony\Component\Form\FormBuilder $builder
-     * @param array $options
+     * {@inheritdoc}
      */
     public function buildForm(FormBuilder $builder, array $options)
     {
@@ -44,10 +49,9 @@ class ContentType extends AbstractType
             $builder->add($fieldName, $fieldParams['type'], $fieldParams['options']);
         }
     }
+    
 	/**
-     * Implements \Symfony\Component\Form\AbstractType::getName()
-     *
-     * @return string
+     * {@inheritdoc}
      */
 	public function getName()
 	{

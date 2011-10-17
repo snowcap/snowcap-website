@@ -1,2 +1,12 @@
 navigation:
   link: Manage %type%
+
+content:
+  list: %content_name% list
+  create: Create %content_name%
+  update: Update %content_name%
+  save: Save
+  edit: Edit
+  delete: Delete
+  actions: Actions
+  back_to_list: Back to list

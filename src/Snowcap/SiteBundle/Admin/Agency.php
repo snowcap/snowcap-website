@@ -26,7 +26,12 @@ class Agency extends Content {
         return array(
             'name' => array(),
             'website' => array(),
-            );
+        );
+    }
+
+    public function getContentTitle($content)
+    {
+        return $content->getName();
     }
 
 }

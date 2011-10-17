@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="agency")
  * @ORM\Entity
  */
-class Agency
+class Agency extends Content
 {
     /**
      * @var integer $id
@@ -43,7 +43,7 @@ class Agency
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {

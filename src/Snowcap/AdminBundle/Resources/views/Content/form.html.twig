@@ -1,17 +1,5 @@
 {% extends "SnowcapAdminBundle::base.html.twig" %}
 
-{% form_theme form _self %}
-{% block datetime_widget %}
-    {% set attr = attr|merge({'class': 'widget-datetimepicker' }) %}
-    {{ block('field_widget') }}
-{% endblock %}
-
-
-{% block slug_widget %}
-    {% set attr = attr|merge({'class': 'widget-slug' }) %}
-    {{ block('field_widget') }}
-{% endblock %}
-
 {% block body %}
 <section class="section-700">
 	<h2>{{ form_title }}</h2>
@@ -22,11 +10,11 @@
 		{% endfor %}
 	    {{ form_rest(form) }}
 		<p>
-			<button type="submit" class="ui-icon ui-icon-circle-check">Save</button>
+			<button type="submit" class="ui-icon ui-icon-circle-check">{{ "content.save" | trans }}</button>
 		</p>
 	</form>
 	<nav>
-		<a href="{{ path('content', {'type': type }) }}" class="ui-button ui-icon ui-icon-circle-triangle-w">Back to the list</a>
+		<a href="{{ path('content', {'type': type }) }}" class="ui-button ui-icon ui-icon-circle-triangle-w">{{ "content.back_to_list" | trans }}</a>
 	</nav>
 </section>
 {% endblock %}

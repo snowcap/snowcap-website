@@ -46,6 +46,13 @@ class Page extends Content
     protected $body;
 
     /**
+     * @var datetime $published_at
+     *
+     * @ORM\Column(name="published_at", type="datetime")
+     */
+    protected $published_at;
+
+    /**
      * Get id
      *
      * @return integer $id
@@ -113,5 +120,25 @@ class Page extends Content
     public function getBody()
     {
         return $this->body;
+    }
+
+    /**
+     * Set published_at
+     *
+     * @param datetime $publishedAt
+     */
+    public function setPublishedAt($publishedAt)
+    {
+        $this->published_at = $publishedAt;
+    }
+
+    /**
+     * Get published_at
+     *
+     * @return datetime $publishedAt
+     */
+    public function getPublishedAt()
+    {
+        return $this->published_at;
     }
 }

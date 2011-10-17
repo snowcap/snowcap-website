@@ -25,7 +25,11 @@ class Tag extends Content {
     {
         return array(
             'name' => array(),
-            );
+        );
     }
 
+    public function getContentTitle($content)
+    {
+        return $content->getName();
+    }
 }

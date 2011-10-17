@@ -1,3 +1,5 @@
+{% extends 'form_div_layout.html.twig' %}
+
 {% block field_row %}
 {% spaceless %}
     <div class="form-row">
@@ -7,3 +9,13 @@
     </div>
 {% endspaceless %}
 {% endblock field_row %}
+
+{% block datetime_widget %}
+    {% set attr = attr|merge({'class': 'widget-datetimepicker' }) %}
+    {{ block('field_widget') }}
+{% endblock %}
+
+{% block slug_widget %}
+    {% set attr = attr|merge({'class': 'widget-slug widget-slug-' ~ target }) %}
+    {{ block('field_widget') }}
+{% endblock slug_widget %}

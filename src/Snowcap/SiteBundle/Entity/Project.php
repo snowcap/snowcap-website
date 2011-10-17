@@ -90,6 +90,7 @@ class Project extends Content
 
     public function __construct() {
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->published_at = new \DateTime();
     }
 
     /**

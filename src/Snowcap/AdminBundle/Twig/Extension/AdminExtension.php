@@ -55,7 +55,7 @@ class AdminExtension extends \Twig_Extension {
         $loader = $this->environment->getLoader(); /* @var \Symfony\Bundle\TwigBundle\Loader\FilesystemLoader $loader */
         $loader->addPath(__DIR__ . '/../../Resources/views/');
         $template = $this->environment->loadTemplate('grid.html.twig');
-        $output = $property;
+        $output = $params['label'];
         ob_start();
         $template->displayBlock('header', array('output' => $output));
         $html = ob_get_clean();

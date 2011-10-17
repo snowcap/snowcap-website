@@ -25,12 +25,8 @@ class Page extends Content {
     {
         return array(
             'title' => array(),
-            'slug' => array(
-                'type' => 'text',
-            ),
-            'body' => array(
-                'type' => 'textarea',
-            ),
+            'slug' => array('type' => 'slug'),
+            'body' => array('type' => 'textarea'),
             'published_at' => array(
                 'type' => 'datetime',
                 'options' => array(
@@ -39,6 +35,11 @@ class Page extends Content {
                 ),
             ),
         );
+    }
+
+    public function getContentTitle($content)
+    {
+        return $content->getTitle();
     }
 
 }
