@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Project extends Content
 {
     /**
-     * @var integer $id
+     * @var integer
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -23,7 +23,7 @@ class Project extends Content
     protected $id;
 
     /**
-     * @var string $title
+     * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
 	 * @Assert\MinLength(5)
@@ -39,7 +39,7 @@ class Project extends Content
 	protected $slug;
 	 
     /**
-     * @var text $body
+     * @var text
      *
      * @ORM\Column(name="introduction", type="text")
      */
@@ -53,44 +53,93 @@ class Project extends Content
     protected $body;
 
     /**
-     * @var datetime $published_at
+     * @var datetime
      *
      * @ORM\Column(name="published_at", type="datetime")
      */
     protected $published_at;
 
     /**
-     * @var string $website
+     * @var string
      *
      * @ORM\Column(name="website", type="string", length=255)
      */
-    private $website;
+    protected $website;
 
     /**
+     * @var string
+     *
      * @ORM\Column(name="client", type="string", length=255)
      */
     protected $client;
 
     /**
+     * @var string
+     *
      * @ORM\Column(name="realisation_period", type="string", length=255)
      */
     protected $realisation_period;
 
     /**
+     * @var \Snowcap\SiteBundle\Entity\Agency
+     *
      * @ORM\ManyToOne(targetEntity="Agency", inversedBy="projects")
      * @ORM\JoinColumn(name="agency_id", referencedColumnName="id")
      */
-    private $agency;
+    protected $agency;
 
     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
      * @ORM\ManyToMany(targetEntity="Tag", inversedBy="projects")
      * @ORM\JoinTable(name="project_tag")
      */
-    private $tags;
+    protected $tags;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="active", type="boolean")
+     */
+    protected $active;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="hidden", type="boolean")
+     */
+    protected $hidden;
+
+    /**
+     * @var \Snowcap\SiteBundle\Entity\Image
+     *
+     * @ORM\OneToOne(targetEntity="Image")
+     */
+    protected $thumb_recto;
+
+    /**
+     * @var \Snowcap\SiteBundle\Entity\Image
+     * @ORM\OneToOne(targetEntity="Image")
+     */
+    protected $thumb_verso;
+
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="Image")
+     */
+    protected $images;
+
+    /**
+     * Project constructor
+     * Set all properties default value
+     */
     public function __construct() {
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
         $this->published_at = new \DateTime();
+        $this->active = true;
+        $this->hidden = false;
+        $this->images = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -183,31 +232,52 @@ class Project extends Content
         return $this->published_at;
     }
 
+    /**
+     * @param \Snowcap\SiteBundle\Entity\Agency $agency
+     * @return void
+     */
     public function setAgency($agency)
     {
         $this->agency = $agency;
     }
 
+    /**
+     * @return \Snowcap\SiteBundle\Entity\Agency
+     */
     public function getAgency()
     {
         return $this->agency;
     }
 
+    /**
+     * @param $tags
+     * @return void
+     */
     public function setTags($tags)
     {
         $this->tags = $tags;
     }
 
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
     public function getTags()
     {
         return $this->tags;
     }
 
+    /**
+     * @param \Snowcap\SiteBundle\Entity\Client $client
+     * @return void
+     */
     public function setClient($client)
     {
         $this->client = $client;
     }
 
+    /**
+     * @return \Snowcap\SiteBundle\Entity\Client
+     */
     public function getClient()
     {
         return $this->client;
@@ -229,11 +299,18 @@ class Project extends Content
         return $this->introduction;
     }
 
+    /**
+     * @param DateTime $realisation_period
+     * @return void
+     */
     public function setRealisationPeriod($realisation_period)
     {
         $this->realisation_period = $realisation_period;
     }
 
+    /**
+     * @return DateTime
+     */
     public function getRealisationPeriod()
     {
         return $this->realisation_period;
@@ -253,5 +330,85 @@ class Project extends Content
     public function getWebsite()
     {
         return $this->website;
+    }
+
+    /**
+     * @param boolean $active
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\ArrayCollection $images
+     */
+    public function setImages($images)
+    {
+        $this->images = $images;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * @param \Snowcap\SiteBundle\Entity\Image $thumb_recto
+     */
+    public function setThumbRecto($thumb_recto)
+    {
+        $this->thumb_recto = $thumb_recto;
+    }
+
+    /**
+     * @return \Snowcap\SiteBundle\Entity\Image
+     */
+    public function getThumbRecto()
+    {
+        return $this->thumb_recto;
+    }
+
+    /**
+     * @param \Snowcap\SiteBundle\Entity\Image $thumb_verso
+     */
+    public function setThumbVerso($thumb_verso)
+    {
+        $this->thumb_verso = $thumb_verso;
+    }
+
+    /**
+     * @return \Snowcap\SiteBundle\Entity\Image
+     */
+    public function getThumbVerso()
+    {
+        return $this->thumb_verso;
+    }
+
+    /**
+     * @param boolean $hidden
+     */
+    public function setHidden($hidden)
+    {
+        $this->hidden = $hidden;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isHidden()
+    {
+        return $this->hidden;
     }
 }
