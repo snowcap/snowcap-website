@@ -66,6 +66,12 @@ class LoadProjectData implements FixtureInterface {
             $this->createEntity($manager, $agency, $agencyIdentifier, $agencyData);
         }
 
+        $images = Yaml::parse(__DIR__ . '/images.yml');
+        foreach($images as $imageIdentifier => $imageData) {
+            $image = new \Snowcap\SiteBundle\Entity\Image();
+            $this->createEntity($manager, $image, $imageIdentifier, $imageData);
+        }
+
         $records = Yaml::parse(__DIR__ . '/projects.yml');
         foreach($records as $recordIdentifier => $recordData) {
             $record = new Project();

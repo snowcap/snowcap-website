@@ -113,20 +113,24 @@ class Project extends Content
     /**
      * @var \Snowcap\SiteBundle\Entity\Image
      *
-     * @ORM\OneToOne(targetEntity="Image")
+     * @ORM\ManyToMany(targetEntity="Image")
+     * @ORM\JoinTable(name="project_front")
      */
-    protected $thumb_recto;
+    protected $thumb_front;
 
     /**
      * @var \Snowcap\SiteBundle\Entity\Image
-     * @ORM\OneToOne(targetEntity="Image")
+     * 
+     * @ORM\ManyToMany(targetEntity="Image")
+     * @ORM\JoinTable(name="project_back")
      */
-    protected $thumb_verso;
+    protected $thumb_back;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      *
      * @ORM\ManyToMany(targetEntity="Image")
+     * @ORM\JoinTable(name="project_image")
      */
     protected $images;
 
@@ -139,6 +143,8 @@ class Project extends Content
         $this->published_at = new \DateTime();
         $this->published = true;
         $this->available_on_list = true;
+        $this->thumb_front = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->thumb_back = new \Doctrine\Common\Collections\ArrayCollection();
         $this->images = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -365,35 +371,35 @@ class Project extends Content
     }
 
     /**
-     * @param \Snowcap\SiteBundle\Entity\Image $thumb_recto
+     * @param \Snowcap\SiteBundle\Entity\Image $thumb_front
      */
-    public function setThumbRecto($thumb_recto)
+    public function setThumbFront($thumb_front)
     {
-        $this->thumb_recto = $thumb_recto;
+        $this->thumb_front = $thumb_front;
     }
 
     /**
      * @return \Snowcap\SiteBundle\Entity\Image
      */
-    public function getThumbRecto()
+    public function getThumbFront()
     {
-        return $this->thumb_recto;
+        return $this->thumb_front;
     }
 
     /**
-     * @param \Snowcap\SiteBundle\Entity\Image $thumb_verso
+     * @param \Snowcap\SiteBundle\Entity\Image $thumb_back
      */
-    public function setThumbVerso($thumb_verso)
+    public function setThumbBack($thumb_back)
     {
-        $this->thumb_verso = $thumb_verso;
+        $this->thumb_back = $thumb_back;
     }
 
     /**
      * @return \Snowcap\SiteBundle\Entity\Image
      */
-    public function getThumbVerso()
+    public function getThumbBack()
     {
-        return $this->thumb_verso;
+        return $this->thumb_back;
     }
 
     /**
