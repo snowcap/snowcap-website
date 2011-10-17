@@ -30,3 +30,5 @@ p1:
   client: Immovlan
   agency: @onemd
   tags: [php,symfony,varnish,memcache,rabbitMQ,supervisor]
+  published: true
+  available_on_list: true

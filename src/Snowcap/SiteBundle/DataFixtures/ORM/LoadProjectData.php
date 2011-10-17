@@ -3,6 +3,7 @@ namespace Snowcap\SiteBundle\DataFixtures\ORM;
 
 use Doctrine\Common\CommonException as DoctrineException;
 use Doctrine\Common\DataFixtures\FixtureInterface;
+use Symfony\Component\DependencyInjection\Container;
 use Snowcap\SiteBundle\Entity\Project;
 use Snowcap\SiteBundle\Entity\Tag;
 
@@ -26,7 +27,7 @@ class LoadProjectData implements FixtureInterface {
                     }
                     $newvalue[] = $associatedEntity;
                 }
-                call_user_func(array($entity, 'set' . $key), $newvalue);
+                call_user_func(array($entity, 'set' . Container::camelize($key)), $newvalue);
             } elseif(!is_array($value)){
                 if(strpos($value, '@', 0) !== false){
                     $associatedIdentifier = substr($value, 1);
@@ -41,7 +42,7 @@ class LoadProjectData implements FixtureInterface {
                 else{
                     $value = $this->decodeMarkdown($value);
                 }
-                call_user_func(array($entity, 'set' . $key), $value);
+                call_user_func(array($entity, 'set' . Container::camelize($key)), $value);
             }
         }
         if(array_key_exists($entityIdentifier, $this->entities)){
