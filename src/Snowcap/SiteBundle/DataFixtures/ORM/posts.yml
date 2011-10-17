@@ -1,9 +1,193 @@
-post1:
+work1:
+  title: Some AIR
+  slug: some-air
+  body: |
+    We just released a web & desktop application for managing hotel vouchers. Since hotels hotels are located far away in snowy peaks, the Internet connection isn't reliable enough, so
+    we've built a desktop application which allows the hotels to continue working even if the connection fails. When the connection comes back, a full synchronization is done, up-to-dating other hotels around.
+    Unfortunately we can't show you this work since it's an internal application, but wanted to share with you this first Snowcap's release, built with PHP, Symfony, and Adobe AIR.
+  publishedAt: '2010-10-02 15:35:00'
+  tags: [projects]
+work2:
   title: First Symfony project: Moving People
   slug: first-symfony-project-moving-people
   body: |
-    Snowcap launched his first project under the [Symfony framework](http://www.symfony.com "Symfony Framework"): Moving People(www.movingpeople.com "Moving People").
+    Snowcap launched his first project under the [Symfony framework](http://www.symfony.com "Symfony Framework"): [Moving People](www.movingpeople.com "Moving People").
     It was a real pleasure for us to discover and work with this Framework, and surely will continue to do so!
     This corporate website, designed by [One Million Dollars](http://www.onemd.be "1MD"), runs with 5 languages and his content is completely managed by the client.
-  publishedAt: '2011-01-01 09:00:12'
-  tags: [php,work,symfony]
+  publishedAt: '2010-11-15 09:00:12'
+  tags: [projects]
+work3:
+  title: Proof of concept for Mediargus
+  slug: proof-of-concept-mediargus
+  body: |
+    Mediargus and Pressbanking, representing all the major Belgian press companies, asked us to build a proof-of-concept for their project. The goal was to centerize and aggregate all the daily Belgian press
+    during the night, to allow third parties to query a webservice to retreive the latest press content. It was a success, both in delivery time and results: the application was fully functional and aggregates
+    the whole press content in less than 4-5 hours, which represents several Giga bytes we had to centerize, aggregate, convert, and store!
+    We achieved this with the Zend Platform, with a huge utilisation of the Factory design pattern to prepare the next level, which concists by using CDN's & No-SQL databases.
+    As we're writing this the final project is still in huge development, but some iPad and iPhone applications will surely soon appear.
+  publishedAt: '2010-12-05 11:03:45'
+  tags: [projects]
+work4:
+  title: New website: Walibi
+  slug: new-website-walibi
+  body: |
+    After 5 months of hard work, the new website of [Walibi](http://www.walibi.com "Walibi website") is online! Made with our partners [One Million Dollars](http://www.1md.be "1md agency") and
+    [Armando Testa](http://www.armandotesta.be "Armando testa agency"), the website is the global platform for a Walibi related parcs, in Belgium,
+    Holland and France. It also has a "Battle Zone" containing music, comics and games, all around their new mascots WAB & SkunX.
+    [Read the case](/cases/walibi "Walibi case")
+  publishedAt: '2011-01-20 16:20:00'
+  tags: [projects]
+work5:
+  title: New website: Star TV
+  slug: new-website-star-tv
+  body: |
+    Cine Télé Revue is launching a new TV channel on the VOO Network, so they needed a web presence: that's were we came into play by developing [this brand new website](http://www.startv.be "StarTV"), with [One Million Dollars](http://www.1md.be "1md agency"),
+    offering a bunch of information on famous pop stars. A strong interaction has been made with Social Networks, to become on central place to get all the latest news of your favourite star!
+  publishedAt: '2011-01-27 10:42:00'
+  tags: [projects]
+work6:
+  title: New eCommerce website: Eurocenter
+  slug: new-ecommerce-website-eurocenter
+  body: |
+    [Eurocenter](http://www.eurocenter.be "Eurocenter"), with his 20 Multimedia and Electro shops, needed to refresh his eCommerce platform. We provided them a full featured eCommerce platform,
+    selling a catalogue of more than 5.000 products. By building a smooth integration with their existing ssystem, the catalogue is automatically updated, and stock information is in real-time!
+    This project was co-operated with our partner Stratenet.
+    [Read the case](/cases/eurocenter "Eurocenter case")
+  publishedAt: '2011-02-18 11:11:19'
+  tags: [projects]
+work7:
+  title: New website: Opera Royal de Wallonie
+  slug: new-website-opera-royal-wallonie
+  body: |
+    We are happy to release a new nice and cultural website: [L'opéra Royal de Wallonie](http://www.operaliege.be "Opera Royal de Wallonie")! Built with Stratenet for the strategy and [Epic](http://epic.net "Epic agency")
+    for the design, the website tells you everything you need to know about the Opera's in Wallonia, from the available concerts to the options and price grids.
+  publishedAt: '2011-04-27 15:41:04'
+  tags: [projects]
+work8:
+  title: New website: Immocitiz
+  slug: new-website-immocitiz
+  body: |
+    We are proud to announce a new release: [Immocitiz](http://www.immocitiz.be "Immocitiz website")! A real estate game based on existing properties on Immovlan. Play with us to generate bricks (aka money) by
+    buying properties, selling them right on time to the bank, gain badges, and finally become governor. A real technical challenge and great fun! All this surrounded by the excellent design by [One Million Dollars](http://www.1md.be "1md agency").
+    [Read the case](/cases/immocitiz "Immocitiz case")
+  publishedAt: '2011-08-08 16:02:54'
+  tags: [projects]
+work9:
+  title: Sodexo's summer
+  slug: sodexo-summer
+  body: |
+    This summer Snowcap will be, for a big part, dedicated to Sodexo. They asked us to support their internal team to achieve a huge international platform aiming to automate to process of ordering
+    services and products in shared offices. Guess that our vacations will be delayed a little, but it's a nice challenge Snowcap is willing to take!
+  publishedAt: '2011-06-01 09:41:12'
+  tags: [projects]
+work10:
+  title: New website: Europabio
+  slug: new-website-europabio
+  body: |
+    We just released the new website of [EuropaBio](http://www.europabio.org "Europabio website"). EuropaBio is the voice for the biotech industry at the EU level, promoting innovative and dynamic biotechnology-based industry in Europe.
+    This is another web project achieved in partnership with [One Million Dollars](http://www.1md.be "1md agency").
+  publishedAt: '2011-09-22 10:24:17'
+  tags: [projects]
+work11:
+  title: Sodexo's mission
+  slug: sodexo-mission
+  body: |
+    Our mission for Sodexo reached his end. The project is surely on a right track, ready to accept further development!
+    [Read the case](/cases/sodexo "Sodexo case")
+  publishedAt: '2011-09-02 13:31:05'
+  tags: [projects]
+out1:
+  title: Attenting new conference: SymfonyLive@Paris
+  slug: attending-new-conference-symfony-live-paris
+  body: |
+    We just bought our tickets to the SymfonyLive conference @ Paris: ready for 3 days of nice talks, learning and discussions! Let us now if you attend too, we'll drink some together :)
+  publishedAt: '2011-02-25 13:59:01'
+  tags: [activities]
+out2:
+  title: Attending new conference: SymfonyDay@Cologne
+  slug: attending-new-conference-symfony-day-cologne
+  body: |
+    We've bought our tickets to the [SymfonyDay 2011 conference @ Cologne](www.symfonyday.com "SymfonyDay 2011 Cologne website), on the 21th of October: after a successfull Symfony conference @Paris few months ago,
+    we couldn't miss this! Let us now if you attend too!
+  publishedAt: '2011-07-28 10:41:18'
+  tags: [activities]
+thought1:
+  title: Why we chose Frameworks
+  slug: why-we-chose-frameworks
+  body: |
+    ## Context
+
+    We've built many websites and web applications from scratch, upon CMS's & eCommerce platforms, and upon Frameworks.  
+    We had CMS expert positions in big companies; we know them very well.  
+    But now we took a decision.
+
+    __We will try to only propose projects made through Frameworks.__
+
+    ## Definitions
+
+    Let's start with the basis to explain our decision:
+
+    ### From scratch
+
+    Applications made from scratch means that the devlopers starts with the core programming language, and build every single functionality home made
+
+    ### CMS / eCommerce platforms
+
+    Drupal, Magento, and many others offers a __complete environment ready to use__: a frontend website, a backend administration module, and often a huge set of working functionalities, like a blog, calendars, image galleries, ...
+
+    ### Frameworks
+
+    Definition from Wikipedia:
+
+    > _"In computer programming, a software framework is an abstraction in which software providing generic functionality can be selectively changed by user code, thus providing application specific software. It is a collection of software libraries providing a defined application programming interface (API)."_
+
+    Frameworks are __between the two other approaches__: it's a complete environment for the designers & developers to work with (sending emails, search functionalities, database accesses, ...) but without any frontend or backend built-in nor any business logic: it's leaves it to the developer.
+
+    ## Benefits and drawbacks
+
+    Now let's see the benefits and the drawbacks of each approach:
+
+    ### From scratch
+
+    The developers are __truly the owner__ of their application: they made it themselves from the beginning!  
+    But this also means that they have to reinvent the wheel over and over again, since many operations (ie database access) has to be done for each project.  
+    It's __time consuming__, and they raise the __risk of bugs__.  
+    Also, if they need backup on the project, they have to explain their whole way of thinking to new developers.
+
+    ### CMS / eCommerce platforms
+
+    With those devlopers can have a fully __functional website in minutes__! Wow.  
+    And there's a __great community__ behind, with many modules & functionalities, ready to support.
+
+    But then, they have to match the client's requests and expectations and merge them into the existing business logic of the application. Here's were they start to struggle: they have to __tweak the application__ to fit the requirements. And sometimes they can't (budget speaking), and they have to convince their client that what they suggest (what the CMS suggests) is better than what he wants.
+
+    And for the backend part, ther's a bunch of options/links/buttons/functionalities/shortcuts/lists, where the client will most probably use 10% of it. It often scares him and he finally ask the developers to do it themselves "to be sure it'll be done the right way".
+
+    Finally, since it offers many functionalities, it has to take care of all of them, even if you don't use those. I'm not going too into details here but this implies huge performances issues (overcomplicated database data model, many unneeded objects in memory, ...)
+
+    ### Frameworks
+
+    Lying in between, a Framework allows the developer to build the frontend and the backend interface exactly the way the client wants, and this with the advantage of not reinventing the wheel - the Framework contains many libraries to assist him.
+    In other words, the developer focuses his development only on the client's business logic.
+
+    And like CMS's, it also provides community support, since the core is open-source and maintained by the community.
+
+    ## False ideas
+
+    We often hear the following remarks, and wanted to share them with you:
+
+    ### CMS's is more affordable: most of my needs are already in it
+    For the first phase of the development, that's true. But when it comes to fill the last 10-20% gap between how the client wants his website and the CMS business logic, you quickly catch up and exceed the time needed with Frameworks to reach the final functionality.
+
+    ### CMS's are secure, maintained, and heavily supported
+    Maintained and supported, yes. Secure, hum, yes and no. They're secure in the fact that many people is digging into it and could find a security risk, but it's not the case for the external modules the developer will download (and he will download some to meet the requirements).    
+    Another point is that if a security breach is found, it's publicly noticed, so the developer has to update his version quickly to avoid exposing himself.
+
+    In the meantime, Frameworks are equally maintained and supported, and most of them have made security audits. Those audits are much more easy to do on Frameworks (libraries of functionalities) than on CMS's (visual code and business logic).
+
+    ### I want a CMS because many other companies do, so it sounds good
+    Let's see why they chose it first, see if they're happy with it, and leads us to our little conclusion:
+
+    **If you reached Snowcap to ask for a development, we hope that you don't want the same as your competitor, but that you want something innovative, powerful, and reflecting your business - not reflecting what already exists.**
+  publishedAt: '2011-10-14 9:25:01'
+  tags: [thoughts]

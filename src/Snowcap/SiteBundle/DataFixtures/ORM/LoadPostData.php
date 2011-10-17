@@ -23,12 +23,12 @@ class LoadPostData implements FixtureInterface {
                         $associatedEntity->setName($tagName);
                         $manager->persist($associatedEntity);
                         $manager->flush();
-                        $newvalue[] = $associatedEntity;
                     }
+                    $newvalue[] = $associatedEntity;
                     call_user_func(array($entity, 'set' . $key), $newvalue);
                 }
             } elseif(!is_array($value)){
-                if(strpos($value, '@', 0) !== false){
+                if(strpos($value, '@', 0) !== false && strpos($value, '@', 0) === 0){
                     $associatedIdentifier = substr($value, 1);
                     if(!array_key_exists($associatedIdentifier, $this->entities)){
                         throw new DoctrineException(sprintf('Trying to reference non-existing fixture entity "%s" for entity "%s"', $associatedIdentifier, $entityIdentifier));

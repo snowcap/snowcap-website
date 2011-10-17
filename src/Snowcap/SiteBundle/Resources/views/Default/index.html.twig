@@ -3,17 +3,17 @@
 {% block body %}
     <h1>{{ "general.snowcap" | trans }}</h1>
     <h2>{{ "general.baseline" | trans }}</h2>
-    <p>{{ "general.nutshell" | trans | markdown }}</p>
+    {{ "general.nutshell" | trans | markdown }}
     <section class="projects">
-        {% render "SnowcapSiteBundle:Project:Latest" with {'limit': 3} %}
+        {% render "SnowcapSiteBundle:Project:latest" with {'limit': 3} %}
     </section>
     <section class="blog">
-        {% render "SnowcapSiteBundle:Post:Latest" with {'limit': 1} %}
+        {% render "SnowcapSiteBundle:Post:latest" with {'limit': 1} %}
     </section>
     <section class="tweets">
-        {% include "SnowcapSiteBundle:Widgets:tweets.html.twig" %}
+        {% render "SnowcapSiteBundle:Widget:tweets" %}
     </section>
     <section class="words">
-        {% include "SnowcapSiteBundle:Widgets:words.html.twig" %}
+        {% include "SnowcapSiteBundle:Widget:words.html.twig" %}
     </section>
 {% endblock %}

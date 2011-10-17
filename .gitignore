@@ -3,5 +3,6 @@
 /app/cache/*
 /app/logs/*
 /vendor/
+/app/config/parameters.yml
 .idea
 .DS_Store

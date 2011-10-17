@@ -69,6 +69,9 @@ services:
   twig.extension.text:
     class: Twig_Extensions_Extension_Text
     tags: [ { name: 'twig.extension' } ]
+  twitter:
+    class:      TwitterOAuth\Api
+    arguments:  [%twitter_consumer_key%, %twitter_consumer_secret%, %twitter_oauth_token%, %twitter_oauth_secret%]
 
 snowcap_admin:
   content:
@@ -76,10 +79,6 @@ snowcap_admin:
           label: Post
           model_class: Snowcap\SiteBundle\Entity\Post
           admin_class: Snowcap\SiteBundle\Admin\Post
-      page:
-          label: Page
-          model_class: Snowcap\SiteBundle\Entity\Page
-          admin_class: Snowcap\SiteBundle\Admin\Page
       project:
           label: Case
           model_class: Snowcap\SiteBundle\Entity\Project
