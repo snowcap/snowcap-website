@@ -29,13 +29,13 @@ class PostController extends BaseController
     /**
      * Finds and displays a Post entity.
      *
-     * @Route("/{id}", name="snwcp_site_post_show")
+     * @Route("/{slug}", name="snwcp_site_post_show")
      * @Template()
      */
-    public function showAction($id)
+    public function showAction($slug)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $entity = $em->getRepository('SnowcapSiteBundle:Post')->find($id);
+        $entity = $em->getRepository('SnowcapSiteBundle:Post')->findOneBySlug($slug);
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Post entity.');
         }

@@ -154,8 +154,6 @@ class Project extends BaseModel
         $this->published_at = new \DateTime();
         $this->published = true;
         $this->available_on_list = true;
-        $this->thumb_front = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->thumb_back = new \Doctrine\Common\Collections\ArrayCollection();
         $this->images = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -470,7 +468,7 @@ class Project extends BaseModel
     }
 
     /**
-     * @param boolean $highlighted
+     * @param bool $highlighted
      */
     public function setHighlighted($highlighted)
     {
@@ -478,7 +476,7 @@ class Project extends BaseModel
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isHighlighted()
     {

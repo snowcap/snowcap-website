@@ -5,17 +5,22 @@ use Doctrine\Common\CommonException as DoctrineException;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Snowcap\SiteBundle\Entity\Post;
 use Snowcap\SiteBundle\Entity\Tag;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\DependencyInjection\Container;
 
 use \Symfony\Component\Yaml\Yaml;
 
 class LoadPostData implements FixtureInterface {
-    protected $entities = array();
+    protected $entities;
+    public function __construct() {
+        $this->entities = new ArrayCollection();
+    }
     protected function createEntity($manager, $entity, $entityIdentifier, array $values)
     {
         /* Populate entity fields */
         foreach($values as $key => $value) {
             if($key === "tags") {
-                $newvalue = array();
+                $newvalue = new ArrayCollection();
                 foreach($value as $tagName) {
                     $associatedEntity = $manager->getRepository('Snowcap\SiteBundle\Entity\Tag')->findOneByName($tagName);
                     if(!$associatedEntity){
@@ -25,12 +30,12 @@ class LoadPostData implements FixtureInterface {
                         $manager->flush();
                     }
                     $newvalue[] = $associatedEntity;
-                    call_user_func(array($entity, 'set' . $key), $newvalue);
+                    call_user_func(array($entity, 'set' . Container::camelize($key)), $newvalue);
                 }
             } elseif(!is_array($value)){
                 if(strpos($value, '@', 0) !== false && strpos($value, '@', 0) === 0){
                     $associatedIdentifier = substr($value, 1);
-                    if(!array_key_exists($associatedIdentifier, $this->entities)){
+                    if(!$this->entities->containsKey($associatedIdentifier)){
                         throw new DoctrineException(sprintf('Trying to reference non-existing fixture entity "%s" for entity "%s"', $associatedIdentifier, $entityIdentifier));
                     }
                     $value = $this->entities[$associatedIdentifier];
@@ -41,10 +46,10 @@ class LoadPostData implements FixtureInterface {
                 else{
                     $value = $this->decodeMarkdown($value);
                 }
-                call_user_func(array($entity, 'set' . $key), $value);
+                call_user_func(array($entity, 'set' . Container::camelize($key)), $value);
             }
         }
-        if(array_key_exists($entityIdentifier, $this->entities)){
+        if($this->entities->containsKey($entityIdentifier)){
             throw new DoctrineException(sprintf('The fixture identifier "%s" is already used', $entityIdentifier));
         }
         $this->entities[$entityIdentifier] = $entity;
