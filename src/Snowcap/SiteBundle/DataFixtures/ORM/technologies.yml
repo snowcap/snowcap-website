@@ -1,0 +1,15 @@
+php:
+  name: php
+  description: our core language
+symfony:
+  name: Symfony
+  description: our beloved PHP Framework
+varnish:
+  name: Varnish
+  description: HTTP Accelerator
+memcache:
+  name: Memcache
+  description: In-Memory Caching
+rabbitMQ:
+  name: rabbitMQ
+  description: Queuing messaging system

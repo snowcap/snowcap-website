@@ -29,10 +29,17 @@ class Post extends Content {
         return array(
             'title' => array(),
             'slug' => array('type' => 'slug'),
-            'tags' => array(
+            'category' => array(
                 'type' => 'entity',
                 'options' => array(
-                    'class' => 'SnowcapSiteBundle:Tag',
+                    'class' => 'SnowcapSiteBundle:PostCategory',
+                    'property' => 'name',
+                ),
+            ),
+            'technologies' => array(
+                'type' => 'entity',
+                'options' => array(
+                    'class' => 'SnowcapSiteBundle:Technology',
                     'property' => 'name',
                     'multiple' => true
                 )

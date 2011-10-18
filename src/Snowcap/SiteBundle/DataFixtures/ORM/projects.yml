@@ -29,7 +29,7 @@ p1:
   realisationPeriod: 2010-2011
   client: Immovlan
   agency: @onemd
-  tags: [php,symfony,varnish,memcache,rabbitMQ,supervisor]
+  technologies: [php,symfony,varnish,memcache,rabbitMQ]
   published: true
   available_on_list: true
   thumb_front: @ic_front

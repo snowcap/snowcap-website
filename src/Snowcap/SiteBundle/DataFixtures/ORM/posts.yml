@@ -6,7 +6,7 @@ work1:
     we've built a desktop application which allows the hotels to continue working even if the connection fails. When the connection comes back, a full synchronization is done, up-to-dating other hotels around.
     Unfortunately we can't show you this work since it's an internal application, but wanted to share with you this first Snowcap's release, built with PHP, Symfony, and Adobe AIR.
   publishedAt: '2010-10-02 15:35:00'
-  tags: [projects]
+  category: @projects
 work2:
   title: First Symfony project: Moving People
   slug: first-symfony-project-moving-people
@@ -15,7 +15,7 @@ work2:
     It was a real pleasure for us to discover and work with this Framework, and surely will continue to do so!
     This corporate website, designed by [One Million Dollars](http://www.onemd.be "1MD"), runs with 5 languages and his content is completely managed by the client.
   publishedAt: '2010-11-15 09:00:12'
-  tags: [projects]
+  category: @projects
 work3:
   title: Proof of concept for Mediargus
   slug: proof-of-concept-mediargus
@@ -26,7 +26,7 @@ work3:
     We achieved this with the Zend Platform, with a huge utilisation of the Factory design pattern to prepare the next level, which concists by using CDN's & No-SQL databases.
     As we're writing this the final project is still in huge development, but some iPad and iPhone applications will surely soon appear.
   publishedAt: '2010-12-05 11:03:45'
-  tags: [projects]
+  category: @projects
 work4:
   title: New website: Walibi
   slug: new-website-walibi
@@ -36,7 +36,7 @@ work4:
     Holland and France. It also has a "Battle Zone" containing music, comics and games, all around their new mascots WAB & SkunX.
     [Read the case](/cases/walibi "Walibi case")
   publishedAt: '2011-01-20 16:20:00'
-  tags: [projects]
+  category: @projects
 work5:
   title: New website: Star TV
   slug: new-website-star-tv
@@ -44,7 +44,7 @@ work5:
     Cine Télé Revue is launching a new TV channel on the VOO Network, so they needed a web presence: that's were we came into play by developing [this brand new website](http://www.startv.be "StarTV"), with [One Million Dollars](http://www.1md.be "1md agency"),
     offering a bunch of information on famous pop stars. A strong interaction has been made with Social Networks, to become on central place to get all the latest news of your favourite star!
   publishedAt: '2011-01-27 10:42:00'
-  tags: [projects]
+  category: @projects
 work6:
   title: New eCommerce website: Eurocenter
   slug: new-ecommerce-website-eurocenter
@@ -54,7 +54,7 @@ work6:
     This project was co-operated with our partner Stratenet.
     [Read the case](/cases/eurocenter "Eurocenter case")
   publishedAt: '2011-02-18 11:11:19'
-  tags: [projects]
+  category: @projects
 work7:
   title: New website: Opera Royal de Wallonie
   slug: new-website-opera-royal-wallonie
@@ -62,7 +62,7 @@ work7:
     We are happy to release a new nice and cultural website: [L'opéra Royal de Wallonie](http://www.operaliege.be "Opera Royal de Wallonie")! Built with Stratenet for the strategy and [Epic](http://epic.net "Epic agency")
     for the design, the website tells you everything you need to know about the Opera's in Wallonia, from the available concerts to the options and price grids.
   publishedAt: '2011-04-27 15:41:04'
-  tags: [projects]
+  category: @projects
 work8:
   title: New website: Immocitiz
   slug: new-website-immocitiz
@@ -71,7 +71,7 @@ work8:
     buying properties, selling them right on time to the bank, gain badges, and finally become governor. A real technical challenge and great fun! All this surrounded by the excellent design by [One Million Dollars](http://www.1md.be "1md agency").
     [Read the case](/cases/immocitiz "Immocitiz case")
   publishedAt: '2011-08-08 16:02:54'
-  tags: [projects]
+  category: @projects
 work9:
   title: Sodexo's summer
   slug: sodexo-summer
@@ -79,7 +79,7 @@ work9:
     This summer Snowcap will be, for a big part, dedicated to Sodexo. They asked us to support their internal team to achieve a huge international platform aiming to automate to process of ordering
     services and products in shared offices. Guess that our vacations will be delayed a little, but it's a nice challenge Snowcap is willing to take!
   publishedAt: '2011-06-01 09:41:12'
-  tags: [projects]
+  category: @projects
 work10:
   title: New website: Europabio
   slug: new-website-europabio
@@ -87,7 +87,7 @@ work10:
     We just released the new website of [EuropaBio](http://www.europabio.org "Europabio website"). EuropaBio is the voice for the biotech industry at the EU level, promoting innovative and dynamic biotechnology-based industry in Europe.
     This is another web project achieved in partnership with [One Million Dollars](http://www.1md.be "1md agency").
   publishedAt: '2011-09-22 10:24:17'
-  tags: [projects]
+  category: @projects
 work11:
   title: Sodexo's mission
   slug: sodexo-mission
@@ -95,14 +95,14 @@ work11:
     Our mission for Sodexo reached his end. The project is surely on a right track, ready to accept further development!
     [Read the case](/cases/sodexo "Sodexo case")
   publishedAt: '2011-09-02 13:31:05'
-  tags: [projects]
+  category: @projects
 out1:
   title: Attenting new conference: SymfonyLive@Paris
   slug: attending-new-conference-symfony-live-paris
   summary: |
     We just bought our tickets to the SymfonyLive conference @ Paris: ready for 3 days of nice talks, learning and discussions! Let us now if you attend too, we'll drink some together :)
   publishedAt: '2011-02-25 13:59:01'
-  tags: [activities]
+  category: @activities
 out2:
   title: Attending new conference: SymfonyDay@Cologne
   slug: attending-new-conference-symfony-day-cologne
@@ -110,7 +110,7 @@ out2:
     We've bought our tickets to the [SymfonyDay 2011 conference @ Cologne](www.symfonyday.com "SymfonyDay 2011 Cologne website), on the 21th of October: after a successfull Symfony conference @Paris few months ago,
     we couldn't miss this! Let us now if you attend too!
   publishedAt: '2011-07-28 10:41:18'
-  tags: [activities]
+  category: @activities
 thought1:
   title: Why we chose Frameworks
   slug: why-we-chose-frameworks
@@ -196,4 +196,4 @@ thought1:
 
     **If you reached Snowcap to ask for a development, we hope that you don't want the same as your competitor, but that you want something innovative, powerful, and reflecting your business - not reflecting what already exists.**
   publishedAt: '2011-10-14 9:25:01'
-  tags: [thoughts]
+  category: @thoughts

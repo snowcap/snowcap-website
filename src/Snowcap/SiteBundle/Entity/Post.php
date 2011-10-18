@@ -41,10 +41,17 @@ class Post extends BaseModel
     protected $slug;
 
     /**
+     * @var \Snowcap\SiteBundle\Entity\PostCategory
+     *
+     * @ORM\ManyToOne(targetEntity="PostCategory", inversedBy="posts")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    protected $category;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="summary", type="text")
-     * @Assert\MaxLength(500)
      */
     protected $summary;
 
@@ -65,10 +72,10 @@ class Post extends BaseModel
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts")
-     * @ORM\JoinTable(name="post_tag")
+     * @ORM\ManyToMany(targetEntity="Technology", inversedBy="posts")
+     * @ORM\JoinTable(name="post_technology")
      */
-    private $tags;
+    protected $technologies;
 
     /**
      * Class constructor
@@ -76,7 +83,7 @@ class Post extends BaseModel
      */
     public function __construct()
     {
-        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->technologies = new \Doctrine\Common\Collections\ArrayCollection();
         $this->published_at = new \DateTime();
     }
 
@@ -171,26 +178,6 @@ class Post extends BaseModel
     }
 
     /**
-     * Set tags
-     *
-     * @param \Doctrine\Common\Collections\ArrayCollection $tags
-     */
-    public function setTags(ArrayCollection $tags)
-    {
-        $this->tags = $tags;
-    }
-
-    /**
-     * Get tags
-     *
-     * @return \Doctrine\Common\Collections\ArrayCollection
-     */
-    public function getTags()
-    {
-        return $this->tags;
-    }
-
-    /**
      * @param string $summary
      */
     public function setSummary($summary)
@@ -204,5 +191,45 @@ class Post extends BaseModel
     public function getSummary()
     {
         return $this->summary;
+    }
+
+    /**
+     * Set Technologies
+     *
+     * @param \Doctrine\Common\Collections\ArrayCollection $technologies
+     */
+    public function setTechnologies(ArrayCollection $technologies)
+    {
+        $this->technologies = $technologies;
+    }
+
+    /**
+     * Get Technologies
+     * 
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getTechnologies()
+    {
+        return $this->technologies;
+    }
+
+    /**
+     * Set Category
+     *
+     * @param \Snowcap\SiteBundle\Entity\PostCategory $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+    /**
+     * Get Category
+     *
+     * @return \Snowcap\SiteBundle\Entity\PostCategory
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }

@@ -3,13 +3,13 @@ namespace Snowcap\SiteBundle\DataFixtures\ORM;
 
 use Doctrine\Common\CommonException as DoctrineException;
 use Doctrine\Common\DataFixtures\FixtureInterface;
-use Snowcap\SiteBundle\Entity\Post;
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\DependencyInjection\Container;
+use Snowcap\SiteBundle\Entity\Project;
+use Doctrine\Common\Collections\ArrayCollection;
 
 use \Symfony\Component\Yaml\Yaml;
 
-class LoadPostData implements FixtureInterface {
+class LoadTechnologyData implements FixtureInterface {
     protected $entities;
     public function __construct() {
         $this->entities = new ArrayCollection();
@@ -18,22 +18,8 @@ class LoadPostData implements FixtureInterface {
     {
         /* Populate entity fields */
         foreach($values as $key => $value) {
-            if($key === "technologies") {
-                $newvalue = new ArrayCollection();
-                foreach($value as $tagName) {
-                    $associatedEntity = $manager->getRepository('Snowcap\SiteBundle\Entity\Technology')->findOneByName($tagName);
-                    if(!$associatedEntity){
-                        $associatedEntity = new \Snowcap\SiteBundle\Entity\Technology();
-                        $associatedEntity->setName($tagName);
-                        $associatedEntity->setDescription('TO BE DEFINED');
-                        $manager->persist($associatedEntity);
-                        $manager->flush();
-                    }
-                    $newvalue[] = $associatedEntity;
-                    call_user_func(array($entity, 'set' . Container::camelize($key)), $newvalue);
-                }
-            } elseif(!is_array($value)){
-                if(strpos($value, '@', 0) !== false && strpos($value, '@', 0) === 0){
+           if(!is_array($value)){
+                if(strpos($value, '@', 0) !== false){
                     $associatedIdentifier = substr($value, 1);
                     if(!$this->entities->containsKey($associatedIdentifier)){
                         throw new DoctrineException(sprintf('Trying to reference non-existing fixture entity "%s" for entity "%s"', $associatedIdentifier, $entityIdentifier));
@@ -64,16 +50,12 @@ class LoadPostData implements FixtureInterface {
      */
     public function load($manager)
     {
-
-        $categories = Yaml::parse(__DIR__ . '/postCategories.yml');
-        foreach($categories as $categoryIdentifier => $categoryData) {
-            $category = new \Snowcap\SiteBundle\Entity\PostCategory();
-            $this->createEntity($manager, $category, $categoryIdentifier, $categoryData);
-        }
-
-        $records = Yaml::parse(__DIR__ . '/posts.yml');
+        $records = Yaml::parse(__DIR__ . '/technologies.yml');
         foreach($records as $recordIdentifier => $recordData) {
-            $record = new Post();
+            $record = $manager->getRepository('Snowcap\SiteBundle\Entity\Technology')->findOneByName($recordData['name']);
+            if(!$record) {
+                $record = new Project();
+            }
             $this->createEntity($manager, $record, $recordIdentifier, $recordData);
         }
         $manager->flush();

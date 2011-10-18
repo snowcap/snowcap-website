@@ -4,16 +4,15 @@ namespace Snowcap\SiteBundle\Entity;
 use Doctrine\ORM\Mapping as ORM,
     Doctrine\Common\Collections\ArrayCollection;
 
-use
-    Snowcap\SiteBundle\Model\Base as BaseModel;
+use Snowcap\SiteBundle\Model\Base as BaseModel;
 
 /**
- * Tag entity class
+ * Agency entity class
  *
- * @ORM\Table(name="tag")
+ * @ORM\Table(name="post_category")
  * @ORM\Entity
  */
-class Tag extends BaseModel
+class PostCategory extends BaseModel
 {
     /**
      * @var int
@@ -34,31 +33,14 @@ class Tag extends BaseModel
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Post", mappedBy="tags")
+     * @ORM\OneToMany(targetEntity="Post", mappedBy="category")
      */
     private $posts;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
-     *
-     * @ORM\ManyToMany(targetEntity="Project", mappedBy="tags")
-     */
-    private $projects;
-
-    /**
-     * Class constructor
-     * 
-     */
-    public function __construct()
-    {
-        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->projects = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
      * Get id
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -86,7 +68,7 @@ class Tag extends BaseModel
     }
 
     /**
-     * Set posts
+     * Set Posts
      *
      * @param \Doctrine\Common\Collections\ArrayCollection $posts
      */
@@ -96,32 +78,12 @@ class Tag extends BaseModel
     }
 
     /**
-     * Get posts
-     *
-     * @return \Doctrine\Common\Collections\ArrayCollection|ArrayCollection
+     * Get Posts
+     * @return \Doctrine\Common\Collections\ArrayCollection
      */
     public function getPosts()
     {
         return $this->posts;
     }
 
-    /**
-     * Set projects
-     *
-     * @param \Doctrine\Common\Collections\ArrayCollection $projects
-     */
-    public function setProjects(ArrayCollection $projects)
-    {
-        $this->projects = $projects;
-    }
-
-    /**
-     * Get projects
-     *
-     * @return \Doctrine\Common\Collections\ArrayCollection
-     */
-    public function getProjects()
-    {
-        return $this->projects;
-    }
 }
