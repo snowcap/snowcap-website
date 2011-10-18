@@ -3,8 +3,8 @@
         <h2>{{ project.title }}</h2>
         <div class="body">
             {{ project.introduction | markdown }}
-            <a href="{{ url('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ 'Read more' | trans }}" class="read-more">{{ 'Read more' | trans }}</a>
+            <a href="{{ url('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ 'general.readmore.title' | trans }}" class="read-more">{{ 'general.readmore.label' | trans }}</a>
         </div>
-        <img src="{{ project.thumbFront.webPath | apply_filter('thumb') }}" class="thumb" />
+        <img src="{{ project.thumb_front.webPath | apply_filter('thumb') }}" class="thumb" />
     </div>
 {% endif %}

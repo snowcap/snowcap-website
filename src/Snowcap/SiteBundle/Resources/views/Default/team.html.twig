@@ -5,7 +5,11 @@
         <section class="main">
             <h1>{{ "team.title" | trans }}</h1>
             <div class="body">
-            In team
+                <ul class="team-list">
+                    {% include "SnowcapSiteBundle:Default:member.html.twig" with { 'member': 'jerome'}%}
+                    {% include "SnowcapSiteBundle:Default:member.html.twig" with { 'member': 'pierre'}%}
+                    {% include "SnowcapSiteBundle:Default:member.html.twig" with { 'member': 'edwin'}%}
+                </ul>
             </div>
         </section>
     </div>

@@ -11,6 +11,9 @@ general:
   baseline: Extreme precision developers
   nutshell: |
     We are a **web development agency** that specializes in implementing open, cutting-edge technologies. We provide analysis, development and IT support - but we are much more than that : a team of smart, open-minded and forward-thinking web experts.
+  readmore:
+    title: Read more
+    label: Read more
 project:
   latest:
     title: Recent works
@@ -63,3 +66,61 @@ contact:
   title: Contact
 team:
   title: Team
+  age:
+    title: Age
+  skills:
+    title: Skills
+  twitter:
+    title: Follow on Twitter
+    label: Follow on Twitter
+  linkedin:
+    title: Follow on Linkedin
+    label: Follow on Linkedin
+  cv:
+    title: Download CV
+    label: Download CV
+  jerome:
+    name: Jérôme Poskin
+    birthdate: "1978-07-23"
+    skills: |
+      * Development
+      * Project Management
+      * CMS
+    quote: Always room for improvement
+    body: jerome.body
+    twitter:
+      url: twitter.url
+    linkedin:
+      url: linkedin.url
+    cv:
+      url: cv.url
+  pierre:
+    name: Pierre Vanliefland
+    birthdate: "1983-05-29"
+    skills: |
+      * Development
+      * Analyse
+      * Database
+    quote: Let's think this over
+    body: pierre.body
+    twitter:
+      url: twitter.url
+    linkedin:
+      url: linkedin.url
+    cv:
+      url: cv.url
+  edwin:
+    name: Edwin Hermans
+    birthdate: "1981-03-15"
+    skills: |
+      * Development
+      * IT
+      * E-Commerce
+    quote: Straight to the point
+    body: edwin.body
+    twitter:
+      url: twitter.url
+    linkedin:
+      url: linkedin.url
+    cv:
+      url: cv.url

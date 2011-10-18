@@ -52,7 +52,7 @@ walibi:
   available_on_list: true
   thumb_front: @wab_front
   thumb_back: @wab_back
-  highlighted: true
+  highlighted: false
 
 wilkinson:
   title: Wilkinson
@@ -71,4 +71,19 @@ wilkinson:
   available_on_list: true
   thumb_front: @wlk_front
   thumb_back: @wlk_back
-  highlighted: true
+  highlighted: false
+
+europabio:
+  title: Europabio
+  slug: europabio
+  introduction:
+  body:
+  website: http://www.europabio.org
+  published_at: '2011-08-12 12:24:00'
+  realisation_period: 2010-2011
+  client: Europabio
+  agency: @onemd
+  tags: [php,symfony,varnish]
+  published: true
+  available_on_list: false
+  highlighted: false
