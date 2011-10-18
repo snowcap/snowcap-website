@@ -1,6 +1,10 @@
 <h2>{{ "project.latest.title" | trans }}</h2>
-    <ul>
-    {% for project in latestProjects %}
-        <img src="{{ project.thumbFront.url }}"/>
-    {% endfor %}
-</ul>
+{% if latestProjects|length > 0 %}
+    <ul class="project-list">
+        {% for project in latestProjects %}
+            <li><img src="{{ project.thumb_front.url }}"/></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>{{ "project.latest.empty" | trans }}</p>
+{% endif %}

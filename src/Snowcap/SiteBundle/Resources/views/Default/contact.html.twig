@@ -1,5 +1,17 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
 {% set body_class = 'contact' %}
 {% block body %}
-In contact
+    <div class="full">
+        <section class="main">
+            <h1>{{ "contact.title" | trans }}</h1>
+            <div class="body">
+                <p>Snowcap</p>
+                <p>Somewhere in Brussels</p>
+                <p>Phone +32 0007 00 00 00</p>
+                <a href="mailto:shoot@snowcap.be">shoot@snowcap.be</a>
+                <a href="#" title="Facebook like">Facebook like</a>
+                <a href="#" title="Follow us on Twitter">Follow us on Twitter</a>
+            </div>
+        </section>
+    </div>
 {% endblock %}

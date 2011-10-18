@@ -25,21 +25,42 @@ post:
   list:
     title: Blog
     empty: No post availabale
-widgets:
+widget:
   tweets:
     title: Last tweets
+    empty: No tweets available
+    by: By Snowcap
 company:
+  title: Company
   body: |
-    After ten years working in various medium and large web and communication agencies, learning a lot, facing added values and issues of different structures, we ended up with the conclusion
-    that if we wanted to achieve our goal, which is developing high quality cutting-edge web applications - and enjoy doing it, we had to have a dedicated environment.
+    Snowcap is a small web development agency located in Brussels. Using a finely balanced mix of open-source technologies, web standards and technical ingenuity, we deliver kick-ass online platforms that will help you communicate about what you do.
 
-    In September 2010, Snowcap was born.
+    * Here is what we have to offer:
+    * Analysis and technological strategy
+    * Website and web application development
+    * Content management system implementations
+    * Intranet and extranet development
+    * E-commerce platforms installation and customization
+    * Database management
+    * Hosting
+    * IT consultancy / support
 
-    The main ideas of Snowcap's concept is to offer, thanks to our combined skills, a straigth stream, from the analysis of the project to the best suitable technical infrastructure, and to offer our
-    clients a direct and smooth communication with the producers, which delivers a more qualitative and innovative result by combining the vision and goals of both parties.
 
-    In other words, since the best projects out there are made by real passionated and motivated crews, we created ourselves a way of being so.
+    We use almost exclusively open-source software. While some IT domains can benefit from proprietary solutions, the web is an area where open-source shines. No license fee and no usage restriction.
+
+    Note: pour les technologies, le texte ne doit pas forcément être affiché à tout le monde. Ca peut être du “tooltip” ou autre. Sous forme d’icônographie ce serait sympa. Il faudrait aussi que nous puissions en rajouter au fur et à mesure...
+
+    __PHP__: Open, robust, and comes with a lot of great-quality libraries, we use it alone or with the Symfony MVC framework in order to provide flexible and performant solutions.
+
+    __Python__: a modern an elegant language, ideal to manage tricky processes or connect heterogen systems
+
+    __HTML, CSS and Javascript__: respecting web standards, we use it to deliver light and highly usable interfaces
+
+    __Adobe AIR__: this platform, developed by Adobe, is a good choice for light online / offline applications.
+
+    __Linux__: Still powering most of the good part of the internet, we rely on it for our projects infrastructuremethod:
 method:
+  title: Method
   body: |
     Snowcap is a web agency that specializes in implementing open, cutting-edge technologies. Partners of your digital projects, we offer the following services:
 
@@ -55,3 +76,7 @@ method:
     We like to work in close partnership with our customers, we want to take part in your projects from the very beginning, and we enjoy meetings as long as decisions are taken.
   quote: |
     Don't expect us to deliver what you already have - we would rather hear about the rock-solid, extreme performance web platform you've always wanted.
+contact:
+  title: Contact
+team:
+  title: Team

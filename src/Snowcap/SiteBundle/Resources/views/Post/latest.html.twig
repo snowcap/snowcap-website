@@ -1,7 +1,13 @@
 <h2>{{ "post.latest.title" | trans }}</h2>
-{% for post in latestPosts %}
-    <h3>{{ post.title }}</h3>
-    <p>{{ post.body | truncate(100) }}</p>
+{% if latestPosts|length > 0 %}
+    <ul class="post-list">
+        {% for post in latestPosts %}
+            <li>
+                <h3>{{ post.title }}</h3>
+                <div class="body">{{ post.summary | markdown }}</div>
+            </li>
+        {% endfor %}
+    </ul>
 {% else %}
     <p>{{ "post.latest.empty" | trans }}</p>
-{% endfor %}
+{% endif %}
