@@ -35,7 +35,7 @@ class Environment {
         }
         $adminParams = $this->content[$type];
         $adminClassName = $adminParams['admin_class'];
-        $adminInstance = new $adminClassName($adminParams['label'], $adminParams['model_class']);
+        $adminInstance = new $adminClassName($adminParams['label'], $adminParams['model_class'], $this);
         return $adminInstance;
     }
     /**

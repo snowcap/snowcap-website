@@ -2,6 +2,7 @@
 namespace Snowcap\SiteBundle\Admin;
 use Snowcap\AdminBundle\Admin\Content;
 use Snowcap\SiteBundle\Entity\Project as ProjectEntity;
+use Snowcap\AdminBundle\Form\ContentType;
 /**
  * Project admin class
  * 
@@ -71,7 +72,12 @@ class Project extends Content {
             'available_on_list' => array(
                 'type' => 'checkbox',
             ),
-
+            'thumb_front' => array(
+                'type' => new ContentType( 'image', $this->environment->getAdmin('image'))
+            ),
+            'thumb_back' => array(
+                'type' => new ContentType( 'image', $this->environment->getAdmin('image'))
+            ),
         );
     }
 

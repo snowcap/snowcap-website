@@ -1,8 +1,23 @@
 <h2>{{ "project.latest.title" | trans }}</h2>
 {% if latestProjects|length > 0 %}
-    <ul class="project-list">
+    <ul>
         {% for project in latestProjects %}
-            <li><img src="{{ project.thumb_front.url }}"/></li>
+            <li>
+                <a href="{{ path('snwcp_site_project_show', {'slug': project.slug}) }}">
+                    <img
+                        class="front"
+                        src="{{ project.thumb_front.webPath | apply_filter('thumb') }}"
+                        alt="{{ project.thumb_front.alt }}"
+                        title="{{ project.thumb_front.name }}"
+                    />
+                    <img
+                        class="back"
+                        src="{{ project.thumb_back.webPath | apply_filter('thumb') }}"
+                        alt="{{ project.thumb_back.alt }}"
+                        title="{{ project.thumb_back.name }}"
+                    />
+                </a>
+            </li>
         {% endfor %}
     </ul>
 {% else %}
