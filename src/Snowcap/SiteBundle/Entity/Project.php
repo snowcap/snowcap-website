@@ -139,7 +139,7 @@ class Project extends BaseModel
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Image")
+     * @ORM\ManyToMany(targetEntity="Image", cascade={"persist"})
      * @ORM\JoinTable(name="project_image")
      */
     protected $images;
@@ -368,13 +368,25 @@ class Project extends BaseModel
     }
 
     /**
-     * Set imahes
+     * Set images
      *
      * @param \Doctrine\Common\Collections\ArrayCollection $images
      */
-    public function setImages(ArrayCollection $images)
+    public function setImages($images)
     {
-        $this->images = $images;
+        $this->images = new \Doctrine\Common\Collections\ArrayCollection();
+        
+        foreach($images as $image) {
+            if(is_array($image)) {
+                $im = new Image();
+                $im->setAlt($image['alt']);
+                $im->setFile($image['file']);
+                $im->setName($image['name']);
+            } else {
+                $im = $image;
+            }
+            $this->images[] = $im;
+        }
     }
 
     /**

@@ -24,3 +24,49 @@
     {% set attr = attr|merge({'class': 'widget-markdown' }) %}
     {{ block('textarea_widget') }}
 {% endblock markdown_widget %}
+
+
+{% block _project_images_widget %}
+{% spaceless %}
+    {% if prototype is defined %}
+        {% set attr = attr|merge({'data-prototype': form_row(prototype) }) %}
+    {% endif %}
+    {{ block('images_widget') }}
+
+        <hr size="1" width="100%" noshade />
+
+        <a href="#" class="add_image">Add an image</a>
+
+{% endspaceless %}
+{% endblock %}
+
+{% block images_widget %}
+{% spaceless %}
+    <div {{ block('widget_container_attributes') }}>
+        {{ block('images_rows') }}
+        {{ form_rest(form) }}
+    </div>
+{% endspaceless %}
+{% endblock images_widget %}
+
+{% block images_rows %}
+{% spaceless %}
+    {{ form_errors(form) }}
+    {% for image in form %}
+        <div>
+
+            {% set productimage = image.get('value') %}
+
+            <img src="{{ productimage.webPath | apply_filter('thumb')}}" style="floaeet:left;padding-right:5px;">
+            <div>
+
+                or replace:
+
+                {{ form_errors(image) }}
+                {{ form_widget(image, {'attr': widget_attr|default({})}) }}
+
+            </div>
+        </div>
+    {% endfor %}
+{% endspaceless %}
+{% endblock images_rows %}

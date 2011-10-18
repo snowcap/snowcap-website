@@ -4,6 +4,7 @@
         <article>
             <h3>{{ post.title }}</h3>
             {{ post.summary | markdown }}
+            <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ "general.readmore.title" | trans }}">{{ "general.readmore.label" | trans }}</a>
         </article>
     {% endfor %}
 {% else %}

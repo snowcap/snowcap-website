@@ -1,0 +1,18 @@
+<li class="{{ member }}">
+    <h2>{{ ("team." ~ member ~ ".name") | trans}}</h2>
+    <dl class="information">
+        <dt>{{ "team.age.title" | trans }}</dt>
+        <dd>{{ ("team." ~ member ~ ".birthdate") | trans | age }}</dd>
+        <dt>{{ "team.skills.title" | trans }}</dt>
+        <dd>
+            {{ ("team." ~ member ~ ".skills") | trans | markdown }}
+        </dd>
+    </dl>
+    <div class="quote">{{ ("team." ~ member ~ ".quote") | trans }}</div>
+    <div class="body">{{ ("team." ~ member ~ ".body") | trans | markdown }}</div>
+    <ul class="contact-links">
+        <li><a href="{{ ("team." ~ member ~ ".twitter.url") | trans }}" title="{{ "team.twitter.title" | trans }}">{{ "team.twitter.label" | trans }}</a></li>
+        <li><a href="{{ ("team." ~ member ~ ".linkedin.url") | trans }}" title="{{ "team.linkedin.title" | trans }}">{{ "team.linkedin.label" | trans }}</a></li>
+        <li><a href="{{ ("team." ~ member ~ ".cv.url") | trans }}" title="{{ "team.cv.title" | trans }}">{{ "team.cv.label" | trans }}</a></li>
+    </ul>
+</li>

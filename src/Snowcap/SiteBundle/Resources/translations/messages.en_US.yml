@@ -1,7 +1,7 @@
 navigation:
   home: Home
   company: Company
-  method: Method
+  method: Services
   team: Team
   posts: Blog
   projects: Cases
@@ -11,6 +11,16 @@ general:
   baseline: Extreme precision developers
   nutshell: |
     We are a **web development agency** that specializes in implementing open, cutting-edge technologies. We provide analysis, development and IT support - but we are much more than that : a team of smart, open-minded and forward-thinking web experts.
+  readmore:
+    title: Read more
+    label: Read more
+geekcorner:
+  title: Geek's corner
+  body: |
+    For our fellow geeks, the complete source code of this website is [available here](http://www.github.com/snowcap/snowcap-website "Snowcap Website source code"). You can browse it to find out
+    how we work, and moreover, if you have a genius idea to improve our website, don't hesitate to fork and send us a pull request :)
+
+    Ow and yeah, we try to contribute more and more to the community - [follow us on GitHub](http://www.github.com/snowcap "Snowcap on GitHub") to discover what we're open sourcing
 project:
   latest:
     title: Recent works
@@ -43,7 +53,7 @@ company:
 
     In other words, since the best projects out there are made by real passionated and motivated crews, we created ourselves a way of being so.
 method:
-  title: Method
+  title: Services
   body: |
     Snowcap is a web agency that specializes in implementing open, cutting-edge technologies. Partners of your digital projects, we offer the following services:
 
@@ -63,3 +73,61 @@ contact:
   title: Contact
 team:
   title: Team
+  age:
+    title: Age
+  skills:
+    title: Skills
+  twitter:
+    title: Follow on Twitter
+    label: Follow on Twitter
+  linkedin:
+    title: Follow on Linkedin
+    label: Follow on Linkedin
+  cv:
+    title: Download CV
+    label: Download CV
+  jerome:
+    name: Jérôme Poskin
+    birthdate: "1978-07-23"
+    skills: |
+      * Development
+      * Project Management
+      * CMS
+    quote: Always room for improvement
+    body: jerome.body
+    twitter:
+      url: twitter.url
+    linkedin:
+      url: linkedin.url
+    cv:
+      url: cv.url
+  pierre:
+    name: Pierre Vanliefland
+    birthdate: "1983-05-29"
+    skills: |
+      * Development
+      * Analyse
+      * Database
+    quote: Let's think this over
+    body: pierre.body
+    twitter:
+      url: twitter.url
+    linkedin:
+      url: linkedin.url
+    cv:
+      url: cv.url
+  edwin:
+    name: Edwin Hermans
+    birthdate: "1981-03-15"
+    skills: |
+      * Development
+      * IT
+      * E-Commerce
+    quote: Straight to the point
+    body: edwin.body
+    twitter:
+      url: twitter.url
+    linkedin:
+      url: linkedin.url
+    cv:
+      url: cv.url

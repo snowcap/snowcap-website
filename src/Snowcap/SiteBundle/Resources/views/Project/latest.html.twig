@@ -3,18 +3,18 @@
     <ul>
         {% for project in latestProjects %}
             <li>
-                <a href="{{ path('snwcp_site_project_show', {'slug': project.slug}) }}">
+                <a href="{{ path('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ "project.link.title" | trans }}">
                     <img
                         class="front"
-                        src="{{ project.thumb_front.url | apply_filter('thumb') }}"
+                        src="{{ project.thumb_front.webPath | apply_filter('thumb') }}"
                         alt="{{ project.thumb_front.alt }}"
-                        title="{{ project.thumb_front.title }}"
+                        title="{{ project.thumb_front.name }}"
                     />
                     <img
                         class="back"
-                        src="{{ project.thumb_back.url | apply_filter('thumb') }}"
+                        src="{{ project.thumb_back.webPath | apply_filter('thumb') }}"
                         alt="{{ project.thumb_back.alt }}"
-                        title="{{ project.thumb_back.title }}"
+                        title="{{ project.thumb_back.name }}"
                     />
                 </a>
             </li>

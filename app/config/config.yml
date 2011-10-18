@@ -95,6 +95,10 @@ snowcap_admin:
           label: Technology
           model_class: Snowcap\SiteBundle\Entity\Technology
           admin_class: Snowcap\SiteBundle\Admin\Technology
+      image:
+          label: Image
+          model_class: Snowcap\SiteBundle\Entity\Image
+          admin_class: Snowcap\SiteBundle\Admin\Image
 
 avalanche_imagine:
     filters:
