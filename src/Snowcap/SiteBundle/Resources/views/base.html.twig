@@ -12,16 +12,7 @@
     <body class="{{ body_class | default('default') }}">
         <header>
             {% block header %}
-                <nav>
-                    <h1><a href="{{ url('snwcp_site_default_index') }}">Snowcap</a></h1>
-                    <a href="{{ url('snwcp_site_default_index') }}"{% if is_menu_active(app.request.get('_controller'), 'Default', 'index') %} class="active" {%endif %}>{{ "navigation.home" | trans }}</a>
-                    <a href="{{ url('snwcp_site_default_company') }}"{% if is_menu_active(app.request.get('_controller'), 'Default', 'company') %} class="active" {%endif %}>{{ "navigation.company" | trans }}</a>
-                    <a href="{{ url('snwcp_site_default_method') }}"{% if is_menu_active(app.request.get('_controller'), 'Default', 'method') %} class="active" {%endif %}>{{ "navigation.method" | trans }}</a>
-                    <a href="{{ url('snwcp_site_default_team') }}"{% if is_menu_active(app.request.get('_controller'), 'Default', 'team') %} class="active" {%endif %}>{{ "navigation.team" | trans }}</a>
-                    <a href="{{ url('snwcp_site_post_list') }}"{% if is_menu_active(app.request.get('_controller'), 'Post') %} class="active" {%endif %}>{{ "navigation.posts" | trans }}</a>
-                    <a href="{{ url('snwcp_site_project_list') }}"{% if is_menu_active(app.request.get('_controller'), 'Project') %} class="active" {%endif %}>{{ "navigation.projects" | trans }}</a>
-                    <a href="{{ url('snwcp_site_default_contact') }}"{% if is_menu_active(app.request.get('_controller'), 'Default', 'contact') %} class="active" {%endif %}>{{ "navigation.contact" | trans }}</a>
-                </nav>
+                {% include 'SnowcapSiteBundle::navigation.html.twig' %}
             {% endblock %}
         </header>
         {% block body %}{% endblock %}
