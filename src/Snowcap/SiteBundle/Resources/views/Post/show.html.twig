@@ -4,7 +4,7 @@
         <section class="main">
             <h1>{{ entity.title }}</h1>
             <div class="body">{{ entity.body | markdown }}</div>
-            <p class="published">{{ entity.published_at | relative_time }}</p>
+            <p class="published">{{ entity.published_at | time_ago }}</p>
         </section>
     </div>
 {% endblock %}

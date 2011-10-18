@@ -24,42 +24,65 @@ class CoreExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            'relative_time' => new \Twig_Filter_Method($this, 'relativeTime'),
+            'time_ago' => new \Twig_Filter_Method($this, 'timeAgo'),
+            'age' => new \Twig_Filter_Method($this, 'age'),
             'safe_truncate' => new \Twig_Filter_Method($this, 'safeTruncate', array('is_safe' => array('html'))),
         );
     }
 
     /**
-     * Filter used to display a datetime as a relative time
+     * Filter used to get a date interval between a date and now
      *
-     * @param DateTime $datetime
-     * @return string
+     * @param string|DateTime $datetime
+     * @return \DateInterval
      */
-    public function relativeTime($datetime = null)
+    public function relativeTime($datetime = null, $format = 'ago')
     {
-
         if ($datetime === null) {
             return "";
         }
 
-        $difference = time() - $datetime->getTimestamp();
-        $periods = array("sec", "min", "hour", "day", "week", "month", "years", "decade");
-        $lengths = array("60", "60", "24", "7", "4.35", "12", "10");
-
-        if ($difference > 0) { // this was in the past
-            $ending = "ago";
-        } else { // this was in the future
-            $difference = -$difference;
-            $ending = "to go";
+        if (is_string($datetime)) {
+            $datetime = new \DateTime($datetime);
         }
-        for ($j = 0; $difference >= $lengths[$j]; $j++)
-            $difference /= $lengths[$j];
-        $difference = round($difference);
-        if ($difference != 1)
-            $periods[$j] .= "s";
-        $text = "$difference $periods[$j] $ending";
-        return $text;
 
+        $current_date = new \DateTime();
+
+        $interval = $current_date->diff($datetime);
+
+        return $interval;
+
+    }
+
+    /**
+     * Filter used to display the time ago for a specific date
+     *
+     * @param \Datetime|string $datetime
+     * @return string
+     */
+    public function timeAgo($datetime) {
+        $interval = $this->relativeTime($datetime);
+
+        $years = $interval->format('%y');
+        $months = $interval->format('%m');
+        $days = $interval->format('%d');
+        if ($years != 0) {
+            $ago = $years . ' year(s) ago';
+        } else {
+            $ago = ($months == 0 ? $days . ' day(s) ago' : $months . ' month(s) ago');
+        }
+
+        return $ago;
+    }
+
+    /**
+     * @param \Datetime|string $datetime
+     * @return string
+     */
+    public function age($datetime) {
+        $interval = $this->relativeTime($datetime);
+
+        return $interval->format('%y');
     }
 
     /**
@@ -72,17 +95,17 @@ class CoreExtension extends \Twig_Extension
      */
     public function safeTruncate($value, $length = 30, $preserve = true, $separator = ' ...')
     {
-       if (strlen($value) > $length) {
-          if ($preserve) {
-              if (false !== ($breakpoint = strpos($value, ' ', $length))) {
-                  $length = $breakpoint;
-              }
-          }
+        if (strlen($value) > $length) {
+            if ($preserve) {
+                if (false !== ($breakpoint = strpos($value, ' ', $length))) {
+                    $length = $breakpoint;
+                }
+            }
 
-          return $this->closetags(substr($value, 0, $length) . $separator);
-      }
+            return $this->closetags(substr($value, 0, $length) . $separator);
+        }
 
-      return $value;
+        return $value;
     }
 
     /**
@@ -139,7 +162,7 @@ class CoreExtension extends \Twig_Extension
 
     /**
      * Return the name of the extension
-     * 
+     *
      * @return string
      */
     public function getName()
