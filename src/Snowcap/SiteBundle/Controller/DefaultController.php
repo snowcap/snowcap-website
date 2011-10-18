@@ -11,7 +11,7 @@ use Snowcap\SiteBundle\Entity\Post;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="front")
+     * @Route("/", name="snwcp_site_default_index")
      * @Template()
      */
     public function indexAction()
@@ -22,7 +22,7 @@ class DefaultController extends Controller
 	}
 
     /**
-     * @Route("/company", name="front_company")
+     * @Route("/company", name="snwcp_site_default_company")
      * @Template()
      */
     public function companyAction() {
@@ -31,7 +31,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/method", name="front_method")
+     * @Route("/method", name="snwcp_site_default_method")
      * @Template()
      */
     public function methodAction() {
@@ -39,7 +39,7 @@ class DefaultController extends Controller
         return array();
     }
     /**
-     * @Route("/team", name="front_team")
+     * @Route("/team", name="snwcp_site_default_team")
      * @Template()
      */
     public function teamAction() {
@@ -48,7 +48,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/contact", name="front_contact")
+     * @Route("/contact", name="snwcp_site_default_contact")
      * @Template()
      */
     public function contactAction() {

@@ -18,7 +18,7 @@ class ProjectController extends BaseController
     /**
      * Display a list of projects
      * 
-     * @Route("/", name="front_projects")
+     * @Route("/", name="snwcp_site_project_list")
      * @Template()
      */
     public function listAction() {
@@ -31,13 +31,13 @@ class ProjectController extends BaseController
     /**
      * Finds and displays a Post entity.
      *
-     * @Route("/{id}", name="front_project")
+     * @Route("/{slug}", name="snwcp_site_project_show")
      * @Template()
      */
-    public function showAction($id)
+    public function showAction($slug)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $entity = $em->getRepository('SnowcapSiteBundle:Project')->find($id);
+        $entity = $em->getRepository('SnowcapSiteBundle:Project')->findOneBySlug($slug);
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Project entity.');
         }
@@ -49,10 +49,21 @@ class ProjectController extends BaseController
     /**
      * @Template()
      */
-    public function LatestAction($limit)
+    public function latestAction($limit)
     {
 		$em = $this->getDoctrine()->getEntityManager();
         $latestProjects = $em->getRepository('SnowcapSiteBundle:Project')->getLatest($limit);
+
         return array('latestProjects' => $latestProjects);
 	}
+
+    /**
+     * @Template()
+     */
+    public function highlightedAction() {
+        $em = $this->getDoctrine()->getEntityManager();
+        $project = $em->getRepository('SnowcapSiteBundle:Project')->findOneByHighlighted(true);
+
+        return array('project' => $project);
+    }
 }

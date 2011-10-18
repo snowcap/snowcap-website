@@ -17,7 +17,7 @@ class PostController extends BaseController
 {
     /**
      *
-     * @Route("/", name="front_posts")
+     * @Route("/", name="snwcp_site_post_list")
      * @Template()
      */
     public function listAction() {
@@ -29,7 +29,7 @@ class PostController extends BaseController
     /**
      * Finds and displays a Post entity.
      *
-     * @Route("/{id}", name="front_post")
+     * @Route("/{id}", name="snwcp_site_post_show")
      * @Template()
      */
     public function showAction($id)
@@ -47,7 +47,7 @@ class PostController extends BaseController
     /**
      * @Template()
      */
-    public function LatestAction($limit)
+    public function latestAction($limit)
     {
 		$em = $this->getDoctrine()->getEntityManager();
         $latestPosts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest($limit);

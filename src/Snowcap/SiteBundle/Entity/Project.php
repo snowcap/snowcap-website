@@ -125,6 +125,13 @@ class Project extends Content
     protected $thumb_back;
 
     /**
+     * @var bool
+     *
+     * @ORM\Column(name="highlighted", type="boolean")
+     */
+    protected $highlighted;
+
+    /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      *
      * @ORM\ManyToMany(targetEntity="Image")
@@ -414,5 +421,21 @@ class Project extends Content
     public function isAvailableOnList()
     {
         return $this->available_on_list;
+    }
+
+    /**
+     * @param boolean $highlighted
+     */
+    public function setHighlighted($highlighted)
+    {
+        $this->highlighted = $highlighted;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isHighlighted()
+    {
+        return $this->highlighted;
     }
 }
