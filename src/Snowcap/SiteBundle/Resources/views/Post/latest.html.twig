@@ -1,13 +1,11 @@
-<h2>{{ "post.latest.title" | trans }}</h2>
+<h2><a href="{{ path('snwcp_') }}">{{ "post.latest.title" | trans }}</a></h2>
 {% if latestPosts|length > 0 %}
-    <ul class="post-list">
-        {% for post in latestPosts %}
-            <li>
-                <h3>{{ post.title }}</h3>
-                <div class="body">{{ post.summary | markdown }}</div>
-            </li>
-        {% endfor %}
-    </ul>
+    {% for post in latestPosts %}
+        <article>
+            <h3>{{ post.title }}</h3>
+            {{ post.summary | markdown }}
+        </article>
+    {% endfor %}
 {% else %}
     <p>{{ "post.latest.empty" | trans }}</p>
 {% endif %}

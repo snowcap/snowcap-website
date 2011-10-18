@@ -1,10 +1,10 @@
-<h2>{{ "widget.tweets.title" | trans }}</h2>
+<h2><a href="">{{ "widget.tweets.title" | trans }}</a></h2>
 {% if tweets|length > 0 %}
     <ul class="tweets-list">
         {% for tweet in tweets %}
             <li>
-                <p>{{ tweet.date | date('F Y') }} <span>{{ "widget.tweets.by" | trans }}</span></p>
-                <p>{{ tweet.text}}</p>
+                <p class="date">{{ tweet.date | date('F Y') }}</p>
+                <p class="text">{{ tweet.text}}</p>
             </li>
         {% endfor %}
     </ul>

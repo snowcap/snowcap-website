@@ -9,6 +9,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: Lato, sans-serif;
 }
+section.content-secondary {
+    font-size: 12px;
+    line-height: 16px;
+}
+section.content-secondary p {
+    margin: 10px 0 0 0;
+}
 section.content h2 {
     margin: 0;
     padding: 0 0 0 10px;
@@ -16,6 +23,11 @@ section.content h2 {
     font-weight: 300;
     background-image: url(../images/headings.png);
     background-repeat: no-repeat;
+}
+section.content-secondary h3 {
+    margin: 15px 0;
+    font-weight: 300;
+    font-size: 24px;
 }
 a {
     color: #79bd01;
@@ -148,14 +160,39 @@ div.split-3 section:not(:last-child) {
 .home section.content-secondary h2 {
     background-position: right -55px;
     line-height: 35px;
-    color: #fff;
     font-size: 24px;
+}
+.home section.content-secondary h2 a {
+    color: #fff;
+    text-decoration: none;
 }
 .home section.blog h2 {
     width: 150px;
 }
 .home section.tweets h2 {
     width: 270px;
+}
+.home section.tweets h2 a {
+    padding-left: 40px;
+    background: url(../images/sprites.png) -35px -98px no-repeat;
+}
+.home section.tweets ul {
+    margin: 0;
+    padding: 0;
+}
+.home section.tweets li {
+    list-style-type: none;
+}
+.home section.tweets li p.date {
+    color: #a5a5a5;
+    font-size: 14px;
+}
+.home section.tweets li p.text {
+    font-family: Lato, sans-serif;
+    font-size: 19px;
+    color: #404040;
+    line-height: 24px;
+    font-weight: 300;
 }
 /* FOOTER */
 footer {
