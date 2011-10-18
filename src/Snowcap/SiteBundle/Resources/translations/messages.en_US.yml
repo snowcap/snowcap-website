@@ -14,6 +14,13 @@ general:
   readmore:
     title: Read more
     label: Read more
+geekcorner:
+  title: Geek's corner
+  body: |
+    For our fellow geeks, the complete source code of this website is [available here](http://www.github.com/snowcap/snowcap-website "Snowcap Website source code"). You can browse it to find out
+    how we work, and moreover, if you have a genius idea to improve our website, don't hesitate to fork and send us a pull request :)
+
+    Ow and yeah, we try to contribute more and more to the community - [follow us on GitHub](http://www.github.com/snowcap "Snowcap on GitHub") to discover what we're open sourcing
 project:
   latest:
     title: Recent works
