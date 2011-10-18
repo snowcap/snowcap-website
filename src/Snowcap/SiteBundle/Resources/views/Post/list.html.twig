@@ -10,7 +10,7 @@
                 <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ 'Read more' | trans }}" class="read-more">{{ 'Read more' | trans }}</a>
             {% endif %}
         </p>
-        {% if post.tags|lentgh > 0 %}
+        {% if post.tags|length > 0 %}
             <ul class="post-list">
                 {% for tag in post.tags %}
                     <li>{{tag.name}}</li>

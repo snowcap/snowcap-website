@@ -6,6 +6,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Snowcap\SiteBundle\Entity\Post;
 use Snowcap\SiteBundle\Entity\Tag;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\DependencyInjection\Container;
 
 use \Symfony\Component\Yaml\Yaml;
 
@@ -29,7 +30,7 @@ class LoadPostData implements FixtureInterface {
                         $manager->flush();
                     }
                     $newvalue[] = $associatedEntity;
-                    call_user_func(array($entity, 'set' . $key), $newvalue);
+                    call_user_func(array($entity, 'set' . Container::camelize($key)), $newvalue);
                 }
             } elseif(!is_array($value)){
                 if(strpos($value, '@', 0) !== false && strpos($value, '@', 0) === 0){
@@ -45,7 +46,7 @@ class LoadPostData implements FixtureInterface {
                 else{
                     $value = $this->decodeMarkdown($value);
                 }
-                call_user_func(array($entity, 'set' . $key), $value);
+                call_user_func(array($entity, 'set' . Container::camelize($key)), $value);
             }
         }
         if($this->entities->containsKey($entityIdentifier)){

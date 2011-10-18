@@ -43,7 +43,15 @@ class Post extends BaseModel
     /**
      * @var string
      *
-     * @ORM\Column(name="body", type="text")
+     * @ORM\Column(name="summary", type="text")
+     * @Assert\MaxLength(500)
+     */
+    protected $summary;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="body", type="text", nullable=true)
      */
     protected $body;
 
@@ -180,5 +188,21 @@ class Post extends BaseModel
     public function getTags()
     {
         return $this->tags;
+    }
+
+    /**
+     * @param string $summary
+     */
+    public function setSummary($summary)
+    {
+        $this->summary = $summary;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSummary()
+    {
+        return $this->summary;
     }
 }

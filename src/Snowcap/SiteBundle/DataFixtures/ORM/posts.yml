@@ -10,7 +10,7 @@ work1:
 work2:
   title: First Symfony project: Moving People
   slug: first-symfony-project-moving-people
-  summray: |
+  summary: |
     Snowcap launched his first project under the [Symfony framework](http://www.symfony.com "Symfony Framework"): [Moving People](www.movingpeople.com "Moving People").
     It was a real pleasure for us to discover and work with this Framework, and surely will continue to do so!
     This corporate website, designed by [One Million Dollars](http://www.onemd.be "1MD"), runs with 5 languages and his content is completely managed by the client.
