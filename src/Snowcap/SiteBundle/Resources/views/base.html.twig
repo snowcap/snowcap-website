@@ -13,7 +13,7 @@
         <header>
             {% block header %}
                 <nav>
-                    <h1><a href="">{{ "Snowcap" | trans }}</a></h1>
+                    <h1><a href="{{ url('front') }}">Snowcap</a></h1>
                     <a href="{{ url('front') }}">{{ "navigation.home" | trans }}</a>
                     <a href="{{ url('front_company') }}">{{ "navigation.company" | trans }}</a>
                     <a href="{{ url('front_method') }}">{{ "navigation.method" | trans }}</a>

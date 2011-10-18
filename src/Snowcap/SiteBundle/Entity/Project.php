@@ -113,16 +113,14 @@ class Project extends Content
     /**
      * @var \Snowcap\SiteBundle\Entity\Image
      *
-     * @ORM\ManyToMany(targetEntity="Image")
-     * @ORM\JoinTable(name="project_front")
+     * @ORM\ManyToOne(targetEntity="Image")
      */
     protected $thumb_front;
 
     /**
      * @var \Snowcap\SiteBundle\Entity\Image
      * 
-     * @ORM\ManyToMany(targetEntity="Image")
-     * @ORM\JoinTable(name="project_back")
+     * @ORM\ManyToOne(targetEntity="Image")
      */
     protected $thumb_back;
 
