@@ -1,19 +1,25 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
 {% set body_class = 'home' %}
 {% block body %}
-    <h1>{{ "general.snowcap" | trans }}</h1>
-    <h2>{{ "general.baseline" | trans }}</h2>
-    {{ "general.nutshell" | trans | markdown }}
-    <section class="projects">
-        {% render "SnowcapSiteBundle:Project:latest" with {'limit': 3} %}
-    </section>
-    <section class="blog">
-        {% render "SnowcapSiteBundle:Post:latest" with {'limit': 1} %}
-    </section>
-    <section class="tweets">
-        {% render "SnowcapSiteBundle:Widget:tweets" %}
-    </section>
-    <section class="words">
-        {% include "SnowcapSiteBundle:Widget:words.html.twig" %}
-    </section>
+    <div class="full">
+        <section class="main">
+            <h1>{{ "general.snowcap" | trans }}</h1>
+            <h2>{{ "general.baseline" | trans }}</h2>
+            {{ "general.nutshell" | trans | markdown }}
+        </section>
+        <section class="projects content content-primary">
+            {% render "SnowcapSiteBundle:Project:latest" with {'limit': 3} %}
+        </section>
+    </div>
+    <div class="split split-3">
+        <section class="blog content content-secondary">
+            {% render "SnowcapSiteBundle:Post:latest" with {'limit': 1} %}
+        </section>
+        <section class="tweets content content-secondary">
+            {% render "SnowcapSiteBundle:Widget:tweets" %}
+        </section>
+        <section class="words">
+            {% include "SnowcapSiteBundle:Widget:words.html.twig" %}
+        </section>
+    </div>
 {% endblock %}

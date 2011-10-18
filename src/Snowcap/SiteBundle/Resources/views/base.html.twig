@@ -24,9 +24,7 @@
                 </nav>
             {% endblock %}
         </header>
-        <section class="main">
-            {% block body %}{% endblock %}
-        </section>
+        {% block body %}{% endblock %}
         <footer>
             <address>
                 {% include "SnowcapSiteBundle:Widget:contact.html.twig" %}
