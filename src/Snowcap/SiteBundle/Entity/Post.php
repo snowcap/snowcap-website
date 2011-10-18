@@ -1,20 +1,22 @@
 <?php
-
 namespace Snowcap\SiteBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM,
+    Doctrine\Common\Collections\ArrayCollection,
+    Symfony\Component\Validator\Constraints as Assert;
+
+use Snowcap\SiteBundle\Model\Base as BaseModel;
 
 /**
- * Snowcap\SiteBundle\Entity\Post
+ * Post entity class
  *
  * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="Snowcap\SiteBundle\Repository\PostRepository")
  */
-class Post extends Content
+class Post extends BaseModel
 {
     /**
-     * @var integer $id
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -23,42 +25,49 @@ class Post extends Content
     protected $id;
 
     /**
-     * @var string $title
+     * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
-	 * @Assert\MinLength(5)
+     * @Assert\MinLength(5)
      */
     protected $title;
-	
-	/**
-	 * @var string
-	 * 
-	 * @ORM\Column(name="slug", type="string", length=255)
-	 * @Assert\MinLength(5)
-	 */
-	protected $slug;
-	 
+
     /**
-     * @var text $body
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255)
+     * @Assert\MinLength(5)
+     */
+    protected $slug;
+
+    /**
+     * @var string
      *
      * @ORM\Column(name="body", type="text")
      */
     protected $body;
 
     /**
-     * @var datetime $published_at
+     * @var \DateTime
      *
      * @ORM\Column(name="published_at", type="datetime")
      */
     protected $published_at;
 
     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
      * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts")
      * @ORM\JoinTable(name="post_tag")
      */
     private $tags;
 
-    public function __construct() {
+    /**
+     * Class constructor
+     * 
+     */
+    public function __construct()
+    {
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
         $this->published_at = new \DateTime();
     }
@@ -66,7 +75,7 @@ class Post extends Content
     /**
      * Get id
      *
-     * @return integer $id
+     * @return integer
      */
     public function getId()
     {
@@ -86,37 +95,37 @@ class Post extends Content
     /**
      * Get title
      *
-     * @return string $title
+     * @return string
      */
     public function getTitle()
     {
         return $this->title;
     }
-	
-	/**
-	 * Set slug
-	 * 
-	 * @param string s$lug
-	 */
-	public function setSlug($slug)
-	{
-		$this->slug = $slug;	
-	}
-	
-	/**
-	 * Get slug
-	 * 
-	 * @return string
-	 */
-	public function getSlug()
-	{
-		return $this->slug;
-	}
-	
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
     /**
      * Set body
      *
-     * @param text $body
+     * @param string $body
      */
     public function setBody($body)
     {
@@ -126,7 +135,7 @@ class Post extends Content
     /**
      * Get body
      *
-     * @return text $body
+     * @return string
      */
     public function getBody()
     {
@@ -136,9 +145,9 @@ class Post extends Content
     /**
      * Set published_at
      *
-     * @param datetime $publishedAt
+     * @param \DateTime $publishedAt
      */
-    public function setPublishedAt($publishedAt)
+    public function setPublishedAt(\DateTime $publishedAt)
     {
         $this->published_at = $publishedAt;
     }
@@ -146,18 +155,28 @@ class Post extends Content
     /**
      * Get published_at
      *
-     * @return datetime $publishedAt
+     * @return \DateTime
      */
     public function getPublishedAt()
     {
         return $this->published_at;
     }
 
-    public function setTags($tags)
+    /**
+     * Set tags
+     *
+     * @param \Doctrine\Common\Collections\ArrayCollection $tags
+     */
+    public function setTags(ArrayCollection $tags)
     {
         $this->tags = $tags;
     }
 
+    /**
+     * Get tags
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
     public function getTags()
     {
         return $this->tags;

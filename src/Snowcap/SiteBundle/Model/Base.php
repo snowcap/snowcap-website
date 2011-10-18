@@ -1,5 +1,5 @@
 <?php
-namespace Snowcap\SiteBundle\Entity;
+namespace Snowcap\SiteBundle\Model;
 
 use Symfony\Component\DependencyInjection\Container;
 
@@ -7,7 +7,7 @@ use Symfony\Component\DependencyInjection\Container;
  * Abstract content class
  *
  */
-abstract class Content
+abstract class Base
 {
     /**
      * @param string $key

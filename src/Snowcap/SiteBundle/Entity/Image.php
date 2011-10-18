@@ -1,24 +1,21 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: jerome
- * Date: 17/10/11
- * Time: 17:53
- * To change this template use File | Settings | File Templates.
- */
-
 namespace Snowcap\SiteBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM,
+    Symfony\Component\Validator\Constraints as Assert;
+
+use Snowcap\SiteBundle\Model\Base as BaseModel;
 
 /**
+ * Image entity class
+ *
  * @ORM\Table(name="image")
  * @ORM\Entity
  */
-class Image {
+class Image extends BaseModel
+{
     /**
-     * @var integer $id
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -48,7 +45,9 @@ class Image {
     protected $alt;
 
     /**
-     * @param string $alt
+     * Set alt
+     *
+     * @param string
      */
     public function setAlt($alt)
     {
@@ -56,6 +55,8 @@ class Image {
     }
 
     /**
+     * Get alt
+     *
      * @return string
      */
     public function getAlt()
@@ -64,14 +65,8 @@ class Image {
     }
 
     /**
-     * @param int $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
+     * Get id
+     *
      * @return int
      */
     public function getId()
@@ -80,6 +75,8 @@ class Image {
     }
 
     /**
+     * Set title
+     *
      * @param string $title
      */
     public function setTitle($title)
@@ -88,6 +85,8 @@ class Image {
     }
 
     /**
+     * Get title
+     *
      * @return string
      */
     public function getTitle()
@@ -96,6 +95,8 @@ class Image {
     }
 
     /**
+     * Set url
+     *
      * @param string $url
      */
     public function setUrl($url)
@@ -104,6 +105,8 @@ class Image {
     }
 
     /**
+     * Get url
+     *
      * @return string
      */
     public function getUrl()

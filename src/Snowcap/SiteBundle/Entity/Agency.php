@@ -1,19 +1,21 @@
 <?php
-
 namespace Snowcap\SiteBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping as ORM,
+    Doctrine\Common\Collections\ArrayCollection;
+
+use Snowcap\SiteBundle\Model\Base as BaseModel;
 
 /**
- * Snowcap\SiteBundle\Entity\Agency
+ * Agency entity class
  *
  * @ORM\Table(name="agency")
  * @ORM\Entity
  */
-class Agency extends Content
+class Agency extends BaseModel
 {
     /**
-     * @var integer $id
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -22,20 +24,22 @@ class Agency extends Content
     private $id;
 
     /**
-     * @var string $name
+     * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
     /**
-     * @var string $website
+     * @var string
      *
      * @ORM\Column(name="website", type="string", length=255)
      */
     private $website;
 
     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
      * @ORM\OneToMany(targetEntity="Project", mappedBy="agency")
      */
     private $projects;
@@ -43,7 +47,7 @@ class Agency extends Content
     /**
      * Get id
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -63,7 +67,7 @@ class Agency extends Content
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -83,18 +87,28 @@ class Agency extends Content
     /**
      * Get website
      *
-     * @return string 
+     * @return string
      */
     public function getWebsite()
     {
         return $this->website;
     }
 
-    public function setProjects($projects)
+    /**
+     * Set projects
+     *
+     * @param \Doctrine\Common\Collections\ArrayCollection $projects
+     */
+    public function setProjects(ArrayCollection $projects)
     {
         $this->projects = $projects;
     }
 
+    /**
+     * Get projects
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
     public function getProjects()
     {
         return $this->projects;

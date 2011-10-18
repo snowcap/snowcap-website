@@ -1,20 +1,25 @@
 <?php
-
 namespace Snowcap\SiteBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM,
+    Doctrine\Common\Collections\ArrayCollection,
+    Symfony\Component\Validator\Constraints as Assert;
+
+use Snowcap\SiteBundle\Model\Base as BaseModel,
+    Snowcap\SiteBundle\Entity\Agency,
+    Snowcap\SiteBundle\Entity\Image;
+
 
 /**
- * Snowcap\SiteBundle\Entity\Project
+ * Project entity class
  *
  * @ORM\Table(name="project")
  * @ORM\Entity(repositoryClass="Snowcap\SiteBundle\Repository\ProjectRepository")
  */
-class Project extends Content
+class Project extends BaseModel
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -26,34 +31,34 @@ class Project extends Content
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
-	 * @Assert\MinLength(5)
+     * @Assert\MinLength(5)
      */
     protected $title;
-	
-	/**
-	 * @var string
-	 * 
-	 * @ORM\Column(name="slug", type="string", length=255)
-	 * @Assert\MinLength(5)
-	 */
-	protected $slug;
-	 
+
     /**
-     * @var text
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255)
+     * @Assert\MinLength(5)
+     */
+    protected $slug;
+
+    /**
+     * @var string
      *
      * @ORM\Column(name="introduction", type="text")
      */
     protected $introduction;
 
     /**
-     * @var text $body
+     * @var string
      *
      * @ORM\Column(name="body", type="text")
      */
     protected $body;
 
     /**
-     * @var datetime
+     * @var \DateTime
      *
      * @ORM\Column(name="published_at", type="datetime")
      */
@@ -119,7 +124,7 @@ class Project extends Content
 
     /**
      * @var \Snowcap\SiteBundle\Entity\Image
-     * 
+     *
      * @ORM\ManyToOne(targetEntity="Image")
      */
     protected $thumb_back;
@@ -133,10 +138,11 @@ class Project extends Content
     protected $images;
 
     /**
-     * Project constructor
-     * Set all properties default value
+     * Class constructor
+     *
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
         $this->published_at = new \DateTime();
         $this->published = true;
@@ -149,7 +155,7 @@ class Project extends Content
     /**
      * Get id
      *
-     * @return integer $id
+     * @return int
      */
     public function getId()
     {
@@ -169,37 +175,37 @@ class Project extends Content
     /**
      * Get title
      *
-     * @return string $title
+     * @return string
      */
     public function getTitle()
     {
         return $this->title;
     }
-	
-	/**
-	 * Set slug
-	 * 
-	 * @param string s$lug
-	 */
-	public function setSlug($slug)
-	{
-		$this->slug = $slug;	
-	}
-	
-	/**
-	 * Get slug
-	 * 
-	 * @return string
-	 */
-	public function getSlug()
-	{
-		return $this->slug;
-	}
-	
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
     /**
      * Set body
      *
-     * @param text $body
+     * @param string $body
      */
     public function setBody($body)
     {
@@ -209,7 +215,7 @@ class Project extends Content
     /**
      * Get body
      *
-     * @return text $body
+     * @return string
      */
     public function getBody()
     {
@@ -219,9 +225,9 @@ class Project extends Content
     /**
      * Set published_at
      *
-     * @param datetime $publishedAt
+     * @param \DateTime $publishedAt
      */
-    public function setPublishedAt($publishedAt)
+    public function setPublishedAt(\DateTime $publishedAt)
     {
         $this->published_at = $publishedAt;
     }
@@ -229,7 +235,7 @@ class Project extends Content
     /**
      * Get published_at
      *
-     * @return datetime $publishedAt
+     * @return \DateTime
      */
     public function getPublishedAt()
     {
@@ -237,15 +243,18 @@ class Project extends Content
     }
 
     /**
+     * Set agency
+     *
      * @param \Snowcap\SiteBundle\Entity\Agency $agency
-     * @return void
      */
-    public function setAgency($agency)
+    public function setAgency(Agency $agency)
     {
         $this->agency = $agency;
     }
 
     /**
+     * Get agency
+     *
      * @return \Snowcap\SiteBundle\Entity\Agency
      */
     public function getAgency()
@@ -254,15 +263,18 @@ class Project extends Content
     }
 
     /**
-     * @param $tags
-     * @return void
+     * Set tags
+     *
+     * @param \Doctrine\Common\Collections\ArrayCollection $tags
      */
-    public function setTags($tags)
+    public function setTags(ArrayCollection $tags)
     {
         $this->tags = $tags;
     }
 
     /**
+     * Get tags
+     *
      * @return \Doctrine\Common\Collections\ArrayCollection
      */
     public function getTags()
@@ -271,8 +283,9 @@ class Project extends Content
     }
 
     /**
-     * @param \Snowcap\SiteBundle\Entity\Client $client
-     * @return void
+     * Set client
+     *
+     * @param string $client
      */
     public function setClient($client)
     {
@@ -280,7 +293,9 @@ class Project extends Content
     }
 
     /**
-     * @return \Snowcap\SiteBundle\Entity\Client
+     * Get client
+     *
+     * @return string
      */
     public function getClient()
     {
@@ -288,7 +303,9 @@ class Project extends Content
     }
 
     /**
-     * @param \Snowcap\SiteBundle\Entity\text $introduction
+     * Set introduction
+     *
+     * @param string $introduction
      */
     public function setIntroduction($introduction)
     {
@@ -296,7 +313,9 @@ class Project extends Content
     }
 
     /**
-     * @return \Snowcap\SiteBundle\Entity\text
+     * Get introduction
+     *
+     * @return string
      */
     public function getIntroduction()
     {
@@ -304,8 +323,9 @@ class Project extends Content
     }
 
     /**
-     * @param DateTime $realisation_period
-     * @return void
+     * Set realisation_period
+     *
+     * @param string $realisation_period
      */
     public function setRealisationPeriod($realisation_period)
     {
@@ -313,7 +333,9 @@ class Project extends Content
     }
 
     /**
-     * @return DateTime
+     * Get realisation_period
+     *
+     * @return string
      */
     public function getRealisationPeriod()
     {
@@ -321,6 +343,8 @@ class Project extends Content
     }
 
     /**
+     * Set website
+     *
      * @param string $website
      */
     public function setWebsite($website)
@@ -329,6 +353,8 @@ class Project extends Content
     }
 
     /**
+     * Get website
+     *
      * @return string
      */
     public function getWebsite()
@@ -337,6 +363,8 @@ class Project extends Content
     }
 
     /**
+     * Set published
+     *
      * @param boolean $published
      */
     public function setPublished($published)
@@ -345,6 +373,8 @@ class Project extends Content
     }
 
     /**
+     * Is published
+     *
      * @return boolean
      */
     public function isPublished()
@@ -353,14 +383,18 @@ class Project extends Content
     }
 
     /**
+     * Set imahes
+     *
      * @param \Doctrine\Common\Collections\ArrayCollection $images
      */
-    public function setImages($images)
+    public function setImages(ArrayCollection $images)
     {
         $this->images = $images;
     }
 
     /**
+     * Get images
+     *
      * @return \Doctrine\Common\Collections\ArrayCollection
      */
     public function getImages()
@@ -369,14 +403,18 @@ class Project extends Content
     }
 
     /**
+     * Set thumb_front
+     *
      * @param \Snowcap\SiteBundle\Entity\Image $thumb_front
      */
-    public function setThumbFront($thumb_front)
+    public function setThumbFront(Image $thumb_front)
     {
         $this->thumb_front = $thumb_front;
     }
 
     /**
+     * Get thumb_front
+     *
      * @return \Snowcap\SiteBundle\Entity\Image
      */
     public function getThumbFront()
@@ -385,14 +423,18 @@ class Project extends Content
     }
 
     /**
+     * Set thumb_back
+     *
      * @param \Snowcap\SiteBundle\Entity\Image $thumb_back
      */
-    public function setThumbBack($thumb_back)
+    public function setThumbBack(Image $thumb_back)
     {
         $this->thumb_back = $thumb_back;
     }
 
     /**
+     * Get thumb_back
+     *
      * @return \Snowcap\SiteBundle\Entity\Image
      */
     public function getThumbBack()
@@ -401,7 +443,9 @@ class Project extends Content
     }
 
     /**
-     * @param boolean $hidden
+     * Set available_on_list
+     *
+     * @param bool $available_on_list
      */
     public function setAvailableOnList($available_on_list)
     {
@@ -409,7 +453,9 @@ class Project extends Content
     }
 
     /**
-     * @return boolean
+     * Is available_on_list
+     *
+     * @return bool
      */
     public function isAvailableOnList()
     {

@@ -125,3 +125,7 @@ div.split-3 section:not(:last-child) {
 .home section.tweets h2 {
     width: 270px;
 }
+/* FOOTER */
+footer {
+    background-color: #0a0a0a;
+}
