@@ -468,7 +468,7 @@ class Project extends BaseModel
     }
 
     /**
-     * @param boolean $highlighted
+     * @param bool $highlighted
      */
     public function setHighlighted($highlighted)
     {
@@ -476,7 +476,7 @@ class Project extends BaseModel
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isHighlighted()
     {
