@@ -4,7 +4,10 @@
         {% for post in latestPosts %}
             <li>
                 <h3>{{ post.title }}</h3>
-                <div class="body">{{ post.summary | markdown }}</div>
+                <div class="body">
+                    {{ post.summary | markdown }}
+                    <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ "general.readmore.title" | trans }}">{{ "general.readmore.label" | trans }}</a>
+                </div>
             </li>
         {% endfor %}
     </ul>
