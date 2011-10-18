@@ -37,6 +37,9 @@ class Post extends Content {
                     'multiple' => true
                 )
             ),
+            'summary' => array(
+                'type' => 'markdown',
+            ),
             'body' => array(
                 'type' => 'markdown',
             ),
