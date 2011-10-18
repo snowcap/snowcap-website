@@ -1,29 +1,33 @@
 (function($) {
 
-    var flipper = function(element) {
-
-        this.element = $(element);
+    var Flipper = function(element) {
+        var _element = $(element);
         var _this = this;
-        _this.front = $('.project-thumb-front', this.element);
-
-        this.element.bind('mouseenter mouseleave', function(event) {
-            _this.front.fadeToggle(200);
-        });
+        _this.init = function() {
+            _element.hover(
+                function(event) {
+                    _element.find('img').animate({'left': '+=300'}, 'fast');
+                },
+                function(event) {
+                    _element.find('img').animate({'left': '-=300'}, 'fast');
+                }
+            );
+        };
+        _this.init();
     };
 
     /**
      * Namespace in jQuery
      */
-    $.fn.flipper = function() {
+    $.fn.Flipper = function() {
         return this.each(function() {
-            new flipper(this);
+            new Flipper(this);
         });
     };
 
     // DOMREADY
     $(document).ready(function(event) {
-
-        //$(".project-thumb-link").flipper();
+        $('.home section.projects li a').Flipper();
     });
 
 })(jQuery);

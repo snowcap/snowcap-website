@@ -12,16 +12,7 @@
     <body class="{{ body_class | default('default') }}">
         <header>
             {% block header %}
-                <nav>
-                    <h1><a href="{{ url('snwcp_site_default_index') }}">Snowcap</a></h1>
-                    <a href="{{ url('snwcp_site_default_index') }}">{{ "navigation.home" | trans }}</a>
-                    <a href="{{ url('snwcp_site_default_company') }}">{{ "navigation.company" | trans }}</a>
-                    <a href="{{ url('snwcp_site_default_method') }}">{{ "navigation.method" | trans }}</a>
-                    <a href="{{ url('snwcp_site_default_team') }}">{{ "navigation.team" | trans }}</a>
-                    <a href="{{ url('snwcp_site_post_list') }}">{{ "navigation.posts" | trans }}</a>
-                    <a href="{{ url('snwcp_site_project_list') }}">{{ "navigation.projects" | trans }}</a>
-                    <a href="{{ url('snwcp_site_default_contact') }}">{{ "navigation.contact" | trans }}</a>
-                </nav>
+                {% include 'SnowcapSiteBundle::navigation.html.twig' %}
             {% endblock %}
         </header>
         {% block body %}{% endblock %}

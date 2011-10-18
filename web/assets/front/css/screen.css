@@ -107,11 +107,43 @@ div.split-3 section:not(:last-child) {
     color: #333332;
 }
 /* projects section */
-.home section.content-primary  h2{
+.home section.projects h2{
     background-position: right 0;
     width: 350px;
     line-height: 55px;
     font-size: 30px;
+}
+.home section.projects ul {
+    overflow: hidden;
+    margin: 20px 0 0 0;
+    padding: 0;
+}
+.home section.projects li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    float: left;
+    width: 308px;
+}
+.home section.projects li a {
+    display: block;
+    width: 300px;
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+}
+.home section.projects li:not(:last-child) {
+    margin-right: 18px;
+}
+.home section.projects li img {
+    position: absolute;
+    top: 0;
+}
+.home section.projects li img.front {
+    left: 0;
+}
+.home section.projects li img {
+    left: -300px;
 }
 .home section.content-secondary h2 {
     background-position: right -55px;

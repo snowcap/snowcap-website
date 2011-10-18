@@ -1,8 +1,24 @@
 ic_front:
-  title: Immocitiz
-  url: /uploads/projects/immocitiz/ic_front.png
+  title: Immocitiz front thulb
+  url: /uploads/projects/ic_front.png
   alt: Immocitiz project
 ic_back:
-  title: Immocitiz
-  url: /uploads/projects/immocitiz/ic_back.png
+  title: Immocitiz back thumb
+  url: /uploads/projects/ic_back.png
   alt: Immocitiz project
+wab_front:
+  title: Walibi front thumb
+  url: /uploads/projects/wab_front.png
+  alt: Walibi project
+wab_back:
+  title: Walibi back thumb
+  url: /uploads/projects/wab_back.png
+  alt: Walibi project
+wlk_front:
+  title: Wilkinson front thumb
+  url: /uploads/projects/wlk_front.png
+  alt: Wilkinson project
+wlk_back:
+  title: Wilkinson back thumb
+  url: /uploads/projects/wlk_back.png
+  alt: Wilkinson project
