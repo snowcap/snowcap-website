@@ -16,3 +16,8 @@ services:
     class: Snowcap\AdminBundle\Form\Extension\Core\Type\SlugType
     tags:
       -  { name: form.type, alias: slug }
+
+  snowcap_admin.markdown:
+    class: Snowcap\AdminBundle\Form\Extension\Core\Type\MarkdownType
+    tags:
+      -  { name: form.type, alias: markdown }

@@ -19,3 +19,8 @@
     {% set attr = attr|merge({'class': 'widget-slug widget-slug-' ~ target }) %}
     {{ block('field_widget') }}
 {% endblock slug_widget %}
+
+{% block markdown_widget %}
+    {% set attr = attr|merge({'class': 'widget-markdown' }) %}
+    {{ block('textarea_widget') }}
+{% endblock markdown_widget %}

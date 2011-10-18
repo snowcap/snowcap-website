@@ -7,20 +7,20 @@
 
 		/**
 		 * Creating the previewer element
-		 */		
+		 */
 		previewid = "markdown_"+this.element.attr('id');
 		this.element.before('<div id="'+previewid+'" class="markdown_previewer">markdown previewer</div>');
 		this.previewElement = $('#'+previewid);
-		
+
 		/**
-		 * Checking every second if the content has changed: if yes, a little AJAX call to convert the content into markdown format and update the previewer 
+		 * Checking every second if the content has changed: if yes, a little AJAX call to convert the content into markdown format and update the previewer
 		 */
 		setInterval( function() {
 			content = _this.element.val();
 			if(_this.latestPreviewContent != content) {
 				$.post('/admin/markdown', { content: content }, function(data) {
 					_this.previewElement.html(data);
-					_this.latestPreviewContent = content;
+					_this.latestPreviewContent = _this.element.val();
 				});
 			}
 		}, 1000);

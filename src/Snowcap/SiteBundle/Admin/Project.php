@@ -38,8 +38,8 @@ class Project extends Content {
         return array(
             'title' => array(),
             'slug' => array('type' => 'slug'),
-            'introduction' => array('type' => 'textarea'),
-            'body' => array('type' => 'textarea'),
+            'introduction' => array('type' => 'markdown'),
+            'body' => array('type' => 'markdown'),
             'website' => array(),
             'realisation_period' => array(),
             'published_at' => array(

@@ -38,7 +38,7 @@ class Post extends Content {
                 )
             ),
             'body' => array(
-                'type' => 'textarea',
+                'type' => 'markdown',
             ),
             'published_at' => array(
                 'type' => 'datetime',

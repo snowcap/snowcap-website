@@ -132,8 +132,9 @@ header nav a:hover {
 	position: absolute;
 	left: 743px;
 	width: 700px;
-	min-height: 188px;
-	border: solid 1px #aaa;
+	height: 188px;
+	overflow:  scroll;
+    border: solid 1px #aaa;
 	padding: 10px;
 	background-color: #eee;
 }
