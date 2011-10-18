@@ -9,6 +9,14 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: Lato, sans-serif;
 }
+section.content h2 {
+    margin: 0;
+    padding: 0 0 0 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+    background-image: url(../images/headings.png);
+    background-repeat: no-repeat;
+}
 a {
     color: #79bd01;
     text-decoration: none;
@@ -54,19 +62,31 @@ header nav a:hover {
     color: #79bd01;
     text-decoration: none;
 }
-/* MAIN SECTION */
-section.main {
+/* SECTIONS */
+div.full, div.split {
     width: 960px;
-    margin: 0 auto;
-    padding: 0 220px;
+    margin: 0 auto 20px auto;
 }
+div.split {
+    overflow: hidden;
+}
+div.split section {
+    float: left;
+}
+div.split-3 section {
+    width: 308px;
+}
+div.split-3 section:not(:last-child) {
+    margin-right: 18px;
+}
+/* main section */
 .home section.main {
-    background: url(../images/home.jpg) right top no-repeat;
-    min-height: 925px;
+    padding: 90px 0 0 0;
+    margin-bottom: 50px;
 }
 .home section.main h1 {
     text-indent: -10000px;
-    margin: 90px 0 0 0;
+    margin: 0;
     padding: 0;
     width: 271px;
     height: 102px;
@@ -85,4 +105,23 @@ section.main {
 }
 .home section.main p strong {
     color: #333332;
+}
+/* projects section */
+.home section.content-primary  h2{
+    background-position: right 0;
+    width: 350px;
+    line-height: 55px;
+    font-size: 30px;
+}
+.home section.content-secondary h2 {
+    background-position: right -55px;
+    line-height: 35px;
+    color: #fff;
+    font-size: 24px;
+}
+.home section.blog h2 {
+    width: 150px;
+}
+.home section.tweets h2 {
+    width: 270px;
 }

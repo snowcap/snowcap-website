@@ -1,7 +1,6 @@
 <h2>{{ "project.latest.title" | trans }}</h2>
-{% for project in latestProjects %}
-    <h3>{{ project.title }}</h3>
-    <p>{{ project.body | truncate(100) }}</p>
-{% else %}
-    <p>{{ "project.latest.empty" | trans }}</p>
-{% endfor %}
+    <ul>
+    {% for project in latestProjects %}
+        <img src="{{ project.thumbFront.url }}"/>
+    {% endfor %}
+</ul>
