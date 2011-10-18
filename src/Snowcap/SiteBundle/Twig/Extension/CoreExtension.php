@@ -176,7 +176,7 @@ class CoreExtension extends \Twig_Extension
         // people
         $tweet = preg_replace_callback(
             '/(^|[^\w]+)\@([a-zA-Z0-9_]{1,15}(\/[a-zA-Z0-9-_]+)*)/',
-            function($tweet) { return $tweet[1].'@<a href="http://twitter.com/'.$tweet[2].'">'.$tweet[2].'</a>'; },
+            function($tweet) { return $tweet[1].'<a href="http://twitter.com/'.$tweet[2].'">@'.$tweet[2].'</a>'; },
             $tweet);
 
         // hashtags
