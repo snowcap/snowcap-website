@@ -6,3 +6,4 @@
 /app/config/parameters.yml
 .idea
 .DS_Store
+/web/media/cache/*
