@@ -162,5 +162,14 @@
 		$('.widget-slug').slugger();
 		// Markdown previewer
 		$('.widget-markdown').markdownPreviewer();
+
+        $('a.add_image').click(function(event){
+            event.preventDefault();
+            var collectionHolder = $('#project_images');
+            var prototype = collectionHolder.attr('data-prototype');
+            form = prototype.replace(/\$\$name\$\$/g, collectionHolder.children().length);
+            collectionHolder.append(form);
+        });
+
 	});
 })(jQuery);

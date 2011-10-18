@@ -73,10 +73,19 @@ class Project extends Content {
                 'type' => 'checkbox',
             ),
             'thumb_front' => array(
-                'type' => new ContentType( 'image', $this->environment->getAdmin('image'))
+                'type' => new ContentType('image', $this->environment->getAdmin('image'))
             ),
             'thumb_back' => array(
-                'type' => new ContentType( 'image', $this->environment->getAdmin('image'))
+                'type' => new ContentType('image', $this->environment->getAdmin('image'))
+            ),
+            'images' => array(
+                'type' => 'collection',
+                'options' => array(
+                    'type'=> new ContentType('image', $this->environment->getAdmin('image')),
+                    'allow_add' => true,
+                    'by_reference' => false,
+                    'prototype' => true,
+                    )
             ),
         );
     }
