@@ -1,11 +1,14 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
 {% block body %}
     <h2>{{ "project.list.title" | trans }}</h2>
-    {% for project in projects %}
-        <h3>{{ project.title }}</h3>
-        <img src="{{ project.getThumbFront().url | apply_filter('thumb') }}" />
-        <p>{{ project.body | truncate(100) }}</p>
+    {% render 'SnowcapSiteBundle:Project:highlighted'%}
+    {% if projects|length > 0 %}
+    <ul class="projects-list">
+        {% for project in projects %}
+            <li><img src="{{ project.thumbFront.url | apply_filter('thumb') }}" /></li>
+        {% endfor %}
+    </ul>
     {% else %}
         <p>{{ "project.list.empty" | trans }}</p>
-    {% endfor %}
+    {% endif %}
 {% endblock body %}

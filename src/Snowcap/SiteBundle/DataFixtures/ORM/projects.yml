@@ -34,3 +34,4 @@ p1:
   available_on_list: true
   thumb_front: @ic_front
   thumb_back: @ic_back
+  highlighted: true

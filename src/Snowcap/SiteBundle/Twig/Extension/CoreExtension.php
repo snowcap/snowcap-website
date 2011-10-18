@@ -4,6 +4,11 @@ namespace Snowcap\SiteBundle\Twig\Extension;
 class CoreExtension extends \Twig_Extension
 {
 
+    /**
+     * Get all available filters
+     *
+     * @return array
+     */
     public function getFilters()
     {
         return array(
@@ -12,6 +17,12 @@ class CoreExtension extends \Twig_Extension
         );
     }
 
+    /**
+     * Filter used to display a datetime as a relative time
+     *
+     * @param DateTime $datetime
+     * @return string
+     */
     public function relativeTime($datetime = null)
     {
 
@@ -39,7 +50,15 @@ class CoreExtension extends \Twig_Extension
 
     }
 
-    public function safeTruncate($value,$length = 30,$preserve = true,$separator = ' ...')
+    /**
+     * Filter used to safely truncate a string with html
+     * @param string $value
+     * @param int $length
+     * @param bool $preserve
+     * @param string $separator
+     * @return string
+     */
+    public function safeTruncate($value, $length = 30, $preserve = true, $separator = ' ...')
     {
        if (strlen($value) > $length) {
           if ($preserve) {
@@ -54,6 +73,12 @@ class CoreExtension extends \Twig_Extension
       return $value;
     }
 
+    /**
+     * Helper used to close html tags
+     *
+     * @param string $html
+     * @return string
+     */
     private function closetags($html)
     {
         preg_match_all('#<([a-z]+)(?: .*)?(?<![/|/ ])>#iU', $html, $result);
@@ -79,6 +104,11 @@ class CoreExtension extends \Twig_Extension
         return $html;
     }
 
+    /**
+     * Return the name of the extension
+     * 
+     * @return string
+     */
     public function getName()
     {
         return 'SnowcapSiteBundle';
