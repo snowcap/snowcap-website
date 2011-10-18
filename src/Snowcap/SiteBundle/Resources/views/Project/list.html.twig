@@ -3,6 +3,7 @@
     <h2>{{ "project.list.title" | trans }}</h2>
     {% for project in projects %}
         <h3>{{ project.title }}</h3>
+        <img src="{{ project.getThumbFront().url | apply_filter('thumb') }}" />
         <p>{{ project.body | truncate(100) }}</p>
     {% else %}
         <p>{{ "project.list.empty" | trans }}</p>

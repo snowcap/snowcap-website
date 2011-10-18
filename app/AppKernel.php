@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
             new Snowcap\SiteBundle\SnowcapSiteBundle(),
             new Snowcap\AdminBundle\SnowcapAdminBundle(),
+            new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -7,3 +7,7 @@ SnowcapSiteBundleFront:
     resource: "@SnowcapSiteBundle/Controller/"
     type:     annotation
     prefix:   /
+
+_imagine:
+    resource: .
+    type: imagine
