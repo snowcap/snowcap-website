@@ -1,5 +1,10 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
 {% set body_class = 'company' %}
 {% block body %}
-{{ 'company.body' | trans | markdown }}
+    <div class="full">
+        <section class="main">
+            <h1>{{ "company.title" | trans }}</h1>
+            <div class="body">{{ 'company.body' | trans | markdown }}</div>
+        </section>
+    </div>
 {% endblock %}

@@ -1,11 +1,13 @@
-<h2>{{ "widgets.tweets.title" | trans }}</h2>
-<ul>
-    {% for tweet in tweets %}
-        <li>
-            <p>{{ tweet.date | date('F Y') }} <span>{{ "By Snowcap" | trans }}</span></p>
-            <p>{{ tweet.text}}</p>
-        </li>
-    {% else %}
-        <p>No tweets available</p>
-    {% endfor %}
-</ul>
+<h2>{{ "widget.tweets.title" | trans }}</h2>
+{% if tweets|length > 0 %}
+    <ul class="tweets-list">
+        {% for tweet in tweets %}
+            <li>
+                <p>{{ tweet.date | date('F Y') }} <span>{{ "widget.tweets.by" | trans }}</span></p>
+                <p>{{ tweet.text}}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>{{ "widget.tweets.empty" | trans }}</p>
+{% endif %}
