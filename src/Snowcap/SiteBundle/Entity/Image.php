@@ -2,7 +2,8 @@
 namespace Snowcap\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM,
-    Symfony\Component\Validator\Constraints as Assert;
+    Symfony\Component\Validator\Constraints as Assert,
+    Symfony\Component\HttpFoundation\File\UploadedFile;
 
 use Snowcap\SiteBundle\Model\Base as BaseModel;
 
@@ -11,6 +12,7 @@ use Snowcap\SiteBundle\Model\Base as BaseModel;
  *
  * @ORM\Table(name="image")
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
 class Image extends BaseModel
 {
@@ -26,16 +28,16 @@ class Image extends BaseModel
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    protected $title;
+    public $path;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="url", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    protected $url;
+    protected $name;
 
     /**
      * @var string
@@ -43,6 +45,94 @@ class Image extends BaseModel
      * @ORM\Column(name="alt", type="string", length=255)
      */
     protected $alt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="updated_at", type="datetime")
+     */
+    protected $updated_at;
+
+    /**
+     * @Assert\File(maxSize="6000000")
+     */
+    public $file;
+
+    public function __construct() {
+        $this->updated_at = new \DateTime('now');
+    }
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->path ? null : $this->getUploadDir().'/'.$this->path;
+    }
+
+    protected function getUploadRootDir()
+    {
+        // the absolute directory path where uploaded documents should be saved
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
+        return 'uploads/images';
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 
     /**
      * Set alt
@@ -64,53 +154,65 @@ class Image extends BaseModel
         return $this->alt;
     }
 
+
     /**
-     * Get id
-     *
-     * @return int
+     * @param \DateTime $updated_at
      */
-    public function getId()
+    public function setUpdatedAt($updated_at)
     {
-        return $this->id;
+        $this->updated_at = $updated_at;
     }
 
     /**
-     * Set title
-     *
-     * @param string $title
+     * @return \DateTime
      */
-    public function setTitle($title)
+    public function getUpdatedAt()
     {
-        $this->title = $title;
+        return $this->updated_at;
     }
 
     /**
-     * Get title
-     *
-     * @return string
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
      */
-    public function getTitle()
+    public function preUpload()
     {
-        return $this->title;
+        if (null !== $this->file) {
+            $this->setPath(uniqid().'.'.$this->file->guessExtension());
+        }
     }
 
     /**
-     * Set url
-     *
-     * @param string $url
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
      */
-    public function setUrl($url)
+    public function upload()
     {
-        $this->url = $url;
+        if (null === $this->file) {
+            return;
+        }
+
+        $this->file->move($this->getUploadRootDir(), $this->path);
+
+        unset($this->file);
     }
 
     /**
-     * Get url
-     *
-     * @return string
+     * @ORM\PostRemove()
      */
-    public function getUrl()
+    public function removeUpload()
     {
-        return $this->url;
+        if ($file = $this->getAbsolutePath()) {
+            @unlink($file);
+        }
+    }
+
+    public function setFile($file) {
+        if($this->path !== NULL) {
+            $this->removeUpload();
+            $this->path = null;
+        }
+        $this->file = $file;
+        $this->setUpdatedAt(new \DateTime('now'));
     }
 }

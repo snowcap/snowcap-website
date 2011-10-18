@@ -12,10 +12,11 @@ abstract class Content {
      * @param string $contentName
      * @param string$entityName
      */
-    public function __construct($contentName, $entityName)
+    public function __construct($contentName, $entityName, $environment)
     {
         $this->contentName = $contentName;
         $this->entityName = $entityName;
+        $this->environment = $environment;
     }
     /**
      * Return the readable name of the managed content

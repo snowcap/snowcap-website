@@ -7,7 +7,7 @@
             {% if projects|length > 0 %}
                 <ul class="project-list">
                     {% for project in projects %}
-                        <li><img src="{{ project.thumb_front.url | apply_filter('thumb') }}" /></li>
+                        <li><img src="{{ project.thumb_front.webPath | apply_filter('thumb') }}" /></li>
                     {% endfor %}
                 </ul>
             {% else %}

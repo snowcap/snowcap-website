@@ -2,7 +2,7 @@
 {% if latestProjects|length > 0 %}
     <ul class="project-list">
         {% for project in latestProjects %}
-            <li><img src="{{ project.thumb_front.url }}"/></li>
+            <li><img src="{{ project.thumb_front.webpath | apply_filter('thumb') }}"/></li>
         {% endfor %}
     </ul>
 {% else %}

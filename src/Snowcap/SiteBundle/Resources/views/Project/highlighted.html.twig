@@ -5,6 +5,6 @@
             {{ project.introduction | markdown }}
             <a href="{{ url('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ 'Read more' | trans }}" class="read-more">{{ 'Read more' | trans }}</a>
         </div>
-        <img src="{{ project.thumbFront.url | apply_filter('thumb') }}" class="thumb" />
+        <img src="{{ project.thumbFront.webPath | apply_filter('thumb') }}" class="thumb" />
     </div>
 {% endif %}
