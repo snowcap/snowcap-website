@@ -4,7 +4,7 @@
         {% for tweet in tweets %}
             <li>
                 <p>{{ tweet.date | date('F Y') }} <span>{{ "widget.tweets.by" | trans }}</span></p>
-                <p>{{ tweet.text}}</p>
+                <p>{{ tweet.text | parse_tweet }}</p>
             </li>
         {% endfor %}
     </ul>

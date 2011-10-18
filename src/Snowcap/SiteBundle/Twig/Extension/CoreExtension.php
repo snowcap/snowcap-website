@@ -27,6 +27,7 @@ class CoreExtension extends \Twig_Extension
             'time_ago' => new \Twig_Filter_Method($this, 'timeAgo'),
             'age' => new \Twig_Filter_Method($this, 'age'),
             'safe_truncate' => new \Twig_Filter_Method($this, 'safeTruncate', array('is_safe' => array('html'))),
+            'parse_tweet' => new \Twig_Filter_Method($this, 'parseTweet', array('is_safe' => array('html'))),
         );
     }
 
@@ -159,6 +160,33 @@ class CoreExtension extends \Twig_Extension
         return $controller == $activeControllerName;
     }
 
+    /**
+     * Parses tweets to make links to URL's, people and hashtags
+     * @param string $tweet
+     * @return string
+     */
+    public function parseTweet($tweet)
+    {
+        // links
+        $tweet = preg_replace_callback(
+            '/[a-z]+:\/\/[a-z0-9-_]+\.[a-z0-9-_:~%&\?\+#\/.=]+[^:\.,\)\s*$]/i',
+            function($tweet) { return '<a href="'.$tweet[0].'">'.((strlen($tweet[0]) > 25) ? substr($tweet[0], 0, 24).'...' : $tweet[0]).'</a>'; },
+            $tweet);
+
+        // people
+        $tweet = preg_replace_callback(
+            '/(^|[^\w]+)\@([a-zA-Z0-9_]{1,15}(\/[a-zA-Z0-9-_]+)*)/',
+            function($tweet) { return $tweet[1].'@<a href="http://twitter.com/'.$tweet[2].'">'.$tweet[2].'</a>'; },
+            $tweet);
+
+        // hashtags
+        $tweet = preg_replace_callback(
+            "/(^|[^&\w'\"]+)\#([a-zA-Z0-9_]+)/",
+            function($tweet) { return $tweet[1].'#<a href="http://search.twitter.com/search?q=%23'.$tweet[2].'">'.$tweet[2].'</a>'; },
+            $tweet);
+
+        return $tweet;
+    }
 
     /**
      * Return the name of the extension
