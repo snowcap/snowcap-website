@@ -96,10 +96,10 @@ class Project extends BaseModel
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="projects")
-     * @ORM\JoinTable(name="project_tag")
+     * @ORM\ManyToMany(targetEntity="Technology", inversedBy="projects")
+     * @ORM\JoinTable(name="project_technology")
      */
-    protected $tags;
+    protected $technologies;
 
     /**
      * @var bool
@@ -150,7 +150,7 @@ class Project extends BaseModel
      */
     public function __construct()
     {
-        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->technologies = new \Doctrine\Common\Collections\ArrayCollection();
         $this->published_at = new \DateTime();
         $this->published = true;
         $this->available_on_list = true;
@@ -265,26 +265,6 @@ class Project extends BaseModel
     public function getAgency()
     {
         return $this->agency;
-    }
-
-    /**
-     * Set tags
-     *
-     * @param \Doctrine\Common\Collections\ArrayCollection $tags
-     */
-    public function setTags(ArrayCollection $tags)
-    {
-        $this->tags = $tags;
-    }
-
-    /**
-     * Get tags
-     *
-     * @return \Doctrine\Common\Collections\ArrayCollection
-     */
-    public function getTags()
-    {
-        return $this->tags;
     }
 
     /**
@@ -481,5 +461,25 @@ class Project extends BaseModel
     public function isHighlighted()
     {
         return $this->highlighted;
+    }
+
+    /**
+     * Set Technologies
+     *
+     * @param \Doctrine\Common\Collections\ArrayCollection $technologies
+     */
+    public function setTechnologies(ArrayCollection $technologies)
+    {
+        $this->technologies = $technologies;
+    }
+
+    /**
+     * Get Technologies
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getTechnologies()
+    {
+        return $this->technologies;
     }
 }

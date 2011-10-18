@@ -79,6 +79,10 @@ snowcap_admin:
           label: Post
           model_class: Snowcap\SiteBundle\Entity\Post
           admin_class: Snowcap\SiteBundle\Admin\Post
+      postCategory:
+          label: Post Category
+          model_class: Snowcap\SiteBundle\Entity\PostCategory
+          admin_class: Snowcap\SiteBundle\Admin\PostCategory
       project:
           label: Case
           model_class: Snowcap\SiteBundle\Entity\Project
@@ -87,10 +91,10 @@ snowcap_admin:
           label: Agency
           model_class: Snowcap\SiteBundle\Entity\Agency
           admin_class: Snowcap\SiteBundle\Admin\Agency
-      tag:
-          label: Tag
-          model_class: Snowcap\SiteBundle\Entity\Tag
-          admin_class: Snowcap\SiteBundle\Admin\Tag
+      technology:
+          label: Technology
+          model_class: Snowcap\SiteBundle\Entity\Technology
+          admin_class: Snowcap\SiteBundle\Admin\Technology
 
 avalanche_imagine:
     filters:

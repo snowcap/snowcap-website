@@ -2,7 +2,7 @@
 namespace Snowcap\SiteBundle\Admin;
 use Snowcap\AdminBundle\Admin\Content;
 
-class Tag extends Content {
+class Technology extends Content {
     public function getGridFields()
     {
         return array(
@@ -17,6 +17,9 @@ class Tag extends Content {
     {
         return array(
             'name' => array(),
+            'description' => array(
+               'type' => 'markdown'
+            ),
         );
     }
 
@@ -24,4 +27,5 @@ class Tag extends Content {
     {
         return $content->getName();
     }
+
 }

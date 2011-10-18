@@ -5,7 +5,6 @@ use Doctrine\Common\CommonException as DoctrineException;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Symfony\Component\DependencyInjection\Container;
 use Snowcap\SiteBundle\Entity\Project;
-use Snowcap\SiteBundle\Entity\Tag;
 use Doctrine\Common\Collections\ArrayCollection;
 
 use \Symfony\Component\Yaml\Yaml;
@@ -19,13 +18,14 @@ class LoadProjectData implements FixtureInterface {
     {
         /* Populate entity fields */
         foreach($values as $key => $value) {
-            if($key === "tags") {
+            if($key === "technologies") {
                 $newvalue = new ArrayCollection();
                 foreach($value as $tagName) {
-                    $associatedEntity = $manager->getRepository('Snowcap\SiteBundle\Entity\Tag')->findOneByName($tagName);
+                    $associatedEntity = $manager->getRepository('Snowcap\SiteBundle\Entity\Technology')->findOneByName($tagName);
                     if(!$associatedEntity){
-                        $associatedEntity = new Tag();
+                        $associatedEntity = new \Snowcap\SiteBundle\Entity\Technology();
                         $associatedEntity->setName($tagName);
+                        $associatedEntity->setDescription('TO BE DEFINED');
                         $manager->persist($associatedEntity);
                         $manager->flush();
                     }

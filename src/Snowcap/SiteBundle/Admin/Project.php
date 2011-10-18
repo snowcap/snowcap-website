@@ -57,10 +57,10 @@ class Project extends Content {
                     'property' => 'name'
                 ),
             ),
-            'tags' => array(
+            'technologies' => array(
                 'type' => 'entity',
                 'options' => array(
-                    'class' => 'SnowcapSiteBundle:Tag',
+                    'class' => 'SnowcapSiteBundle:Technology',
                     'property' => 'name',
                     'multiple' => true
                 ),

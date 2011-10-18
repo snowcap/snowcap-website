@@ -5,6 +5,18 @@ class CoreExtension extends \Twig_Extension
 {
 
     /**
+     * Get all available functions
+     *
+     * @return array
+     */
+    public function getFunctions()
+    {
+        return array(
+            'is_menu_active' => new \Twig_Function_Method($this, 'isMenuActive'),
+        );
+    }
+
+    /**
      * Get all available filters
      *
      * @return array
@@ -12,8 +24,8 @@ class CoreExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            'relativeTime' => new \Twig_Filter_Method($this, 'relativeTime'),
-            'safeTruncate' => new \Twig_Filter_Method($this, 'safeTruncate', array('is_safe' => array('html'))),
+            'relative_time' => new \Twig_Filter_Method($this, 'relativeTime'),
+            'safe_truncate' => new \Twig_Filter_Method($this, 'safeTruncate', array('is_safe' => array('html'))),
         );
     }
 
@@ -103,6 +115,27 @@ class CoreExtension extends \Twig_Extension
         }
         return $html;
     }
+
+    /**
+     * Return true if the menu should be active
+     * @param string $activeController
+     * @param string $controller
+     * @param string $action
+     * @return bool
+     */
+    public function isMenuActive($activeController, $controller, $action = null)
+    {
+        preg_match('/\\\([^\\\]+)Controller/', $activeController, $matches);
+        $activeControllerName = $matches[1];
+        if ($action !== null) {
+            preg_match('/::([^::]+)Action/', $activeController, $matches);
+            $activeActionName = $matches[1];
+            return $controller == $activeControllerName && $action == $activeActionName;
+
+        }
+        return $controller == $activeControllerName;
+    }
+
 
     /**
      * Return the name of the extension
