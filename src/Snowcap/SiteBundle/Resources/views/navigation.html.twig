@@ -1,10 +1,13 @@
+{% macro menu_link(label, route_name, controller, action) %}
+    <a href="{{ url(route_name) }}" {% if is_menu_active(app.request.get('_controller'), controller, action) %} class="active" {%endif %} >{{ label | trans }}</a>
+{% endmacro %}
 <nav>
-    <h1><a href="{{ url('snwcp_site_default_index') }}"{% if is_menu_active(app.request.get('_controller'), 'Default', 'index') %} class="active" {% endif %}>Snowcap</a></h1>
-    <a href="{{ url('snwcp_site_default_index') }}"{% if is_menu_active(app.request.get('_controller'), 'Default', 'index') %} class="active" {% endif %}>{{ "navigation.home" | trans }}</a>
-    <a href="{{ url('snwcp_site_default_company') }}"{% if is_menu_active(app.request.get('_controller'), 'Default', 'company') %} class="active" {% endif %}>{{ "navigation.company" | trans }}</a>
-    <a href="{{ url('snwcp_site_default_method') }}"{% if is_menu_active(app.request.get('_controller'), 'Default', 'method') %} class="active" {% endif %}>{{ "navigation.method" | trans }}</a>
-    <a href="{{ url('snwcp_site_default_team') }}"{% if is_menu_active(app.request.get('_controller'), 'Default', 'team') %} class="active" {% endif %}>{{ "navigation.team" | trans }}</a>
-    <a href="{{ url('snwcp_site_post_list') }}"{% if is_menu_active(app.request.get('_controller'), 'Post') %} class="active" {% endif %}>{{ "navigation.posts" | trans }}</a>
-    <a href="{{ url('snwcp_site_project_list') }}"{% if is_menu_active(app.request.get('_controller'), 'Project') %} class="active" {% endif %}>{{ "navigation.projects" | trans }}</a>
-    <a href="{{ url('snwcp_site_default_contact') }}"{% if is_menu_active(app.request.get('_controller'), 'Default', 'contact') %} class="active" {% endif %}>{{ "navigation.contact" | trans }}</a>
+    <h1>{{ _self.menu_link('general.snowcap', 'snwcp_site_default_index', 'Default', 'index') }}</h1>
+    {{ _self.menu_link('navigation.home', 'snwcp_site_default_index', 'Default', 'index') }}
+    {{ _self.menu_link('navigation.company', 'snwcp_site_default_company', 'Default', 'company') }}
+    {{ _self.menu_link('navigation.method', 'snwcp_site_default_method', 'Default', 'method') }}
+    {{ _self.menu_link('navigation.team', 'snwcp_site_default_team', 'Default', 'team') }}
+    {{ _self.menu_link('navigation.posts', 'snwcp_site_post_list', 'Post', 'list') }}
+    {{ _self.menu_link('navigation.projects', 'snwcp_site_project_list', 'Project', 'list') }}
+    {{ _self.menu_link('navigation.contact', 'snwcp_site_default_contact', 'Default', 'contact') }}
 </nav>
