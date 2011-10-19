@@ -26,7 +26,7 @@ class LoadTechnologyData implements FixtureInterface {
                     }
                     $value = $this->entities[$associatedIdentifier];
                 }
-                elseif(strtotime($value)) {
+                elseif(strtotime($value) && strlen($value) === 19) {
                     $value = new \DateTime($value);
                 }
                 else{
@@ -54,7 +54,7 @@ class LoadTechnologyData implements FixtureInterface {
         foreach($records as $recordIdentifier => $recordData) {
             $record = $manager->getRepository('Snowcap\SiteBundle\Entity\Technology')->findOneByName($recordData['name']);
             if(!$record) {
-                $record = new Project();
+                $record = new \Snowcap\SiteBundle\Entity\Technology();
             }
             $this->createEntity($manager, $record, $recordIdentifier, $recordData);
         }

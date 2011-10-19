@@ -40,7 +40,7 @@ class LoadProjectData implements FixtureInterface {
                     }
                     $value = $this->entities[$associatedIdentifier];
                 }
-                elseif(strtotime($value)) {
+                elseif(strtotime($value) && strlen($value) === 19) {
                     $value = new \DateTime($value);
                 }
                 else{

@@ -26,4 +26,15 @@ class WidgetController extends Controller
         }
         return array('tweets' => $tweets);
     }
+
+    /**
+     * @Template()
+     */
+    public function technologyAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $technologies = $em->getRepository('SnowcapSiteBundle:Technology')->findAll();
+        return array('technologies' => $technologies);
+    }
+
 }

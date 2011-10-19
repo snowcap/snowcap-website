@@ -1,15 +1,32 @@
 php:
-  name: php
-  description: our core language
+  name: PHP
+  description: |
+    Our core language, [php.net](http://www.php.net "PHP website")
 symfony:
   name: Symfony
-  description: our beloved PHP Framework
+  description: |
+    Our favourite PHP Framework! [symfony.com](http://www.symfony.com "Symfony website")
+zend:
+  name: Zend
+  description: |
+    PHP Framework, [zend.com](http://www.zend.com "Zend website")
 varnish:
   name: Varnish
-  description: HTTP Accelerator
-memcache:
-  name: Memcache
-  description: In-Memory Caching
+  description: |
+    HTTP Accelerator. [Varnish Cache](http://www.varnish-cache.org "Varnish website") is an open source, state of the art web application accelerator. We use it a lot!
+memcached:
+  name: Memcached
+  description: |
+    [Memcached](http://www.memcached.org "Memcached website") is a high-performance, distributed memory object caching system
 rabbitMQ:
-  name: rabbitMQ
-  description: Queuing messaging system
+  name: RabbitMQ
+  description: |
+    [RabbitMQ](http://www.rabbitmq.com "RabbitMQ website") is a complete and highly reliable messaging system. It allows us to decouple huge/many/long requests from the browser
+drupal:
+  name: Drupal
+  description: |
+    [Drupal](http://www.drupal.org "Drupal website") is an open source content management platform. If we must use a CMS, we'll choose Drupal
+magento:
+  name: Magento
+  description: |
+    Complete eCommerce platform, [magentocommerce.com](http://www.magentocommerce.com "Magento website")
