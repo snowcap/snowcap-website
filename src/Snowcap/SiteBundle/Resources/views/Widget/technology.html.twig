@@ -1,8 +1,5 @@
 <ul class="technology-list">
-    <li>CSS</li>
-    <li>Html 5</li>
-    <li>Php</li>
-    <li>Mysql</li>
-    <li>jQuery</li>
-    <li>Symfony</li>
+    {% for technology in technologies %}
+        <li><a href="{{ url('snwcp_site_default_technologies', { 'technology': technology.name })}}">{{ technology.name }}</a></li>
+    {% endfor %}
 </ul>

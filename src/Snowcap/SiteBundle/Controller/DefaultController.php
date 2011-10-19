@@ -55,4 +55,19 @@ class DefaultController extends Controller
 
         return array();
     }
+
+    /**
+     * @Route("/technologies/{technology}", name="snwcp_site_default_technologies")
+     * @Template()
+     */
+    public function technologyAction($technology) {
+        $em = $this->getDoctrine()->getEntityManager();
+        $technology = $em->getRepository('SnowcapSiteBundle:Technology')->findOneByName($technology);
+        if (!$technology) {
+            throw $this->createNotFoundException('Unable to find that technology.');
+        }
+        return array(
+            'technology' => $technology,
+        );
+    }
 }

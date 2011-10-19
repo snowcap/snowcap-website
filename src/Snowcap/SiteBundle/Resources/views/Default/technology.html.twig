@@ -1,0 +1,27 @@
+{% extends "SnowcapSiteBundle::base.html.twig" %}
+{% set body_class = 'technology' %}
+{% block body %}
+    <div class="full">
+        <section class="main">
+            <h1>{{ 'technology.title' | trans }} : {{ technology.name }}</h1>
+            <div class="body">
+                {{ technology.description | markdown }}
+            </div>
+
+            <h3>{{ 'technology.projects' | trans }}</h3>
+
+            <ul>
+                {% for project in technology.projects %}
+                    {% if project.availableonlist %}
+                        <li><a href="{{ url('snwcp_site_project_show', { 'slug': project.slug }) }}">{{ project.title }}</a></li>
+                    {% elseif project.website %}
+                        <li><a href="{{ project.website }}">{{ project.title }}</a></li>
+                    {% else %}
+                        <li>{{ project.title }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        </section>
+    </div>
+{% endblock %}

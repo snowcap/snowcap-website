@@ -133,3 +133,6 @@ team:
       url: linkedin.url
     cv:
       url: cv.url
+technology:
+  title: Technologies
+  projects: Used, among other, in the following projects
