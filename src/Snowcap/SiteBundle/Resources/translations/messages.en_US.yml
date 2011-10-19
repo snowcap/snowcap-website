@@ -26,6 +26,8 @@ project:
     label: Client
   agency:
     label: Agency
+    link:
+      title: View %name% website
   realisation_period:
     label: Realisation period
   website:

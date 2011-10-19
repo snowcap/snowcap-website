@@ -10,7 +10,13 @@
                     <dt>{{ "project.client.label" | trans }}</dt>
                     <dd>{{ project.client}}</dd>
                     <dt>{{ "project.agency.label" | trans }}</dt>
-                    <dd>{{ project.agency.name }}</dd>
+                    <dd>
+                    {% if project.agency.website %}
+                        <a href="{{ project.agency.website }}" title="{{ "project.agency.link.title" | trans({ '%name%': project.agency.name }) }}">{{ project.agency.name }}</a>
+                    {% else %}
+                        {{ project.agency.name }}
+                    {% endif %}
+                    </dd>
                     <dt>{{ "project.realisation_period.label" | trans }}</dt>
                     <dd>{{ project.realisation_period }}</dd>
                 </dl>
