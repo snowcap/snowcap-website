@@ -1,0 +1,42 @@
+{% extends "SnowcapSiteBundle::base.html.twig" %}
+{% set body_class = 'technology' %}
+{% block body %}
+    <div class="full">
+        <section class="main">
+            <h1>{{ 'technology.title' | trans }} : {{ technology.name }}</h1>
+            <div class="body">
+                {{ technology.description | markdown }}
+            </div>
+
+            <h3>{{ 'technology.projects' | trans }}</h3>
+
+            {% if technology.projects|length > 0 %}
+                {% import 'SnowcapSiteBundle::macros.html.twig' as helper %}
+                <ul>
+                    {% for project in technology.projects %}
+                        {% if project.availableonlist %}
+                            <li>
+                                <a class="flipper flipper_small" href="{{ url('snwcp_site_project_show', { 'slug': project.slug }) }}" title="{{ "project.link.title" | trans({ '%title%': project.title }) }}">
+                                    {{ helper.project_image_flipper(project, "small") }}
+                                </a>
+                            </li>
+                        {% elseif project.website %}
+                            <li>
+                                <a class="flipper flipper_small" href="{{ project.website }}" title="{{ "project.website.title" | trans }}">
+                                    {{ helper.project_image_flipper(project, "small") }}
+                                </a>
+                            </li>
+                        {% else %}
+                            <li>
+                                <div class="flipper flipper_small">
+                                    {{ helper.project_image_flipper(project, "small") }}
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+             {% endif %}
+
+        </section>
+    </div>
+{% endblock %}

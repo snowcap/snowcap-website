@@ -17,6 +17,12 @@ class Technology extends Content {
     {
         return array(
             'name' => array(),
+            'slug' => array(
+                'type' => 'slug',
+                'options' => array(
+                    'target' => 'name',
+                ),
+            ),
             'description' => array(
                'type' => 'markdown'
             ),

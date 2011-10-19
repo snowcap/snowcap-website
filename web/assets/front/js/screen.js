@@ -3,13 +3,19 @@
     var Flipper = function(element) {
         var _element = $(element);
         var _this = this;
+        var _pixels;
+        if (_element.hasClass('flipper_thumb')) {
+            _pixels = 300;
+        } else if (_element.hasClass('flipper_small')) {
+            _pixels = 100;
+        }
         _this.init = function() {
             _element.hover(
                 function(event) {
-                    _element.find('img').animate({'left': '+=300'}, 'fast');
+                    _element.find('img').animate({'left': '+=' + _pixels}, 'fast');
                 },
                 function(event) {
-                    _element.find('img').animate({'left': '-=300'}, 'fast');
+                    _element.find('img').animate({'left': '-=' + _pixels}, 'fast');
                 }
             );
         };

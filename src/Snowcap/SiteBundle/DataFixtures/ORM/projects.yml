@@ -28,7 +28,7 @@ p1:
   realisation_period: 2010-2011
   client: Immovlan
   agency: @onemd
-  technologies: [php,symfony,varnish,memcached,rabbitMQ]
+  technologies: [php,symfony,varnish,memcached,rabbitmq]
   published: true
   available_on_list: true
   thumb_front: @ic_front
@@ -86,6 +86,8 @@ europabio:
   technologies: [php,drupal]
   published: true
   available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
   highlighted: false
 
 sodexo:
@@ -100,6 +102,8 @@ sodexo:
   technologies: [php,zend]
   published: true
   available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
   highlighted: false
 
 movingpeople:
@@ -115,6 +119,8 @@ movingpeople:
   technologies: [php,symfony,varnish]
   published: true
   available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
   highlighted: false
 
 mediargus:
@@ -129,6 +135,8 @@ mediargus:
   technologies: [php,zend]
   published: true
   available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
   highlighted: false
 
 startv:
@@ -195,11 +203,13 @@ mefirst:
   realisation_period: October 2011
   client: MeFirst
   agency: @onemd
-  technologies: [rabbitMQ]
+  technologies: [php,rabbitmq]
   published: true
   available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
   highlighted: false
-
+  
 devenirunelegende:
   title: Devenir une légende - Coca-Cola Zero
   slug: devenir-une-legende

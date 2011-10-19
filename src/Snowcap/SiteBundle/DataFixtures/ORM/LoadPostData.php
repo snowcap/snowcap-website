@@ -64,7 +64,6 @@ class LoadPostData implements FixtureInterface {
      */
     public function load($manager)
     {
-
         $categories = Yaml::parse(__DIR__ . '/postCategories.yml');
         foreach($categories as $categoryIdentifier => $categoryData) {
             $category = new \Snowcap\SiteBundle\Entity\PostCategory();
@@ -76,6 +75,7 @@ class LoadPostData implements FixtureInterface {
             $record = new Post();
             $this->createEntity($manager, $record, $recordIdentifier, $recordData);
         }
+
         $manager->flush();
     }
 

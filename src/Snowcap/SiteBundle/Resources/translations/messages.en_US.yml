@@ -14,8 +14,10 @@ general:
   readmore:
     title: Read more
     label: Read more
-geekcorner:
-  title: Geek's corner
+    facebook_link: Check out our Facebook page
+    twitter_link: Check out our twitter
+nerds:
+  title: Hey(,) Nerds !
   body: |
     For our fellow geeks, the complete source code of this website is [available here](http://www.github.com/snowcap/snowcap-website "Snowcap Website source code"). You can browse it to find out
     how we work, and moreover, if you have a genius idea to improve our website, don't hesitate to fork and send us a pull request :)
@@ -84,6 +86,7 @@ method:
     Don't expect us to deliver what you already have - we would rather hear about the rock-solid, extreme performance web platform you've always wanted.
 contact:
   title: Contact
+  somewhere: Somewhere in Brussels
 team:
   title: Team
   age:
