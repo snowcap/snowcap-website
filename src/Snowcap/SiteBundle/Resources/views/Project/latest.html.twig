@@ -1,21 +1,11 @@
 <h2>{{ "project.latest.title" | trans }}</h2>
 {% if latestProjects|length > 0 %}
+    {% import "SnowcapSiteBundle::macros.html.twig" as helper %}
     <ul>
         {% for project in latestProjects %}
             <li>
-                <a href="{{ path('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ "project.link.title" | trans }}">
-                    <img
-                        class="front"
-                        src="{{ project.thumb_front.webPath | apply_filter('thumb') }}"
-                        alt="{{ project.thumb_front.alt }}"
-                        title="{{ project.thumb_front.name }}"
-                    />
-                    <img
-                        class="back"
-                        src="{{ project.thumb_back.webPath | apply_filter('thumb') }}"
-                        alt="{{ project.thumb_back.alt }}"
-                        title="{{ project.thumb_back.name }}"
-                    />
+                <a href="{{ path('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ "project.link.title" | trans({'%title%': project.title}) }}">
+                    {{ helper.project_image_flipper(project) }}
                 </a>
             </li>
         {% endfor %}
