@@ -10,6 +10,14 @@
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body class="{{ body_class | default('default') }}">
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
         <header>
             {% block header %}
                 {% include 'SnowcapSiteBundle::navigation.html.twig' %}
@@ -17,12 +25,14 @@
         </header>
         {% block body %}{% endblock %}
         <footer>
-            <address>
-                {% include "SnowcapSiteBundle:Widget:contact.html.twig" %}
-            </address>
-            <aside class="technology">
-                {% render "SnowcapSiteBundle:Technology:widget" %}
-            </aside>
+            <div class="split split-2">
+                <section class="contact">
+                    {% include "SnowcapSiteBundle:Widget:contact.html.twig" %}
+                </section>
+                <section class="technology">
+                    {% render "SnowcapSiteBundle:Technology:widget" %}
+                </section>
+            </div>
         </footer>
         {% block javascripts %}
             <script type="text/javascript" src="/assets/vendors/jquery/jquery-1.6.1.min.js"></script>

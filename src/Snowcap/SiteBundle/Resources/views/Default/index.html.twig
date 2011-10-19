@@ -12,14 +12,15 @@
         </section>
     </div>
     <div class="split split-3">
+        <img id="mask-image" src="{{ asset('/assets/front/images/mask.png') }}" />
         <section class="blog content content-secondary">
             {% render "SnowcapSiteBundle:Post:widget" with {'limit': 1} %}
         </section>
         <section class="tweets content content-secondary">
             {% render "SnowcapSiteBundle:Widget:tweets" %}
         </section>
-        <section class="words">
-            {% include "SnowcapSiteBundle:Widget:words.html.twig" %}
+        <section class="nerds">
+            {% include "SnowcapSiteBundle:Widget:nerds.html.twig" %}
         </section>
     </div>
 {% endblock %}
