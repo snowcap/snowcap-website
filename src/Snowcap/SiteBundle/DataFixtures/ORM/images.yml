@@ -46,3 +46,7 @@ star_back:
   name: Star TV back thumb
   path: projects/star_back.png
   alt: Star TV project
+snwcp_front:
+  name: Snowcap front thumb
+  path: projects/snwcp_front.png
+  alt: Snowcap website

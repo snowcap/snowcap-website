@@ -182,10 +182,16 @@ div.split-3 section:not(:last-child) {
 /* FLIPPER */
 .flipper {
     display: block;
-    width: 300px;
-    height: 230px;
     position: relative;
     overflow: hidden;
+}
+.flipper_thumb {
+    width: 300px;
+    height: 230px;
+}
+.flipper_small {
+    width: 100px;
+    height: 76px;
 }
 .flipper img {
     position: absolute;
@@ -194,8 +200,13 @@ div.split-3 section:not(:last-child) {
 .flipper img.front {
     left: 0;
 }
-.flipper img {
+
+.flipper_thumb img {
     left: -300px;
+
+}
+.flipper_small img {
+    left: -100px;
 }
 
 /* FOOTER */
