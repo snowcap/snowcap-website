@@ -24,6 +24,9 @@
             </div>
             <div class="thumb flipper">{{ helper.project_image_flipper(project) }}</div>
             <div class="body">{{ project.body | markdown | hr_columns }}</div>
+            <div class="technologies">
+                {% include "SnowcapSiteBundle:Project:technologies.html.twig" with { 'techonologies': project.technologies } %}
+            </div>
         </section>
     </div>
 {% endblock %}

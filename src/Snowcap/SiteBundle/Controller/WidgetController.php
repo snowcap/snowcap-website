@@ -41,16 +41,4 @@ class WidgetController extends Controller
         return array('tweets' => $tweets);
     }
 
-    /**
-     * Action used to render the technologies used in Snowcap
-     *
-     * @Template()
-     */
-    public function technologyAction()
-    {
-        $em = $this->getDoctrine()->getEntityManager();
-        $technologies = $em->getRepository('SnowcapSiteBundle:Technology')->findAll();
-        return array('technologies' => $technologies);
-    }
-
 }

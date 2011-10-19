@@ -49,7 +49,7 @@ class ProjectController extends BaseController
     /**
      * @Template()
      */
-    public function latestAction($limit)
+    public function widgetAction($limit)
     {
 		$em = $this->getDoctrine()->getEntityManager();
         $latestProjects = $em->getRepository('SnowcapSiteBundle:Project')->getLatest($limit);

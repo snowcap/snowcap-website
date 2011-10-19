@@ -1,0 +1,7 @@
+{% if technologies|length > 0 %}
+    <ul>
+        {% for technology in technologies %}
+            <li><a href="{{ url('snwcp_site_technology_show', { 'slug': technology.slug }) }}">{{ project.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
