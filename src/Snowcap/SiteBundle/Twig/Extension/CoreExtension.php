@@ -28,6 +28,7 @@ class CoreExtension extends \Twig_Extension
             'age' => new \Twig_Filter_Method($this, 'age'),
             'safe_truncate' => new \Twig_Filter_Method($this, 'safeTruncate', array('is_safe' => array('html'))),
             'parse_tweet' => new \Twig_Filter_Method($this, 'parseTweet', array('is_safe' => array('html'))),
+            'hr_columns' => new \Twig_Filter_Method($this, 'hrColumns', array('is_safe' => array('html'))),
         );
     }
 
@@ -186,6 +187,20 @@ class CoreExtension extends \Twig_Extension
             $tweet);
 
         return $tweet;
+    }
+
+    /**
+     * Converts <hr> tag to <div> column style
+     *
+     * @param string $content
+     * @return string
+     */
+    public function hrColumns($content)
+    {
+        $content = '<div class="column">' .
+            str_replace(array('<hr>', '<hr/>', '<hr />'), '</div><div class="column">', $content) .
+            '</div>';
+        return $content;
     }
 
     /**

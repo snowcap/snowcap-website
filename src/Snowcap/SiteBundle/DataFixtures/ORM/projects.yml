@@ -28,7 +28,7 @@ p1:
   realisation_period: 2010-2011
   client: Immovlan
   agency: @onemd
-  technologies: [php,symfony,varnish,memcached,rabbitMQ]
+  technologies: [php,symfony,varnish,memcached,rabbitmq]
   published: true
   available_on_list: true
   thumb_front: @ic_front
@@ -195,7 +195,7 @@ mefirst:
   realisation_period: October 2011
   client: MeFirst
   agency: @onemd
-  technologies: [php,rabbitMQ]
+  technologies: [php,rabbitmq]
   published: true
   available_on_list: false
   highlighted: false

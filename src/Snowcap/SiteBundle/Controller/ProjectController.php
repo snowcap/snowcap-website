@@ -37,19 +37,19 @@ class ProjectController extends BaseController
     public function showAction($slug)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $entity = $em->getRepository('SnowcapSiteBundle:Project')->findOneBySlug($slug);
-        if (!$entity) {
+        $project = $em->getRepository('SnowcapSiteBundle:Project')->findOneBySlug($slug);
+        if (!$project) {
             throw $this->createNotFoundException('Unable to find Project entity.');
         }
         return array(
-            'entity' => $entity,
+            'project' => $project,
         );
     }
 
     /**
      * @Template()
      */
-    public function latestAction($limit)
+    public function widgetAction($limit)
     {
 		$em = $this->getDoctrine()->getEntityManager();
         $latestProjects = $em->getRepository('SnowcapSiteBundle:Project')->getLatest($limit);

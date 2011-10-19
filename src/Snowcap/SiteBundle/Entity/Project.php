@@ -31,7 +31,6 @@ class Project extends BaseModel
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
-     * @Assert\MinLength(5)
      */
     protected $title;
 
@@ -39,7 +38,6 @@ class Project extends BaseModel
      * @var string
      *
      * @ORM\Column(name="slug", type="string", length=255)
-     * @Assert\MinLength(5)
      */
     protected $slug;
 

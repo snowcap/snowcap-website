@@ -24,6 +24,17 @@ nerds:
 
     Ow and yeah, we try to contribute more and more to the community - [follow us on GitHub](http://www.github.com/snowcap "Snowcap on GitHub") to discover what we're open sourcing
 project:
+  client:
+    label: Client
+  agency:
+    label: Agency
+    link:
+      title: View %name% website
+  realisation_period:
+    label: Realisation period
+  website:
+    label: View website
+    title: View website
   link:
     title: Read the %title% case
   latest:

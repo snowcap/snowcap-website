@@ -20,11 +20,12 @@ class LoadProjectData implements FixtureInterface {
         foreach($values as $key => $value) {
             if($key === "technologies") {
                 $newvalue = new ArrayCollection();
-                foreach($value as $tagName) {
-                    $associatedEntity = $manager->getRepository('Snowcap\SiteBundle\Entity\Technology')->findOneByName($tagName);
+                foreach($value as $tagSlug) {
+                    $associatedEntity = $manager->getRepository('Snowcap\SiteBundle\Entity\Technology')->findOneByName($tagSlug);
                     if(!$associatedEntity){
                         $associatedEntity = new \Snowcap\SiteBundle\Entity\Technology();
-                        $associatedEntity->setName($tagName);
+                        $associatedEntity->setName($tagSlug);
+                        $associatedEntity->setSlug($tagSlug);
                         $associatedEntity->setDescription('TO BE DEFINED');
                         $manager->persist($associatedEntity);
                         $manager->flush();

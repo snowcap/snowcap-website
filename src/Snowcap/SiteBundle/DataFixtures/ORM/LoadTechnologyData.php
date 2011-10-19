@@ -52,7 +52,7 @@ class LoadTechnologyData implements FixtureInterface {
     {
         $records = Yaml::parse(__DIR__ . '/technologies.yml');
         foreach($records as $recordIdentifier => $recordData) {
-            $record = $manager->getRepository('Snowcap\SiteBundle\Entity\Technology')->findOneByName($recordData['name']);
+            $record = $manager->getRepository('Snowcap\SiteBundle\Entity\Technology')->findOneBySlug($recordData['slug']);
             if(!$record) {
                 $record = new \Snowcap\SiteBundle\Entity\Technology();
             }

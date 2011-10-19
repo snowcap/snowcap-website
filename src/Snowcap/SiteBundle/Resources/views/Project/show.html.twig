@@ -1,10 +1,32 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% import "SnowcapSiteBundle::macros.html.twig" as helper %}
 {% block body %}
     <div class="full">
         <section class="main">
-            <h1>{{ entity.title }}</h1>
-            <div class="body">{{ entity.body | markdown }}</div>
-            <p class="published">{{ entity.published_at | time_ago }}</p>
+            <div class="summary">
+                <h1>{{ project.title }}</h1>
+                <div class="introduction">{{ project.introduction | markdown }}</div>
+                <dl class="information">
+                    <dt>{{ "project.client.label" | trans }}</dt>
+                    <dd>{{ project.client}}</dd>
+                    <dt>{{ "project.agency.label" | trans }}</dt>
+                    <dd>
+                    {% if project.agency.website %}
+                        <a href="{{ project.agency.website }}" title="{{ "project.agency.link.title" | trans({ '%name%': project.agency.name }) }}">{{ project.agency.name }}</a>
+                    {% else %}
+                        {{ project.agency.name }}
+                    {% endif %}
+                    </dd>
+                    <dt>{{ "project.realisation_period.label" | trans }}</dt>
+                    <dd>{{ project.realisation_period }}</dd>
+                </dl>
+                <a href="{{ project.website }}" title="{{ 'project.website.title' | trans }}">{{ "project.website.label" | trans }}</a>
+            </div>
+            <div class="thumb flipper">{{ helper.project_image_flipper(project) }}</div>
+            <div class="body">{{ project.body | markdown | hr_columns }}</div>
+            <div class="technologies">
+                {% include "SnowcapSiteBundle:Project:technologies.html.twig" with { 'technologies': project.technologies } %}
+            </div>
         </section>
     </div>
 {% endblock %}
