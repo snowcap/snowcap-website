@@ -28,7 +28,7 @@
     // DOMREADY
     $(document).ready(function(event) {
         // Flip images on latest project for homepage
-        $('.home section.projects li a').Flipper();
+        $('.flipper').Flipper();
         // Remove title on latest project for homepage links
         $(".home .projects li a").attr('title', '');
     });

@@ -74,6 +74,7 @@ header nav a:hover {
     color: #79bd01;
     text-decoration: none;
 }
+
 /* SECTIONS */
 div.full, div.split {
     width: 960px;
@@ -137,25 +138,8 @@ div.split-3 section:not(:last-child) {
     float: left;
     width: 308px;
 }
-.home section.projects li a {
-    display: block;
-    width: 300px;
-    height: 230px;
-    position: relative;
-    overflow: hidden;
-}
 .home section.projects li:not(:last-child) {
     margin-right: 18px;
-}
-.home section.projects li img {
-    position: absolute;
-    top: 0;
-}
-.home section.projects li img.front {
-    left: 0;
-}
-.home section.projects li img {
-    left: -300px;
 }
 .home section.content-secondary h2 {
     background-position: right -55px;
@@ -194,6 +178,26 @@ div.split-3 section:not(:last-child) {
     line-height: 24px;
     font-weight: 300;
 }
+
+/* FLIPPER */
+.flipper {
+    display: block;
+    width: 300px;
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+}
+.flipper img {
+    position: absolute;
+    top: 0;
+}
+.flipper img.front {
+    left: 0;
+}
+.flipper img {
+    left: -300px;
+}
+
 /* FOOTER */
 footer {
     background-color: #0a0a0a;

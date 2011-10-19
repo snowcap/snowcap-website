@@ -6,6 +6,6 @@
             {{ project.introduction | markdown }}
             <a href="{{ url('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ 'general.readmore.title' | trans }}" class="read-more">{{ 'general.readmore.label' | trans }}</a>
         </div>
-        {{ helper.project_image_flipper(project) }}
+        <div class="flipper">{{ helper.project_image_flipper(project) }}</div>
     </div>
 {% endif %}
