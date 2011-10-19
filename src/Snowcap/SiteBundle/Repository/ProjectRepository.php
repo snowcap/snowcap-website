@@ -18,6 +18,7 @@ class ProjectRepository extends EntityRepository
 			->createQuery('
 				SELECT p
 				FROM SnowcapSiteBundle:Project p
+				WHERE p.available_on_list = true AND p.published = true
 				ORDER BY p.published_at DESC
 			')
 			->setMaxResults($limit)

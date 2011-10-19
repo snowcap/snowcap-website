@@ -23,7 +23,7 @@ class ProjectController extends BaseController
      */
     public function listAction() {
         $em = $this->getDoctrine()->getEntityManager();
-        $projects = $em->getRepository('SnowcapSiteBundle:Project')->findBy(array('published' => true, 'available_on_list' => true));
+        $projects = $em->getRepository('SnowcapSiteBundle:Project')->getLatest(1500);
         
         return array('projects' => $projects);
     }
