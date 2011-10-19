@@ -1,4 +1,5 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% import "SnowcapSiteBundle::macros.html.twig" as helper %}
 {% block body %}
     <div class="full">
         <section class="main">
@@ -7,7 +8,9 @@
             {% if projects|length > 0 %}
                 <ul class="project-list">
                     {% for project in projects %}
-                        <li><a href="{{ url('snwcp_site_project_show', { 'slug': project.slug }) }}" title="{{ "project.link.title" | trans }}"><img src="{{ project.thumb_front.webPath | apply_filter('thumb') }}" alt="{{ "project.thumb.alt" | trans }}"/></a></li>
+                        <li>
+                        {{ helper.project_image_flipper(project) }}
+                        </li>
                     {% endfor %}
                 </ul>
             {% else %}
