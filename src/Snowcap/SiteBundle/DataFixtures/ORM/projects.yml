@@ -24,7 +24,7 @@ p1:
 
     Afin de mener cette mission a bien, nous avons opté pour une solution custom basés sur le framework Symfony. Nous avons également pu compter sur une série d’outils open-source de qualité impressionante, qui nous ont permis d’offrir un résultat stable, robuste et performant.
   website: http://www.immocitiz.be
-  published_at: '2011-08-12 12:24:00'
+  published_at: '2011-08-08 12:24:00'
   realisation_period: 2010-2011
   client: Immovlan
   agency: @onemd
@@ -43,7 +43,7 @@ walibi:
   body: |
     Bla bla bla bla bla bla bla
   website: http://www.walibi.be
-  published_at: '2011-08-12 12:24:00'
+  published_at: '2011-01-20 12:24:00'
   realisation_period: 2010-2011
   client: Compagnie des Alpes
   agency: @onemd
@@ -62,7 +62,7 @@ wilkinson:
   body:
     Bla bla bla bla bla bla bla
   website: http://www.wilkinson-sword.be
-  published_at: '2011-08-12 12:24:00'
+  published_at: '2011-10-25 12:24:00'
   realisation_period: 2010-2011
   client: Mortier Brigade
   agency: @onemd
@@ -79,7 +79,7 @@ europabio:
   introduction:
   body:
   website: http://www.europabio.org
-  published_at: '2011-08-12 12:24:00'
+  published_at: '2011-09-22 12:24:00'
   realisation_period: 2010-2011
   client: Europabio
   agency: @onemd
@@ -145,6 +145,8 @@ startv:
   technologies: [php,drupal]
   published: true
   available_on_list: true
+  thumb_front: @star_front
+  thumb_back: @star_back
   highlighted: false
 
 eurocenter:
@@ -161,6 +163,8 @@ eurocenter:
   technologies: [php,zend,magento]
   published: true
   available_on_list: true
+  thumb_front: @ec_front
+  thumb_back: @ec_back
   highlighted: false
 
 orw:
@@ -177,6 +181,8 @@ orw:
   technologies: [php,drupal]
   published: true
   available_on_list: true
+  thumb_front: @orw_front
+  thumb_back: @orw_back
   highlighted: false
 
 mefirst:

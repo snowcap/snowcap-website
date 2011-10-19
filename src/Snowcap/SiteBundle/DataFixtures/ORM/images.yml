@@ -22,3 +22,27 @@ wlk_back:
   name: Wilkinson back thumb
   path: projects/wlk_back.png
   alt: Wilkinson project
+ec_front:
+  name: Eurocenter front thumb
+  path: projects/ec_front.png
+  alt: Eurocenter project
+ec_back:
+  name: Eurocenter back thumb
+  path: projects/ec_back.png
+  alt: Eurocenter project
+orw_front:
+  name: ORW front thumb
+  path: projects/orw_front.png
+  alt: Opera Royal de Wallonie project
+orw_back:
+  name: ORW back thumb
+  path: projects/orw_back.png
+  alt: Opera Royal de Wallonie project
+star_front:
+  name: Star TV front thumb
+  path: projects/star_front.png
+  alt: Star TV project
+star_back:
+  name: Star TV back thumb
+  path: projects/star_back.png
+  alt: Star TV project
