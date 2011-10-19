@@ -1,4 +1,4 @@
-<ul class="technology-list">
+<ul>
     {% for technology in technologies %}
         <li><a href="{{ url('snwcp_site_default_technologies', { 'technology': technology.name })}}">{{ technology.name }}</a></li>
     {% endfor %}
