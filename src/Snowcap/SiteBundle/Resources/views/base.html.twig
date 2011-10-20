@@ -10,20 +10,23 @@
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body class="{{ body_class | default('default') }}">
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) {return;}
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-        <header>
-            {% block header %}
-                {% include 'SnowcapSiteBundle::navigation.html.twig' %}
-            {% endblock %}
-        </header>
-        {% block body %}{% endblock %}
+        <div class="wrapper">
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) {return;}
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            <header>
+                {% block header %}
+                    {% include 'SnowcapSiteBundle::navigation.html.twig' %}
+                {% endblock %}
+            </header>
+            {% block body %}{% endblock %}
+            <div class="push"></div>
+        </div>
         <footer>
             <div class="split split-2">
                 <section class="contact">
