@@ -2,13 +2,14 @@
 {% set body_class = 'home' %}
 {% block body %}
     <div class="full">
-        <section class="main">
+        <section class="main content">
             <h1>{{ "general.snowcap" | trans }}</h1>
             <h2>{{ "general.baseline" | trans }}</h2>
             {{ "general.nutshell" | trans | markdown }}
         </section>
         <section class="projects content content-primary">
-            {% render "SnowcapSiteBundle:Project:widget" with {'limit': 3} %}
+            <h2>{{ "project.latest.title" | trans }}</h2>
+            {% render "SnowcapSiteBundle:Project:list" with {'limit': 3} %}
         </section>
     </div>
     <div class="split split-3">

@@ -18,14 +18,13 @@ class ProjectController extends BaseController
     /**
      * Display a list of projects
      * 
-     * @Route("/", name="snwcp_site_project_list")
+     * @Route("/", name="snwcp_site_project_index")
      * @Template()
      */
-    public function listAction() {
+    public function indexAction() {
         $em = $this->getDoctrine()->getEntityManager();
-        $projects = $em->getRepository('SnowcapSiteBundle:Project')->getLatest(1500);
-        
-        return array('projects' => $projects);
+        $project = $em->getRepository('SnowcapSiteBundle:Project')->findOneByHighlighted(true);
+        return array('project' => $project);
     }
 
     /**
@@ -49,7 +48,7 @@ class ProjectController extends BaseController
     /**
      * @Template()
      */
-    public function widgetAction($limit)
+    public function listAction($limit = 1000)
     {
 		$em = $this->getDoctrine()->getEntityManager();
         $latestProjects = $em->getRepository('SnowcapSiteBundle:Project')->getLatest($limit);
@@ -61,9 +60,6 @@ class ProjectController extends BaseController
      * @Template()
      */
     public function highlightedAction() {
-        $em = $this->getDoctrine()->getEntityManager();
-        $project = $em->getRepository('SnowcapSiteBundle:Project')->findOneByHighlighted(true);
 
-        return array('project' => $project);
     }
 }

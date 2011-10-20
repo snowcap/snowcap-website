@@ -10,6 +10,25 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: Lato, sans-serif;
 }
+/* CONTENT SECTIONS */
+/* main sections */
+h1.main-title {
+    background-image: url(../images/main_title.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    position: absolute;
+    top: 110px;
+    height: 55px;
+    line-height: 55px;
+    left: 0;
+    padding-left: 50%;
+    margin: 0 0 0 -480px;
+    width: 230px;
+    color: #0a0a0a;
+    font-size: 30px;
+    font-weight: 300;
+}
+/* secondary sections */
 section.content-secondary {
     font-size: 12px;
     line-height: 16px;
@@ -29,10 +48,12 @@ section.content-secondary p.read-more a{
 }
 
 section.content h2 {
-    margin: 0;
-    padding: 0 0 0 10px;
-    text-transform: uppercase;
     font-weight: 300;
+}
+.home section-content h2 {
+    margin: 0;
+    text-transform: uppercase;
+    padding: 0 0 0 10px;
     background-image: url(../images/headings.png);
     background-repeat: no-repeat;
 }
@@ -136,7 +157,7 @@ div.split-3 section {
 div.split-3 section:not(:last-child) {
     margin-right: 27px;
 }
-/* main section */
+/* HOME */
 .home section.main {
     padding: 90px 0 0 0;
     margin-bottom: 50px;
@@ -154,6 +175,8 @@ div.split-3 section:not(:last-child) {
     text-transform: uppercase;
     font-weight: 300;
     letter-spacing: -1px;
+    background: none;
+    padding: 0;
 }
 .home section.main p {
     margin: 30px 0 0 0;
@@ -163,29 +186,34 @@ div.split-3 section:not(:last-child) {
 .home section.main p strong {
     color: #333332;
 }
-/* projects section */
+/* PROJECTS */
 .home section.projects h2{
     background-position: right 0;
     width: 350px;
     line-height: 55px;
     font-size: 30px;
 }
-.home section.projects ul {
+section.projects ul {
     overflow: hidden;
     margin: 20px 0 0 0;
     padding: 0;
 }
-.home section.projects li {
-    margin: 0;
+section.projects li {
+    margin: 0 0 27px 0;
     padding: 0;
     list-style-type: none;
     float: left;
     width: 302px;
-    height: 238px;
+    height: 232px;
 }
-.home section.projects li:not(:last-child) {
+section.projects li:not(.three) {
     margin-right: 27px;
 }
+
+
+
+
+
 .home section.content-secondary h2 {
     background-position: right -55px;
     line-height: 35px;
