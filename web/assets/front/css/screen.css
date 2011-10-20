@@ -163,7 +163,7 @@ div.split-3 section:not(:last-child) {
 .home section.main p strong {
     color: #333332;
 }
-/* projects section */
+/* projects section and page */
 .home section.projects h2{
     background-position: right 0;
     width: 350px;
@@ -202,6 +202,45 @@ body.project-list ul.project-list li {
 }
 .project-highlighted .flipper {
     float: right;
+}
+
+/* project page */
+body.project div.flipper {
+    float: right;
+}
+body.project div.summary {
+    width: 520px;
+    min-height: 232px;
+}
+body.project dl.information {
+    overflow: hidden;
+}
+body.project dl.information dt {
+    clear: left;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+body.project dl.information dd {
+    float: left;
+    margin: 0 0 0 5px;
+    padding: 0;
+}
+body.project .website {
+    clear: left;
+    display: block;
+    margin:  20px 0 0 0;
+}
+body.project div.body {
+    overflow: hidden;
+}
+body.project div.body .column {
+    width: 290px;
+    padding-right: 10px;
+    float: left;
+}
+body.project div.body .column h2 {
+    margin-top: 0;
 }
 
 /* content secondary section */
