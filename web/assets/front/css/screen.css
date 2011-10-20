@@ -170,12 +170,13 @@ div.split-3 section:not(:last-child) {
     line-height: 55px;
     font-size: 30px;
 }
-.home section.projects ul {
+ul.project-list {
+    clear: left;
     overflow: hidden;
     margin: 20px 0 0 0;
     padding: 0;
 }
-.home section.projects li {
+ul.project-list li {
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -183,9 +184,27 @@ div.split-3 section:not(:last-child) {
     width: 302px;
     height: 238px;
 }
-.home section.projects li:not(:last-child) {
+ul.project-list li:not(:last-child) {
     margin-right: 27px;
 }
+ul.project-list li.jump {
+    margin-right: 0;
+}
+body.project-list ul.project-list li {
+    margin-bottom: 27px;
+}
+.project-highlighted {
+    min-height: 232px;
+}
+.project-highlighted h2,
+.project-highlighted .body {
+    width: 520px;
+}
+.project-highlighted .flipper {
+    float: right;
+}
+
+/* content secondary section */
 .home section.content-secondary h2 {
     background-position: right -55px;
     line-height: 35px;

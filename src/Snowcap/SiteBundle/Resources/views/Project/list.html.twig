@@ -1,4 +1,5 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% set body_class = 'project-list' %}
 {% import "SnowcapSiteBundle::macros.html.twig" as helper %}
 {% block body %}
     <div class="full">
@@ -7,8 +8,8 @@
             {% render 'SnowcapSiteBundle:Project:highlighted'%}
             {% if projects|length > 0 %}
                 <ul class="project-list">
-                    {% for project in projects %}
-                        <li>
+                    {% for key, project in projects %}
+                        <li{% if (key+1) is divisibleby(3) %} class="jump"{% endif %}>
                             <a class="flipper flipper_thumb" href="{{ path('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ "project.link.title" | trans({'%title%': project.title}) }}">
                                 {{ helper.project_image_flipper(project) }}
                             </a>
