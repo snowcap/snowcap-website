@@ -235,11 +235,12 @@ body.project div.body {
     overflow: hidden;
 }
 body.project div.body .column {
-    width: 290px;
-    padding-right: 10px;
+    width: 300px;
     float: left;
 }
-
+body.project div.body .column:not(:last-child) {
+    margin-right: 30px;
+}
 /* content secondary section */
 .home section.content-secondary h2 {
     background-position: right -55px;
