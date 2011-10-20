@@ -277,6 +277,21 @@ section.projects li:not(.three) {
     width: 100px;
     height: 76px;
 }
+.flipper span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #8bc623;
+    opacity: 0.85;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px;
+    display: none;
+}
 .flipper img {
     position: absolute;
     top: 0;
@@ -384,6 +399,18 @@ html, body {
 }
 .push {
     height: 183px;
+}
+
+/* projects page */
+body.projects .project-highlighted {
+    min-height: 232px;
+}
+body.projects .project-highlighted .flipper {
+    float: right;
+}
+body.projects .project-highlighted .body,
+body.projects .project-highlighted h2 {
+    width: 520px;
 }
 
 /* project page */

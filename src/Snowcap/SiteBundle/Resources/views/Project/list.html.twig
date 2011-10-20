@@ -4,7 +4,7 @@
         {% for project in projects %}
             <li{{ loop.index % 3 == 0 ? ' class="three"' : '' }}>
                 <a class="flipper flipper-{{ format }}" href="{{ path('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ "project.link.title" | trans({'%title%': project.title}) }}">
-                    {{ helper.project_image_flipper(project, format) }}
+                    <span>{{project.title}}</span>{{ helper.project_image_flipper(project, format) }}
                 </a>
             </li>
         {% endfor %}

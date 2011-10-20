@@ -13,9 +13,11 @@
             _element.hover(
                 function(event) {
                     _element.find('img').animate({'left': '+=' + _pixels}, 'fast');
+                    _element.find('span').show();
                 },
                 function(event) {
                     _element.find('img').animate({'left': '-=' + _pixels}, 'fast');
+                    _element.find('span').hide();
                 }
             );
         };

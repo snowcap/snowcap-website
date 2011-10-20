@@ -1,4 +1,5 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% set body_class = 'projects' %}
 {% import "SnowcapSiteBundle::macros.html.twig" as helper %}
 {% block body %}
     <h1 class="main-title">{{ "project.list.title" | trans }}</h1>
@@ -6,14 +7,14 @@
         <section class="content main">
             {% if project %}
                 <div class="project-highlighted">
+                    <a class="flipper flipper-thumb" href="{{ path('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ "project.link.title" | trans({'%title%': project.title}) }}">
+                        {{ helper.project_image_flipper(project, 'thumb') }}
+                    </a>
                     <h2>{{ project.title }}</h2>
                     <div class="body">
                         {{ project.introduction | markdown }}
                         <a href="{{ url('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ 'general.readmore.title' | trans }}" class="read-more">{{ 'general.readmore.label' | trans }}</a>
                     </div>
-                    <a class="flipper flipper-thumb" href="{{ path('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ "project.link.title" | trans({'%title%': project.title}) }}">
-                        {{ helper.project_image_flipper(project, 'thumb') }}
-                    </a>
                 </div>
             {% endif %}
         </section>
