@@ -239,9 +239,6 @@ body.project div.body .column {
     padding-right: 10px;
     float: left;
 }
-body.project div.body .column h2 {
-    margin-top: 0;
-}
 
 /* content secondary section */
 .home section.content-secondary h2 {
