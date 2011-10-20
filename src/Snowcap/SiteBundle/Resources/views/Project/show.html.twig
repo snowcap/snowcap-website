@@ -5,7 +5,7 @@
     <div class="full">
         <section class="main">
             <h1>{{ project.title }}</h1>
-            <div class="flipper flipper_thumb">{{ helper.project_image_flipper(project) }}</div>
+            <div class="flipper flipper-thumb">{{ helper.project_image_flipper(project, 'thumb') }}</div>
             <div class="summary">
                 <div class="introduction">{{ project.introduction | markdown }}</div>
                 <dl class="information">

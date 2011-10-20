@@ -50,7 +50,7 @@ section.content-secondary p.read-more a{
 section.content h2 {
     font-weight: 300;
 }
-.home section-content h2 {
+.home section.content h2 {
     margin: 0;
     text-transform: uppercase;
     padding: 0 0 0 10px;
