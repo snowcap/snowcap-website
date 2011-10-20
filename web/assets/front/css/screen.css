@@ -204,43 +204,6 @@ body.project-list ul.project-list li {
     float: right;
 }
 
-/* project page */
-body.project div.flipper {
-    float: right;
-}
-body.project div.summary {
-    width: 520px;
-    min-height: 232px;
-}
-body.project dl.information {
-    overflow: hidden;
-}
-body.project dl.information dt {
-    clear: left;
-    float: left;
-    margin: 0;
-    padding: 0;
-}
-body.project dl.information dd {
-    float: left;
-    margin: 0 0 0 5px;
-    padding: 0;
-}
-body.project .website {
-    clear: left;
-    display: block;
-    margin:  20px 0 0 0;
-}
-body.project div.body {
-    overflow: hidden;
-}
-body.project div.body .column {
-    width: 300px;
-    float: left;
-}
-body.project div.body .column:not(:last-child) {
-    margin-right: 30px;
-}
 /* content secondary section */
 .home section.content-secondary h2 {
     background-position: right -55px;
@@ -421,3 +384,40 @@ html, body {
     height: 183px;
 }
 
+/* project page */
+body.project div.flipper {
+    float: right;
+}
+body.project div.summary {
+    width: 520px;
+    min-height: 232px;
+}
+body.project dl.information {
+    overflow: hidden;
+}
+body.project dl.information dt {
+    clear: left;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+body.project dl.information dd {
+    float: left;
+    margin: 0 0 0 5px;
+    padding: 0;
+}
+body.project .website {
+    clear: left;
+    display: block;
+    margin:  20px 0 0 0;
+}
+body.project div.body {
+    overflow: hidden;
+}
+body.project div.body .column {
+    width: 300px;
+    float: left;
+}
+body.project div.body .column:not(:last-child) {
+    margin-right: 30px;
+}
