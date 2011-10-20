@@ -270,11 +270,17 @@ section.projects li:not(.three) {
 /* FLIPPER */
 .flipper {
     display: block;
-    width: 300px;
-    height: 230px;
     position: relative;
     overflow: hidden;
     border:  1px solid #dcdcdc;
+}
+.flipper-thumb {
+    width: 300px;
+    height: 230px;
+}
+.flipper-small {
+    width: 100px;
+    height: 76px;
 }
 .flipper img {
     position: absolute;
@@ -283,8 +289,11 @@ section.projects li:not(.three) {
 .flipper img.front {
     left: 0;
 }
-.flipper img {
+.flipper-thumb img {
     left: -300px;
+}
+.flipper-small img {
+    left: -100px;
 }
 
 /* FOOTER */
@@ -366,4 +375,18 @@ footer section.technology a {
 footer section.technology a:hover {
     color: #8bc623;
     text-decoration: none;
+}
+
+/* STICKY FOOTER */
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -183px;
+}
+.push {
+    height: 183px;
 }

@@ -86,6 +86,8 @@ europabio:
   technologies: [php,drupal]
   published: true
   available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
   highlighted: false
 
 sodexo:
@@ -100,6 +102,8 @@ sodexo:
   technologies: [php,zend]
   published: true
   available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
   highlighted: false
 
 movingpeople:
@@ -115,6 +119,8 @@ movingpeople:
   technologies: [php,symfony,varnish]
   published: true
   available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
   highlighted: false
 
 mediargus:
@@ -129,6 +135,8 @@ mediargus:
   technologies: [php,zend]
   published: true
   available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
   highlighted: false
 
 startv:
@@ -198,4 +206,6 @@ mefirst:
   technologies: [php,rabbitmq]
   published: true
   available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
   highlighted: false

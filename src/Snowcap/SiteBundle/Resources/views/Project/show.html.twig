@@ -22,7 +22,7 @@
                 </dl>
                 <a href="{{ project.website }}" title="{{ 'project.website.title' | trans }}">{{ "project.website.label" | trans }}</a>
             </div>
-            <div class="thumb flipper">{{ helper.project_image_flipper(project) }}</div>
+            <div class="flipper flipper-thumb">{{ helper.project_image_flipper(project, 'thumb') }}</div>
             <div class="body">{{ project.body | markdown | hr_columns }}</div>
             <div class="technologies">
                 {% include "SnowcapSiteBundle:Project:technologies.html.twig" with { 'technologies': project.technologies } %}

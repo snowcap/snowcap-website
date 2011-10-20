@@ -23,7 +23,10 @@ class ProjectController extends BaseController
      */
     public function indexAction() {
         $em = $this->getDoctrine()->getEntityManager();
-        $project = $em->getRepository('SnowcapSiteBundle:Project')->findOneByHighlighted(true);
+        $project = $em->getRepository('SnowcapSiteBundle:Project')->findOneBy(array(
+            'highlighted' => true,
+            'published' => true
+        ));
         return array('project' => $project);
     }
 
@@ -48,18 +51,13 @@ class ProjectController extends BaseController
     /**
      * @Template()
      */
-    public function listAction($limit = 1000)
+    public function listAction($limit = 1000, $highlighted = false, $availableOnList = true)
     {
 		$em = $this->getDoctrine()->getEntityManager();
-        $latestProjects = $em->getRepository('SnowcapSiteBundle:Project')->getLatest($limit);
-
-        return array('latestProjects' => $latestProjects);
+        $projects = $em->getRepository('SnowcapSiteBundle:Project')->getList($limit, $highlighted, $availableOnList);
+        return array(
+            'projects' => $projects,
+            'format'=> 'thumb'
+        );
 	}
-
-    /**
-     * @Template()
-     */
-    public function highlightedAction() {
-
-    }
 }

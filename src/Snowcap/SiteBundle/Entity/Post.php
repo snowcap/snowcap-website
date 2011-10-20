@@ -76,6 +76,20 @@ class Post extends BaseModel
     protected $technologies;
 
     /**
+     * @var \Snowcap\SiteBundle\Entity\Image
+     *
+     * @ORM\ManyToOne(targetEntity="Image")
+     */
+    protected $thumb;
+
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="Image")
+     */
+    protected $images;
+
+    /**
      * Class constructor
      * 
      */
@@ -229,5 +243,37 @@ class Post extends BaseModel
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\ArrayCollection $images
+     */
+    public function setImages($images)
+    {
+        $this->images = $images;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * @param \Snowcap\SiteBundle\Entity\Image $thumb
+     */
+    public function setThumb($thumb)
+    {
+        $this->thumb = $thumb;
+    }
+
+    /**
+     * @return \Snowcap\SiteBundle\Entity\Image
+     */
+    public function getThumb()
+    {
+        return $this->thumb;
     }
 }

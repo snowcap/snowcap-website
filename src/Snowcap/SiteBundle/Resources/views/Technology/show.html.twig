@@ -7,21 +7,11 @@
             <div class="body">
                 {{ technology.description | markdown }}
             </div>
-
             <h3>{{ 'technology.projects' | trans }}</h3>
-
-            <ul>
-                {% for project in technology.projects %}
-                    {% if project.availableonlist %}
-                        <li><a href="{{ url('snwcp_site_project_show', { 'slug': project.slug }) }}">{{ project.title }}</a></li>
-                    {% elseif project.website %}
-                        <li><a href="{{ project.website }}">{{ project.title }}</a></li>
-                    {% else %}
-                        <li>{{ project.title }}</li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-
+            {% if technology.projects|length > 0 %}
+                {% import 'SnowcapSiteBundle::macros.html.twig' as helper %}
+                {% include 'SnowcapSiteBundle:Project:list.html.twig' with {'projects': technology.projects, 'format': 'small' } %}
+             {% endif %}
         </section>
     </div>
 {% endblock %}

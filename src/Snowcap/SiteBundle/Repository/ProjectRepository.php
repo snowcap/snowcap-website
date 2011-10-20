@@ -11,17 +11,24 @@ class ProjectRepository extends EntityRepository
 	 * 
 	 * @return array
 	 */
-	public function getLatest($limit)
+	public function getList($limit, $highlighted = null, $availableOnList = null)
 	{
-		return $this
+		$queryBuilder = $this
 			->getEntityManager()
-			->createQuery('
-				SELECT p
-				FROM SnowcapSiteBundle:Project p
-				WHERE p.available_on_list = true AND p.published = true
-				ORDER BY p.published_at DESC
-			')
-			->setMaxResults($limit)
-			->getResult();
+            ->createQueryBuilder()
+            ->select('p')
+            ->from('SnowcapSiteBundle:Project', 'p')
+            ->where('p.published = true')
+            ->orderBy('p.published_at', 'DESC')
+            ->setMaxResults($limit);
+        if($highlighted !== null) {
+            $queryBuilder->andWhere('p.highlighted = :highlighted');
+            $queryBuilder->setParameter('highlighted', $highlighted);
+        }
+        if($availableOnList !== null) {
+            $queryBuilder->andWhere('p.available_on_list = :available_on_list');
+            $queryBuilder->setParameter('available_on_list', $availableOnList);
+        }
+		return $queryBuilder->getQuery()->getResult();
 	}
 }
