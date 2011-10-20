@@ -51,7 +51,7 @@ class ProjectController extends BaseController
     /**
      * @Template()
      */
-    public function listAction($limit = 1000, $highlighted = false, $availableOnList = true)
+    public function listAction($limit = 1000, $highlighted = null, $availableOnList = true)
     {
 		$em = $this->getDoctrine()->getEntityManager();
         $projects = $em->getRepository('SnowcapSiteBundle:Project')->getList($limit, $highlighted, $availableOnList);
