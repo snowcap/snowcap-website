@@ -69,14 +69,33 @@ header nav a:hover {
 	margin-bottom: 5px;
 	font-size: 16px;
 }
+#main section .form-row .form {
+    background-color: #eee;
+    border: 1px solid #c0c0c0;
+    padding:  0 10px;
+}
+#main section #project_images .form-row > label {
+    display: none;
+}
+#main .section-700 .form-row .form input,
+#main .section-700 .form-row .form textarea {
+	width: 630px;
+}
+
 #main section input,
 #main section textarea {
 	display: block;
 	padding: 4px;
 	border: 1px solid #c0c0c0;
+    background-color: #fff;
 }
 #main section input {
 	height: 20px;
+}
+#main section input[type="text"] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
 }
 #main section input.datepicker {
 	width: 80px;
