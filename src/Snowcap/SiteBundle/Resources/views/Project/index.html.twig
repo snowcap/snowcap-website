@@ -3,19 +3,26 @@
 {% import "SnowcapSiteBundle::macros.html.twig" as helper %}
 {% block body %}
     <h1 class="main-title">{{ "project.list.title" | trans }}</h1>
-    <div class="full" style="padding-top: 200px;">
+    <div class="full">
         <section class="content main">
             {% if project %}
-                <div class="project-highlighted">
-                    <a class="flipper flipper-thumb" href="{{ path('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ "project.link.title" | trans({'%title%': project.title}) }}">
-                        {{ helper.project_image_flipper(project, 'thumb') }}
+                <h2>{{ project.title }}</h2>
+                {{ project.introduction | markdown }}
+                <p class="read-more">
+                    <a
+                        href="{{ url('snwcp_site_project_show', {'slug': project.slug}) }}"
+                        title="{{ 'general.readmore.title' | trans }}"
+                    >
+                        {{ 'general.readmore.label' | trans }}
                     </a>
-                    <h2>{{ project.title }}</h2>
-                    <div class="body">
-                        {{ project.introduction | markdown }}
-                        <a href="{{ url('snwcp_site_project_show', {'slug': project.slug}) }}" title="{{ 'general.readmore.title' | trans }}" class="read-more">{{ 'general.readmore.label' | trans }}</a>
-                    </div>
-                </div>
+                </p>
+                <a
+                    class="flipper flipper-preview"
+                    href="{{ path('snwcp_site_project_show', {'slug': project.slug}) }}"
+                    title="{{ "project.link.title" | trans({'%title%': project.title}) }}"
+                >
+                    {{ helper.project_image_flipper(project, 'preview') }}
+                </a>
             {% endif %}
         </section>
         <section class="projects content content-primary">

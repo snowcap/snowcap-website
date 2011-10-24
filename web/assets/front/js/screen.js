@@ -3,20 +3,15 @@
     var Flipper = function(element) {
         var _element = $(element);
         var _this = this;
-        var _pixels;
-        if (_element.hasClass('flipper-thumb')) {
-            _pixels = 300;
-        } else if (_element.hasClass('flipper-small')) {
-            _pixels = 100;
-        }
+        var _left = $(_element.find('img')[0]).width();
         _this.init = function() {
             _element.hover(
                 function(event) {
-                    _element.find('img').animate({'left': '+=' + _pixels}, 'fast');
+                    _element.find('img').animate({'left': '+=' + _left}, 'fast');
                     _element.find('span').show();
                 },
                 function(event) {
-                    _element.find('img').animate({'left': '-=' + _pixels}, 'fast');
+                    _element.find('img').animate({'left': '-=' + _left}, 'fast');
                     _element.find('span').hide();
                 }
             );
