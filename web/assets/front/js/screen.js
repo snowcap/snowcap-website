@@ -3,7 +3,7 @@
     var Flipper = function(element) {
         var _element = $(element);
         var _this = this;
-        var _left = $(_element.find('img')[0]).width();
+        var _left = _element.width();
         _this.init = function() {
             _element.hover(
                 function(event) {

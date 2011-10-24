@@ -1,4 +1,7 @@
 /* GLOBALS */
+html, body {
+    height: 100%;
+}
 body {
     color: #0a0a0a;
     background-color: #fff;
@@ -9,6 +12,14 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: Lato, sans-serif;
+}
+/* WRAPPERS */
+.wrapper-outer {
+    position: relative;
+    min-height: 100%;
+}
+.wrapper-inner {
+    padding-bottom: 186px;
 }
 /* CONTENT SECTIONS */
 /* main sections */
@@ -21,9 +32,8 @@ h1.main-title {
     height: 55px;
     line-height: 55px;
     left: 0;
-    padding-left: 50%;
     margin: 0 0 0 -480px;
-    width: 230px;
+    padding: 0 60px 0 50%;
     color: #0a0a0a;
     font-size: 30px;
     font-weight: 300;
@@ -124,29 +134,42 @@ div.split-3 section {
 div.split-3 section:not(:last-child) {
     margin-right: 27px;
 }
+/* generic rules */
+section.main {
+    margin: 150px 0 20px 0;
+}
 /* content sections */
 section.content h2 {
+    margin: 0 0 20px 0;
     font-size: 24px;
     font-weight: 300;
 }
 /* main sections */
-section.main p {
+section.main {
     color: #a6a6a6;
+}
+section.main p {
     font-size: 16px;
     font-weight: bold;
     line-height: 21px;
 }
 
 /* secondary sections */
-section.content-secondary {
+section.secondary {
     font-size: 12px;
     line-height: 16px;
 }
-section.content-secondary p {
+section.secondary p {
     margin: 10px 0 0 0;
     font-size: 12px;
     line-height: 16px;
 }
+section.secondary h3 {
+    margin: 15px 0;
+    font-weight: 300;
+    font-size: 24px;
+}
+/* content sections */
 section.content p.read-more {
     font-weight: bold;
 }
@@ -157,11 +180,6 @@ section.content p.read-more a{
     background-image: url(../images/sprites.png);
     background-repeat: no-repeat;
     background-position: 90px -143px;
-}
-section.content-secondary h3 {
-    margin: 15px 0;
-    font-weight: 300;
-    font-size: 24px;
 }
 /* home-specific rules */
 .home section.main p {
@@ -183,7 +201,7 @@ section.content-secondary h3 {
 /* HOME */
 .home section.main {
     padding: 90px 0 0 0;
-    margin-bottom: 50px;
+    margin: 0 0 50px 0;
 }
 .home section.main h1 {
     text-indent: -10000px;
@@ -217,11 +235,12 @@ section.content-secondary h3 {
     width: 350px;
     line-height: 55px;
     font-size: 30px;
+    margin: 0 0 20px 0;
 }
 /* generic project listing */
 section.projects ul {
     overflow: hidden;
-    margin: 20px 0 0 0;
+    margin: 0;
     padding: 0;
 }
 section.projects li {
@@ -234,31 +253,73 @@ section.projects li {
 section.projects li:not(.three) {
     margin-right: 30px;
 }
-/* projects listing page */
-.projects section.main {
-    margin-top: 135px;
+/* projects generic rules */
+section.project-detail {
     padding-right: 480px;
     position: relative;
     height: 285px;
     overflow:  hidden;
-    background: url(../images/sprites.png) 0 284px repeat-x;
 }
-.projects section.main .flipper {
+section.project-detail .visual {
     position: absolute;
     right: 0;
     top: 0;
 }
-body.projects .project-highlighted .body,
-body.projects .project-highlighted h2 {
-    width: 520px;
+/* project-detail */
+.project section.project-detail dl {
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 18px;
+}
+.project section.project-detail dt {
+    clear: left;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.project section.project-detail dd {
+    float: left;
+    margin: 0 0 0 5px;
+    padding: 0;
+    font-weight: bold;
+}
+.project section.project-detail p.read-more a {
+    background-position: 110px -145px;
+}
+.project section.project-story {
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 18px;
+    color: #818181;
+}
+.project section.project-story h2 {
+    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #3f3f3f;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+.project section.project-story p {
+    margin: 0 0 20px 0;
+}
+.project section.project-story .column {
+    width: 300px;
+    float: left;
+}
+.project section.project-story .column:not(:last-child) {
+    margin-right: 30px;
+}
+/* projects list */
+.projects section.project-detail {
+    background: url(../images/sprites.png) 0 284px repeat-x;
 }
 /* HOMEPAGE */
-.home section.content-secondary h2 {
+.home section.secondary h2 {
     background-position: right -55px;
     line-height: 35px;
     font-size: 24px;
 }
-.home section.content-secondary h2 a {
+.home section.secondary h2 a {
     color: #fff;
     text-decoration: none;
 }
@@ -306,25 +367,28 @@ body.projects .project-highlighted h2 {
     font-size: 12px;
     line-height: 16px;
 }
-/* FLIPPER */
-.flipper {
+/* VISUALS */
+.visual {
     display: block;
     position: relative;
-    overflow: hidden;
     margin: 5px;
     box-shadow: 0 3px 5px #ccc;
 }
-.flipper-preview {
+.visual-preview {
     width: 390px;
     height: 255px;
 }
-.flipper-thumb {
+.visual-thumb {
     width: 290px;
     height: 197px;
 }
-.flipper-small {
+.visual-small {
     width: 100px;
     height: 76px;
+}
+/* flipper */
+.flipper {
+    overflow: hidden;
 }
 .flipper span {
     position: absolute;
@@ -345,21 +409,56 @@ body.projects .project-highlighted h2 {
     position: absolute;
     top: 0;
 }
-.flipper img.front {
+.visual img.front {
     left: 0;
 }
-.flipper-preview img {
+.visual-preview img.back {
     left: -390px;
 }
-.flipper-thumb img {
+.visual-thumb img.back {
     left: -290px;
 }
-.flipper-small img {
+.visual-small img.back {
     left: -100px;
 }
+/* TECHNOLOGIES */
 
+section.technology ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+section.technology li {
+    list-style-type: none;
+    float: left;
+    line-height: 40px;
+    border-radius: 2px;
+    margin-right: 3px;
+    font-size: 13px;
+    font-weight: 700;
+    font-style: italic;
+    background: #4b4b4b; /* Old browsers */
+    background: -moz-linear-gradient(top, #4b4b4b 6%, #252525 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,#4b4b4b), color-stop(100%,#252525)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #4b4b4b 6%,#252525 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #4b4b4b 6%,#252525 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #4b4b4b 6%,#252525 100%); /* IE10+ */
+    background: linear-gradient(top, #4b4b4b 6%,#252525 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b4b4b', endColorstr='#252525',GradientType=0 ); /* IE6-9 */
+}
+section.technology a {
+    padding:  0 10px;
+    color: #fff;
+}
+section.technology a:hover {
+    color: #8bc623;
+    text-decoration: none;
+}
 /* FOOTER */
 footer {
+    position: relative;
+    margin-top: -186px;
+    height: 148px;
     border-top:  8px solid #8bc623;
     padding: 0 0 30px 0;
     color: #fff;
@@ -406,86 +505,5 @@ footer section.technology {
     width: 665px;
 }
 footer section.technology ul {
-    margin: 60px 0 0 0;
-    overflow: hidden;
-}
-footer section.technology li {
-    list-style-type: none;
-    float: left;
-    line-height: 40px;
-    border-radius: 2px;
-    margin-right: 3px;
-    font-size: 13px;
-    font-weight: 700;
-    font-style: italic;
-    background: #4b4b4b; /* Old browsers */
-    background: -moz-linear-gradient(top, #4b4b4b 6%, #252525 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,#4b4b4b), color-stop(100%,#252525)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #4b4b4b 6%,#252525 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #4b4b4b 6%,#252525 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #4b4b4b 6%,#252525 100%); /* IE10+ */
-    background: linear-gradient(top, #4b4b4b 6%,#252525 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b4b4b', endColorstr='#252525',GradientType=0 ); /* IE6-9 */
-}
-footer section.technology a {
-    padding:  0 10px;
-    color: #fff;
-}
-footer section.technology a:hover {
-    color: #8bc623;
-    text-decoration: none;
-}
-
-/* STICKY FOOTER */
-html, body {
-    height: 100%;
-}
-.wrapper-outer {
-    position: relative;
-    min-height: 100%;
-}
-.wrapper-inner {
-    padding-bottom: 186px;
-}
-footer {
-    position: relative;
-    margin-top: -186px;
-    height: 148px;
-}
-/* project page */
-body.project div.flipper {
-    float: right;
-}
-body.project div.summary {
-    width: 520px;
-    min-height: 232px;
-}
-body.project dl.information {
-    overflow: hidden;
-}
-body.project dl.information dt {
-    clear: left;
-    float: left;
-    margin: 0;
-    padding: 0;
-}
-body.project dl.information dd {
-    float: left;
-    margin: 0 0 0 5px;
-    padding: 0;
-}
-body.project .website {
-    clear: left;
-    display: block;
-    margin:  20px 0 0 0;
-}
-body.project div.body {
-    overflow: hidden;
-}
-body.project div.body .column {
-    width: 300px;
-    float: left;
-}
-body.project div.body .column:not(:last-child) {
-    margin-right: 30px;
+    margin-top: 60px;
 }
