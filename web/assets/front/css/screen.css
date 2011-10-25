@@ -33,10 +33,12 @@ h1.main-title {
     line-height: 55px;
     left: 0;
     margin: 0 0 0 -480px;
-    padding: 0 60px 0 50%;
+    padding: 0 150px 0 50%;
     color: #0a0a0a;
     font-size: 30px;
     font-weight: 300;
+    text-align: right;
+    text-transform: uppercase;
 }
 a {
     color: #8bc623;
@@ -134,26 +136,50 @@ div.split-3 section {
 div.split-3 section:not(:last-child) {
     margin-right: 27px;
 }
-/* generic rules */
-section.main {
-    margin: 150px 0 20px 0;
-}
 /* content sections */
 section.content h2 {
     margin: 0 0 20px 0;
     font-size: 24px;
     font-weight: 300;
+    color: #333;
+}
+section.content p {
+    margin: 15px 0;
+}
+
+section.content p.read-more {
+    font-weight: bold;
+}
+section.content p.read-more a{
+    height: 14px;
+    line-height: 14px;
+    padding: 0 30px 0 0;
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+    background-position: 90px -143px;
 }
 /* main sections */
 section.main {
+    margin: 150px 0 20px 0;
     color: #a6a6a6;
+    font-size: 14px;
+    line-height: 18px;
 }
-section.main p {
+section.main p.intro {
     font-size: 16px;
-    font-weight: bold;
     line-height: 21px;
+    font-weight: bold;
 }
-
+section.main ul {
+    list-style-type: none;
+    margin: 30px 0;
+    padding: 0;
+    line-height: 26px;
+}
+section.main li {
+    padding-left: 30px;
+    background:  url(../images/sprites.png) 0 -143px no-repeat;
+}
 /* secondary sections */
 section.secondary {
     font-size: 12px;
@@ -168,18 +194,6 @@ section.secondary h3 {
     margin: 15px 0;
     font-weight: 300;
     font-size: 24px;
-}
-/* content sections */
-section.content p.read-more {
-    font-weight: bold;
-}
-section.content p.read-more a{
-    height: 14px;
-    line-height: 14px;
-    padding: 0 30px 0 0;
-    background-image: url(../images/sprites.png);
-    background-repeat: no-repeat;
-    background-position: 90px -143px;
 }
 /* home-specific rules */
 .home section.main p {
@@ -228,6 +242,52 @@ section.content p.read-more a{
 .home section.main p strong {
     color: #333332;
 }
+/* SERVICES */
+.services section.main {
+    padding-right: 500px;
+}
+/* COMPANY */
+.company h1.main-title {
+     position: absolute;
+    left: 0;
+    right: 50%;
+    margin: 0;
+    padding: 0 65px 0 35%;
+    width: 480px;
+    top: 175px;
+}
+.company h2#mountain {
+    position: absolute;
+    left: 0;
+    right: 50%;
+    margin: 0;
+    padding: 0 0 0 35%;
+    width: 480px;
+    top: 65px;
+    height: 93px;
+    text-indent: -10000px;
+    background: url(../images/sprites.png) right -171px no-repeat;
+}
+.company blockquote {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    color: #d4d4d4;
+    font-style: oblique;
+    line-height: 24px;
+    left: 0;
+    margin: 0 0 0 -490px;
+    padding: 15px 125px 15px 50%;
+    position: absolute;
+    top: 375px;
+    right: 50%;
+    width: 350px;
+    height: 95px;
+    background: url(../images/headings.png) right -95px no-repeat;
+}
+.company section.main {
+    margin-top: 215px;
+    padding-left: 500px;
+}
 /* PROJECTS */
 /* homepage */
 .home section.projects h2{
@@ -259,6 +319,11 @@ section.project-detail {
     position: relative;
     height: 285px;
     overflow:  hidden;
+}
+section.project-detail p {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: bold;
 }
 section.project-detail .visual {
     position: absolute;

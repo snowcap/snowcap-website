@@ -1,0 +1,10 @@
+{% extends "SnowcapSiteBundle::base.html.twig" %}
+{% set body_class = 'services' %}
+{% block body %}
+    <h1 class="main-title">{{ "services.title" | trans }}</h1>
+    <div class="full">
+        <section class="content main">
+            {{ 'services.body' | trans | markdown }}
+        </section>
+    </div>
+{% endblock %}
