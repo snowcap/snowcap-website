@@ -156,27 +156,30 @@ section.content p.read-more a{
     padding: 0 30px 0 0;
     background-image: url(../images/sprites.png);
     background-repeat: no-repeat;
-    background-position: 90px -143px;
+    background-position: 90px -148px;
 }
 /* main sections */
 section.main {
     margin: 150px 0 20px 0;
+}
+/* primary sections */
+section.primary {
     color: #a6a6a6;
     font-size: 14px;
     line-height: 18px;
 }
-section.main p.intro {
+section.primary p.intro {
     font-size: 16px;
     line-height: 21px;
     font-weight: bold;
 }
-section.main ul {
+section.primary ul {
     list-style-type: none;
     margin: 30px 0;
     padding: 0;
     line-height: 26px;
 }
-section.main li {
+section.primary li {
     padding-left: 30px;
     background:  url(../images/sprites.png) 0 -143px no-repeat;
 }
@@ -288,6 +291,151 @@ section.secondary h3 {
     margin-top: 215px;
     padding-left: 500px;
 }
+/* TEAM */
+.team section.main {
+    margin-top: 300px;
+}
+.team section.main ul {
+    margin: 0;
+    padding: 0;
+}
+.team section.main li {
+    float: left;
+    width: 318px;
+    list-style-type: none;
+    margin: 0 1px;
+    color: #818181;
+}
+.team section.main li h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 16px;
+    height: 32px;
+    margin: 0;
+    width: 80px;
+    padding: 10px 110px 10px 10px;
+    background: url(../images/headings.png) right -220px;
+}
+.team section.main li .member-details {
+    background-color: #eeeff1;
+    padding: 15px 0;
+}
+.team section.main li .member-details li {
+    float: none;
+    width: auto;
+    margin:  0;
+}
+.team section.main .member-details dl {
+    padding: 15px;
+    position: relative;
+    height: 65px;
+    background: url(../images/sprites.png) 0 94px repeat-x;
+}
+.team section.main .member-details dt,
+.team section.main .member-details dd {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+.team section.main .member-details dt.age {
+    left: 15px;
+    top: 15px;
+}
+.team section.main .member-details dd.age {
+    font-family: Lato, sans-serif;
+    font-size: 45px;
+    font-weight: 300;
+    left: 15px;
+    top: 35px;
+}
+.team section.main .member-details dt.skills {
+    left: 90px;
+    top: 15px;
+}
+.team section.main .member-details dd.skills {
+    left: 90px;
+    top: 35px;
+}
+.team section.main .member-details blockquote {
+    margin:  0;
+    padding: 15px;
+    line-height: 18px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: #0a0a0a;
+    background: url(../images/sprites.png) 0 47px repeat-x;
+    text-align: center;
+    font-style: oblique;
+}
+.team section.main .member-details p {
+    margin: 15px;
+}
+.team section.main .member-details ul.social {
+    margin: 15px;
+    overflow:  hidden;
+    font-size: 11px;
+    font-weight: bold;
+}
+.team section.main .member-details ul.social li {
+    float: left;
+    margin-right: 5px;
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+.team section.main .member-details ul.social li:hover {
+    background: rgb(238,238,238); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+}
+.team section.main .member-details ul.social li a {
+    display: block;
+    line-height: 22px;
+    padding: 2px 5px 0 24px;
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+    color: #818181;
+    text-decoration: none;
+}
+.team section.main .member-details ul.social li.twitter a {
+     background-position: -145px -262px;
+}
+.team section.main .member-details ul.social li.twitter a:hover {
+     background-position: 2px -262px;
+}
+.team section.main .member-details ul.social li.linkedin a {
+     background-position: -141px -282px;
+}
+.team section.main .member-details ul.social li.linkedin a:hover {
+     background-position: 6px -282px;
+}
+.team section.main .member-details ul.social li.forrst a {
+    padding-left: 22px;
+    background-position: -141px -302px;
+}
+.team section.main .member-details ul.social li.forrst a:hover {
+    background-position: 6px -302px;
+}
+.team section.main .member-details ul.social li.github a {
+    padding-left: 22px;
+    background-position: -141px -322px;
+}
+.team section.main .member-details ul.social li.github a:hover {
+    background-position: 6px -322px;
+}
 /* PROJECTS */
 /* homepage */
 .home section.projects h2{
@@ -349,7 +497,7 @@ section.project-detail .visual {
     font-weight: bold;
 }
 .project section.project-detail p.read-more a {
-    background-position: 110px -145px;
+    background-position: 110px -148px;
 }
 .project section.project-story {
     overflow: hidden;

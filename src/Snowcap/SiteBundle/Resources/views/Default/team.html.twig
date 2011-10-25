@@ -1,16 +1,14 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
 {% set body_class = 'team' %}
 {% block body %}
+    <h1 class="main-title">{{ "team.title" | trans }}</h1>
     <div class="full">
         <section class="main">
-            <h1>{{ "team.title" | trans }}</h1>
-            <div class="body">
-                <ul class="team-list">
-                    {% include "SnowcapSiteBundle:Default:member.html.twig" with { 'member': 'jerome'}%}
-                    {% include "SnowcapSiteBundle:Default:member.html.twig" with { 'member': 'pierre'}%}
-                    {% include "SnowcapSiteBundle:Default:member.html.twig" with { 'member': 'edwin'}%}
-                </ul>
-            </div>
+            <ul>
+                {% for member in ['jerome', 'pierre', 'edwin'] %}
+                    <li id="{{ member }}">{% include "SnowcapSiteBundle:Default:member.html.twig" with {'member': member} %}</li>
+                {% endfor %}
+            </ul>
         </section>
     </div>
 {% endblock %}

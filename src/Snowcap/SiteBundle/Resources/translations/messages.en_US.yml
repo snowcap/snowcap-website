@@ -96,10 +96,16 @@ team:
     title: Skills
   twitter:
     title: Follow on Twitter
-    label: Follow on Twitter
+    label: Twitter
   linkedin:
     title: Follow on Linkedin
-    label: Follow on Linkedin
+    label: Linkedin
+  forrst:
+    title: Follow on Forrst
+    label: Forrst
+  github:
+    title: Follow on Github
+    label: Github
   cv:
     title: Download CV
     label: Download CV
@@ -111,13 +117,12 @@ team:
       * Project Management
       * CMS
     quote: Always room for improvement
-    body: jerome.body
-    twitter:
-      url: twitter.url
-    linkedin:
-      url: linkedin.url
-    cv:
-      url: cv.url
+    body: |
+      Jerome is a perfectionnist, an experienced developer that will go all the way to improve the quality of our work, day after day.
+    twitter: moinax
+    linkedin: moinax
+    forrst: moinax
+    github: moinax
   pierre:
     name: Pierre Vanliefland
     birthdate: "1983-05-29"
@@ -126,13 +131,12 @@ team:
       * Analyse
       * Database
     quote: Let's think this over
-    body: pierre.body
-    twitter:
-      url: twitter.url
-    linkedin:
-      url: linkedin.url
-    cv:
-      url: cv.url
+    body: |
+      Pierre likes to code. He also likes to think and to talk about code, and to be honest we suspect him to dream about code as well.
+    twitter: pvanliefland
+    linkedin: pvanliefland
+    forrst: pvanliefland
+    github: pvanliefland
   edwin:
     name: Edwin Hermans
     birthdate: "1981-03-15"
@@ -141,13 +145,12 @@ team:
       * IT
       * E-Commerce
     quote: Straight to the point
-    body: edwin.body
-    twitter:
-      url: twitter.url
-    linkedin:
-      url: linkedin.url
-    cv:
-      url: cv.url
+    body: |
+      Edwin does not only program, he can also talk to machines. He brings us the much needed bridge between development, security and IT.
+    twitter: edwin_hermans
+    linkedin: herdani
+    forrst: herdani
+    github: herdani
 technology:
   title: Technologies
   projects: Used, among other, in the following projects
