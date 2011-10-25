@@ -319,7 +319,15 @@ section.secondary h3 {
 }
 .team section.main li .member-details {
     background-color: #eeeff1;
-    padding: 15px 0;
+    padding: 0 0 100px 0;
+    background: rgb(238,239,241); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(238,239,241,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,239,241,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(238,239,241,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(238,239,241,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(238,239,241,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(238,239,241,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeff1', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 .team section.main li .member-details li {
     float: none;
@@ -354,6 +362,9 @@ section.secondary h3 {
     top: 15px;
 }
 .team section.main .member-details dd.skills {
+    font-weight: 300;
+    font-family: Lato, sans-serif;
+    text-transform: uppercase;
     left: 90px;
     top: 35px;
 }
@@ -369,7 +380,7 @@ section.secondary h3 {
     font-style: oblique;
 }
 .team section.main .member-details p {
-    margin: 15px;
+    margin: 30px 15px;
 }
 .team section.main .member-details ul.social {
     margin: 15px;
