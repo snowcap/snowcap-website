@@ -31,10 +31,10 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/method", name="snwcp_site_default_method")
+     * @Route("/services", name="snwcp_site_default_services")
      * @Template()
      */
-    public function methodAction() {
+    public function servicesAction() {
 
         return array();
     }
