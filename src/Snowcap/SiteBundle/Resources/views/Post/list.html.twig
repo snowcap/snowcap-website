@@ -1,31 +1,24 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% set body_class = 'blog blog-listing' %}
 {% block body %}
+    <h1 class="main-title">{{ "post.list.title" | trans }}</h1>
     <div class="full">
-        <section class="main">
-            <h1>{{ "post.list.title" | trans }}</h1>
-            {% for post in posts %}
-                {% if post.thumb %}
-                    <img class="thumb" src="{{ post.thumb.webPath | apply_filter('thumb') }}" alt="{{ post.thumb.alt }}" />
-                {% endif %}
-                <h3>{{ post.title }}</h3>
-                <h4>{{ post.published_at | time_ago }}</h4>
-                <p>
-                    {{ post.summary | markdown }}
-                    {% if post.body %}
-                        <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ 'Read more' | trans }}" class="read-more">{{ 'Read more' | trans }}</a>
-                    {% endif %}
-                </p>
-                ({{post.category.name}})
-                {% if post.technologies|length > 0 %}
-                    <ul class="technology-list">
-                        {% for technology in post.technologies %}
-                            <li>{{technology.name}}</li>
-                        {%endfor%}
-                    </ul>
-                {% endif %}
-            {% else %}
-                <p>{{ "post.list.empty" | trans }}</p>
-            {% endfor %}
+        <section class="main content">
+            <ul>
+                {% for post in posts %}
+                    <li>
+                        {% if post.thumb %}
+                            <img class="thumb" src="{{ post.thumb.webPath | apply_filter('thumb') }}" alt="{{ post.thumb.alt }}" />
+                        {% endif %}
+                        <h2>{{ post.title }}</h2>
+                        <p class="published">{{ post.published_at | time_ago }}</p>
+                        {{ post.summary | markdown }}
+                        {% if post.body %}
+                            <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ 'Read more' | trans }}" class="read-more">{{ 'Read more' | trans }}</a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
         </section>
     </div>
 {% endblock body %}

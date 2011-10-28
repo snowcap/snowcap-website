@@ -1,10 +1,10 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
-{% set body_class = 'project' %}
+{% set body_class = 'project project-detail' %}
 {% import "SnowcapSiteBundle::macros.html.twig" as helper %}
 {% block body %}
     <h1 class="main-title">{{ project.title }}</h1>
     <div class="full">
-        <section class="content main primary project-detail">
+        <section class="main content project-overview">
             {{ project.introduction | markdown }}
             <dl>
                 <dt>{{ "project.client.label" | trans }} :</dt>

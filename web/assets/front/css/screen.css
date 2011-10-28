@@ -13,16 +13,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: Lato, sans-serif;
 }
-/* WRAPPERS */
-.wrapper-outer {
-    position: relative;
-    min-height: 100%;
-}
-.wrapper-inner {
-    padding-bottom: 186px;
-}
-/* CONTENT SECTIONS */
-/* main sections */
 h1.main-title {
     background-image: url(../images/main_title.png);
     background-repeat: no-repeat;
@@ -46,6 +36,14 @@ a {
 }
 a:hover {
     text-decoration: underline;
+}
+/* WRAPPERS */
+.wrapper-outer {
+    position: relative;
+    min-height: 100%;
+}
+.wrapper-inner {
+    padding-bottom: 186px;
 }
 /* HEADER */
 header {
@@ -113,14 +111,6 @@ div.full:after, div.split:after {
 	clear: both;
 	height: 0;
 }
-.home div.split-3 img#mask-image {
-    position: absolute;
-    z-index: 100;
-    right: -42px;
-    top: -8px;
-    width: 97px;
-    height: 105px;
-}
 div.split section {
     float: left;
 }
@@ -136,7 +126,12 @@ div.split-3 section {
 div.split-3 section:not(:last-child) {
     margin-right: 27px;
 }
-/* content sections */
+/* content sections (content sections are just content) */
+section.content {
+    color: #818181;
+    font-size: 14px;
+    line-height: 18px;
+}
 section.content h2 {
     margin: 0 0 20px 0;
     font-size: 24px;
@@ -146,7 +141,6 @@ section.content h2 {
 section.content p {
     margin: 15px 0;
 }
-
 section.content p.read-more {
     font-weight: bold;
 }
@@ -158,64 +152,39 @@ section.content p.read-more a{
     background-repeat: no-repeat;
     background-position: 90px -148px;
 }
-/* main sections */
+/* main sections (only used to push content) */
 section.main {
     margin: 150px 0 20px 0;
 }
-/* primary sections */
-section.primary {
+/* standard sections (used to provide a few generic styling for simple content sections */
+section.standard {
     color: #a6a6a6;
-    font-size: 14px;
-    line-height: 18px;
 }
-section.primary p.intro {
+section.standard p.intro {
     font-size: 16px;
     line-height: 21px;
     font-weight: bold;
 }
-section.primary ul {
+section.standard ul {
     list-style-type: none;
     margin: 30px 0;
     padding: 0;
     line-height: 26px;
 }
-section.primary li {
+section.standard li {
     padding-left: 30px;
     background:  url(../images/sprites.png) 0 -143px no-repeat;
 }
-/* secondary sections */
-section.secondary {
-    font-size: 12px;
-    line-height: 16px;
+/* HOMEPAGE */
+.home div.split-3 img#mask-image {
+    position: absolute;
+    z-index: 100;
+    right: -42px;
+    top: -8px;
+    width: 97px;
+    height: 105px;
 }
-section.secondary p {
-    margin: 10px 0 0 0;
-    font-size: 12px;
-    line-height: 16px;
-}
-section.secondary h3 {
-    margin: 15px 0;
-    font-weight: 300;
-    font-size: 24px;
-}
-/* home-specific rules */
-.home section.main p {
-    font-size: 14px;
-}
-.home section.content h2 {
-    margin: 0;
-    text-transform: uppercase;
-    padding: 0 0 0 10px;
-    background-image: url(../images/headings.png);
-    background-repeat: no-repeat;
-}
-.home section.content p.read-more {
-    text-align: right;
-}
-.home section.content p.read-more a {
-    background-position: 70px -145px;
-}
-/* HOME */
+/* main section */
 .home section.main {
     padding: 90px 0 0 0;
     margin: 0 0 50px 0;
@@ -245,31 +214,132 @@ section.secondary h3 {
 .home section.main p strong {
     color: #333332;
 }
+/* projects */
+.home section.projects h2{
+    background-position: right 0;
+    width: 350px;
+    line-height: 55px;
+    font-size: 30px;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    padding: 0 0 0 10px;
+    background-image: url(../images/headings.png);
+    background-repeat: no-repeat;
+}
+/* secondary sections */
+.home section.secondary {
+    font-size: 12px;
+    line-height: 16px;
+}
+.home section.secondary h2 {
+    margin: 0;
+    text-transform: uppercase;
+    padding: 0 0 0 10px;
+    background-image: url(../images/headings.png);
+    background-repeat: no-repeat;
+    background-position: right -55px;
+    line-height: 35px;
+    font-size: 24px;
+}
+.home section.secondary h2 a {
+    color: #fff;
+    text-decoration: none;
+}
+.home section.secondary p {
+    margin: 10px 0 0 0;
+    font-size: 12px;
+    line-height: 16px;
+}
+.home section.secondary h3 {
+    margin: 15px 0;
+    font-weight: 300;
+    font-size: 24px;
+}
+.home section.secondary p.read-more {
+    text-align: right;
+}
+.home section.secondary p.read-more a {
+    background-position: 70px -150px;
+}
+/* blog */
+.home section.blog h2 {
+    width: 150px;
+}
+/* tweets */
+.home section.tweets h2 {
+    width: 270px;
+}
+.home section.tweets h2 a {
+    padding-left: 40px;
+    background: url(../images/sprites.png) -94px -115px no-repeat;
+}
+.home section.tweets ul {
+    margin: 0;
+    padding: 0;
+}
+.home section.tweets li {
+    list-style-type: none;
+}
+.home section.tweets li p.date {
+    color: #a5a5a5;
+    font-size: 14px;
+}
+.home section.tweets li p.text {
+    font-family: Lato, sans-serif;
+    font-size: 19px;
+    color: #404040;
+    line-height: 24px;
+    font-weight: 300;
+}
+/* nerds */
+.home section.nerds {
+    color: #fff;
+    background: #0a0a0a;
+    width: 242px;
+    padding: 30px;
+}
+.home section.nerds h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 32px;
+}
+.home section.nerds p {
+    font-size: 12px;
+    line-height: 16px;
+}
 /* SERVICES */
 .services section.main {
     padding-right: 500px;
 }
-/* COMPANY */
-.company h1.main-title {
-     position: absolute;
+/* COMPANY AND CONTACT */
+.company h1.main-title,
+.contact h1.main-title {
+    position: absolute;
     left: 0;
     right: 50%;
     margin: 0;
     padding: 0 65px 0 35%;
     width: 480px;
-    top: 175px;
+    top: 210px;
 }
-.company h2#mountain {
+.company h2#mountain,
+.contact h2#mountain {
     position: absolute;
     left: 0;
     right: 50%;
     margin: 0;
     padding: 0 0 0 35%;
     width: 480px;
-    top: 65px;
+    top: 100px;
     height: 93px;
     text-indent: -10000px;
     background: url(../images/sprites.png) right -171px no-repeat;
+}
+/* COMPANY */
+.company section.main {
+    margin-top: 250px;
+    padding-left: 500px;
 }
 .company blockquote {
     font-family: Georgia, "Times New Roman", serif;
@@ -287,9 +357,18 @@ section.secondary h3 {
     height: 95px;
     background: url(../images/headings.png) right -95px no-repeat;
 }
-.company section.main {
-    margin-top: 215px;
+/* CONTACT */
+.contact section.main {
+    margin-top: 300px;
     padding-left: 500px;
+}
+.contact .snowcap-map {
+    width: 100%;
+    height: 300px;
+    margin:  30px 0;
+}
+.contact ul.social {
+    margin: 30px 0;
 }
 /* TEAM */
 .team section.main {
@@ -382,81 +461,11 @@ section.secondary h3 {
 .team section.main .member-details p {
     margin: 30px 15px;
 }
-.team section.main .member-details ul.social {
-    margin: 15px;
-    overflow:  hidden;
-    font-size: 11px;
-    font-weight: bold;
-}
-.team section.main .member-details ul.social li {
-    float: left;
-    margin-right: 5px;
-    background: rgb(255,255,255); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
-    background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
-    border-radius: 3px;
-    border: 1px solid #ccc;
-}
-.team section.main .member-details ul.social li:hover {
-    background: rgb(238,238,238); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* IE10+ */
-    background: linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
-}
-.team section.main .member-details ul.social li a {
-    display: block;
-    line-height: 22px;
-    padding: 2px 5px 0 24px;
-    background-image: url(../images/sprites.png);
-    background-repeat: no-repeat;
-    color: #818181;
-    text-decoration: none;
-}
-.team section.main .member-details ul.social li.twitter a {
-     background-position: -145px -262px;
-}
-.team section.main .member-details ul.social li.twitter a:hover {
-     background-position: 2px -262px;
-}
-.team section.main .member-details ul.social li.linkedin a {
-     background-position: -141px -282px;
-}
-.team section.main .member-details ul.social li.linkedin a:hover {
-     background-position: 6px -282px;
-}
-.team section.main .member-details ul.social li.forrst a {
-    padding-left: 22px;
-    background-position: -141px -302px;
-}
-.team section.main .member-details ul.social li.forrst a:hover {
-    background-position: 6px -302px;
-}
-.team section.main .member-details ul.social li.github a {
-    padding-left: 22px;
-    background-position: -141px -322px;
-}
-.team section.main .member-details ul.social li.github a:hover {
-    background-position: 6px -322px;
+.team ul.social {
+    margin: 15px !important;
 }
 /* PROJECTS */
-/* homepage */
-.home section.projects h2{
-    background-position: right 0;
-    width: 350px;
-    line-height: 55px;
-    font-size: 30px;
-    margin: 0 0 20px 0;
-}
-/* generic project listing */
+/* generic project listing (also used for the homepage) */
 section.projects ul {
     overflow: hidden;
     margin: 0;
@@ -472,44 +481,42 @@ section.projects li {
 section.projects li:not(.three) {
     margin-right: 30px;
 }
-/* projects generic rules */
-section.project-detail {
+/* project-detail (top of the list or in detail page) */
+.project section.project-overview {
     padding-right: 480px;
     position: relative;
     height: 285px;
     overflow:  hidden;
+    color: #a6a6a6;
 }
-section.project-detail p {
+.project section.project-overview p {
     font-size: 16px;
     line-height: 21px;
     font-weight: bold;
 }
-section.project-detail .visual {
+.project section.project-overview .visual {
     position: absolute;
     right: 0;
     top: 0;
 }
-/* project-detail */
-.project section.project-detail dl {
+.project section.project-overview dl {
     overflow: hidden;
     font-size: 14px;
     line-height: 18px;
 }
-.project section.project-detail dt {
+.project section.project-overview dt {
     clear: left;
     float: left;
     margin: 0;
     padding: 0;
 }
-.project section.project-detail dd {
+.project section.project-overview dd {
     float: left;
     margin: 0 0 0 5px;
     padding: 0;
     font-weight: bold;
 }
-.project section.project-detail p.read-more a {
-    background-position: 110px -148px;
-}
+/* project story */
 .project section.project-story {
     overflow: hidden;
     font-size: 14px;
@@ -533,63 +540,34 @@ section.project-detail .visual {
 .project section.project-story .column:not(:last-child) {
     margin-right: 30px;
 }
-/* projects list */
-.projects section.project-detail {
+/* project-listing page */
+.project-listing section.project-overview {
     background: url(../images/sprites.png) 0 284px repeat-x;
 }
-/* HOMEPAGE */
-.home section.secondary h2 {
-    background-position: right -55px;
-    line-height: 35px;
-    font-size: 24px;
+/* project-detail page */
+.project-detail section.project-overview p.read-more a {
+    background-position: 110px -148px;
 }
-.home section.secondary h2 a {
-    color: #fff;
-    text-decoration: none;
+/* BLOG */
+.blog section.main p.published {
+    margin: 0 0 10px 0;
+    font-size: 11px;
+    color: #818181;
 }
-.home section.blog h2 {
-    width: 150px;
-}
-.home section.tweets h2 {
-    width: 270px;
-}
-.home section.tweets h2 a {
-    padding-left: 40px;
-    background: url(../images/sprites.png) -94px -115px no-repeat;
-}
-.home section.tweets ul {
+/* blog-listing page */
+.blog-listing section.main ul {
     margin: 0;
     padding: 0;
+    background: none;
+    line-height: inherit;
 }
-.home section.tweets li {
+.blog-listing section.main li {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
 }
-.home section.tweets li p.date {
-    color: #a5a5a5;
-    font-size: 14px;
-}
-.home section.tweets li p.text {
-    font-family: Lato, sans-serif;
-    font-size: 19px;
-    color: #404040;
-    line-height: 24px;
-    font-weight: 300;
-}
-.home section.nerds {
-    color: #fff;
-    background: #0a0a0a;
-    width: 242px;
-    padding: 30px;
-}
-.home section.nerds h2 {
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 32px;
-}
-.home section.nerds p {
-    font-size: 12px;
-    line-height: 16px;
+.blog-listing section.main h2 {
+    margin: 15px 0 0 0;
 }
 /* VISUALS */
 .visual {
@@ -646,7 +624,6 @@ section.project-detail .visual {
     left: -100px;
 }
 /* TECHNOLOGIES */
-
 section.technology ul {
     margin: 0;
     padding: 0;
@@ -678,6 +655,84 @@ section.technology a:hover {
     color: #8bc623;
     text-decoration: none;
 }
+/* SOCIAL */
+ul.social {
+    padding:  0 !important;
+    overflow:  hidden;
+    font-size: 11px;
+    font-weight: bold;
+}
+ul.social li {
+    float: left !important;
+    margin: 0 5px 0 0 !important;
+    padding: 0 !important;
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+ul.social li:hover {
+    background: rgb(238,238,238); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+}
+ul.social li a {
+    display: block;
+    line-height: 22px;
+    padding: 2px 5px 0 20px;
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+    color: #818181;
+    text-decoration: none;
+}
+ul.social li.twitter a {
+    padding-left: 24px;
+     background-position: -145px -267px;
+}
+ul.social li.twitter a:hover {
+     background-position: 2px -267px;
+}
+ul.social li.linkedin a {
+    background-position: -146px -287px;
+}
+ul.social li.linkedin a:hover {
+     background-position: 1px -287px;
+}
+ul.social li.forrst a {
+    background-position: -146px -307px;
+}
+ul.social li.forrst a:hover {
+    background-position: 1px -307px;
+}
+ul.social li.github a {
+    background-position: -146px -327px;
+}
+ul.social li.github a:hover {
+    background-position: 1px -327px;
+}
+ul.social li.mail a {
+    background-position: -146px -347px;
+}
+ul.social li.mail a:hover {
+    background-position: 1px -347px;
+}
+ul.social li.facebook a {
+    background-position: -146px -367px;
+}
+ul.social li.facebook a:hover {
+    background-position: 1px -367px;
+}
 /* FOOTER */
 footer {
     position: relative;
@@ -697,7 +752,7 @@ footer section.contact address {
     font-family: Lato, sans-serif;
     font-weight: 300;
 }
-footer section.contact h4 {
+footer section.contact p.snowcap {
     font-size: 25px;
     margin: 0 0 10px 0;
     font-weight: 300;
