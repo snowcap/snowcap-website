@@ -1,8 +1,22 @@
 <?php
 namespace Snowcap\SiteBundle\Twig\Extension;
 
+use Twig_Environment;
+
 class CoreExtension extends \Twig_Extension
 {
+
+    /** @var $app \Symfony\Bundle\FrameworkBundle\Templating\GlobalVariables */
+    private $app;
+
+    public function initRuntime(Twig_Environment $environment)
+    {
+        $globals = $environment->getGlobals();
+        if(isset($globals['app'])) {
+            $this->app = $globals['app'];
+        }
+    }
+
 
     /**
      * Get all available functions
@@ -28,6 +42,8 @@ class CoreExtension extends \Twig_Extension
             'age' => new \Twig_Filter_Method($this, 'age'),
             'safe_truncate' => new \Twig_Filter_Method($this, 'safeTruncate', array('is_safe' => array('html'))),
             'parse_tweet' => new \Twig_Filter_Method($this, 'parseTweet', array('is_safe' => array('html'))),
+            'hr_columns' => new \Twig_Filter_Method($this, 'hrColumns', array('is_safe' => array('html'))),
+            'static_path' => new \Twig_Filter_Method($this, 'staticPath', array()),
         );
     }
 
@@ -186,6 +202,30 @@ class CoreExtension extends \Twig_Extension
             $tweet);
 
         return $tweet;
+    }
+
+    /**
+     * Converts <hr> tag to <div> column style
+     *
+     * @param string $content
+     * @return string
+     */
+    public function hrColumns($content)
+    {
+        $content = '<div class="column">' .
+            str_replace(array('<hr>', '<hr/>', '<hr />'), '</div><div class="column">', $content) .
+            '</div>';
+        return $content;
+    }
+
+    /**
+     * Returns an absolute path with the static domain
+     */
+    public function staticPath($url)
+    {
+        /** @var $request \Symfony\Component\HttpFoundation\Request */
+        $request = $this->app->getRequest();
+        return $request->getScheme()."://static.".$request->getHost().':'.$request->getPort(). ((substr($url,0,1) === "/")?"":"/") . $url;
     }
 
     /**

@@ -1,10 +1,15 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% set body_class = 'blog blog-detail' %}
 {% block body %}
+    <h1 class="main-title">{{ entity.title }}</h1>
     <div class="full">
-        <section class="main">
-            <h1>{{ entity.title }}</h1>
-            <div class="body">{{ entity.body | markdown }}</div>
-            <p class="published">{{ entity.published_at | time_ago }}</p>
+        <section class="main content primary">
+            <p class="published">
+                {% trans with {'%on%': entity.published_at | time_ago, '%in%': entity.category.name, '%in_url%': 'http://www.google.be' } %}
+                    blog.published_on_in
+                {% endtrans %}
+            </p>
+            {{ entity.body | markdown }}
         </section>
     </div>
 {% endblock %}

@@ -1,7 +1,6 @@
 navigation:
-  home: Home
   company: Company
-  method: Services
+  services: Services
   team: Team
   posts: Blog
   projects: Cases
@@ -14,14 +13,30 @@ general:
   readmore:
     title: Read more
     label: Read more
-geekcorner:
-  title: Geek's corner
+    facebook_link: Check out our Facebook page
+    twitter_link: Check out our twitter
+nerds:
+  title: Hey(,) Nerds !
   body: |
     For our fellow geeks, the complete source code of this website is [available here](http://www.github.com/snowcap/snowcap-website "Snowcap Website source code"). You can browse it to find out
     how we work, and moreover, if you have a genius idea to improve our website, don't hesitate to fork and send us a pull request :)
 
     Ow and yeah, we try to contribute more and more to the community - [follow us on GitHub](http://www.github.com/snowcap "Snowcap on GitHub") to discover what we're open sourcing
 project:
+  partner_visit: Visit the website of %name%
+  client:
+    label: Client
+  agency:
+    label: Agency
+    link:
+      title: View %name% website
+  realisation_period:
+    label: Realisation period
+  website:
+    label: View website
+    title: View website
+  link:
+    title: Read the %title% case
   latest:
     title: Recent works
     empty: No work available
@@ -43,8 +58,8 @@ widget:
 company:
   title: Company
   body: |
-    After ten years working in various medium and large web and communication agencies, learning a lot, facing added values and issues of different structures, we ended up with the conclusion
-    that if we wanted to achieve our goal, which is developing high quality cutting-edge web applications - and enjoy doing it, we had to have a dedicated environment.
+    <p class="intro">After ten years working in various medium and large web and communication agencies, learning a lot, facing added values and issues of different structures, we ended up with the conclusion
+    that if we wanted to achieve our goal, which is developing high quality cutting-edge web applications - and enjoy doing it, we had to have a dedicated environment.</p>
 
     In September 2010, Snowcap was born.
 
@@ -52,10 +67,12 @@ company:
     clients a direct and smooth communication with the producers, which delivers a more qualitative and innovative result by combining the vision and goals of both parties.
 
     In other words, since the best projects out there are made by real passionated and motivated crews, we created ourselves a way of being so.
-method:
+  quote: |
+    Don't expect us to deliver what you already have - we would rather hear about the rock-solid, extreme performance web platform you've always wanted.
+services:
   title: Services
   body: |
-    Snowcap is a web agency that specializes in implementing open, cutting-edge technologies. Partners of your digital projects, we offer the following services:
+    <p class="intro">Snowcap is a web agency that specializes in implementing open, cutting-edge technologies. Partners of your digital projects, we offer the following services :</p>
 
     * Analysis and technological strategy
     * Website and web application development
@@ -67,10 +84,19 @@ method:
     * IT consultancy / support
 
     We like to work in close partnership with our customers, we want to take part in your projects from the very beginning, and we enjoy meetings as long as decisions are taken.
-  quote: |
+
     Don't expect us to deliver what you already have - we would rather hear about the rock-solid, extreme performance web platform you've always wanted.
 contact:
   title: Contact
+  somewhere: Somewhere in Brussels
+  body: |
+    <p class="intro">
+      We are a Brussels-based agency... and we are looking for a new home...
+      If, by chance, you are working for a real estate agency, don't hesitate to contact us !
+    </p>
+    We are looking for a spacious and not-too-corporate office space in southern Brussels.
+
+    If your work field is not related to real estate, then you probably want to get in touch with us and have a chat about your poject. We would be very happy to hear from you, drop us an email and we'll get back to you in no time.
 team:
   title: Team
   age:
@@ -79,10 +105,16 @@ team:
     title: Skills
   twitter:
     title: Follow on Twitter
-    label: Follow on Twitter
+    label: Twitter
   linkedin:
     title: Follow on Linkedin
-    label: Follow on Linkedin
+    label: Linkedin
+  forrst:
+    title: Follow on Forrst
+    label: Forrst
+  github:
+    title: Follow on Github
+    label: Github
   cv:
     title: Download CV
     label: Download CV
@@ -94,13 +126,12 @@ team:
       * Project Management
       * CMS
     quote: Always room for improvement
-    body: jerome.body
-    twitter:
-      url: twitter.url
-    linkedin:
-      url: linkedin.url
-    cv:
-      url: cv.url
+    body: |
+      Jerome is a perfectionnist, an experienced developer that will go all the way to improve the quality of our work, day after day.
+    twitter: moinax
+    linkedin: moinax
+    forrst: moinax
+    github: moinax
   pierre:
     name: Pierre Vanliefland
     birthdate: "1983-05-29"
@@ -109,13 +140,12 @@ team:
       * Analyse
       * Database
     quote: Let's think this over
-    body: pierre.body
-    twitter:
-      url: twitter.url
-    linkedin:
-      url: linkedin.url
-    cv:
-      url: cv.url
+    body: |
+      Pierre likes to code. He also likes to think and to talk about code, and to be honest we suspect him to dream about code as well.
+    twitter: pvanliefland
+    linkedin: pvanliefland
+    forrst: pvanliefland
+    github: pvanliefland
   edwin:
     name: Edwin Hermans
     birthdate: "1981-03-15"
@@ -124,10 +154,14 @@ team:
       * IT
       * E-Commerce
     quote: Straight to the point
-    body: edwin.body
-    twitter:
-      url: twitter.url
-    linkedin:
-      url: linkedin.url
-    cv:
-      url: cv.url
+    body: |
+      Edwin does not only program, he can also talk to machines. He brings us the much needed bridge between development, security and IT.
+    twitter: edwin_hermans
+    linkedin: herdani
+    forrst: herdani
+    github: herdani
+technology:
+  title: Technologies
+  projects: Used, among other, in the following projects
+blog:
+  published_on_in: Published %on% in <a href="%in_url%">%in%</a>

@@ -69,9 +69,6 @@ services:
   twig.extension.text:
     class: Twig_Extensions_Extension_Text
     tags: [ { name: 'twig.extension' } ]
-  twitter:
-    class:      TwitterOAuth\Api
-    arguments:  [%twitter_consumer_key%, %twitter_consumer_secret%, %twitter_oauth_token%, %twitter_oauth_secret%]
 
 snowcap_admin:
   content:
@@ -102,6 +99,12 @@ snowcap_admin:
 
 avalanche_imagine:
     filters:
+        preview:
+          type: thumbnail
+          options: { size: [390, 255], mode: outbound }
         thumb:
           type: thumbnail
-          options: { size: [300, 230], mode: outbound }
+          options: { size: [290, 197], mode: outbound}
+        small:
+          type: thumbnail
+          options: { size: [100, 76], mode: outbound }

@@ -1,4 +1,4 @@
-p1:
+immocitiz:
   title: Immocitiz
   slug: immocitiz
   introduction: |
@@ -23,12 +23,24 @@ p1:
     %% Un projet sur mesure
 
     Afin de mener cette mission a bien, nous avons opté pour une solution custom basés sur le framework Symfony. Nous avons également pu compter sur une série d’outils open-source de qualité impressionante, qui nous ont permis d’offrir un résultat stable, robuste et performant.
+
+    *****
+
+    ![A dummy image](http://snowcap.local/media/cache/thumb/uploads/images/projects/ic_front.png "A dummy image")
   website: http://www.immocitiz.be
-  published_at: '2011-08-12 12:24:00'
+  published_at: '2011-08-08 12:24:00'
   realisation_period: 2010-2011
   client: Immovlan
-  agency: @onemd
-  technologies: [php,symfony,varnish,memcache,rabbitMQ]
+  collaborations:
+      -
+        project: @immocitiz
+        agency: @onemd
+        field: Concept & Design
+      -
+        project: @immocitiz
+        agency: @stratenet
+        field: SEO & visibility
+  technologies: [@php, @symfony, @varnish, @memcached, @rabbitmq]
   published: true
   available_on_list: true
   thumb_front: @ic_front
@@ -43,11 +55,10 @@ walibi:
   body: |
     Bla bla bla bla bla bla bla
   website: http://www.walibi.be
-  published_at: '2011-08-12 12:24:00'
+  published_at: '2011-01-20 12:24:00'
   realisation_period: 2010-2011
   client: Compagnie des Alpes
-  agency: @onemd
-  technologies: [php,symfony,varnish,memcache,rabbitMQ,supervisor]
+  technologies: [@php, @drupal]
   published: true
   available_on_list: true
   thumb_front: @wab_front
@@ -61,12 +72,11 @@ wilkinson:
     Mortier Brigade a confé à Snowcap la réalisation du site Wilkinson Sword pour le Benelux
   body:
     Bla bla bla bla bla bla bla
-  website: http://www.walibi.be
-  published_at: '2011-08-12 12:24:00'
+  website: http://www.wilkinson-sword.be
+  published_at: '2011-10-25 12:24:00'
   realisation_period: 2010-2011
   client: Mortier Brigade
-  agency: @onemd
-  technologies: [php,symfony,varnish,memcache,rabbitMQ,supervisor]
+  technologies: [@php, @symfony, @varnish]
   published: true
   available_on_list: true
   thumb_front: @wlk_front
@@ -79,11 +89,142 @@ europabio:
   introduction:
   body:
   website: http://www.europabio.org
-  published_at: '2011-08-12 12:24:00'
+  published_at: '2011-09-22 12:24:00'
   realisation_period: 2010-2011
   client: Europabio
+  technologies: [@php, @drupal]
+  published: true
+  available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
+  highlighted: false
+
+sodexo:
+  title: Sodexo Circles
+  slug: sodexo-circles
+  introduction:
+  body:
+  website: http://www.circles.com
+  published_at: '2011-09-01 09:12:21'
+  realisation_period: summer 2011
+  client: Sodexo
+  technologies: [@php, @zend]
+  published: true
+  available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
+  highlighted: false
+
+movingpeople:
+  title: MovingPeople
+  slug: movingpeople
+  introduction:
+  body:
+  website: http://www.movingpeople.com
+  published_at: '2010-11-15 09:12:21'
+  realisation_period: September 2010
+  client: Moving People
+  technologies: [@php, @symfony, @varnish]
+  published: true
+  available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
+  highlighted: false
+
+mediargus:
+  title: Mediargus
+  slug: mediargus
+  introduction:
+  body:
+  website:
+  published_at: '2010-12-05 09:12:21'
+  realisation_period: December 2010
+  client: Pressbanking & Mediargus
+  technologies: [@php, @zend]
+  published: true
+  available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
+  highlighted: false
+
+startv:
+  title: Star TV
+  slug: star-tv
+  introduction: blabla
+  body: |
+    bli
+  website: http://www.startv.be
+  published_at: '2011-01-27 09:12:21'
+  realisation_period: January 2011
+  client: Ciné Télé Revue
+  technologies: [@php, @drupal]
+  published: true
+  available_on_list: true
+  thumb_front: @star_front
+  thumb_back: @star_back
+  highlighted: false
+
+eurocenter:
+  title: Eurocenter
+  slug: eurocenter
+  introduction: blabla
+  body: |
+    bli
+  website: http://www.eurocenter.be
+  published_at: '2011-02-18 09:12:21'
+  realisation_period: 2010-2011
+  client: Eurocenter
+  technologies: [@php, @zend, @magento]
+  published: true
+  available_on_list: true
+  thumb_front: @ec_front
+  thumb_back: @ec_back
+  highlighted: false
+
+orw:
+  title: Opéra Royal de Wallonie
+  slug: opera-royal-wallonie
+  introduction: blabla
+  body: |
+    bli
+  website: http://www.operaliege.be
+  published_at: '2011-04-27 09:12:21'
+  realisation_period: April 2011
+  client: Opera Royal de Wallonie
+  technologies: [@php, @drupal]
+  published: true
+  available_on_list: true
+  thumb_front: @orw_front
+  thumb_back: @orw_back
+  highlighted: false
+
+mefirst:
+  title: Compare your friends
+  slug: compare-your-friends
+  introduction:
+  body:
+  website: http://www.compareyourfriends.be
+  published_at: '2011-10-18 09:12:21'
+  realisation_period: October 2011
+  client: MeFirst
+  technologies: [@php, @rabbitmq]
+  published: true
+  available_on_list: false
+  thumb_front: @snwcp_front
+  thumb_back: @snwcp_front
+  highlighted: false
+  
+devenirunelegende:
+  title: Devenir une légende - Coca-Cola Zero
+  slug: devenir-une-legende
+  introduction:
+  body:
+  website: http://www.devenirunelegende.fr
+  published_at: '2011-11-05 05:12:32'
+  realisation_period: December 2011
+  client: Coca-Cola
   agency: @onemd
-  tags: [php,symfony,varnish]
+  technologies: [varnish]
   published: true
   available_on_list: false
   highlighted: false

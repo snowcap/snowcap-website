@@ -11,19 +11,34 @@ use Snowcap\SiteBundle\Entity\Post;
 class WidgetController extends Controller
 {
     /**
+     * Action used to render the 3 last tweets of Snowcap
+     * 
      * @Template()
      */
     public function tweetsAction()
     {
-        $twitter = $this->get('twitter');
-        $content = $twitter->get("statuses/user_timeline", array('count' => 3));
+        $ch = curl_init("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=snwcp&count=3");
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        $json = json_decode($result);
         $tweets = array();
-        foreach($content as $tweet) {
-            $tweets[] = array(
-                'date' => new \DateTime($tweet->created_at),
-                'text' => $tweet->text,
-            );
+        if (is_array($json)) {
+            foreach ($json as $tweet) {
+                $tweets[] = array(
+                    'date' => new \DateTime($tweet->created_at),
+                    'text' => $tweet->text,
+                );
+
+            }
         }
+
         return array('tweets' => $tweets);
     }
+
 }

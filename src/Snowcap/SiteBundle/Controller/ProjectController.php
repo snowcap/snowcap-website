@@ -18,14 +18,16 @@ class ProjectController extends BaseController
     /**
      * Display a list of projects
      * 
-     * @Route("/", name="snwcp_site_project_list")
+     * @Route("/", name="snwcp_site_project_index")
      * @Template()
      */
-    public function listAction() {
+    public function indexAction() {
         $em = $this->getDoctrine()->getEntityManager();
-        $projects = $em->getRepository('SnowcapSiteBundle:Project')->findBy(array('published' => true, 'available_on_list' => true));
-        
-        return array('projects' => $projects);
+        $project = $em->getRepository('SnowcapSiteBundle:Project')->findOneBy(array(
+            'highlighted' => true,
+            'published' => true
+        ));
+        return array('project' => $project);
     }
 
     /**
@@ -37,33 +39,25 @@ class ProjectController extends BaseController
     public function showAction($slug)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $entity = $em->getRepository('SnowcapSiteBundle:Project')->findOneBySlug($slug);
-        if (!$entity) {
+        $project = $em->getRepository('SnowcapSiteBundle:Project')->findOneBySlug($slug);
+        if (!$project) {
             throw $this->createNotFoundException('Unable to find Project entity.');
         }
         return array(
-            'entity' => $entity,
+            'project' => $project,
         );
     }
 
     /**
      * @Template()
      */
-    public function latestAction($limit)
+    public function listAction($limit = 1000, $highlighted = null, $availableOnList = true)
     {
 		$em = $this->getDoctrine()->getEntityManager();
-        $latestProjects = $em->getRepository('SnowcapSiteBundle:Project')->getLatest($limit);
-
-        return array('latestProjects' => $latestProjects);
+        $projects = $em->getRepository('SnowcapSiteBundle:Project')->getList($limit, $highlighted, $availableOnList);
+        return array(
+            'projects' => $projects,
+            'format'=> 'thumb'
+        );
 	}
-
-    /**
-     * @Template()
-     */
-    public function highlightedAction() {
-        $em = $this->getDoctrine()->getEntityManager();
-        $project = $em->getRepository('SnowcapSiteBundle:Project')->findOneByHighlighted(true);
-
-        return array('project' => $project);
-    }
 }

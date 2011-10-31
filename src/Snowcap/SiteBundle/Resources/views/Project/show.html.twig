@@ -1,10 +1,43 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% set body_class = 'project project-detail' %}
+{% import "SnowcapSiteBundle::macros.html.twig" as helper %}
 {% block body %}
+    <h1 class="main-title">{{ project.title }}</h1>
     <div class="full">
-        <section class="main">
-            <h1>{{ entity.title }}</h1>
-            <div class="body">{{ entity.body | markdown }}</div>
-            <p class="published">{{ entity.published_at | time_ago }}</p>
+        <section class="main content project-overview">
+            {{ project.introduction | markdown }}
+            <dl>
+                <dt>{{ "project.client.label" | trans }} :</dt>
+                <dd>{{ project.client}}</dd>
+                {% for collaboration in project.collaborations %}
+                    <dt>{{ collaboration.field }} :</dt>
+                    <dd>
+                        <a
+                            href="{{ collaboration.agency.website }}"
+                            title="{{ "project.partner_visit" | trans({'%name%': collaboration.agency.name}) }}"
+                        >
+                            {{ collaboration.agency.name }}
+                        </a>
+                    </dd>
+                {% endfor %}
+                <dt>{{ "project.realisation_period.label" | trans }} :</dt>
+                <dd>{{ project.realisation_period }}</dd>
+            </dl>
+            <p class="read-more">
+                <a href="{{ project.website }}" title="{{ 'project.website.title' | trans }}">{{ "project.website.label" | trans }}</a>
+            </p>
+            <div class="visual visual-preview">
+                <img
+                    src="{{ project.thumb_front.webPath | apply_filter('preview') }}"
+                    alt="{{ project.thumb_front.alt }}"
+                />
+            </div>
+        </section>
+        <section class="content project-story">
+            {{ project.body | markdown | hr_columns }}
+        </section>
+        <section class="technology">
+            {% include "SnowcapSiteBundle:Project:technologies.html.twig" with { 'technologies': project.technologies } %}
         </section>
     </div>
 {% endblock %}

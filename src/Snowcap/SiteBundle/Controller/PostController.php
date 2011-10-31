@@ -47,7 +47,7 @@ class PostController extends BaseController
     /**
      * @Template()
      */
-    public function latestAction($limit)
+    public function widgetAction($limit)
     {
 		$em = $this->getDoctrine()->getEntityManager();
         $latestPosts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest($limit);

@@ -2,24 +2,26 @@
 {% set body_class = 'home' %}
 {% block body %}
     <div class="full">
-        <section class="main">
+        <section class="main content">
             <h1>{{ "general.snowcap" | trans }}</h1>
             <h2>{{ "general.baseline" | trans }}</h2>
             {{ "general.nutshell" | trans | markdown }}
         </section>
-        <section class="projects content content-primary">
-            {% render "SnowcapSiteBundle:Project:latest" with {'limit': 3} %}
+        <section class="content projects">
+            <h2>{{ "project.latest.title" | trans }}</h2>
+            {% render "SnowcapSiteBundle:Project:list" with {'limit': 3} %}
         </section>
     </div>
     <div class="split split-3">
-        <section class="blog content content-secondary">
-            {% render "SnowcapSiteBundle:Post:latest" with {'limit': 1} %}
+        <img id="mask-image" src="{{ asset('/assets/front/images/mask.png') }}" />
+        <section class="secondary content blog">
+            {% render "SnowcapSiteBundle:Post:widget" with {'limit': 1} %}
         </section>
-        <section class="tweets content content-secondary">
+        <section class="secondary content tweets">
             {% render "SnowcapSiteBundle:Widget:tweets" %}
         </section>
-        <section class="words">
-            {% include "SnowcapSiteBundle:Widget:words.html.twig" %}
+        <section class="nerds">
+            {% include "SnowcapSiteBundle:Widget:nerds.html.twig" %}
         </section>
     </div>
 {% endblock %}

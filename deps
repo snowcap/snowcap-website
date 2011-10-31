@@ -69,9 +69,6 @@
     git=http://github.com/symfony/DoctrineFixturesBundle.git
     target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
 
-[twitteroauth]
-    git=http://github.com/ruudk/twitteroauth.git
-    
 [Imagine]
     git=http://github.com/avalanche123/Imagine.git
     target=imagine
