@@ -213,3 +213,18 @@ mefirst:
   thumb_front: @snwcp_front
   thumb_back: @snwcp_front
   highlighted: false
+  
+devenirunelegende:
+  title: Devenir une légende - Coca-Cola Zero
+  slug: devenir-une-legende
+  introduction:
+  body:
+  website: http://www.devenirunelegende.fr
+  published_at: '2011-11-05 05:12:32'
+  realisation_period: December 2011
+  client: Coca-Cola
+  agency: @onemd
+  technologies: [varnish]
+  published: true
+  available_on_list: false
+  highlighted: false
