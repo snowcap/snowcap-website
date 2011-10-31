@@ -6,10 +6,12 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Symfony\Component\DependencyInjection\Container;
 use Snowcap\SiteBundle\Entity\Project;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
 
 use \Symfony\Component\Yaml\Yaml;
 
-class LoadProjectData implements FixtureInterface {
+class LoadProjectData extends AbstractFixture implements OrderedFixtureInterface {
     protected $entities;
     public function __construct() {
         $this->entities = new ArrayCollection();
@@ -90,4 +92,8 @@ class LoadProjectData implements FixtureInterface {
         return preg_replace('/(?<=^|%)%/m', '#', $string);
     }
 
+    public function getOrder()
+    {
+        return 20;
+    }
 }
