@@ -84,12 +84,11 @@ class Project extends BaseModel
     protected $realisation_period;
 
     /**
-     * @var \Snowcap\SiteBundle\Entity\Agency
+     * @var \Doctrine\Common\Collections\ArrayCollection
      *
-     * @ORM\ManyToOne(targetEntity="Agency", inversedBy="projects")
-     * @ORM\JoinColumn(name="agency_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="Collaboration", mappedBy="project")
      */
-    protected $agency;
+    protected $collaborations;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
@@ -148,11 +147,11 @@ class Project extends BaseModel
      */
     public function __construct()
     {
-        $this->technologies = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->technologies = new ArrayCollection();
         $this->published_at = new \DateTime();
         $this->published = true;
         $this->available_on_list = true;
-        $this->images = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     /**
@@ -246,23 +245,23 @@ class Project extends BaseModel
     }
 
     /**
-     * Set agency
+     * Set collaborations
      *
-     * @param \Snowcap\SiteBundle\Entity\Agency $agency
+     * @param \Doctrine\Common\Collections\ArrayCollection $collaborations
      */
-    public function setAgency(Agency $agency)
+    public function SetCollaborations(ArrayCollection $collaborations)
     {
-        $this->agency = $agency;
+        $this->collaborations = $collaborations;
     }
 
     /**
-     * Get agency
+     * Get collaborations
      *
-     * @return \Snowcap\SiteBundle\Entity\Agency
+     * @return \Doctrine\Common\Collections\ArrayCollection
      */
-    public function getAgency()
+    public function getCollaborations()
     {
-        return $this->agency;
+        return $this->collaborations;
     }
 
     /**

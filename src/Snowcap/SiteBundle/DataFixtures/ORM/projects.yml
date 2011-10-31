@@ -1,4 +1,4 @@
-p1:
+immocitiz:
   title: Immocitiz
   slug: immocitiz
   introduction: |
@@ -31,8 +31,16 @@ p1:
   published_at: '2011-08-08 12:24:00'
   realisation_period: 2010-2011
   client: Immovlan
-  agency: @onemd
-  technologies: [php,symfony,varnish,memcached,rabbitmq]
+  collaborations:
+      -
+        project: @immocitiz
+        agency: @onemd
+        field: Concept & Design
+      -
+        project: @immocitiz
+        agency: @stratenet
+        field: SEO & visibility
+  technologies: [@php, @symfony, @varnish, @memcached, @rabbitmq]
   published: true
   available_on_list: true
   thumb_front: @ic_front
@@ -50,8 +58,7 @@ walibi:
   published_at: '2011-01-20 12:24:00'
   realisation_period: 2010-2011
   client: Compagnie des Alpes
-  agency: @onemd
-  technologies: [php,drupal]
+  technologies: [@php, @drupal]
   published: true
   available_on_list: true
   thumb_front: @wab_front
@@ -69,8 +76,7 @@ wilkinson:
   published_at: '2011-10-25 12:24:00'
   realisation_period: 2010-2011
   client: Mortier Brigade
-  agency: @onemd
-  technologies: [php,symfony,varnish]
+  technologies: [@php, @symfony, @varnish]
   published: true
   available_on_list: true
   thumb_front: @wlk_front
@@ -86,8 +92,7 @@ europabio:
   published_at: '2011-09-22 12:24:00'
   realisation_period: 2010-2011
   client: Europabio
-  agency: @onemd
-  technologies: [php,drupal]
+  technologies: [@php, @drupal]
   published: true
   available_on_list: false
   thumb_front: @snwcp_front
@@ -103,7 +108,7 @@ sodexo:
   published_at: '2011-09-01 09:12:21'
   realisation_period: summer 2011
   client: Sodexo
-  technologies: [php,zend]
+  technologies: [@php, @zend]
   published: true
   available_on_list: false
   thumb_front: @snwcp_front
@@ -119,8 +124,7 @@ movingpeople:
   published_at: '2010-11-15 09:12:21'
   realisation_period: September 2010
   client: Moving People
-  agency: @onemd
-  technologies: [php,symfony,varnish]
+  technologies: [@php, @symfony, @varnish]
   published: true
   available_on_list: false
   thumb_front: @snwcp_front
@@ -136,7 +140,7 @@ mediargus:
   published_at: '2010-12-05 09:12:21'
   realisation_period: December 2010
   client: Pressbanking & Mediargus
-  technologies: [php,zend]
+  technologies: [@php, @zend]
   published: true
   available_on_list: false
   thumb_front: @snwcp_front
@@ -153,8 +157,7 @@ startv:
   published_at: '2011-01-27 09:12:21'
   realisation_period: January 2011
   client: Ciné Télé Revue
-  agency: @onemd
-  technologies: [php,drupal]
+  technologies: [@php, @drupal]
   published: true
   available_on_list: true
   thumb_front: @star_front
@@ -171,8 +174,7 @@ eurocenter:
   published_at: '2011-02-18 09:12:21'
   realisation_period: 2010-2011
   client: Eurocenter
-  agency: @stratenet
-  technologies: [php,zend,magento]
+  technologies: [@php, @zend, @magento]
   published: true
   available_on_list: true
   thumb_front: @ec_front
@@ -189,8 +191,7 @@ orw:
   published_at: '2011-04-27 09:12:21'
   realisation_period: April 2011
   client: Opera Royal de Wallonie
-  agency: @stratenet
-  technologies: [php,drupal]
+  technologies: [@php, @drupal]
   published: true
   available_on_list: true
   thumb_front: @orw_front
@@ -206,8 +207,7 @@ mefirst:
   published_at: '2011-10-18 09:12:21'
   realisation_period: October 2011
   client: MeFirst
-  agency: @onemd
-  technologies: [php,rabbitmq]
+  technologies: [@php, @rabbitmq]
   published: true
   available_on_list: false
   thumb_front: @snwcp_front

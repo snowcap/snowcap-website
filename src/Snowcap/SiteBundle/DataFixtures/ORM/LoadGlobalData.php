@@ -3,7 +3,8 @@ namespace Snowcap\SiteBundle\DataFixtures\ORM;
 
 use Snowcap\YamlFixturesBundle\YamlFixtures\AbstractYamlFixture;
 
-class LoadProjectData extends AbstractYamlFixture {
+class LoadGlobalData extends AbstractYamlFixture {
+
     /**
      * Load data fixtures with the passed EntityManager
      *
@@ -11,13 +12,13 @@ class LoadProjectData extends AbstractYamlFixture {
      */
     public function loadYamlFiles()
     {
-        $this->loadYaml(__DIR__ . '/agencies.yml', 'SnowcapSiteBundle:Agency');
+        $this->loadYaml(__DIR__ . '/technologies.yml', 'SnowcapSiteBundle:Technology');
         $this->loadYaml(__DIR__ . '/images.yml', 'SnowcapSiteBundle:Image');
-        $this->loadYaml(__DIR__ . '/projects.yml', 'SnowcapSiteBundle:Project');
+        $this->loadYaml(__DIR__ . '/agencies.yml', 'SnowcapSiteBundle:Agency');
     }
 
     public function getOrder() {
-        return 30;
+        return 10;
     }
 
 }

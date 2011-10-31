@@ -23,7 +23,7 @@ memcached:
   slug: memcached
   description: |
     [Memcached](http://www.memcached.org "Memcached website") is a high-performance, distributed memory object caching system
-rabbitMQ:
+rabbitmq:
   name: RabbitMQ
   slug: rabbitmq
   description: |

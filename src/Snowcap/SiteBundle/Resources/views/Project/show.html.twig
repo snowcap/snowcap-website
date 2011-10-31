@@ -9,14 +9,17 @@
             <dl>
                 <dt>{{ "project.client.label" | trans }} :</dt>
                 <dd>{{ project.client}}</dd>
-                <dt>{{ "project.agency.label" | trans }} :</dt>
-                <dd>
-                {% if project.agency.website %}
-                    <a href="{{ project.agency.website }}" title="{{ "project.agency.link.title" | trans({ '%name%': project.agency.name }) }}">{{ project.agency.name }}</a>
-                {% else %}
-                    {{ project.agency.name }}
-                {% endif %}
-                </dd>
+                {% for collaboration in project.collaborations %}
+                    <dt>{{ collaboration.field }} :</dt>
+                    <dd>
+                        <a
+                            href="{{ collaboration.agency.website }}"
+                            title="{{ "project.partner_visit" | trans({'%name%': collaboration.agency.name}) }}"
+                        >
+                            {{ collaboration.agency.name }}
+                        </a>
+                    </dd>
+                {% endfor %}
                 <dt>{{ "project.realisation_period.label" | trans }} :</dt>
                 <dd>{{ project.realisation_period }}</dd>
             </dl>
