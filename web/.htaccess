@@ -1,3 +1,24 @@
+# Gzipping
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript font/woff
+
+FileETag None
+
+# Other parameters for YSlow to gain some points
+AddType font/woff .woff
+
+ExpiresActive on
+ExpiresByType image/x-icon "access plus 5 days"
+ExpiresByType image/gif "access plus 5 days"
+ExpiresByType image/png "access plus 5 days"
+ExpiresByType image/jpg "access plus 5 days"
+ExpiresByType image/jpeg "access plus 5 days"
+ExpiresByType text/css "access plus 5 days"
+ExpiresByType font/woff "access plus 5 days"
+ExpiresByType application/x-font-ttf "access plus 5 days"
+ExpiresByType text/css "access plus 5 days"
+ExpiresByType application/javascript "access plus 5 days"
+
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
