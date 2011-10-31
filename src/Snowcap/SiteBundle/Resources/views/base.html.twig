@@ -18,12 +18,16 @@
           js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
-        <header>
-            {% block header %}
-                {% include 'SnowcapSiteBundle::navigation.html.twig' %}
-            {% endblock %}
-        </header>
-        {% block body %}{% endblock %}
+        <div class="wrapper-outer">
+            <header>
+                {% block header %}
+                    {% include 'SnowcapSiteBundle::navigation.html.twig' %}
+                {% endblock %}
+            </header>
+            <div class="wrapper-inner">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
         <footer>
             <div class="split split-2">
                 <section class="contact">
@@ -38,6 +42,7 @@
             <script type="text/javascript" src="/assets/vendors/jquery/jquery-1.6.1.min.js"></script>
             <script type="text/javascript" src="/assets/vendors/jquery/jquery-ui-1.8.13.custom.min.js"></script>
 			<script type="text/javascript" src="/assets/front/js/screen.js"></script>
+			<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
         {% endblock %}
     </body>
 </html>

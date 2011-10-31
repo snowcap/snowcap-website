@@ -1,0 +1,32 @@
+{% extends "SnowcapSiteBundle::base.html.twig" %}
+{% set body_class = 'project project-listing' %}
+{% import "SnowcapSiteBundle::macros.html.twig" as helper %}
+{% block body %}
+    <h1 class="main-title">{{ "project.list.title" | trans }}</h1>
+    <div class="full">
+        <section class="main content project-overview">
+            {% if project %}
+                <h2>{{ project.title }}</h2>
+                {{ project.introduction | markdown }}
+                <p class="read-more">
+                    <a
+                        href="{{ url('snwcp_site_project_show', {'slug': project.slug}) }}"
+                        title="{{ 'general.readmore.title' | trans }}"
+                    >
+                        {{ 'general.readmore.label' | trans }}
+                    </a>
+                </p>
+                <a
+                    class="visual visual-preview flipper"
+                    href="{{ path('snwcp_site_project_show', {'slug': project.slug}) }}"
+                    title="{{ "project.link.title" | trans({'%title%': project.title}) }}"
+                >
+                    {{ helper.project_image_flipper(project, 'preview') }}
+                </a>
+            {% endif %}
+        </section>
+        <section class="content projects">
+            {% render 'SnowcapSiteBundle:Project:list' with {'highlighted': false} %}
+        </section>
+    </div>
+{% endblock body %}

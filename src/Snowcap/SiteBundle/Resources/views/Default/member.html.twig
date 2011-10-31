@@ -1,18 +1,26 @@
-<li class="{{ member }}">
-    <h2>{{ ("team." ~ member ~ ".name") | trans}}</h2>
+<h2>{{ ("team." ~ member ~ ".name") | trans}}</h2>
+<div class="member-details">
     <dl class="information">
-        <dt>{{ "team.age.title" | trans }}</dt>
-        <dd>{{ ("team." ~ member ~ ".birthdate") | trans | age }}</dd>
-        <dt>{{ "team.skills.title" | trans }}</dt>
-        <dd>
+        <dt class="age">{{ "team.age.title" | trans }}</dt>
+        <dd class="age">{{ ("team." ~ member ~ ".birthdate") | trans | age }}</dd>
+        <dt class="skills">{{ "team.skills.title" | trans }}</dt>
+        <dd class="skills">
             {{ ("team." ~ member ~ ".skills") | trans | markdown }}
         </dd>
     </dl>
-    <div class="quote">{{ ("team." ~ member ~ ".quote") | trans }}</div>
-    <div class="body">{{ ("team." ~ member ~ ".body") | trans | markdown }}</div>
-    <ul class="contact-links">
-        <li><a href="{{ ("team." ~ member ~ ".twitter.url") | trans }}" title="{{ "team.twitter.title" | trans }}">{{ "team.twitter.label" | trans }}</a></li>
-        <li><a href="{{ ("team." ~ member ~ ".linkedin.url") | trans }}" title="{{ "team.linkedin.title" | trans }}">{{ "team.linkedin.label" | trans }}</a></li>
-        <li><a href="{{ ("team." ~ member ~ ".cv.url") | trans }}" title="{{ "team.cv.title" | trans }}">{{ "team.cv.label" | trans }}</a></li>
+    <blockquote>"{{ ("team." ~ member ~ ".quote") | trans }}"</blockquote>
+    {{ ("team." ~ member ~ ".body") | trans | markdown }}
+    <ul class="social">
+        <li class="twitter">
+            <a href="http://twitter.com/{{ ("team." ~ member ~ ".twitter") | trans }}" title="{{ "team.twitter.title" | trans }}">{{ "team.twitter.label" | trans }}</a>
+        <li class="linkedin">
+            <a href="http://be.linkedin.com/in/{{ ("team." ~ member ~ ".linkedin") | trans }}" title="{{ "team.linkedin.title" | trans }}">{{ "team.linkedin.label" | trans }}</a>
+        </li>
+        <li class="forrst">
+            <a href="http://www.forrst.com/people/{{ ("team." ~ member ~ ".forrst") | trans }}" title="{{ "team.forrst.title" | trans }}">{{ "team.forrst.label" | trans }}</a>
+        </li>
+        <li class="github">
+            <a href="http://github.com/{{ ("team." ~ member ~ ".github") | trans }}" title="{{ "team.github.title" | trans }}">{{ "team.github.label" | trans }}</a>
+        </li>
     </ul>
-</li>
+</div>

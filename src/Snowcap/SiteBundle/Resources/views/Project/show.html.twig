@@ -1,32 +1,40 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% set body_class = 'project project-detail' %}
 {% import "SnowcapSiteBundle::macros.html.twig" as helper %}
 {% block body %}
+    <h1 class="main-title">{{ project.title }}</h1>
     <div class="full">
-        <section class="main">
-            <div class="summary">
-                <h1>{{ project.title }}</h1>
-                <div class="introduction">{{ project.introduction | markdown }}</div>
-                <dl class="information">
-                    <dt>{{ "project.client.label" | trans }}</dt>
-                    <dd>{{ project.client}}</dd>
-                    <dt>{{ "project.agency.label" | trans }}</dt>
-                    <dd>
-                    {% if project.agency.website %}
-                        <a href="{{ project.agency.website }}" title="{{ "project.agency.link.title" | trans({ '%name%': project.agency.name }) }}">{{ project.agency.name }}</a>
-                    {% else %}
-                        {{ project.agency.name }}
-                    {% endif %}
-                    </dd>
-                    <dt>{{ "project.realisation_period.label" | trans }}</dt>
-                    <dd>{{ project.realisation_period }}</dd>
-                </dl>
+        <section class="main content project-overview">
+            {{ project.introduction | markdown }}
+            <dl>
+                <dt>{{ "project.client.label" | trans }} :</dt>
+                <dd>{{ project.client}}</dd>
+                <dt>{{ "project.agency.label" | trans }} :</dt>
+                <dd>
+                {% if project.agency.website %}
+                    <a href="{{ project.agency.website }}" title="{{ "project.agency.link.title" | trans({ '%name%': project.agency.name }) }}">{{ project.agency.name }}</a>
+                {% else %}
+                    {{ project.agency.name }}
+                {% endif %}
+                </dd>
+                <dt>{{ "project.realisation_period.label" | trans }} :</dt>
+                <dd>{{ project.realisation_period }}</dd>
+            </dl>
+            <p class="read-more">
                 <a href="{{ project.website }}" title="{{ 'project.website.title' | trans }}">{{ "project.website.label" | trans }}</a>
+            </p>
+            <div class="visual visual-preview">
+                <img
+                    src="{{ project.thumb_front.webPath | apply_filter('preview') }}"
+                    alt="{{ project.thumb_front.alt }}"
+                />
             </div>
-            <div class="flipper flipper_thumb">{{ helper.project_image_flipper(project) }}</div>
-            <div class="body">{{ project.body | markdown | hr_columns }}</div>
-            <div class="technologies">
-                {% include "SnowcapSiteBundle:Project:technologies.html.twig" with { 'technologies': project.technologies } %}
-            </div>
+        </section>
+        <section class="content project-story">
+            {{ project.body | markdown | hr_columns }}
+        </section>
+        <section class="technology">
+            {% include "SnowcapSiteBundle:Project:technologies.html.twig" with { 'technologies': project.technologies } %}
         </section>
     </div>
 {% endblock %}

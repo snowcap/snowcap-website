@@ -1,10 +1,12 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
 {% set body_class = 'company' %}
 {% block body %}
+    <h1 class="main-title">{{ "company.title" | trans }}</h1>
+    <h2 id="mountain">{{ "general.snowcap" | trans }}</h2>
+    <blockquote>{{ "company.quote" | trans }}</blockquote>
     <div class="full">
-        <section class="main">
-            <h1>{{ "company.title" | trans }}</h1>
-            <div class="body">{{ 'company.body' | trans | markdown }}</div>
+        <section class="main content standard">
+            {{ 'company.body' | trans | markdown }}
         </section>
     </div>
 {% endblock %}

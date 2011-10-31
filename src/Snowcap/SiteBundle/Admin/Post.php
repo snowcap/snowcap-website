@@ -1,6 +1,8 @@
 <?php
 namespace Snowcap\SiteBundle\Admin;
 use Snowcap\AdminBundle\Admin\Content;
+use Snowcap\AdminBundle\Form\ContentType;
+
 /**
  * Post admin class
  *
@@ -56,6 +58,21 @@ class Post extends Content {
                     'input' => 'datetime',
 				    'widget' => 'single_text',
                 ),
+            ),
+            'thumb' => array(
+                'type' => new ContentType('image', $this->environment->getAdmin('image')),
+                'options' => array(
+                    'required' => false,
+                ),
+            ),
+            'images' => array(
+                'type' => 'collection',
+                'options' => array(
+                    'type'=> new ContentType('image', $this->environment->getAdmin('image')),
+                    'allow_add' => true,
+                    'by_reference' => false,
+                    'prototype' => true,
+                    )
             ),
         );
     }
