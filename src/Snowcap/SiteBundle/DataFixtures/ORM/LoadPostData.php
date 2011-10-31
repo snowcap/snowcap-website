@@ -6,10 +6,12 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Snowcap\SiteBundle\Entity\Post;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\DependencyInjection\Container;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
 
 use \Symfony\Component\Yaml\Yaml;
 
-class LoadPostData implements FixtureInterface {
+class LoadPostData extends AbstractFixture implements OrderedFixtureInterface {
     protected $entities;
     public function __construct() {
         $this->entities = new ArrayCollection();
@@ -82,6 +84,11 @@ class LoadPostData implements FixtureInterface {
     public function decodeMarkdown($string)
     {
         return preg_replace('/(?<=^|%)%/m', '#', $string);
+    }
+
+    public function getOrder()
+    {
+        return 10;
     }
 
 }

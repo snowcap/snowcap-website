@@ -6,10 +6,12 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Symfony\Component\DependencyInjection\Container;
 use Snowcap\SiteBundle\Entity\Project;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
 
 use \Symfony\Component\Yaml\Yaml;
 
-class LoadTestData implements FixtureInterface {
+class LoadTestData extends AbstractFixture implements OrderedFixtureInterface {
     /**
      * Load data fixtures with the passed EntityManager
      *
@@ -23,6 +25,11 @@ class LoadTestData implements FixtureInterface {
         $post->setThumb($image);
 
         $manager->flush();
+    }
+
+    public function getOrder()
+    {
+        return 100;
     }
 
 }
