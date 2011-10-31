@@ -12,7 +12,9 @@ class CoreExtension extends \Twig_Extension
     public function initRuntime(Twig_Environment $environment)
     {
         $globals = $environment->getGlobals();
-        $this->app = $globals['app'];
+        if(isset($globals['app'])) {
+            $this->app = $globals['app'];
+        }
     }
 
 
