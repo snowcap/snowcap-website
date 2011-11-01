@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Snowcap\SiteBundle\SnowcapSiteBundle(),
             new Snowcap\AdminBundle\SnowcapAdminBundle(),
             new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
+            new Snowcap\YamlFixturesBundle\SnowcapYamlFixturesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

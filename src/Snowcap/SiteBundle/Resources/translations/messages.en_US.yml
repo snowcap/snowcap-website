@@ -23,6 +23,7 @@ nerds:
 
     Ow and yeah, we try to contribute more and more to the community - [follow us on GitHub](http://www.github.com/snowcap "Snowcap on GitHub") to discover what we're open sourcing
 project:
+  partner_visit: Visit the website of %name%
   client:
     label: Client
   agency:
