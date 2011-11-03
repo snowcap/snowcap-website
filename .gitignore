@@ -1,3 +1,4 @@
+/web/static/*
 /web/bundles/
 /app/bootstrap*
 /app/cache/*
