@@ -223,7 +223,6 @@ devenirunelegende:
   published_at: '2011-11-05 05:12:32'
   realisation_period: December 2011
   client: Coca-Cola
-  agency: @onemd
   technologies: [varnish]
   published: true
   available_on_list: false
