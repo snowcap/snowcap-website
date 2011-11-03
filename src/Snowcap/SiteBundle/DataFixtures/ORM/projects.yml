@@ -223,7 +223,7 @@ devenirunelegende:
   published_at: '2011-11-05 05:12:32'
   realisation_period: December 2011
   client: Coca-Cola
-  technologies: [varnish]
+  technologies: [@varnish]
   published: true
   available_on_list: false
   highlighted: false
