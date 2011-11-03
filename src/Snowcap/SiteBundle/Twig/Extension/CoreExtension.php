@@ -43,7 +43,6 @@ class CoreExtension extends \Twig_Extension
             'safe_truncate' => new \Twig_Filter_Method($this, 'safeTruncate', array('is_safe' => array('html'))),
             'parse_tweet' => new \Twig_Filter_Method($this, 'parseTweet', array('is_safe' => array('html'))),
             'hr_columns' => new \Twig_Filter_Method($this, 'hrColumns', array('is_safe' => array('html'))),
-            'static_path' => new \Twig_Filter_Method($this, 'staticPath', array()),
         );
     }
 
@@ -216,16 +215,6 @@ class CoreExtension extends \Twig_Extension
             str_replace(array('<hr>', '<hr/>', '<hr />'), '</div><div class="column">', $content) .
             '</div>';
         return $content;
-    }
-
-    /**
-     * Returns an absolute path with the static domain
-     */
-    public function staticPath($url)
-    {
-        /** @var $request \Symfony\Component\HttpFoundation\Request */
-        $request = $this->app->getRequest();
-        return $request->getScheme()."://static.".$request->getHost().':'.$request->getPort(). ((substr($url,0,1) === "/")?"":"/") . $url;
     }
 
     /**
