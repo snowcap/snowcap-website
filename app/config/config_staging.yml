@@ -3,7 +3,7 @@ imports:
 
 framework:
     templating:
-      assets_base_url: http://static.staging.snowcap.local
+      assets_base_url: http://static.staging.snowcap.be
 
 #doctrine:
 #    metadata_cache_driver: apc
