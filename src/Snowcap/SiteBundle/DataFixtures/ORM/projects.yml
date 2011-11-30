@@ -60,15 +60,17 @@ walibi:
   body: |
       %% A story about kangaroos
 
-      If you were born in Belgium, or if you have spent a few years in the country, you know that Walibi is the number one amusement park around. Today, Walibi, under the direction of the french group "Compagnie des Alpes", runs four sites in Belgium, France, the Netherlands.
+      If you were born in Belgium, or if you have spent a few years in the country, you know that Walibi is the number one amusement park around.
+
+      Today, Walibi, under the direction of the french group "Compagnie des Alpes", runs four sites in Belgium, in France, and in the Netherlands.
 
       From the very beginning, Walibi had adopted the bright orange kangaroo as its mascot. When Walibi decided to renew their visual identity a few years ago, they decided that kangaroos were still cool, and gave their favourite animal a modern twist.
 
-      Electric guitars, music battles, and teenage kangaroos : something has definitely changed in the Walibi World.
+      Electric guitars, epic music battles, an evil kangaroo twin brother and a bunch of new funky characters : something has definitely changed in the world of Walibi.
 
       *****************
 
-      In order to promote this new identity online, Walibi asked its advertisement agency, Armando Testa Brussels, to launch a new version of its website. Under the direction of Armando Testa, and with the help of our friends from One Million Dollars, we were to take care of the development of the platform.
+      In order to promote this new identity online, Walibi asked its advertisement agency, [Armando Testa Brussels](http://www.armando-testa.eu "Armando Testa website"), to launch a new version of its website. Under the direction of Armando Testa, and with the help of our friends from [One Million Dollars](http://www.1md.be "One Million Dollars website"), we were to take care of the development of the platform.
 
       ![A dummy image](/uploads/images/projects/wab_skunx.jpg "A dummy image")
 
@@ -78,11 +80,11 @@ walibi:
 
       %% Who's in charge ?
 
-      Sometimes, customers want everything taken care of for them. And sometimes, they want to be empowered to do most of the work themselves - which was the case for Walibi.
+      Sometimes, customers want everything taken care of for them. And sometimes, they want to be empowered to do most of the work themselves - which was the route chosen by Walibi.
 
-      That's why we built the foundations of the new platform, added a few cool features  on top, and then put the enthusiastic Walibi web team in control. And it worked. It worked so well that from times to times, we look at the website, and discover new features, or even a new theme.
+      That's why we built the foundations of the new platform, added a few cool features  on top, and then put the enthusiastic Walibi web team in control. And it worked. It worked so well that from times to times, we look at the website, and discover new features, or even a whole new theme.
 
-      For the day to day operations, from content management to visual themes, Walibi is in charge. And when it comes to the heavy lifting... That's where Snowcap comes in.
+      For the day to day operations, from content management to graphical interface fine-tuning, Walibi is in charge. And when it comes to the heavy lifting... That's where Snowcap comes in.
 
 
   website: http://www.walibi.be
