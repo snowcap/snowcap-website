@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}SNOWCAP{% endblock %}</title>
-        {% stylesheets 'assets/front/css/*' output='static/css/all.css' filter='cssrewrite, yui_css' %}
+        {% stylesheets 'assets/front/css/*' output='static/css/all.css' filter='cssrewrite, ?yui_css' %}
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
         {% endstylesheets %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />

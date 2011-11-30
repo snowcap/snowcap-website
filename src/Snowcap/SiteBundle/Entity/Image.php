@@ -91,7 +91,7 @@ class Image extends BaseModel
     protected function getUploadDir()
     {
         // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
-        return 'uploads/images';
+        return '/uploads/images';
     }
 
     /**
