@@ -230,13 +230,13 @@ wilkinson:
   title: Wilkinson Sword
   slug: wilkinson
   introduction: |
-    Wilkinson Sword is the first project born from the collaboration between Snowcap and the brussels-based advertisement agency [Mortier Brigade](http://www.mortierbrgade.com "Mortier Brigade website"). It is also, of course, a website about shaving.
+    Wilkinson Sword is the first project born from the collaboration between Snowcap and the brussels-based advertisement agency [Mortierbrigade](http://www.mortierbrgade.com "Mortierbrigade website"). It is also, of course, a website about shaving.
   body: |
     %% Sometimes it is that simple
 
     Everybody is familiar with the Wilkinson Sword brand, although some of you may not know that the company really started as a sword manufacturer.
 
-    The belgian ad agency Mortier Brigade needed to find a good team of web developers to build the new Wilkinson Sword website for the Benelux. We already met them a few months before and this was a perfect occasion to start working together.
+    The belgian ad agency Mortierbrigade needed to find a good team of web developers to build the new Wilkinson Sword website for the Benelux. We already met them a few months before and this was a perfect occasion to start working together.
 
     To be honest, the job was simple. What was asked from us was a neat corporate website that would be easy to administer, and fast to browse.
 
@@ -248,7 +248,7 @@ wilkinson:
 
     Instead of installing a heavy ready-to-use CMS, we decided to opt for a custom implementation, built on top of the Symfony2 web framework.
 
-    We also built a small backend interface that would allow both Mortier Brigade and Wilkison Sword to manage the website content.
+    We also built a small backend interface that would allow both Mortierbrigade and Wilkison Sword to manage the website content.
 
     %% A straightforward job done right
 
@@ -277,15 +277,15 @@ wilkinson:
       alt: Wilkinson Sword screenshot
   highlighted: false
 
-# Mortier Brigade
+# Mortierbrigade
 mortierbrigade:
-  title: Mortier Brigade
-  slug: mortier-brigade
-  introduction: Mortier Brigade makes no secret about their ambition : becoming the most influential agency in the world. When they decided to launch a new version of their own website, it was obvious that they had to hire extreme precisions developers for the job.
+  title: Mortierbrigade
+  slug: mortierbrigade
+  introduction: Mortierbrigade makes no secret about their ambition : becoming the most influential agency in the world. When they decided to launch a new version of their own website, it was obvious that they had to hire extreme precisions developers for the job.
   body: |
     %% From influence ...
 
-    We had already worked with Mortier Brigade for the [Wilkinson-Sword project](/cases/wilkinson "Wilkinson Sword project") and it went really well, so when they asked us if we wanted to work on their own website, we were more than enthusiastic.
+    We had already worked with Mortierbrigade for the [Wilkinson-Sword project](/cases/wilkinson "Wilkinson Sword project") and it went really well, so when they asked us if we wanted to work on their own website, we were more than enthusiastic.
 
     So they provided us the design of the new version, and we started coding it. If the backend development was somewhat simple, we knew things would be more of a challenge on the client side.
 
@@ -295,7 +295,7 @@ mortierbrigade:
 
     *******************************
 
-    Finally, Mortier Brigade wanted to make that they would have full control on their content, and that anyone on their side would be able to manage it.
+    Finally, Mortierbrigade wanted to make that they would have full control on their content, and that anyone on their side would be able to manage it.
 
     ![A dummy image](/uploads/images/projects/mbg_cam.jpg "A dummy image")
 
@@ -305,16 +305,16 @@ mortierbrigade:
 
     As always with advertisement agencies, the job had to be done fast. We knew that in this case, a standard CMS just wouldn't cut it, so we decided to use the Symfony2 web framework.
 
-    We put our frontend skills to good use in order to implement a full screen and highly interactive design. Moreover, we ensured that the website would behave nicely on most devices : smartphones, tablets and displays of various sizes.
+    We put our frontend skills to good use in order to implement a full screen responsive & adaptive design : we ensured that the website would behave nicely on smartphones, tablets and displays of various sizes.
 
     We also had a lot of fun implementing the special feature : for each project, visitors have the chance to leave a video comment using their own webcam.
 
-    Needless to say, Snowcap and Mortier Brigade are very happy with the result, and we invite you to [check it out](http://www.mortierbrigade.com "Mortier Brigade website") and leave a lot of video feedback).
+    Needless to say, Snowcap and Mortierbrigade are very happy with the result, and we invite you to [check it out](http://www.mortierbrigade.com "Mortierbrigade website") and leave a lot of video feedback.
 
   website: http://www.mortierbrigade.com
   published_at: '2011-11-29 12:24:00'
   realisation_period: October - November 2011
-  client: Mortier Brigade
+  client: Mortierbrigade
   collaborations:
     -
       project: @mortierbrigade
@@ -324,18 +324,18 @@ mortierbrigade:
   published: true
   available_on_list: true
   thumb_front:
-    name: Mortier Brigade front thumb
+    name: Mortierbrigade front thumb
     path: projects/mbg_front.jpg
-    alt: Mortier Brigade front thumb
+    alt: Mortierbrigade front thumb
   thumb_back:
-    name: Mortier Brigade back thumb
+    name: Mortierbrigade back thumb
     path: projects/mbg_back.jpg
-    alt: Mortier Brigade back thumb
+    alt: Mortierbrigade back thumb
   images:
     -
-      name: Mortier Brigade Webcam
+      name: Mortierbrigade Webcam
       path: projects/mbg_cam.jpg
-      alt: Mortier Brigade Webcam
+      alt: Mortierbrigade Webcam
   highlighted: false
 
 #Sodexo
