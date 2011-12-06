@@ -3,8 +3,9 @@ html, body {
     height: 100%;
 }
 body {
+    min-width: 960px;
     color: #0a0a0a;
-    background-color: #fff;
+    background-color: #0a0a0a;
     margin: 0;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
@@ -18,10 +19,10 @@ h1.main-title {
     background-repeat: no-repeat;
     background-position: right top;
     position: absolute;
-    top: 110px;
     height: 55px;
     line-height: 55px;
     left: 0;
+    top: 0;
     margin: 0 0 0 -480px;
     padding: 0 150px 0 50%;
     color: #0a0a0a;
@@ -38,17 +39,18 @@ a:hover {
     text-decoration: underline;
 }
 /* WRAPPERS */
-.wrapper-outer {
+.wrapper {
     position: relative;
-    min-height: 100%;
-}
-.wrapper-inner {
-    padding-bottom: 186px;
+    padding: 1px 0;
+    background-color: #fff;
+    background-repeat: no-repeat;
 }
 /* HEADER */
 header {
-    background-color: #0a0a0a;
-    height: 40px;
+    position: relative;
+    z-index: 100;
+    height: 180px;
+    background: url(../images/sky_pattern.jpg) left 40px repeat-x;
 }
 header nav {
     width: 860px;
@@ -155,7 +157,7 @@ section.content p.read-more a{
 }
 /* main sections (only used to push content) */
 section.main {
-    margin: 150px 0 20px 0;
+    margin: 75px 0 20px 0;
 }
 /* standard sections (used to provide a few generic styling for simple content sections */
 section.standard {
@@ -310,36 +312,48 @@ section.standard li {
     line-height: 16px;
 }
 /* SERVICES */
+.services .wrapper {
+    min-height: 784px;
+    background-image: url(../images/services.jpg);
+    background-position: bottom center;
+}
 .services section.main {
-    padding-right: 500px;
+    margin-top: 100px;
+    padding-right: 550px;
 }
 /* COMPANY AND CONTACT */
+.company .wrapper {
+    min-height: 647px;
+    background-image: url(../images/company.jpg);
+    background-position: center bottom;
+}
 .company h1.main-title,
 .contact h1.main-title {
     position: absolute;
     left: 0;
+    top: 50px;
     right: 50%;
     margin: 0;
     padding: 0 65px 0 35%;
     width: 480px;
-    top: 210px;
 }
 .company h2#mountain,
 .contact h2#mountain {
     position: absolute;
     left: 0;
+    top: -50px;
     right: 50%;
     margin: 0;
     padding: 0 0 0 35%;
     width: 480px;
-    top: 100px;
+    z-index: 100;
     height: 93px;
     text-indent: -10000px;
     background: url(../images/sprites.png) right -171px no-repeat;
 }
 /* COMPANY */
 .company section.main {
-    margin-top: 250px;
+    margin-top: 150px;
     padding-left: 500px;
 }
 .company blockquote {
@@ -352,7 +366,7 @@ section.standard li {
     margin: 0 0 0 -490px;
     padding: 15px 125px 15px 50%;
     position: absolute;
-    top: 375px;
+    top: 275px;
     right: 50%;
     width: 350px;
     height: 95px;
@@ -372,8 +386,13 @@ section.standard li {
     margin: 30px 0;
 }
 /* TEAM */
+.team .wrapper{
+    background-position: center top;
+    background-image: url(../images/team.jpg);
+    min-height: 871px;
+}
 .team section.main {
-    margin-top: 300px;
+    margin-top: 400px;
 }
 .team section.main ul {
     margin: 0;
@@ -736,8 +755,6 @@ ul.social li.facebook a:hover {
 }
 /* FOOTER */
 footer {
-    position: relative;
-    margin-top: -186px;
     height: 148px;
     border-top:  8px solid #8bc623;
     padding: 0 0 30px 0;

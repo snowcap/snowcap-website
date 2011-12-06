@@ -17,15 +17,13 @@
           js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
-        <div class="wrapper-outer">
-            <header>
-                {% block header %}
-                    {% include 'SnowcapSiteBundle::navigation.html.twig' %}
-                {% endblock %}
-            </header>
-            <div class="wrapper-inner">
-                {% block body %}{% endblock %}
-            </div>
+        <header>
+            {% block header %}
+                {% include 'SnowcapSiteBundle::navigation.html.twig' %}
+            {% endblock %}
+        </header>
+        <div class="wrapper">
+            {% block body %}{% endblock %}
         </div>
         <footer>
             <div class="split split-2">
