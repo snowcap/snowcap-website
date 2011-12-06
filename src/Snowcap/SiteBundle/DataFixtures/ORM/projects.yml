@@ -9,11 +9,13 @@ immocitiz:
 
     Immocitiz is a gaming platform built on top of [Immovlan](http://www.immovlan.be "Immovlan website"), one of the most visited real estate websites in Belgium
 
+    ![A dummy image](/uploads/images/projects/ic_content.jpg "A dummy image")
+
     Contestants are invited to browse the properties available on the website. Using a virtual money, they can buy the ones that they find the most interesting. Once the property has been bought, it generates revenue, as every visit on the property page brings a little play money to its owner.
 
-    Properties can be sold to the bank, or can be traded with other players. The player sucess depends on his ability to spot profitable properties that will attract a lot of visitors and then sell them at a higher price.
-
     **********************
+
+    Properties can be sold to the bank, or can be traded with other players. The player sucess depends on his ability to spot profitable properties that will attract a lot of visitors and then sell them at a higher price.
 
     As he progresses through the game, the player is rewarded with various badges and titles. He can also compare his real estate performances with his Facebook friends, and display his activity on his wall (if you want to [try the game](http://www.immocitiz.be "Immocitiz website"), don't worry - this is completely optional).
 
@@ -72,19 +74,22 @@ walibi:
 
       In order to promote this new identity online, Walibi asked its advertisement agency, [Armando Testa Brussels](http://www.armando-testa.eu "Armando Testa website"), to launch a new version of its website. Under the direction of Armando Testa, and with the help of our friends from [One Million Dollars](http://www.1md.be "One Million Dollars website"), we were to take care of the development of the platform.
 
-      ![A dummy image](/uploads/images/projects/wab_skunx.jpg "A dummy image")
 
       The new version was designed with three goals in mind : reflect the new identity of the franchise, provide a global platform suitable for managing content in three countries, and offer a very high level of autonomy for the Walibi marketing staff.
 
-      **********************
 
       %% Who's in charge ?
 
       Sometimes, customers want everything taken care of for them. And sometimes, they want to be empowered to do most of the work themselves - which was the route chosen by Walibi.
 
+      **********************
+
       That's why we built the foundations of the new platform, added a few cool features  on top, and then put the enthusiastic Walibi web team in control. And it worked. It worked so well that from times to times, we look at the website, and discover new features, or even a whole new theme.
 
+      ![A dummy image](/uploads/images/projects/wab_themes.jpg "A dummy image")
+
       For the day to day operations, from content management to graphical interface fine-tuning, Walibi is in charge. And when it comes to the heavy lifting... That's where Snowcap comes in.
+
 
 
   website: http://www.walibi.be
@@ -122,7 +127,7 @@ eurocenter:
 
      Eurocenter started as a family business in 1984. From a single store, it has grown to one of the most well-known appliance retail chain in southern Belgium. It was only natural than a few years ago, they realized that they should be as successful online as they were offline.
 
-     ![A dummy image](/uploads/images/projects/ec_map.jpg "A dummy image")
+     ![A dummy image](/uploads/images/projects/ec_pickup.jpg "A dummy image")
 
      ********************
 
@@ -230,25 +235,26 @@ wilkinson:
   title: Wilkinson Sword
   slug: wilkinson
   introduction: |
-    Wilkinson Sword is the first project born from the collaboration between Snowcap and the brussels-based advertisement agency [Mortier Brigade](http://www.mortierbrgade.com "Mortier Brigade website"). It is also, of course, a website about shaving.
+    Wilkinson Sword is the first project born from the collaboration between Snowcap and the brussels-based advertisement agency [Mortierbrigade](http://www.mortierbrgade.com "Mortierbrigade website"). It is also, of course, a website about shaving.
   body: |
+
+    ![A dummy image](/uploads/images/projects/wlk_her.jpg "A dummy image")
+
+    ***********************
+
     %% Sometimes it is that simple
 
     Everybody is familiar with the Wilkinson Sword brand, although some of you may not know that the company really started as a sword manufacturer.
 
-    The belgian ad agency Mortier Brigade needed to find a good team of web developers to build the new Wilkinson Sword website for the Benelux. We already met them a few months before and this was a perfect occasion to start working together.
+    The belgian ad agency Mortierbrigade needed to find a good team of web developers to build the new Wilkinson Sword website for the Benelux. We already met them a few months before and this was a perfect occasion to start working together.
 
     To be honest, the job was simple. What was asked from us was a neat corporate website that would be easy to administer, and fast to browse.
 
     ***********************
 
-    ![A dummy image](/uploads/images/projects/wlk_connect.jpg "A dummy image")
-
-    ***********************
-
     Instead of installing a heavy ready-to-use CMS, we decided to opt for a custom implementation, built on top of the Symfony2 web framework.
 
-    We also built a small backend interface that would allow both Mortier Brigade and Wilkison Sword to manage the website content.
+    We also built a small backend interface that would allow both Mortierbrigade and Wilkison Sword to manage the website content.
 
     %% A straightforward job done right
 
@@ -277,15 +283,15 @@ wilkinson:
       alt: Wilkinson Sword screenshot
   highlighted: false
 
-# Mortier Brigade
+# Mortierbrigade
 mortierbrigade:
-  title: Mortier Brigade
-  slug: mortier-brigade
-  introduction: Mortier Brigade makes no secret about their ambition : becoming the most influential agency in the world. When they decided to launch a new version of their own website, it was obvious that they had to hire extreme precisions developers for the job.
+  title: Mortierbrigade
+  slug: mortierbrigade
+  introduction: Mortierbrigade makes no secret about their ambition : becoming the most influential agency in the world. When they decided to launch a new version of their own website, it was obvious that they had to hire extreme precisions developers for the job.
   body: |
     %% From influence ...
 
-    We had already worked with Mortier Brigade for the [Wilkinson-Sword project](/cases/wilkinson "Wilkinson Sword project") and it went really well, so when they asked us if we wanted to work on their own website, we were more than enthusiastic.
+    We had already worked with Mortierbrigade for the [Wilkinson-Sword project](/cases/wilkinson "Wilkinson Sword project") and it went really well, so when they asked us if we wanted to work on their own website, we were more than enthusiastic.
 
     So they provided us the design of the new version, and we started coding it. If the backend development was somewhat simple, we knew things would be more of a challenge on the client side.
 
@@ -295,7 +301,7 @@ mortierbrigade:
 
     *******************************
 
-    Finally, Mortier Brigade wanted to make that they would have full control on their content, and that anyone on their side would be able to manage it.
+    Finally, Mortierbrigade wanted to make that they would have full control on their content, and that anyone on their side would be able to manage it.
 
     ![A dummy image](/uploads/images/projects/mbg_cam.jpg "A dummy image")
 
@@ -305,16 +311,16 @@ mortierbrigade:
 
     As always with advertisement agencies, the job had to be done fast. We knew that in this case, a standard CMS just wouldn't cut it, so we decided to use the Symfony2 web framework.
 
-    We put our frontend skills to good use in order to implement a full screen and highly interactive design. Moreover, we ensured that the website would behave nicely on most devices : smartphones, tablets and displays of various sizes.
+    We put our frontend skills to good use in order to implement a full screen responsive & adaptive design : we ensured that the website would behave nicely on smartphones, tablets and displays of various sizes.
 
     We also had a lot of fun implementing the special feature : for each project, visitors have the chance to leave a video comment using their own webcam.
 
-    Needless to say, Snowcap and Mortier Brigade are very happy with the result, and we invite you to [check it out](http://www.mortierbrigade.com "Mortier Brigade website") and leave a lot of video feedback).
+    Needless to say, Snowcap and Mortierbrigade are very happy with the result, and we invite you to [check it out](http://www.mortierbrigade.com "Mortierbrigade website") and leave a lot of video feedback.
 
   website: http://www.mortierbrigade.com
   published_at: '2011-11-29 12:24:00'
   realisation_period: October - November 2011
-  client: Mortier Brigade
+  client: Mortierbrigade
   collaborations:
     -
       project: @mortierbrigade
@@ -324,18 +330,18 @@ mortierbrigade:
   published: true
   available_on_list: true
   thumb_front:
-    name: Mortier Brigade front thumb
+    name: Mortierbrigade front thumb
     path: projects/mbg_front.jpg
-    alt: Mortier Brigade front thumb
+    alt: Mortierbrigade front thumb
   thumb_back:
-    name: Mortier Brigade back thumb
+    name: Mortierbrigade back thumb
     path: projects/mbg_back.jpg
-    alt: Mortier Brigade back thumb
+    alt: Mortierbrigade back thumb
   images:
     -
-      name: Mortier Brigade Webcam
+      name: Mortierbrigade Webcam
       path: projects/mbg_cam.jpg
-      alt: Mortier Brigade Webcam
+      alt: Mortierbrigade Webcam
   highlighted: false
 
 #Sodexo
@@ -350,9 +356,11 @@ sodexo:
 
     As time went by, some of their operation centres started providing more personal assistance to employees and managers, and realized that there was a solid demand for concierge services among their existing customers.
 
-    What was at first a side business became a full-fledged commercial activity under the name of "Circles". Today, Circles operates in five countries : Belgium, France, Luxemburg, Sweden and the United States, with probably more to come.
+    ![Backend login](/uploads/images/projects/sdx_screen.jpg "Backend login")
 
     **************
+
+    What was at first a side business became a full-fledged commercial activity under the name of "Circles". Today, Circles operates in five countries : Belgium, France, Luxemburg, Sweden and the United States, with probably more to come.
 
     Each of those countries had its own set of workflows and tools, which was totally fine for a business that was still in its teenage years. But today, Circles is a mature company that needs a comprehensive approach in terms of customer management and follow-up.
 
@@ -366,7 +374,7 @@ sodexo:
 
     We have worked on this project for several month, providing analysis support, IT consultancy, as well as frontend and backend development.
 
-    ![A dummy image](/uploads/images/projects/sdx_screen.jpg "A dummy image")
+    ![Backend screenshot](/uploads/images/projects/sdx_backend.jpg "Backend screenshot")
 
     Today, the project is up and running, and we are happy to know that it will be a cornerstone of Circles's international business for the years to come.
 
