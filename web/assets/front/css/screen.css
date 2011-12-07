@@ -13,6 +13,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: Lato, sans-serif;
+    letter-spacing: -0.01em;
 }
 h1.main-title {
     background-image: url(../images/main_title.png);
@@ -179,6 +180,10 @@ section.standard li {
     background:  url(../images/sprites.png) 0 -143px no-repeat;
 }
 /* HOMEPAGE */
+.home .wrapper {
+    background-image: url(../images/home.jpg);
+    background-position: center top;
+}
 .home div.split-3 img#mask-image {
     position: absolute;
     z-index: 100;
@@ -187,21 +192,25 @@ section.standard li {
     width: 97px;
     height: 105px;
 }
-/* main section */
-.home section.main {
-    padding: 90px 0 0 0;
-    margin: 0 0 50px 0;
+.home h1.home-title,
+.home h2.baseline {
+    position: absolute;
 }
-.home section.main h1 {
+.home h1.home-title {
     text-indent: -10000px;
-    margin: 0;
+    top: -60px;
+    left: 50%;
+    margin: 0 0 0 -480px;
+    z-index: 100;
     padding: 0;
     width: 271px;
     height: 102px;
     background: url(../images/sprites.png) 0 -15px no-repeat;
 }
-.home section.main h2 {
-    margin: 10px 0 0 0;
+.home h2.baseline {
+    top: 40px;
+    left: 50%;
+    margin: 10px 0 0 -480px;
     text-transform: uppercase;
     font-weight: 300;
     letter-spacing: -1px;
@@ -209,6 +218,12 @@ section.standard li {
     padding: 0;
     font-size: 24px;
 }
+/* main section */
+.home section.main {
+    padding: 0;
+    margin: 110px 0 50px 0;
+}
+
 .home section.main p {
     margin: 30px 0 0 0;
     width: 375px;
@@ -218,6 +233,9 @@ section.standard li {
     color: #333332;
 }
 /* projects */
+.home section.projects {
+    margin-top: 270px;
+}
 .home section.projects h2{
     background-position: right 0;
     width: 350px;
@@ -331,17 +349,21 @@ section.standard li {
 .contact h1.main-title {
     position: absolute;
     left: 0;
-    top: 50px;
     right: 50%;
     margin: 0;
     padding: 0 65px 0 35%;
     width: 480px;
 }
+.company h1.main-title {
+    top: 50px;
+}
+.contact h1.main-title {
+    top: 80px;
+}
 .company h2#mountain,
 .contact h2#mountain {
     position: absolute;
     left: 0;
-    top: -50px;
     right: 50%;
     margin: 0;
     padding: 0 0 0 35%;
@@ -350,6 +372,12 @@ section.standard li {
     height: 93px;
     text-indent: -10000px;
     background: url(../images/sprites.png) right -171px no-repeat;
+}
+.company h2#mountain {
+    top: -50px;
+}
+.contact h2#mountain {
+    top: -20px;
 }
 /* COMPANY */
 .company section.main {
@@ -373,6 +401,11 @@ section.standard li {
     background: url(../images/headings.png) right -95px no-repeat;
 }
 /* CONTACT */
+.contact .wrapper {
+    background-image: url(../images/contact.jpg);
+    background-position: center bottom;
+    min-height: 859px;
+}
 .contact section.main {
     margin-top: 300px;
     padding-left: 500px;
@@ -492,11 +525,31 @@ section.projects ul {
     padding: 0;
 }
 section.projects li {
-    margin: 0 0 20px 0;
+    margin: 24px 0 16px 0;
     list-style-type: none;
     float: left;
     width: 300px;
-    height: 207px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+section.projects li h3 {
+    font-weight: 700;
+    position: absolute;
+    top: -24px;
+    left: 0;
+    margin: 0;
+    width: 280px;
+    background: #e5e5e5;
+    color: #0a0a0a;
+    line-height: 24px;
+    font-size: 14px;
+    padding: 0 10px;
+    text-transform: uppercase;
+}
+section.projects li:hover {
+    background: #e5e5e5;
+    overflow: visible;
 }
 section.projects li:not(.three) {
     margin-right: 30px;
@@ -755,31 +808,39 @@ ul.social li.facebook a:hover {
 }
 /* FOOTER */
 footer {
-    height: 148px;
     border-top:  8px solid #8bc623;
-    padding: 0 0 30px 0;
+    padding: 10px 0;
     color: #fff;
     background-color: #0a0a0a;
 }
+footer div.full {
+    margin-bottom: 0;
+}
 footer section.contact {
-    width: 265px;
+    margin: 0;
+    overflow: hidden;
 }
-footer section.contact address {
-    margin: 20px 0 0 0;
-    font-style: normal;
+footer section.contact h3, footer section.contact p {
+    float: left;
     font-family: Lato, sans-serif;
-    font-weight: 300;
 }
-footer section.contact p.snowcap {
-    font-size: 25px;
-    margin: 0 0 10px 0;
+footer section.contact h3 {
     font-weight: 300;
+    font-size: 21px;
+    margin: 0 100px 2px 0;
+    font-weight: 300;
+    line-height: 38px;
+}
+footer section.contact p {
+    line-height: 40px;
+    margin: 0 100px 0 0;
 }
 footer section.contact a.twitter,
 footer section.contact a.facebook {
     float: left;
     text-indent: -10000px;
     height: 25px;
+    margin: 7px 0 8px 0;
     background-image: url(../images/sprites.png);
     background-repeat: no-repeat;
 }

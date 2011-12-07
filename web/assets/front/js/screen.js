@@ -15,12 +15,10 @@
         _this.init = function() {
             _element.hover(
                 function(event) {
-                    _element.find('img').animate({'left': '+=' + _left}, 'fast');
-                    _element.find('span').show();
+                    _element.find('img').animate({'left': '+=' + _left}, 200);
                 },
                 function(event) {
-                    _element.find('img').animate({'left': '-=' + _left}, 'fast');
-                    _element.find('span').hide();
+                    _element.find('img').animate({'left': '-=' + _left}, 200);
                 }
             );
         };
