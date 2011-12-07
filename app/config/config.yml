@@ -100,14 +100,21 @@ snowcap_admin:
           model_class: Snowcap\SiteBundle\Entity\Image
           admin_class: Snowcap\SiteBundle\Admin\Image
 
-avalanche_imagine:
-    filters:
+liip_imagine:
+    filter_sets:
+        post_thumb:
+            quality: 100
+            filters:
+                relative_resize: { widen: 290 }
         preview:
-          type: thumbnail
-          options: { size: [390, 255], mode: outbound }
+            quality: 100
+            filters:
+                thumbnail: { size: [390, 255], mode: outbound }
         thumb:
-          type: thumbnail
-          options: { size: [290, 190], mode: outbound}
+            quality: 90
+            filters:
+                thumbnail: { size: [290, 190], mode: outbound }
         small:
-          type: thumbnail
-          options: { size: [100, 76], mode: outbound }
+            quality: 80
+            filters:
+                thumbnail: { size: [100, 76], mode: outbound }
