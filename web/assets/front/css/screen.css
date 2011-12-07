@@ -467,6 +467,7 @@ section.standard li {
     margin:  0;
 }
 .team section.main .member-details dl {
+    margin: 0;
     padding: 15px;
     position: relative;
     height: 65px;
@@ -536,19 +537,17 @@ section.projects li {
 section.projects li h3 {
     font-weight: 700;
     position: absolute;
-    top: -24px;
+    top: -20px;
     left: 0;
     margin: 0;
     width: 280px;
-    background: #e5e5e5;
-    color: #0a0a0a;
-    line-height: 24px;
+    color: #a6a6a6;
+    line-height: 20px;
     font-size: 14px;
-    padding: 0 10px;
+    padding: 0 5px;
     text-transform: uppercase;
 }
 section.projects li:hover {
-    background: #e5e5e5;
     overflow: visible;
 }
 section.projects li:not(.three) {
