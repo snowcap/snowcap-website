@@ -157,22 +157,25 @@ class CoreExtension extends \Twig_Extension
 
     /**
      * Return true if the menu should be active
-     * @param string $activeController
-     * @param string $controller
-     * @param string $action
+     * @param string $activeRoue
+     * @param string $route
      * @return bool
      */
-    public function isMenuActive($activeController, $controller, $action = null)
+    public function isMenuActive($activeRoute, $route)
     {
-        preg_match('/\\\([^\\\]+)Controller/', $activeController, $matches);
-        $activeControllerName = $matches[1];
-        if ($action !== null) {
-            preg_match('/::([^::]+)Action/', $activeController, $matches);
-            $activeActionName = $matches[1];
-            return $controller == $activeControllerName && $action == $activeActionName;
-
+        switch($activeRoute) {
+            case 'snwcp_site_post_list':
+            case 'snwcp_site_post_show':
+                return $route === 'snwcp_site_post_list';
+                break;
+            case 'snwcp_site_project_index':
+            case 'snwcp_site_project_show':
+                return $route === 'snwcp_site_project_index';
+                break;
+            default:
+                return $activeRoute === $route;
+                break;
         }
-        return $controller == $activeControllerName;
     }
 
     /**
