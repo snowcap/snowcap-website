@@ -75,7 +75,7 @@
             var element = $(this);
             _move = window.setTimeout(function(){
                 _this.moveTo(element, 200);
-            }, 500);
+            }, 300);
         };
         /**
          * Go back to active (on mouseleave)
@@ -86,7 +86,7 @@
             window.clearTimeout(_move);
             _move = window.setTimeout(function(){
                 _this.moveToActive(200);
-            }, 500);
+            }, 300);
 
         };
         /**
