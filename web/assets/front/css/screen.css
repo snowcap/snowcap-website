@@ -148,14 +148,14 @@ section.content h2 {
 section.content p {
     margin: 15px 0;
 }
-section.content p.read-more {
+section p.read-more {
     font-weight: bold;
     font-size: 14px !important;
 }
-section.content p.read-more a{
+section p.read-more a{
     height: 14px;
     line-height: 14px;
-    padding: 0 40px 0 0;
+    padding: 0 30px 0 0;
     background-image: url(../images/sprites.png);
     background-repeat: no-repeat;
     background-position: 80px -147px;
@@ -329,7 +329,7 @@ body.home {
     color: #fff;
     width: 242px;
     padding: 30px;
-    background-color: #0a0a0a
+    background: url(../images/octocat.png) #0a0a0a center bottom no-repeat;
 }
 .home section.nerds h2 {
     margin: 0;
@@ -349,11 +349,11 @@ body.home {
     font-size: 14px;
     line-height: 16px;
 }
-.home section.nerds a.github {
-    display: block;
-    width: 242px;
-    height: 112px;
-    background: url(../images/github.jpg);
+.home section.nerds p.read-more {
+    text-align: right;
+}
+.home section.nerds p.read-more a {
+    background-position: 150px -147px;
 }
 /* SERVICES */
 body.services {
@@ -841,13 +841,14 @@ ul.social li.facebook a:hover {
 /* FOOTER */
 footer {
     padding: 5px;
-    margin: 10px auto;
+    margin: 0 auto 10px auto;
     width: 450px;
-    background: #f0f0f0;
+    background:rgba(245,245,245, 0.8);
 }
 footer p {
     margin: 0;
     color: #818181;
     text-align: center;
     font-size: 11px;
+    font-weight: bold;
 }
