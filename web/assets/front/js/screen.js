@@ -22,7 +22,7 @@
                 }
             );
         };
-        /* Init() */
+        /* INIT */
         _this.init();
     };
     /**
@@ -34,44 +34,87 @@
         });
     };
     /**
-     * Map class constructor
+     * Navigation class constructor
      *
      * @param DOMElement element
      */
-    var Map = function(element) {
-        var _bareElement = element;
+    var Navigation = function(element) {
         var _element = $(element);
         var _this = this;
-        var latlng = new google.maps.LatLng(50.85, 4.35);
-        var options = {
-            'zoom': 13,
-            'center': latlng,
-            'mapTypeId': google.maps.MapTypeId.ROADMAP,
-            'disableDefaultUI': true,
-            'zoomControlOptions': {
-                'style': google.maps.ZoomControlStyle.SMALL
+        var _handle;
+        var _move;
+        /**
+         * Move the handle to the specified element
+         *
+         * @param DOMElement element
+         * @param int speed
+         */
+        _this.moveTo = function(element, speed) {
+            var activeOffset = $(element).position().left;
+            var handleOffset = activeOffset + element.outerWidth() / 2 - 5;
+            _handle.animate({'left': handleOffset}, speed);
+        };
+        /**
+         * Move the handle to the active element
+         *
+         * @param int speed
+         */
+        _this.moveToActive = function(speed) {
+            var activeElement = _element.find('.active');
+            if(activeElement.length > 0) {
+                _this.moveTo(activeElement, speed);
             }
         };
-        var map = new google.maps.Map(_bareElement, options);
+        /**
+         * Follow (on mouseenter)
+         *
+         * @param DOMEvent event
+         */
+        _this.follow = function(event) {
+            window.clearTimeout(_move);
+            var element = $(this);
+            _move = window.setTimeout(function(){
+                _this.moveTo(element, 200);
+            }, 500);
+        };
+        /**
+         * Go back to active (on mouseleave)
+         *
+         * @param DOMEvent event
+         */
+        _this.gohome = function(event) {
+            window.clearTimeout(_move);
+            _move = window.setTimeout(function(){
+                _this.moveToActive(200);
+            }, 500);
+
+        };
+        /**
+         * Navigation init
+         *
+         */
+        _this.init = function() {
+            _handle = $('<span>').addClass('handle').hide();
+            _element.append(_handle);
+            _this.moveToActive(0);
+            _handle.show();
+            _element.find('a').hover(_this.follow, _this.gohome);
+        };
+        /* INIT */
+        _this.init();
     };
-    /**
-     * Namespace Map in jQuery
-     * 
-     */
-    $.fn.map = function() {
+
+    $.fn.navigation = function(element) {
         return this.each(function() {
-            new Map(this);
+            new Navigation(this);
         });
     };
-    /**
-     * DOMREADY
-     * 
-     */
+    /* DOMREADY */
     $(document).ready(function(event) {
         // Flip images on latest project for homepage
         $('.flipper').flipper();
         // Remove title on latest project for homepage links
         $(".home .projects li a").attr('title', '');
-        $('.snowcap-map').map();
+        $('header nav').navigation();
     });
 })(jQuery);

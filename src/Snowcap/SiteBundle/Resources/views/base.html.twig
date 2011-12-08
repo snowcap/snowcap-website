@@ -26,11 +26,7 @@
             {% block body %}{% endblock %}
         </div>
         <footer>
-            <div class="full">
-                <section class="contact">
-                    {% include "SnowcapSiteBundle:Widget:contact.html.twig" %}
-                </section>
-            </div>
+            {{ "general.footer" | trans({"%date%": "now" | date('Y') }) | markdown }}
         </footer>
         {% javascripts 'assets/vendors/jquery/*' 'assets/front/js/*' output='static/js/all.js' filter='yui_js' %}
             <script type="text/javascript" src="{{ asset_url }}"></script>

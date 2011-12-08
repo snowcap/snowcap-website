@@ -60,11 +60,18 @@ header nav {
     font-size: 13px;
     position: relative;
 }
+header nav .handle {
+    position: absolute;
+    bottom: 0;
+    width: 11px;
+    height: 6px;
+    background: url(../images/sprites.png) -3px -419px;
+ }
 header nav h1 {
     margin: 13px 0;
     padding: 0;
     float: left;
-    margin-right: 75px;
+    margin-right: 60px;
 }
 header nav h1 a {
     display: block;
@@ -80,9 +87,8 @@ header nav h1 a:hover {
 header nav > a {
     float: left;
     line-height: 38px;
-    padding: 0 0 2px 0;
+    padding: 0 15px 2px 15px;
     color: #fff;
-    margin-right: 30px;
 }
 header nav a:hover {
     color: #79bd01;
@@ -300,14 +306,19 @@ body.home {
 }
 .home section.tweets li {
     list-style-type: none;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    background: url("../../../assets/front/images/sprites.png") repeat-x scroll right bottom;
 }
 .home section.tweets li p.date {
-    color: #a5a5a5;
-    font-size: 14px;
+    color: #818181;
+    font-size: 11px;
 }
 .home section.tweets li p.text {
+    margin-top: 2px;
     font-family: Lato, sans-serif;
-    font-size: 19px;
+    font-size: 18px;
     color: #404040;
     line-height: 24px;
     font-weight: 300;
@@ -315,9 +326,9 @@ body.home {
 /* nerds */
 .home section.nerds {
     color: #fff;
-    background: #0a0a0a;
     width: 242px;
     padding: 30px;
+    background-color: #0a0a0a
 }
 .home section.nerds h2 {
     margin: 0;
@@ -325,9 +336,23 @@ body.home {
     font-weight: 300;
     font-size: 32px;
 }
+.home section.nerds p.open-source {
+    font-size: 16px;
+    line-height: 20px;
+}
+.home section.nerds p.open-source strong {
+    font-weight: normal;
+    font-size: 22px;
+}
 .home section.nerds p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 16px;
+}
+.home section.nerds a.github {
+    display: block;
+    width: 242px;
+    height: 112px;
+    background: url(../images/github.jpg);
 }
 /* SERVICES */
 body.services {
@@ -340,6 +365,12 @@ body.services {
 .services section.main {
     margin-top: 100px;
     padding-right: 550px;
+}
+.services footer {
+    margin-top: 130px;
+}
+.services footer p {
+    text-align: left;
 }
 /* COMPANY AND CONTACT */
 body.company {
@@ -383,6 +414,10 @@ body.company {
 .contact h2#mountain {
     top: -20px;
 }
+.company footer p,
+.contact footer p {
+    text-align: right;
+}
 /* COMPANY */
 .company section.main {
     margin-top: 220px;
@@ -398,7 +433,7 @@ body.company {
     margin: 0 0 0 -490px;
     padding: 15px 125px 15px 50%;
     position: absolute;
-    bottom: 130px;
+    bottom: 320px;
     right: 50%;
     width: 350px;
     height: 95px;
@@ -450,7 +485,7 @@ body.team {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
-    line-height: 16px;
+    line-height: 18px;
     height: 32px;
     margin: 0;
     width: 80px;
@@ -551,7 +586,7 @@ section.projects li h3 {
     width: 280px;
     color: #a6a6a6;
     line-height: 20px;
-    font-size: 14px;
+    font-size: 12px;
     padding: 0 5px;
     text-transform: uppercase;
 }
@@ -654,7 +689,7 @@ section.projects li:not(.three) {
     display: block;
     position: relative;
     margin: 5px;
-    box-shadow: 0 3px 5px #ccc;
+    box-shadow: 0 1px 3px #999;
 }
 .visual-preview {
     width: 390px;
@@ -758,14 +793,7 @@ ul.social li {
     border: 1px solid #ccc;
 }
 ul.social li:hover {
-    background: rgb(238,238,238); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* IE10+ */
-    background: linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+    box-shadow: inset 0 0 2px 1px #fff;
 }
 ul.social li a {
     display: block;
@@ -773,8 +801,11 @@ ul.social li a {
     padding: 2px 5px 0 20px;
     background-image: url(../images/sprites.png);
     background-repeat: no-repeat;
-    color: #818181;
     text-decoration: none;
+    color: #a6a6a6;
+}
+ul.social li a:hover {
+    color: #818181;
 }
 ul.social li.twitter a {
     padding-left: 24px;
@@ -815,61 +846,11 @@ ul.social li.facebook a:hover {
 }
 /* FOOTER */
 footer {
-    display: none;
-    border-top:  8px solid #8bc623;
-    padding: 10px 0;
-    color: #fff;
-    background-color: #0a0a0a;
+    margin: 10px auto;
+    width: 960px;
 }
-footer div.full {
-    margin-bottom: 0;
-}
-footer section.contact {
-    margin: 0;
-    overflow: hidden;
-}
-footer section.contact h3, footer section.contact p {
-    float: left;
-    font-family: Lato, sans-serif;
-}
-footer section.contact h3 {
-    font-weight: 300;
-    font-size: 21px;
-    margin: 0 100px 2px 0;
-    font-weight: 300;
-    line-height: 38px;
-}
-footer section.contact p {
-    line-height: 40px;
-    margin: 0 100px 0 0;
-}
-footer section.contact a.twitter,
-footer section.contact a.facebook {
-    float: left;
-    text-indent: -10000px;
-    height: 25px;
-    margin: 7px 0 8px 0;
-    background-image: url(../images/sprites.png);
-    background-repeat: no-repeat;
-}
-footer section.contact a.facebook {
-    background-position: -68px -117px;
-    width: 13px;
-    margin-right: 20px;
-}
-footer section.contact a.facebook:hover {
-    background-position: -81px -117px;
-}
-footer section.contact a.twitter {
-    background-position: 0 -117px;
-    width: 34px;
-}
-footer section.contact a.twitter:hover {
-    background-position: -34px -117px;
-}
-footer section.technology {
-    width: 665px;
-}
-footer section.technology ul {
-    margin-top: 60px;
+footer p {
+    color: #a6a6a6;
+    text-align: center;
+    font-size: 11px;
 }

@@ -6,22 +6,25 @@ navigation:
   projects: Cases
   contact: Contact
 general:
-  snowcap: Snowcap
-  baseline: Extreme precision developers
-  nutshell: |
-    We are a **web development agency** that specializes in implementing open, cutting-edge technologies. We provide analysis, development and IT support - but we are much more than that : a team of smart, open-minded and forward-thinking web experts.
-  readmore:
-    title: Read more
-    label: Read more
-    facebook_link: Check out our Facebook page
-    twitter_link: Check out our twitter
+    snowcap: Snowcap
+    baseline: Extreme precision developers
+    nutshell: |
+        We are a **web development agency** that specializes in implementing open, cutting-edge technologies. We provide analysis, development and IT support - but we are much more than that : a team of smart, open-minded and forward-thinking web experts.
+    readmore:
+        title: Read more
+        label: Read more
+    facebook_link: Our Facebook page
+    twitter_link: @snwcp on Twitter
+    footer: © Snowcap %date% - inquiries, questions, praise and insults : [shoot@snowcap.be](mailto:shoot@snowcap.be)
 nerds:
   title: Hey(,) Nerds !
+  open_source:
   body: |
-    For our fellow geeks, the complete source code of this website is [available here](http://www.github.com/snowcap/snowcap-website "Snowcap Website source code"). You can browse it to find out
-    how we work, and moreover, if you have a genius idea to improve our website, don't hesitate to fork and send us a pull request :)
+    <p class="open-source">Because we like to put our money where our mouth is, <strong>the code of this website is open-source</strong> and freely available on Github.</p>
 
-    Ow and yeah, we try to contribute more and more to the community - [follow us on GitHub](http://www.github.com/snowcap "Snowcap on GitHub") to discover what we're open sourcing
+    Feel free to [browse the code](https://github.com/snowcap/snowcap-website "Snowcap's github account") so that you can get a feel of the way we work. And if you have a cool idea to improve our website, just fork the repo and send us a pull request !
+
+
 project:
   partner_visit: Visit the website of %name%
   client:
