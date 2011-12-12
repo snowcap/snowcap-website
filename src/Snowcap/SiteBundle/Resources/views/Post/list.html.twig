@@ -16,7 +16,11 @@
                         {% if post.body %}
                             <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ 'Read more' | trans }}" class="read-more">{{ 'Read more' | trans }}</a>
                         {% endif %}
-                        {% render 'SnowcapSiteBundle:Post:comment' with ({ 'slug': post.slug })%}
+                        <div class="comments-count">
+                            {{ 'blog.comments.count' | transchoice(post.getComments()|length) }}
+                            <a href="{{ path('snwcp_site_post_show', {'slug': post.slug }) }}" title="{{ 'blog.comment.post.title' | trans }}" class="post-comment-link">{{ 'blog.comment.post.label' | trans }}</a>
+                        </div>
+
                     </li>
                 {% endfor %}
             </ul>
