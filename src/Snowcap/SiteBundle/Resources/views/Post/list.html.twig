@@ -16,6 +16,7 @@
                         {% if post.body %}
                             <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ 'Read more' | trans }}" class="read-more">{{ 'Read more' | trans }}</a>
                         {% endif %}
+                        {% render 'SnowcapSiteBundle:Post:comment' with ({ 'slug': post.slug })%}
                     </li>
                 {% endfor %}
             </ul>

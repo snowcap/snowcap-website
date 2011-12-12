@@ -6,7 +6,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 use Snowcap\SiteBundle\Controller\BaseController;
-use Snowcap\SiteBundle\Entity\Post;
+use Snowcap\SiteBundle\Entity\Comment;
+use Snowcap\SiteBundle\Form\CommentType;
 
 /**
  * Post controller.
@@ -53,4 +54,35 @@ class PostController extends BaseController
         $latestPosts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest($limit);
         return array('latestPosts' => $latestPosts);
 	}
+
+    /**
+     * @Route("/comment/{slug}", name="comment")
+     * @Template()
+     *
+     * @param int $post_id
+     * @return array
+     */
+    public function commentAction($slug) {
+        $em = $this->getDoctrine()->getEntityManager();
+        $post = $em->getRepository('SnowcapSiteBundle:Post')->findOneBySlug($slug);
+        $request = $this->getRequest();
+        $comment = new Comment();
+        $comment->setPost($post);
+
+        $form = $this->createForm(new CommentType(), $comment);
+
+        if ($request->getMethod() == 'POST') {
+              $form->bindRequest($request);
+
+              if ($form->isValid()) {
+                  // perform some action, such as saving the task to the database
+                  $em->pesist($comment);
+                  $em->flush();
+
+                  return $this->redirect($this->generateUrl('snwcp_site_post_list'));
+              }
+          }
+
+        return array('form' => $form->createView(), 'post' => $post);
+    }
 }
