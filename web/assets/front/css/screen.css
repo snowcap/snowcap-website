@@ -294,6 +294,10 @@ body.home {
     width: 150px;
 }
 /* tweets */
+.home section.tweets {
+    height: 378px;
+    overflow: hidden;
+}
 .home section.tweets h2 {
     width: 270px;
 }

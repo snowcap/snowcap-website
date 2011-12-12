@@ -3,7 +3,7 @@
     <ul>
         {% for tweet in tweets %}
             <li>
-                <p class="date">{{ tweet.date | date('F Y') }}</p>
+                <p class="date">{{ tweet.date | date('d F Y') }}</p>
                 <p class="text">{{ tweet.text | parse_tweet }}</p>
             </li>
         {% endfor %}

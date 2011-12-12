@@ -109,6 +109,35 @@
             new Navigation(this);
         });
     };
+
+    var TwitterFeed = function(element) {
+        var _this = this;
+        var _element = $(element);
+        var max_elements = 4;
+        $('li', _element).each(function(offset, element) {
+            if (offset >= max_elements) {
+                $(element).hide();
+            }
+        });
+        setInterval(function(){
+            var first_child = $('li:first-child', _element);
+            var siblings = first_child.siblings();
+            first_child.slideUp(1000);
+            $(siblings[max_elements-1]).fadeIn(1000, function() {
+                _element.append(first_child);
+                first_child.hide();
+            });
+
+        }, 5000);
+
+
+    };
+    $.fn.twitterFeed = function() {
+        return this.each(function() {
+            new TwitterFeed(this);
+        });
+    };
+
     /* DOMREADY */
     $(document).ready(function(event) {
         // Flip images on latest project for homepage
@@ -116,5 +145,6 @@
         // Remove title on latest project for homepage links
         $(".home .projects li a").attr('title', '');
         $('header nav').navigation();
+        $('section.tweets ul').twitterFeed();
     });
 })(jQuery);

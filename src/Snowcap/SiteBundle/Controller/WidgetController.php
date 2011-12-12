@@ -17,27 +17,27 @@ class WidgetController extends Controller
      */
     public function tweetsAction()
     {
-        $ch = curl_init("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=snwcp&count=3");
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        $result = curl_exec($ch);
-        curl_close($ch);
-
-        $json = json_decode($result);
+        $relative_filename = __DIR__ . '/../../../../web/uploads/twitter.json';
+        $filename = realpath($relative_filename);
+        if (!$filename) {
+            touch($relative_filename);
+            $filename = realpath($relative_filename);
+        }
+        $twitter = $this->get('twitter');
+        $result = $twitter->get('search.json?q=snwcp&rpp='.  $this->container->getParameter('twitter_limit') .'&');
         $tweets = array();
-        if (is_array($json)) {
-            foreach ($json as $tweet) {
+        if (is_object($result) && count($result->results)) {
+            foreach ($result->results as $tweet) {
                 $tweets[] = array(
                     'date' => new \DateTime($tweet->created_at),
                     'text' => $tweet->text,
+                    'from_user' => $tweet->from_user,
                 );
-
             }
+            file_put_contents($filename, json_encode($tweets));
+        } else {
+            $tweets = json_decode(file_get_contents($filename), false);
         }
-
         return array('tweets' => $tweets);
     }
 

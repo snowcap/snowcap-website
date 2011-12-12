@@ -76,3 +76,6 @@
 [LiipImagineBundle]
     git=http://github.com/liip/LiipImagineBundle.git
     target=bundles/Liip/ImagineBundle
+
+[twitteroauth]
+    git=http://github.com/ruudk/twitteroauth.git
