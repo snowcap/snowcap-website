@@ -12,7 +12,8 @@ class CommentType extends AbstractType
         $builder
             ->add('name')
 			->add('email', 'email')
-            ->add('body');
+            ->add('body')
+        ;
     }
 	
 	public function getName()

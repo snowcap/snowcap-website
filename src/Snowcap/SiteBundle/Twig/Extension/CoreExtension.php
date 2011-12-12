@@ -85,7 +85,13 @@ class CoreExtension extends \Twig_Extension
         if ($years != 0) {
             $ago = $years . ' year(s) ago';
         } else {
-            $ago = ($months == 0 ? $days . ' day(s) ago' : $months . ' month(s) ago');
+            if ($months == 0 && $days == 0) {
+                $ago = 'Today';
+            } elseif ($months == 0 && $days == 1) {
+                $ago = 'Yesterday';
+            } else {
+                $ago = ($months == 0 ? $days . ' day(s) ago' : $months . ' month(s) ago');
+            }
         }
 
         return $ago;

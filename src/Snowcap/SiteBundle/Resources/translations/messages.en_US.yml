@@ -169,4 +169,12 @@ technology:
   title: Technologies
   projects: Used, among other, in the following projects
 blog:
+  comments:
+    count: 1 comment|%count% comments
   published_on_in: Published %on% in <a href="%in_url%">%in%</a>
+  comment:
+    submit: Send
+    title: %relative_time% by %name%
+    post:
+      title: Post a comment
+      label: Post a comment

@@ -37,6 +37,7 @@ class Comment extends BaseModel
      *
      * @ORM\Column(name="email", type="string", length=255)
      * @Assert\NotBlank()
+     * @Assert\Email()
      */
     protected $email;
 

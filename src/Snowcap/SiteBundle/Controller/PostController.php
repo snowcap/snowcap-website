@@ -21,12 +21,15 @@ class PostController extends BaseController
      * @Route("/", name="snwcp_site_post_list")
      * @Template()
      */
-    public function listAction() {
+    public function listAction()
+    {
         $em = $this->getDoctrine()->getEntityManager();
+
         $posts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(10);
 
         return array('posts' => $posts);
     }
+
     /**
      * Finds and displays a Post entity.
      *
@@ -50,38 +53,40 @@ class PostController extends BaseController
      */
     public function widgetAction($limit)
     {
-		$em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getEntityManager();
         $latestPosts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest($limit);
         return array('latestPosts' => $latestPosts);
-	}
+    }
 
     /**
-     * @Route("/comment/{slug}", name="comment")
+     * @Route("/comment/{slug}", name="snwcp_site_post_comment")
      * @Template()
      *
      * @param int $post_id
      * @return array
      */
-    public function commentAction($slug) {
+    public function commentAction($slug)
+    {
         $em = $this->getDoctrine()->getEntityManager();
-        $post = $em->getRepository('SnowcapSiteBundle:Post')->findOneBySlug($slug);
         $request = $this->getRequest();
+
+        $post = $em->getRepository('SnowcapSiteBundle:Post')->findOneBySlug($slug);
+
         $comment = new Comment();
         $comment->setPost($post);
 
         $form = $this->createForm(new CommentType(), $comment);
 
         if ($request->getMethod() == 'POST') {
-              $form->bindRequest($request);
+            $form->bindRequest($request);
 
-              if ($form->isValid()) {
-                  // perform some action, such as saving the task to the database
-                  $em->pesist($comment);
-                  $em->flush();
+            if ($form->isValid()) {
+                // perform some action, such as saving the task to the database
+                $em->persist($comment);
+                $em->flush();
+            }
+        }
 
-                  return $this->redirect($this->generateUrl('snwcp_site_post_list'));
-              }
-          }
 
         return array('form' => $form->createView(), 'post' => $post);
     }

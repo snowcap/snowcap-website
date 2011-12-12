@@ -138,6 +138,34 @@
         });
     };
 
+    var CommentForm = function(element) {
+        var _this = this;
+        var _element = $(element);
+        var _container = _element.parents('.comments-container');
+
+        /**
+         * CommentForm init
+         */
+        _this.init = function() {
+            _element.submit(function() {
+                $.post(_element.attr('action'), _element.serialize(), function(data, response, xhr) {
+                    var html = $(data);
+                    _container.replaceWith(html);
+                    $('form', html).commentForm();
+                });
+
+                return false;
+            });
+        };
+        /* INIT */
+        _this.init();
+    };
+    $.fn.commentForm = function() {
+        return this.each(function() {
+            new CommentForm(this);
+        });
+    };
+
     /* DOMREADY */
     $(document).ready(function(event) {
         // Flip images on latest project for homepage
@@ -146,5 +174,6 @@
         $(".home .projects li a").attr('title', '');
         $('header nav').navigation();
         $('section.tweets ul').twitterFeed();
+        $('.comments form').commentForm();
     });
 })(jQuery);
