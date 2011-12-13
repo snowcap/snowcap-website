@@ -18,26 +18,24 @@ Run the following commands:
 Configuration
 -------------
 
-All credentials has to be defined in your virtualhost configuration, like this:
+### Configure your personnal stuff
+Copy the app/config/parameters.ini.dist to app/config/parameters.ini & fill the gaps
 
+### Load the vendors
 
-    SetEnv framework_secret somesecretvalue
+    ./bin/vendors install
 
-    SetEnv database_host your_host
-    SetEnv database_name your_db_name
-    SetEnv database_user your_user
-    SetEnv database_password your_passwrd
+### Create your database by running some command lines
 
-    SetEnv mailer_transport smtp
-    SetEnv mailer_host your_host
-    SetEnv mailer_user your_user
-    SetEnv mailer_password your_password
+    ./app/console doctrine:schema:create
+    ./app/console doctrine:schema:update --force
 
-If you want to change the path for the administration part, add the following:
+### Load some content fixtures
 
-    SetEnv admin_path some_path
+    ./app/console doctrine:fixtures:load
 
+### Troubleshooting & more info
 
-Look at the Symfony2 documentation for more information about handling cache refreshing, database updates ...
+Look at the [Symfony2 documentation](http://symfony.com/doc/current/) if you run into trouble with the above commands
 
-Enjoy!
+### Enjoy!
