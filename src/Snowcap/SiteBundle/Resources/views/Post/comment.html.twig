@@ -1,4 +1,4 @@
-{% set comments_count = post.getComments()|length %}
+{% set comments_count = post.getValidComments()|length %}
 <div class="comments-container">
     <div class="comments-count">
         {{ 'blog.comments.count' | transchoice(comments_count) }}
@@ -15,6 +15,11 @@
                 {% endfor %}
             </ul>
         {% endif %}
+
+        {% if post_result is not null %}
+            <div class="comments-post-result">{{ post_result | trans }}</div>
+        {% endif %}
+
         <form action="{{ path('snwcp_site_post_comment', {'slug': post.slug }) }}" method="post" {{ form_enctype(form) }}>
             {{ form_widget(form) }}
 

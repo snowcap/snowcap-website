@@ -329,6 +329,20 @@ class Post extends BaseModel
     }
 
     /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getValidComments()
+    {
+        $comments = $this->comments;
+        foreach($comments as $key => $comment) {
+            if(!$comment->published) {
+                $comments->remove($key);
+            }
+        }
+        return $comments;
+    }
+
+    /**
      * @param bool $published
      */
     public function setPublished($published) {
