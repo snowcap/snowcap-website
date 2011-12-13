@@ -18,6 +18,7 @@ class PostRepository extends EntityRepository
 			->createQuery('
 				SELECT p
 				FROM SnowcapSiteBundle:Post p
+				WHERE p.published = true
 				ORDER BY p.published_at DESC
 			')
 			->setMaxResults($limit)

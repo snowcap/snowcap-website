@@ -94,8 +94,14 @@ class Post extends BaseModel
      *
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
      */
-    private $comments;
+    protected $comments;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="published", type="boolean")
+     */
+    protected $published;
 
     /**
      * Class constructor
@@ -106,6 +112,7 @@ class Post extends BaseModel
         $this->technologies = new \Doctrine\Common\Collections\ArrayCollection();
         $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
         $this->published_at = new \DateTime();
+        $this->published = true;
     }
 
     /**
@@ -300,5 +307,19 @@ class Post extends BaseModel
     public function getComments()
     {
         return $this->comments;
+    }
+
+    /**
+     * @param bool $published
+     */
+    public function setPublished($published) {
+        $this->published = $published;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getPublished() {
+        return $this->published;
     }
 }
