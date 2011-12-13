@@ -63,34 +63,43 @@ widget:
 company:
   title: Company
   body: |
-    <p class="intro">After ten years working in various medium and large web and communication agencies, learning a lot, facing added values and issues of different structures, we ended up with the conclusion
-    that if we wanted to achieve our goal, which is developing high quality cutting-edge web applications - and enjoy doing it, we had to have a dedicated environment.</p>
+    <p class="intro">We created Snowcap in September 2010 with a very simple goal in mind : to think, implement and deliver high quality websites and web applications.</p>
 
-    In September 2010, Snowcap was born.
+    Before that, the three of us spent about 10 years in various web and communication agencies. We perfected our skills, met incredible people, worked on challenging projects and had a lot of fun.
+    But somehow, we felt there was an opening for something a little bit different.
 
-    The main ideas of Snowcap's concept is to offer, thanks to our combined skills, a straigth stream, from the analysis of the project to the best suitable technical infrastructure, and to offer our
-    clients a direct and smooth communication with the producers, which delivers a more qualitative and innovative result by combining the vision and goals of both parties.
+    Snowcap is the opposite of what you would call a 360° agency. Our offer is solely focused on the technical side of the job : analysis, development and IT.
+    We don't have dedicated project or account managers, so when you work with us, you are in a continuous dialogue with the people programming your site. For the other tasks (design, strategy, etc.)
+    we work with other experts, in order to provide comprehensive solutions.
 
-    In other words, since the best projects out there are made by real passionated and motivated crews, we created ourselves a way of being so.
+    Having such a strict job definition means that we can put all our efforts into it, and offer a high level of quality. It makes innovation easier as well : new tools and technologies can be implemented very
+    fast, without having to go through a lenghty decision-making process.
+
+    So if you want to work with specialists, who do only one thing but do it right and play well with others, you might just have found your new agency.
+
+
   quote: |
     Don't expect us to deliver what you already have - we would rather hear about the rock-solid, extreme performance web platform you've always wanted.
 services:
   title: Services
   body: |
-    <p class="intro">Snowcap is a web agency that specializes in implementing open, cutting-edge technologies. Partners of your digital projects, we offer the following services :</p>
+    <p class="intro">As we are a technical web agency, we do pretty much everything that is development-related on the web, including :</p>
 
     * Analysis and technological strategy
+    * Backend and frontend web development
+    * IT consultancy and support
+
+    We work on all kind of projects (as long as they require developers) :
+
     * Website and web application development
-    * Content management system implementations
+    * Content management and E-commerce implementations
     * Intranet and extranet development
-    * E-commerce platforms development
-    * Database management
-    * Hosting
-    * IT consultancy / support
+    * Prototypes and proof of concept
 
-    We like to work in close partnership with our customers, we want to take part in your projects from the very beginning, and we enjoy meetings as long as decisions are taken.
+    Our approach is simple : we use efficient and open technologies in order to deliver high-quality quality web projects.
 
-    Don't expect us to deliver what you already have - we would rather hear about the rock-solid, extreme performance web platform you've always wanted.
+    Here are some of our favourite tools :
+
 contact:
   title: Contact
   somewhere: Somewhere in Brussels
@@ -132,7 +141,7 @@ team:
       * CMS
     quote: Always room for improvement
     body: |
-      Jerome is a perfectionnist, an experienced developer that will go all the way to improve the quality of our work, day after day.
+      Jerome is a perfectionist, an experienced developer that will go all the way to improve the quality of our work, day after day.
     twitter: moinax
     linkedin: moinax
     forrst: moinax
@@ -142,7 +151,7 @@ team:
     birthdate: "1983-05-29"
     skills: |
       * Development
-      * Analyse
+      * Analysis
       * Database
     quote: Let's think this over
     body: |
@@ -160,7 +169,7 @@ team:
       * E-Commerce
     quote: Straight to the point
     body: |
-      Edwin does not only program, he can also talk to machines. He brings us the much needed bridge between development and IT.
+      Edwin does not only program, he can also talk to machines. He brings us the much needed link between development, security and IT.
     twitter: edwin_hermans
     linkedin: herdani
     forrst: herdani

@@ -2,7 +2,7 @@
 {% set body_class = 'blog blog-detail' %}
 {% block body %}
     <h1 class="main-title">{{ entity.title }}</h1>
-    <div class="full">
+    <div class="split split-2">
         <section class="main content primary">
             <p class="published">
                 {% trans with {'%on%': entity.published_at | time_ago, '%in%': entity.category.name, '%in_url%': 'http://www.google.be' } %}

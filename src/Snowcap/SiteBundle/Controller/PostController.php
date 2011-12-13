@@ -22,7 +22,7 @@ class PostController extends BaseController
      */
     public function listAction() {
         $em = $this->getDoctrine()->getEntityManager();
-        $posts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(10);
+        $posts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(50);
 
         return array('posts' => $posts);
     }
