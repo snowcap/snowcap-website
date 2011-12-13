@@ -10,3 +10,4 @@
 /web/media/cache/*
 .settings/com.aptana.editor.php.prefs
 .project
+/web/upload/twitter.json
