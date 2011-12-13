@@ -1,13 +1,13 @@
 /web/static/*
-/web/bundles/
+/web/bundles/*
 /app/bootstrap*
 /app/cache/*
 /app/logs/*
 /vendor/
-/app/config/parameters.yml
+/app/config/parameters.ini
 .idea
 .DS_Store
 /web/media/cache/*
 .settings/com.aptana.editor.php.prefs
-
 .project
+/web/upload/twitter.json

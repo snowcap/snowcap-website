@@ -1,4 +1,4 @@
-<h2><a href="">{{ "post.latest.title" | trans }}</a></h2>
+<h2><a href="">{{ "blog.latest.title" | trans }}</a></h2>
 {% if latestPosts|length > 0 %}
     {% for post in latestPosts %}
         <article>
@@ -11,5 +11,5 @@
         </article>
     {% endfor %}
 {% else %}
-    <p>{{ "post.latest.empty" | trans }}</p>
+    <p>{{ "blog.latest.empty" | trans }}</p>
 {% endif %}

@@ -18,14 +18,28 @@ class PostController extends BaseController
 {
     /**
      *
-     * @Route("/", name="snwcp_site_post_list")
+     * @Route("/{category_slug}", name="snwcp_site_post_list", defaults={"category_slug"=null})
      * @Template()
      */
-    public function listAction()
+    public function listAction($category_slug = null)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $posts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(50);
+        $posts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(50, $category_slug);
+
+        return array('posts' => $posts);
+    }
+
+    /**
+     * @Route("/feed.rss", name="snwcp_site_post_feed", defaults={"_format"="rss"})
+     * @Template()
+     * @return array
+     */
+    public function feedAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $posts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(10);
 
         return array('posts' => $posts);
     }
@@ -33,7 +47,7 @@ class PostController extends BaseController
     /**
      * Finds and displays a Post entity.
      *
-     * @Route("/{slug}", name="snwcp_site_post_show")
+     * @Route("/post/{slug}", name="snwcp_site_post_show")
      * @Template()
      */
     public function showAction($slug)
@@ -43,9 +57,8 @@ class PostController extends BaseController
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Post entity.');
         }
-        return array(
-            'entity' => $entity,
-        );
+
+        return array('entity' => $entity);
     }
 
     /**
@@ -55,6 +68,7 @@ class PostController extends BaseController
     {
         $em = $this->getDoctrine()->getEntityManager();
         $latestPosts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest($limit);
+
         return array('latestPosts' => $latestPosts);
     }
 
@@ -87,7 +101,8 @@ class PostController extends BaseController
             }
         }
 
-
         return array('form' => $form->createView(), 'post' => $post);
     }
+
+
 }

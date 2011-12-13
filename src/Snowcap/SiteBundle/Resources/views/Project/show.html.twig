@@ -7,24 +7,24 @@
         <section class="main content project-overview">
             {{ project.introduction | markdown }}
             <dl>
-                <dt>{{ "project.client.label" | trans }} :</dt>
+                <dt>{{ "cases.client.label" | trans }} :</dt>
                 <dd>{{ project.client}}</dd>
                 {% for collaboration in project.collaborations %}
                     <dt>{{ collaboration.field }} :</dt>
                     <dd>
                         <a
                             href="{{ collaboration.agency.website }}"
-                            title="{{ "project.partner_visit" | trans({'%name%': collaboration.agency.name}) }}"
+                            title="{{ "cases.partner_visit" | trans({'%name%': collaboration.agency.name}) }}"
                         >
                             {{ collaboration.agency.name }}
                         </a>
                     </dd>
                 {% endfor %}
-                <dt>{{ "project.realisation_period.label" | trans }} :</dt>
+                <dt>{{ "cases.realisation_period.label" | trans }} :</dt>
                 <dd>{{ project.realisation_period }}</dd>
             </dl>
             <p class="read-more">
-                <a href="{{ project.website }}" title="{{ 'project.website.title' | trans }}">{{ "project.website.label" | trans }}</a>
+                <a href="{{ project.website }}" title="{{ 'cases.website.title' | trans }}">{{ "cases.website.label" | trans }}</a>
             </p>
             <div class="visual visual-preview">
                 <img

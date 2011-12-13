@@ -17,6 +17,7 @@ class PostCategory extends Content {
     {
         return array(
             'name' => array(),
+            'slug' => array(),
         );
     }
 
