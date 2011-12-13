@@ -1,6 +1,9 @@
 thoughts:
-  name: Throughts
-projects:
-  name: Projects
-activities:
-  name: Activities
+  name: Thoughts
+  slug: thoughts
+cases:
+  name: Cases
+  slug: cases
+events:
+  name: Events
+  slug: events

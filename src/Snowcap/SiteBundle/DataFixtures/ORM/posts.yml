@@ -6,7 +6,7 @@ work1:
     customers. Since their internet connection can be unreliable at times we built them a desktop application that can be used in offline mode ; when the connection is back up, the tool performs a full data synchronization
     between hotels. As it is a purely internal application, you won't be able to see it in action, but we really wanted to share with you our first project made with the Adobe AIR technology.
   publishedAt: '2010-10-02 15:35:00'
-  category: @projects
+  category: @cases
 work2:
   title: Our first Symfony project : Moving People
   slug: our-first-symfony-project-moving-people
@@ -15,7 +15,7 @@ work2:
     a belgian company that specializes in finding medical talent in Eastern Europe and North Africa. Basing ourselves on a clean design by the folks from [One Million Dollars](http://www.onemd.be "1MD"),
     we delivered them a lightweight and nice-looking corporate website. It was a real pleasure to work with Symfony, and there is no doubt that we will keep on using it in the near future.
   publishedAt: '2010-11-15 09:00:12'
-  category: @projects
+  category: @cases
 work3:
   title: A proof of concept for Mediargus
   slug: proof-of-concept-mediargus
@@ -25,7 +25,7 @@ work3:
     a wide variety of channels and devices. Based on the Zend framework, the delivered proof of concept was a sucess, both in terms of implementation time and in terms of results :
     it processes several gigabytes of data every night.
   publishedAt: '2010-12-05 11:03:45'
-  category: @projects
+  category: @cases
 work4:
   title: A new website for the Walibi brand
   slug: new-website-walibi
@@ -34,7 +34,7 @@ work4:
     [Armando Testa Brussels](http://www.armandotesta.be "Armando testa agency"), the platform will be used from now on by every Walibi amusement park in Europe. Created to promote the recent relooking of the Walibi brand, it
     also contains the "Battle Zone", an interactive section centered on the Walibi universe and full of music, comic strips and games. if you want to learn more about our work on this project, [go on and read the case!](/cases/walibi "Walibi case")
   publishedAt: '2011-01-20 16:20:00'
-  category: @projects
+  category: @cases
 work5:
   title: Eurocenter just got a new webshop.
   slug: new-ecommerce-website-eurocenter
@@ -43,7 +43,7 @@ work5:
     of more than 5000 products, with a real-time stock management system and automated product imports run every few hours. With a well-thought interface, the shop has already a lot of visits and the sales numbers look more than
     promising ! This project was a collaboration with the strategy specialists from [Stratenet](http://www.stratenet.com "Stratenet website"). Feel free to check the [full story](/cases/eurocenter "Eurocenter case") in our case section.
   publishedAt: '2011-02-18 11:11:19'
-  category: @projects
+  category: @cases
 work6:
   title: New website: Opera Royal de Wallonie
   slug: new-website-opera-royal-wallonie
@@ -51,7 +51,7 @@ work6:
     We are happy to release a new nice and cultural website: [L'opéra Royal de Wallonie](http://www.operaliege.be "Opera Royal de Wallonie")! Built with Stratenet for the strategy and [Epic](http://epic.net "Epic agency")
     for the design, the website tells you everything you need to know about the Opera's in Wallonia, from the available concerts to the options and price grids.
   publishedAt: '2011-04-27 15:41:04'
-  category: @projects
+  category: @cases
 work8:
   title: New website: Immocitiz
   slug: new-website-immocitiz
@@ -60,7 +60,7 @@ work8:
     buying properties, selling them right on time to the bank, gain badges, and finally become governor. A real technical challenge and great fun! All this surrounded by the excellent design by [One Million Dollars](http://www.1md.be "1md agency").
     [Read the case](/cases/immocitiz "Immocitiz case")
   publishedAt: '2011-08-08 16:02:54'
-  category: @projects
+  category: @cases
 work9:
   title: Sodexo's summer
   slug: sodexo-summer
@@ -68,7 +68,7 @@ work9:
     This summer Snowcap will be, for a big part, dedicated to Sodexo. They asked us to support their internal team to achieve a huge international platform aiming to automate to process of ordering
     services and products in shared offices. Guess that our vacations will be delayed a little, but it's a nice challenge Snowcap is willing to take!
   publishedAt: '2011-06-01 09:41:12'
-  category: @projects
+  category: @cases
 work10:
   title: New website: Europabio
   slug: new-website-europabio
@@ -76,7 +76,7 @@ work10:
     We just released the new website of [EuropaBio](http://www.europabio.org "Europabio website"). EuropaBio is the voice for the biotech industry at the EU level, promoting innovative and dynamic biotechnology-based industry in Europe.
     This is another web project achieved in partnership with [One Million Dollars](http://www.1md.be "1md agency").
   publishedAt: '2011-09-22 10:24:17'
-  category: @projects
+  category: @cases
 work11:
   title: Sodexo's mission
   slug: sodexo-mission
@@ -84,14 +84,14 @@ work11:
     Our mission for Sodexo reached his end. The project is surely on a right track, ready to accept further development!
     [Read the case](/cases/sodexo "Sodexo case")
   publishedAt: '2011-09-02 13:31:05'
-  category: @projects
+  category: @cases
 out1:
   title: Attenting new conference: SymfonyLive@Paris
   slug: attending-new-conference-symfony-live-paris
   summary: |
     We just bought our tickets to the SymfonyLive conference @ Paris: ready for 3 days of nice talks, learning and discussions! Let us now if you attend too, we'll drink some together :)
   publishedAt: '2011-02-25 13:59:01'
-  category: @activities
+  category: @events
 out2:
   title: Attending new conference: SymfonyDay@Cologne
   slug: attending-new-conference-symfony-day-cologne
@@ -99,7 +99,7 @@ out2:
     We've bought our tickets to the [SymfonyDay 2011 conference @ Cologne](www.symfonyday.com "SymfonyDay 2011 Cologne website), on the 21th of October: after a successfull Symfony conference @Paris few months ago,
     we couldn't miss this! Let us now if you attend too!
   publishedAt: '2011-07-28 10:41:18'
-  category: @activities
+  category: @events
 thought1:
   title: Why we chose Frameworks
   slug: why-we-chose-frameworks

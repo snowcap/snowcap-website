@@ -6,21 +6,37 @@ use Doctrine\ORM\EntityRepository;
 
 class PostRepository extends EntityRepository
 {
-	/**
-	 * Get the latest blog posts
-	 * 
-	 * @return array
-	 */
-	public function getLatest($limit)
-	{
-		return $this
-			->getEntityManager()
-			->createQuery('
-				SELECT p
-				FROM SnowcapSiteBundle:Post p
-				ORDER BY p.published_at DESC
-			')
-			->setMaxResults($limit)
-			->getResult();
+    /**
+     * Get the latest blog posts
+     *
+     * @param int $limit
+     * @param string $slug
+     *
+     * @return array
+     */
+    public function getLatest($limit, $slug = null)
+    {
+        if ($slug == null) {
+            $dql = "SELECT p
+                FROM SnowcapSiteBundle:Post p
+                ORDER BY p.published_at DESC
+            ";
+            $query = $this
+                ->getEntityManager()
+                ->createQuery($dql);
+        } else {
+            $dql = "SELECT p
+                FROM SnowcapSiteBundle:Post p
+                INNER JOIN p.category c
+                WHERE c.slug = :slug
+                ORDER BY p.published_at DESC
+            ";
+            $query = $this
+                ->getEntityManager()
+                ->createQuery($dql)
+                ->setParameter('slug', $slug);
+        }
+        return $query->setMaxResults($limit)
+            ->getResult();
 	}
 }
