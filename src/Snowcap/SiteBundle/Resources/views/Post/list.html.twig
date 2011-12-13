@@ -4,7 +4,7 @@
 {% block meta_keywords %}{{ "blog.meta.keywords" | trans }}{% endblock %}
 {% set body_class = 'blog blog-listing' %}
 {% block body %}
-    <h1 class="main-title">{{ "blog.list.title" | trans }}</h1>
+    <h1 class="main-title">{{ "blog.title" | trans }}</h1>
     <div class="split split-2">
         <section class="main content">
             {% if posts|length > 0 %}
@@ -14,7 +14,7 @@
                             {% if post.thumb %}
                                 <img class="thumb" src="{{ post.thumb.webPath | imagine_filter('thumb') }}" alt="{{ post.thumb.alt }}" />
                             {% endif %}
-                            <h2>{{ post.title }}</h2>
+                            <h2 class="post-title">{{ post.title }}</h2>
                             <p class="published">
                                 {% trans with {'%on%': post.published_at | time_ago, '%in%': post.category.name, '%in_url%': path('snwcp_site_post_list', {"category_slug": post.category.slug }) } %}
                                     blog.published_on_in

@@ -4,20 +4,31 @@
 {% block meta_keywords %}{{ post.getMetaKeywords() }}{% endblock%}
 {% set body_class = 'blog blog-detail' %}
 {% block body %}
-    <h1 class="main-title">{{ post.title }}</h1>
+    <h2 class="main-title">{{ "blog.title" | trans }}</h2>
     <div class="split split-2">
         <section class="main content primary">
-            <p class="published">
-                {% trans with {'%on%': post.published_at | time_ago, '%in%': post.category.name, '%in_url%': 'http://www.google.be' } %}
-                    blog.published_on_in
-                {% endtrans %}
-            </p>
-            {% if post.body != '' %}
-                {{ post.body | markdown }}
-            {% else %}
-                <p>{{ post.summary }}</p>
-            {% endif %}
+            <article class="{{ post.category.slug }}{% if post.thumb %} withthumb{% endif %}">
+                {% if post.thumb %}
+                    <img class="thumb" src="{{ post.thumb.webPath | imagine_filter('thumb') }}" alt="{{ post.thumb.alt }}" />
+                {% endif %}
+                <h1 class="post-title">{{ post.title }}</h1>
+                <p class="published">
+                    {% trans with {'%on%': post.published_at | time_ago, '%in%': post.category.name, '%in_url%': 'http://www.google.be' } %}
+                        blog.published_on_in
+                    {% endtrans %}
+                </p>
+                {% if post.body != '' %}
+                    {{ post.body | markdown }}
+                {% else %}
+                    <p>{{ post.summary }}</p>
+                {% endif %}
+            </article>
             {% render 'SnowcapSiteBundle:Post:comment' with ({ 'slug': post.slug })%}
         </section>
+        <aside>
+            <nav>
+                <a href="{{ path('snwcp_site_post_list') }}" class="back">{{ "blog.back_to_list" | trans }}</a>
+            </nav>
+        </aside>
     </div>
 {% endblock %}

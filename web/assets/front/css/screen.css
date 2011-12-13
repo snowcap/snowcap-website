@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: Lato, sans-serif;
     letter-spacing: -0.01em;
 }
-h1.main-title {
+h1.main-title, h2.main-title {
     background-image: url(../images/main_title.png);
     background-repeat: no-repeat;
     background-position: right top;
@@ -696,32 +696,66 @@ section.projects li:not(.three) {
    color: #0a0a0a;
 }
 .blog aside nav a.events {
-    background-position: -960px -425px;
+    background-position: -961px -425px;
 }
 .blog aside nav a.events.active,
 .blog aside nav a.events:hover {
     background-position: 5px -425px;
 }
 .blog aside nav a.cases {
-    background-position: -960px -465px;
+    background-position: -961px -465px;
 }
 .blog aside nav a.cases.active,
 .blog aside nav a.cases:hover {
     background-position: 5px -465px;
 }
 .blog aside nav a.thoughts {
-    background-position: -960px -505px;
+    background-position: -961px -505px;
 }
 .blog aside nav a.thoughts.active,
 .blog aside nav a.thoughts:hover {
     background-position: 5px -505px;
 }
 .blog aside nav a.all {
-    background-position: -960px -545px;
+    background-position: -961px -545px;
 }
 .blog aside nav a.all.active,
 .blog aside nav a.all:hover {
     background-position: 5px -545px;
+}
+.blog aside nav a.back {
+    background-position: -961px -585px;
+}
+.blog aside nav a.back.active,
+.blog aside nav a.back:hover {
+    background-position: 5px -585px;
+}
+.blog section.main img.thumb {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+.blog section.main .post-title {
+    margin: 15px 0 0 0;
+    line-height: 24px;
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+.blog section.main .withthumb .post-title,
+.blog section.main .withthumb p.published {
+    margin-left: 310px;
+}
+.blog section.main .thoughts .post-title {
+    background-position: 0 -512px;
+}
+.blog section.main .events .post-title {
+    background-position: 0 -512px;
+}
+.blog section.main .cases .post-title {
+    background-position: 0 -512px;
+}
+.blog section.main p.published {
+    padding-left: 40px;
 }
 /* blog-listing page */
 .blog-listing section.main ul {
@@ -736,10 +770,6 @@ section.projects li:not(.three) {
     list-style-type: none;
     background: url(../images/sprites.png) left bottom repeat-x;
 }
-.blog-listing section.main li img.thumb {
-    float: left;
-    margin: 0 20px 20px 0;
-}
 .blog-listing section.main li .comments {
     height: 34px;
     line-height: 34px;
@@ -749,28 +779,20 @@ section.projects li:not(.three) {
     text-transform: uppercase;
     color: #0a0a0a;
 }
-.blog-listing section.main li h2 {
-    margin: 15px 0 0 0;
-    line-height: 24px;
-    background-image: url(../images/sprites.png);
-    background-repeat: no-repeat;
-    padding-left: 40px;
+/* blog detail page */
+.blog-detail section.main h1 {
+    color: #333333;
+    font-size: 24px;
+    font-weight: 300;
 }
-.blog-listing section.main li.withthumb h2,
-.blog-listing section.main li.withthumb p.published {
-    margin-left: 310px;
+.blog-detail section.main h2 {
+    font-size: 21px;
 }
-.blog-listing section.main li.thoughts h2 {
-    background-position: 0 -512px;
-}
-.blog-listing section.main li.events h2 {
-    background-position: 0 -512px;
-}
-.blog-listing section.main li.cases h2 {
-    background-position: 0 -512px;
-}
-.blog-listing section.main li p.published {
-    padding-left: 40px;
+.blog-detail section.main h3 {
+    font-family: Helvetica, Aria, sans-serif;
+    font-size: 16px;
+    color: #0a0a0a;
+    font-weight: normal;
 }
 /* VISUALS */
 .visual {

@@ -94,6 +94,7 @@ blog:
     description: Posts and comments about cases, thoughts and events.
     keywords: posts, blog, comments, cases, projects, thoughts, events
   title: Blog
+  back_to_list: Back to list
   comments:
     count: 1 comment|%count% comments
   published_on_in: Published %on% in <a href="%in_url%">%in%</a>
