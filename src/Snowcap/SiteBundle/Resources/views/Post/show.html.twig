@@ -9,7 +9,12 @@
                     blog.published_on_in
                 {% endtrans %}
             </p>
-            {{ entity.body | markdown }}
+            {% if entity.body != '' %}
+                {{ entity.body | markdown }}
+            {% else %}
+                <p>{{ entity.summary }}</p>
+            {% endif %}
+            {% render 'SnowcapSiteBundle:Post:comment' with ({ 'slug': entity.slug })%}
         </section>
     </div>
 {% endblock %}

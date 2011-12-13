@@ -1,12 +1,12 @@
-{% macro menu_link(label, route_name, controller, action) %}
-    <a href="{{ url(route_name) }}" {% if is_menu_active(app.request.get('_controller'), controller, action) %} class="active" {%endif %} >{{ label | trans }}</a>
+{% macro menu_link(label, route_name) %}
+    <a href="{{ url(route_name) }}" {% if is_menu_active(app.request.get('_route'), route_name) %} class="active" {%endif %} >{{ label | trans }}</a>
 {% endmacro %}
 <nav>
-    <h1>{{ _self.menu_link('general.snowcap', 'snwcp_site_default_index', 'Default', 'index') }}</h1>
-    {{ _self.menu_link('navigation.services', 'snwcp_site_default_services', 'Default', 'services') }}
-    {{ _self.menu_link('navigation.projects', 'snwcp_site_project_index', 'Project', 'list') }}
-    {{ _self.menu_link('navigation.posts', 'snwcp_site_post_list', 'Post', 'list') }}
-    {{ _self.menu_link('navigation.company', 'snwcp_site_default_company', 'Default', 'company') }}
-    {{ _self.menu_link('navigation.team', 'snwcp_site_default_team', 'Default', 'team') }}
-    {{ _self.menu_link('navigation.contact', 'snwcp_site_default_contact', 'Default', 'contact') }}
+    <h1>{{ _self.menu_link('general.snowcap', 'snwcp_site_default_index') }}</h1>
+    {{ _self.menu_link('navigation.services', 'snwcp_site_default_services') }}
+    {{ _self.menu_link('navigation.projects', 'snwcp_site_project_index') }}
+    {{ _self.menu_link('navigation.posts', 'snwcp_site_post_list') }}
+    {{ _self.menu_link('navigation.company', 'snwcp_site_default_company') }}
+    {{ _self.menu_link('navigation.team', 'snwcp_site_default_team') }}
+    {{ _self.menu_link('navigation.contact', 'snwcp_site_default_contact') }}
 </nav>

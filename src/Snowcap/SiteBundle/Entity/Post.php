@@ -90,12 +90,21 @@ class Post extends BaseModel
     protected $images;
 
     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
+     */
+    private $comments;
+
+
+    /**
      * Class constructor
      * 
      */
     public function __construct()
     {
         $this->technologies = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
         $this->published_at = new \DateTime();
     }
 
@@ -275,5 +284,21 @@ class Post extends BaseModel
     public function getThumb()
     {
         return $this->thumb;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\ArrayCollection $comments
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

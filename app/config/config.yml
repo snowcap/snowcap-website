@@ -71,6 +71,9 @@ services:
   twig.extension.text:
     class: Twig_Extensions_Extension_Text
     tags: [ { name: 'twig.extension' } ]
+  twitter:
+    class: TwitterOAuth\Api
+    arguments: [%twitter_consumer_key%, %twitter_consumer_secret%, %twitter_oauth_token%, %twitter_oauth_secret%]
 
 snowcap_admin:
   content:
