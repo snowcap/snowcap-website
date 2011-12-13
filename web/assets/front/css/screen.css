@@ -117,7 +117,8 @@ div.full:after, div.split:after {
 	clear: both;
 	height: 0;
 }
-div.split section {
+div.split section,
+div.split aside {
     float: left;
 }
 div.split-2 section {
@@ -663,12 +664,64 @@ section.projects li:not(.three) {
 }
 /* BLOG */
 .blog section.main {
-    width: 650px;
+    width: 610px;
 }
 .blog section.main p.published {
     margin: 0 0 10px 0;
     font-size: 11px;
     color: #818181;
+}
+.blog aside {
+    width: 300px;
+    margin-top: 75px;
+}
+.blog aside nav {
+    width: 215px;
+}
+.blog aside nav a {
+    display: block;
+    background: #e6e6e6;
+    line-height: 40px;
+    margin-bottom: 2px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: Lato, sans-serif;
+    color: #cccaca;
+    text-decoration: none;
+    padding-left: 45px;
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+}
+.blog aside nav a.active {
+   color: #0a0a0a;
+}
+.blog aside nav a.events {
+    background-position: -960px -425px;
+}
+.blog aside nav a.events.active,
+.blog aside nav a.events:hover {
+    background-position: 5px -425px;
+}
+.blog aside nav a.cases {
+    background-position: -960px -465px;
+}
+.blog aside nav a.cases.active,
+.blog aside nav a.cases:hover {
+    background-position: 5px -465px;
+}
+.blog aside nav a.thoughts {
+    background-position: -960px -505px;
+}
+.blog aside nav a.thoughts.active,
+.blog aside nav a.thoughts:hover {
+    background-position: 5px -505px;
+}
+.blog aside nav a.all {
+    background-position: -960px -545px;
+}
+.blog aside nav a.all.active,
+.blog aside nav a.all:hover {
+    background-position: 5px -545px;
 }
 /* blog-listing page */
 .blog-listing section.main ul {
@@ -678,12 +731,46 @@ section.projects li:not(.three) {
     line-height: inherit;
 }
 .blog-listing section.main li {
-    margin: 0;
+    margin: 0 0 35px 0;
     padding: 0;
     list-style-type: none;
+    background: url(../images/sprites.png) left bottom repeat-x;
 }
-.blog-listing section.main h2 {
+.blog-listing section.main li img.thumb {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+.blog-listing section.main li .comments {
+    height: 34px;
+    line-height: 34px;
+    background: url(../images/sprites.png) left -998px repeat-x;
+    clear: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #0a0a0a;
+}
+.blog-listing section.main li h2 {
     margin: 15px 0 0 0;
+    line-height: 24px;
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+.blog-listing section.main li.withthumb h2,
+.blog-listing section.main li.withthumb p.published {
+    margin-left: 310px;
+}
+.blog-listing section.main li.thoughts h2 {
+    background-position: 0 -512px;
+}
+.blog-listing section.main li.events h2 {
+    background-position: 0 -512px;
+}
+.blog-listing section.main li.cases h2 {
+    background-position: 0 -512px;
+}
+.blog-listing section.main li p.published {
+    padding-left: 40px;
 }
 /* VISUALS */
 .visual {

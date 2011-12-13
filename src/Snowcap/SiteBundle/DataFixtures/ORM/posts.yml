@@ -7,7 +7,7 @@ work1:
     between hotels. As it is a purely internal application, you won't be able to see it in action, but we really wanted to share with you our first project made with the Adobe AIR technology.
   published: true
   publishedAt: '2010-10-02 15:35:00'
-  category: @projects
+  category: @cases
 work2:
   title: Our first Symfony project : Moving People
   slug: our-first-symfony-project-moving-people
@@ -17,7 +17,7 @@ work2:
     we delivered them a lightweight and nice-looking corporate website. It was a real pleasure to work with Symfony, and there is no doubt that we will keep on using it in the near future.
   published: true
   publishedAt: '2010-11-15 09:00:12'
-  category: @projects
+  category: @cases
 work3:
   title: A proof of concept for Mediargus
   slug: proof-of-concept-mediargus
@@ -28,7 +28,7 @@ work3:
     it processes several gigabytes of data every night.
   published: true
   publishedAt: '2010-12-05 11:03:45'
-  category: @projects
+  category: @cases
 work4:
   title: A new website for the Walibi brand
   slug: new-website-walibi
@@ -38,7 +38,7 @@ work4:
     also contains the "Battle Zone", an interactive section centered on the Walibi universe and full of music, comic strips and games. if you want to learn more about our work on this project, [go on and read the case!](/cases/walibi "Walibi case")
   published: true
   publishedAt: '2011-01-20 16:20:00'
-  category: @projects
+  category: @cases
 work5:
   title: Eurocenter just got a new webshop.
   slug: new-ecommerce-website-eurocenter
@@ -48,7 +48,7 @@ work5:
     promising ! This project was a collaboration with the strategy specialists from [Stratenet](http://www.stratenet.com "Stratenet website"). Feel free to check the [full story](/cases/eurocenter "Eurocenter case") in our case section.
   published: true
   publishedAt: '2011-02-18 11:11:19'
-  category: @projects
+  category: @cases
 work6:
   title: New website: Opera Royal de Wallonie
   slug: new-website-opera-royal-wallonie
@@ -57,7 +57,7 @@ work6:
     for the design, the website tells you everything you need to know about the Opera's in Wallonia, from the available concerts to the options and price grids.
   published: true
   publishedAt: '2011-04-27 15:41:04'
-  category: @projects
+  category: @cases
 work8:
   title: New website: Immocitiz
   slug: new-website-immocitiz
@@ -67,7 +67,7 @@ work8:
     [Read the case](/cases/immocitiz "Immocitiz case")
   published: true
   publishedAt: '2011-08-08 16:02:54'
-  category: @projects
+  category: @cases
 work9:
   title: Sodexo's summer
   slug: sodexo-summer
@@ -76,7 +76,7 @@ work9:
     services and products in shared offices. Guess that our vacations will be delayed a little, but it's a nice challenge Snowcap is willing to take!
   published: true
   publishedAt: '2011-06-01 09:41:12'
-  category: @projects
+  category: @cases
 work10:
   title: New website: Europabio
   slug: new-website-europabio
@@ -85,7 +85,7 @@ work10:
     This is another web project achieved in partnership with [One Million Dollars](http://www.1md.be "1md agency").
   published: true
   publishedAt: '2011-09-22 10:24:17'
-  category: @projects
+  category: @cases
 work11:
   title: Sodexo's mission
   slug: sodexo-mission
@@ -94,7 +94,7 @@ work11:
     [Read the case](/cases/sodexo "Sodexo case")
   published: true
   publishedAt: '2011-09-02 13:31:05'
-  category: @projects
+  category: @cases
 out1:
   title: Attenting new conference: SymfonyLive@Paris
   slug: attending-new-conference-symfony-live-paris
@@ -102,7 +102,7 @@ out1:
     We just bought our tickets to the SymfonyLive conference @ Paris: ready for 3 days of nice talks, learning and discussions! Let us now if you attend too, we'll drink some together :)
   published: true
   publishedAt: '2011-02-25 13:59:01'
-  category: @activities
+  category: @events
 out2:
   title: Attending new conference: SymfonyDay@Cologne
   slug: attending-new-conference-symfony-day-cologne
@@ -111,17 +111,17 @@ out2:
     we couldn't miss this! Let us now if you attend too!
   published: true
   publishedAt: '2011-07-28 10:41:18'
-  category: @activities
+  category: @events
 
 tought1:
-    title: 13 months and 9321 line of codes later
+    title: 13 months and 114598 lines of codes later
     slug: 13-months-later
     thumb:
         name: CMS or Framework ?
-        path: posts/cmsvsframeworks.jpg
+        path: posts/launch.jpg
         alt: CMS or Framework ?
     summary:
-        Snowcap was launched in september 2010. For thirteen months, we have been working for our customers, launching their projects and
+        Snowcap was launched in september 2010. We've been very busy since then. Here is a short summary on what we have been doing.
     body: |
         A little more than one year ago, the three of us (Edwin, Jérôme and Pierre) left the agency we were working for and created our own company. It was a very exciting time,
         and there was much to do. In fact, we have been so busy that we took about 13 months to launch our own website. Now that it is online, it is time for us to publish a first
@@ -161,9 +161,9 @@ tought1:
 
         %% What's next ?
 
-        2011 is nearly over, and we have already a lot of resolutions for 2012. First, we're going to keep on sharpening our technical skills, and try t. Then, we will try to do less cms-based
-        projects, in favor of custom development (we will write another post on that specific subject shortly). And finally, we have decided to get more involved in the open-source community. We have been free software enthusiast for some
-        years now, and we feel that now is a good time to start to contribute actively to it.
+        2011 is nearly over, and we have already a lot of resolutions for 2012. First, we're going to keep on sharpening our technical skills. There are numerous tools and techniques that we want to explore in 2012. Then, we will try to do less cms-based
+        projects, in favor of custom development (we will write another post on that specific subject shortly). And finally, we have decided to get more involved in the open-source community. We have been free software enthusiasts
+        for several years, and we feel that now is a good time to start contributing.
 
         Before we get back to code and machines, we would like to thank our customers and our partners, for entrusting us with their projects. Thanks a lot to the guys from One Million Dollars, who, in addition to giving us
         a great logo, also designed this website. Many thanks as well to Xavier Portela, who took all those cool pictures of us in 80's skiing gear.

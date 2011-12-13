@@ -1,20 +1,20 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
 {% set body_class = 'blog blog-detail' %}
 {% block body %}
-    <h1 class="main-title">{{ entity.title }}</h1>
+    <h1 class="main-title">{{ post.title }}</h1>
     <div class="split split-2">
         <section class="main content primary">
             <p class="published">
-                {% trans with {'%on%': entity.published_at | time_ago, '%in%': entity.category.name, '%in_url%': 'http://www.google.be' } %}
+                {% trans with {'%on%': post.published_at | time_ago, '%in%': post.category.name, '%in_url%': path('snwcp_site_post_list', {"category_slug": post.category.slug }) } %}
                     blog.published_on_in
                 {% endtrans %}
             </p>
-            {% if entity.body != '' %}
-                {{ entity.body | markdown }}
+            {% if post.body != '' %}
+                {{ post.body | markdown }}
             {% else %}
-                <p>{{ entity.summary }}</p>
+                <p>{{ post.summary }}</p>
             {% endif %}
-            {% render 'SnowcapSiteBundle:Post:comment' with ({ 'slug': entity.slug })%}
+            {% render 'SnowcapSiteBundle:Post:comment' with ({ 'slug': post.slug })%}
         </section>
     </div>
 {% endblock %}
