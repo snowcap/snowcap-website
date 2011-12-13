@@ -96,7 +96,7 @@ blog:
   title: Blog
   back_to_list: Back to list
   comments:
-    count: 1 comment|%count% comments
+    count: '{0}|{1}1 comment \|]1,Inf]%count% comments \'
   published_on_in: Published %on% in <a href="%in_url%">%in%</a>
   comment:
     submit: Send
