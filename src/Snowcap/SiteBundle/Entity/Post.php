@@ -97,6 +97,13 @@ class Post extends BaseModel
     protected $comments;
 
     /**
+    * @var bool
+    *
+    * @ORM\Column(name="published", type="boolean")
+    */
+   protected $published;
+
+    /**
      * @var string
      *
      * @ORM\Column("meta_title", type="string", length="255", nullable=true)
