@@ -369,7 +369,7 @@ body.services {
 }
 .services section.main {
     margin-top: 100px;
-    padding-right: 550px;
+    padding-right: 470px;
 }
 .services footer {
     margin-top: 130px;
@@ -466,7 +466,7 @@ body.team {
     min-height: 871px;
 }
 .team section.main {
-    margin-top: 400px;
+    margin-top: 420px;
 }
 .team section.main ul {
     margin: 0;
@@ -662,6 +662,9 @@ section.projects li:not(.three) {
     background-position: 110px -148px;
 }
 /* BLOG */
+.blog section.main {
+    width: 650px;
+}
 .blog section.main p.published {
     margin: 0 0 10px 0;
     font-size: 11px;
@@ -847,7 +850,7 @@ footer {
     padding: 5px;
     margin: 0 auto 10px auto;
     width: 450px;
-    background:rgba(245,245,245, 0.8);
+    background: #f6f6f6;
 }
 footer p {
     margin: 0;
