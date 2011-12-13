@@ -24,6 +24,7 @@ class PostController extends BaseController
     public function listAction($category_slug = null)
     {
         $em = $this->getDoctrine()->getEntityManager();
+
         $posts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(50, $category_slug);
         return array(
             'posts' => $posts,
@@ -58,6 +59,7 @@ class PostController extends BaseController
         if (!$post) {
             throw $this->createNotFoundException('Unable to find Post entity.');
         }
+
         return array('post' => $post);
     }
 

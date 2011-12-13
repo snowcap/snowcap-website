@@ -87,6 +87,9 @@ class Project extends Content {
                     'prototype' => true,
                     )
             ),
+            'meta_title' => array(),
+            'meta_description' => array(),
+            'meta_keywords' => array(),
         );
     }
 

@@ -1,8 +1,11 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% block meta_title %}{{ "cases.meta.title" | trans }}{% endblock %}
+{% block meta_description %}{{ "cases.meta.description" | trans }}{% endblock %}
+{% block meta_keywords %}{{ "cases.meta.keywords" | trans }}{% endblock %}
 {% set body_class = 'project project-listing' %}
 {% import "SnowcapSiteBundle::macros.html.twig" as helper %}
 {% block body %}
-    <h1 class="main-title">{{ "cases.list.title" | trans }}</h1>
+    <h1 class="main-title">{{ "cases.title" | trans }}</h1>
     <div class="full">
         <section class="main content project-overview">
             {% if project %}

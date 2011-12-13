@@ -97,11 +97,23 @@ class Post extends BaseModel
     protected $comments;
 
     /**
-     * @var bool
+     * @var string
      *
-     * @ORM\Column(name="published", type="boolean")
+     * @ORM\Column("meta_title", type="string", length="255", nullable=true)
      */
-    protected $published;
+    protected $meta_title;
+    /**
+     * @var string
+     *
+     * @ORM\Column("meta_description", type="string", length="255", nullable=true)
+     */
+    protected $meta_description;
+    /**
+     * @var string
+     *
+     * @ORM\Column("meta_keywords", type="string", length="255", nullable=true)
+     */
+    protected $meta_keywords;
 
     /**
      * Class constructor
@@ -321,5 +333,53 @@ class Post extends BaseModel
      */
     public function getPublished() {
         return $this->published;
+    }
+    
+    /**
+     * @param string $meta_description
+     */
+    public function setMetaDescription($meta_description)
+    {
+        $this->meta_description = $meta_description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaDescription()
+    {
+        return ($this->meta_description != null ?: $this->summary);
+    }
+
+    /**
+     * @param string $meta_keywords
+     */
+    public function setMetaKeywords($meta_keywords)
+    {
+        $this->meta_keywords = $meta_keywords;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaKeywords()
+    {
+        return ($this->meta_keywords != null ?: $this->getCategory()->getName());
+    }
+
+    /**
+     * @param string $meta_title
+     */
+    public function setMetaTitle($meta_title)
+    {
+        $this->meta_title = $meta_title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaTitle()
+    {
+        return ($this->meta_title != null ?: $this->title);
     }
 }

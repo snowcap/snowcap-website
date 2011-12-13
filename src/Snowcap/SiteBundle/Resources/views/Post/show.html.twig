@@ -1,11 +1,14 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% block meta_title %}{{ post.getMetaTitle() }} - Blog - Snowcap{% endblock%}
+{% block meta_description %}{{ post.getMetaDescription() }}{% endblock%}
+{% block meta_keywords %}{{ post.getMetaKeywords() }}{% endblock%}
 {% set body_class = 'blog blog-detail' %}
 {% block body %}
     <h1 class="main-title">{{ post.title }}</h1>
     <div class="split split-2">
         <section class="main content primary">
             <p class="published">
-                {% trans with {'%on%': post.published_at | time_ago, '%in%': post.category.name, '%in_url%': path('snwcp_site_post_list', {"category_slug": post.category.slug }) } %}
+                {% trans with {'%on%': post.published_at | time_ago, '%in%': post.category.name, '%in_url%': 'http://www.google.be' } %}
                     blog.published_on_in
                 {% endtrans %}
             </p>

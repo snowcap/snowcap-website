@@ -8,7 +8,7 @@
             {{ "general.nutshell" | trans | markdown }}
         </section>
         <section class="content projects">
-            <h2>{{ "cases.latest.title" | trans }}</h2>
+            <h2>{{ "cases.title" | trans }}</h2>
             {% render "SnowcapSiteBundle:Project:list" with {'limit': 3} %}
         </section>
     </div>

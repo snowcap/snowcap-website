@@ -1,4 +1,7 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% block meta_title %}{{ "company.meta.title" | trans }}{% endblock %}
+{% block meta_description %}{{ "company.meta.description" | trans }}{% endblock %}
+{% block meta_keywords %}{{ "company.meta.keywords" | trans }}{% endblock %}
 {% set body_class = 'company' %}
 {% block body %}
     <h1 class="main-title">{{ "company.title" | trans }}</h1>
