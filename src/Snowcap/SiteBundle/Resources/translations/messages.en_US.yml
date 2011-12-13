@@ -16,6 +16,9 @@ general:
     facebook_link: Our Facebook page
     twitter_link: @snwcp on Twitter
     footer: © Snowcap %date% - inquiries, questions, praise and insults : [shoot@snowcap.be](mailto:shoot@snowcap.be)
+    feed:
+        title: Snowcap feed
+        description: Snowcap toughts, projects and events
 nerds:
   title: Hey(,) Nerds !
   open_source:

@@ -31,6 +31,20 @@ class PostController extends BaseController
     }
 
     /**
+     * @Route("/feed.rss", name="snwcp_site_post_feed", defaults={"_format"="rss"})
+     * @Template()
+     * @return array
+     */
+    public function feedAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $posts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(10);
+
+        return array('posts' => $posts);
+    }
+
+    /**
      * Finds and displays a Post entity.
      *
      * @Route("/{slug}", name="snwcp_site_post_show")
@@ -43,9 +57,8 @@ class PostController extends BaseController
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Post entity.');
         }
-        return array(
-            'entity' => $entity,
-        );
+
+        return array('entity' => $entity);
     }
 
     /**
@@ -55,6 +68,7 @@ class PostController extends BaseController
     {
         $em = $this->getDoctrine()->getEntityManager();
         $latestPosts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest($limit);
+
         return array('latestPosts' => $latestPosts);
     }
 
@@ -87,7 +101,8 @@ class PostController extends BaseController
             }
         }
 
-
         return array('form' => $form->createView(), 'post' => $post);
     }
+
+
 }

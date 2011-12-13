@@ -7,6 +7,7 @@
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
         {% endstylesheets %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="alternate" type="application/rss+xml" title="{{ 'general.feed.title' | trans }}" href="{{ path('snwcp_site_post_feed') }}" />
     </head>
     <body class="{{ body_class | default('default') }}">
         <div id="fb-root"></div>
