@@ -39,6 +39,10 @@ widget:
             title: Follow us on Github
             label: Follow us on Github
 services:
+  meta:
+    title: Services - Snowcap
+    description: As we are a technical web agency, we do pretty much everything that is development-related on the web.
+    keywords: analysis, technonolical strategy, backend, frontend, development, it, consultancy, support
   title: Services
   body: |
     <p class="intro">As we are a technical web agency, we do pretty much everything that is development-related on the web, including :</p>
@@ -59,6 +63,11 @@ services:
     Here are some of our favourite tools :
 
 cases:
+  meta:
+    title: Cases - Snowcap
+    description: Portfolio of our recent work.
+    keywords: cases, work, project, immocitiz, mortierbrigade, wilkinson, circles, sodexo, opéra de liège, eurocenter, walibi
+  title: Cases
   partner_visit: Visit the website of %name%
   client:
     label: Client
@@ -80,6 +89,11 @@ cases:
     title: Cases
     empty: No case available
 blog:
+  meta:
+    title: Blog - Snowcap
+    description: Posts and comments about cases, thoughts and events.
+    keywords: posts, blog, comments, cases, projects, thoughts, events
+  title: Blog
   comments:
     count: 1 comment|%count% comments
   published_on_in: Published %on% in <a href="%in_url%">%in%</a>
@@ -89,12 +103,7 @@ blog:
     post:
       title: Post a comment
       label: Post a comment
-  latest:
-    title: Blog
-    empty: No post available
-  list:
-    title: Blog
-    empty: No post available
+  empty: No post available
   category:
     all:
         title: Display all
@@ -109,6 +118,10 @@ blog:
         title: Display events
         label: Events
 company:
+  meta:
+    title: Company - Snowcap
+    description: We created Snowcap in September 2010 with a very simple goal in mind : to think, implement and deliver high quality websites and web applications.
+    keywords: snowcap, company, foundation, agency, web, it, work, specialists
   title: Company
   body: |
     <p class="intro">We created Snowcap in September 2010 with a very simple goal in mind : to think, implement and deliver high quality websites and web applications.</p>
@@ -129,6 +142,10 @@ company:
   quote: |
     Don't expect us to deliver what you already have - we would rather hear about the rock-solid, extreme performance web platform you've always wanted.
 team:
+  meta:
+    title: Team - Snowcap
+    description: Curriculum Vitae of the team co-founded by Jérôme Poskin, Pierre Vanliefland and Edwin Hermans.
+    keywords: team, cv, curriculum vitae, jérôme, poskin, pierre, vanliefland, edwin, hermans, experience, twitter, linkedin, forrst, github
   title: Team
   age:
     title: Age
@@ -192,6 +209,10 @@ team:
     forrst: herdani
     github: herdani
 contact:
+  meta:
+    title: Contact - Snowcap
+    description: We are a Brussels-based agency.
+    keywords: brussels, agency, contact, email, facebook, twitter
   title: Contact
   somewhere: Somewhere in Brussels
   body: |

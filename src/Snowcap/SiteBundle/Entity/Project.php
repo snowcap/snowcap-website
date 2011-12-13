@@ -142,6 +142,32 @@ class Project extends BaseModel
     protected $images;
 
     /**
+     * @var Agency
+     *
+     * @ORM\ManyToOne(targetEntity="Agency", inversedBy="project")
+     */
+    protected $agency;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column("meta_title", type="string", length="255", nullable=true)
+     */
+    protected $meta_title;
+    /**
+     * @var string
+     *
+     * @ORM\Column("meta_description", type="string", length="255", nullable=true)
+     */
+    protected $meta_description;
+    /**
+     * @var string
+     *
+     * @ORM\Column("meta_keywords", type="string", length="255", nullable=true)
+     */
+    protected $meta_keywords;
+
+    /**
      * Class constructor
      *
      */
@@ -490,5 +516,77 @@ class Project extends BaseModel
     public function getTechnologies()
     {
         return $this->technologies;
+    }
+
+    /**
+     * @param string $meta_description
+     */
+    public function setMetaDescription($meta_description)
+    {
+        $this->meta_description = $meta_description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaDescription()
+    {
+        return ($this->meta_description != null ?: $this->introduction);
+    }
+
+    /**
+     * @param string $meta_keywords
+     */
+    public function setMetaKeywords($meta_keywords)
+    {
+        $this->meta_keywords = $meta_keywords;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaKeywords()
+    {
+        if ($this->meta_keywords != null) {
+            return $this->meta_keywords;
+        } else {
+            $meta_keywords = array();
+            foreach($this->getTechnologies() as $technolgy) {
+                $meta_keywords[] = $technolgy->getName();
+            }
+            return implode(', ', $meta_keywords);
+        }
+    }
+
+    /**
+     * @param string $meta_title
+     */
+    public function setMetaTitle($meta_title)
+    {
+        $this->meta_title = $meta_title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaTitle()
+    {
+        return ($this->meta_title != null ?: $this->title);
+    }
+
+    /**
+     * @param \Snowcap\SiteBundle\Entity\Agency $agency
+     */
+    public function setAgency($agency)
+    {
+        $this->agency = $agency;
+    }
+
+    /**
+     * @return \Snowcap\SiteBundle\Entity\Agency
+     */
+    public function getAgency()
+    {
+        return $this->agency;
     }
 }

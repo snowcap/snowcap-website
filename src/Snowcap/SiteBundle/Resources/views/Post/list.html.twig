@@ -1,7 +1,10 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% block meta_title %}{{ "blog.meta.title" | trans }}{% endblock %}
+{% block meta_description %}{{ "blog.meta.description" | trans }}{% endblock %}
+{% block meta_keywords %}{{ "blog.meta.keywords" | trans }}{% endblock %}
 {% set body_class = 'blog blog-listing' %}
 {% block body %}
-    <h1 class="main-title">{{ "blog.list.title" | trans }}</h1>
+    <h1 class="main-title">{{ "blog.title" | trans }}</h1>
     <div class="full">
         <section class="main content">
             <nav>

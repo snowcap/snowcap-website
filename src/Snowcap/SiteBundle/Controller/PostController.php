@@ -53,12 +53,12 @@ class PostController extends BaseController
     public function showAction($slug)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $entity = $em->getRepository('SnowcapSiteBundle:Post')->findOneBySlug($slug);
-        if (!$entity) {
+        $post = $em->getRepository('SnowcapSiteBundle:Post')->findOneBySlug($slug);
+        if (!$post) {
             throw $this->createNotFoundException('Unable to find Post entity.');
         }
 
-        return array('entity' => $entity);
+        return array('post' => $post);
     }
 
     /**
