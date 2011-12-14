@@ -104,6 +104,17 @@ work12:
   publishedAt: '2011-10-02 12:00:01'
   category: @cases
 work13:
+  title: A little help for our friends
+  slug: a-little-help-for-our-friends
+  summary: |
+    Our partners from One Million Dollars were working on a very nice project for the Insurance Company MeFirst, that allows users to compare their facebook friends with each other.
+    Their application was working just fine, but the comparison process was a bit too heavy to be run in real-time. They gave us a call, and we helped them decouple the analysis engine
+    from the website. Now, the comparison is done "behind the scene", and the website is updated through ajax when the results are ready. It's always a pleasure to help our partners
+    whenever they need exotic stuff... P.S: don't forget to [Compare your friends]("http://compareyourfriends.mefirst.be/" "Compare your friends website") !
+  published: true
+  publishedAt: '2011-10-28 10:00:05'
+  category: @cases
+work14:
   title: The new Mortierbrigade is live
   slug: new-mortierbrigade-live
   summary: |
