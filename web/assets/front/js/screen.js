@@ -96,14 +96,12 @@
         _this.init = function() {
             _handle = $('<span>').addClass('handle').hide();
             _element.append(_handle);
-            setTimeout(
-                function(){
-                    _this.moveToActive(0)
-                    _handle.show();
-                },
-                200
-            );
+            _this.moveToActive(0)
+            _handle.show();
             _element.find('a').hover(_this.follow, _this.gohome);
+            _element.find('a').click(function(event) {
+                $(this).unbind('hover');
+            });
         };
         /* INIT */
         _this.init();

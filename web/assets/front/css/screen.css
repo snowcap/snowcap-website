@@ -89,7 +89,30 @@ header nav > a {
     line-height: 38px;
     padding: 0 15px 2px 15px;
     color: #fff;
+    overflow: hidden;
 }
+header nav a.home {
+    width: 35px;
+}
+header nav a.services {
+    width: 50px;
+}
+header nav a.cases {
+    width: 40px;
+}
+header nav a.blog {
+    width: 30px;
+}
+header nav a.company {
+    width: 55px;
+}
+header nav a.team {
+    width: 35px;
+}
+header nav a.contact {
+    width: 50px;
+}
+
 header nav a:hover {
     color: #79bd01;
     text-decoration: none;
