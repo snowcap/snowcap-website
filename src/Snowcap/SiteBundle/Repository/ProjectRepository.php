@@ -11,7 +11,7 @@ class ProjectRepository extends EntityRepository
 	 * 
 	 * @return array
 	 */
-	public function getList($limit, $highlighted = null, $availableOnList = null)
+	public function getList($limit, $highlighted = null, $availableOnList = null, $exclude = array())
 	{
 		$queryBuilder = $this
 			->getEntityManager()
@@ -28,6 +28,9 @@ class ProjectRepository extends EntityRepository
         if($availableOnList !== null) {
             $queryBuilder->andWhere('p.available_on_list = :available_on_list');
             $queryBuilder->setParameter('available_on_list', $availableOnList);
+        }
+        if(count($exclude) > 0) {
+            $queryBuilder->andWhere($queryBuilder->expr()->notIn('p.id', $exclude));
         }
 		return $queryBuilder->getQuery()->getResult();
 	}
