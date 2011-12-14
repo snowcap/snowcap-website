@@ -1,0 +1,19 @@
+<h3>Hey,</h3>
+
+<div>We got a new comment, and it has {% if isSpam is sameas(true) %}<strong>NOT</strong>{% endif %} been published on the website</div>
+
+<div style="margin-top: 20px;font-weight:bold; font-size: 20px;">{{ comment.post.title}}</div>
+
+<div style="background-color: #333;padding:20px;margin:10px 0px;color:white">
+        {{ comment.body | nl2br }}
+</div>
+
+<div>
+from <strong>{{ comment.name }}</strong> ({{comment.email}})
+</div>
+
+{% if isSpam is null %}
+    <div style="background-color:#dc322f;padding:20px;margin:10px 0px;color:white">
+        Attention: Akismet service didn't responded
+    </div>
+{% endif %}

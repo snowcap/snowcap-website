@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Snowcap\AdminBundle\SnowcapAdminBundle(),
             new Snowcap\YamlFixturesBundle\SnowcapYamlFixturesBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
+            new Ornicar\AkismetBundle\OrnicarAkismetBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

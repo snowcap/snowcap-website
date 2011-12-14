@@ -93,17 +93,48 @@ class PostController extends BaseController
 
         $form = $this->createForm(new CommentType(), $comment);
 
+        $post_result = null;
+
         if ($request->getMethod() == 'POST') {
             $form->bindRequest($request);
 
             if ($form->isValid()) {
-                // perform some action, such as saving the task to the database
+
+                $akismet = $this->container->get('ornicar_akismet');
+
+                try {
+                    $isSpam = $akismet->isSpam(array(
+                        'comment_author'  => $comment->getName(),
+                        'comment_author_email' => $comment->getEmail(),
+                        'comment_content' => $comment->getBody(),
+                    ));
+                } catch(\Exception $e) {
+                    $isSpam = null;
+                }
+
+                if($isSpam === true) {
+                    $comment->setPublished(0);
+                    $post_result = "blog.comments.result.unpublished";
+                } else {
+                    $post_result = "blog.comments.result.published";
+                }
+
                 $em->persist($comment);
                 $em->flush();
+
+                $message = \Swift_Message::newInstance()
+                        ->setSubject('New comment on a Snowcap post')
+                        ->setFrom('website@snowcap.be','Snowcap ' . $this->get('kernel')->getEnvironment() .  ' website')
+                        ->setTo($this->container->getParameter('mailer_to'))
+                        ->setBody($this->renderView('SnowcapSiteBundle:Email:newcomment.txt.twig', array('comment' => $comment, 'isSpam' => $isSpam)))
+                        ->addPart($this->renderView('SnowcapSiteBundle:Email:newcomment.html.twig', array('comment' => $comment, 'isSpam' => $isSpam)), 'text/html')
+                    ;
+                $this->get('mailer')->send($message);
+
             }
         }
 
-        return array('form' => $form->createView(), 'post' => $post);
+        return array('form' => $form->createView(), 'post' => $post, 'post_result' => $post_result);
     }
 
 

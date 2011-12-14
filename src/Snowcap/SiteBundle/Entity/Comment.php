@@ -64,6 +64,13 @@ class Comment extends BaseModel
      */
     private $post;
 
+    /**
+    * @var bool
+    *
+    * @ORM\Column(name="published", type="boolean")
+    */
+   protected $published;
+
 
     /**
      * Class constructor
@@ -72,6 +79,7 @@ class Comment extends BaseModel
     public function __construct()
     {
         $this->published_at = new \DateTime();
+        $this->published = 1;
     }
 
     /**
@@ -162,6 +170,22 @@ class Comment extends BaseModel
     public function getPost()
     {
         return $this->post;
+    }
+
+    /**
+     * @param boolean $published
+     */
+    public function setPublished($published)
+    {
+        $this->published = $published;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getPublished()
+    {
+        return $this->published;
     }
 
 

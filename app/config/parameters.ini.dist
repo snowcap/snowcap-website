@@ -11,8 +11,10 @@
 
     mailer_transport  = smtp
     mailer_host       = localhost
+    mailer_port       = 25
     mailer_user       =
     mailer_password   =
+    mailer_to         = someemail@somedomain.com
 
     locale            = en
 
@@ -23,3 +25,6 @@
     twitter_oauth_token =
     twitter_oauth_secret =
     twitter_limit = 10
+
+    akismet_api_key =
+    akismet_url     =
