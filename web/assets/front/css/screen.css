@@ -112,7 +112,7 @@ header nav a.team {
 header nav a.contact {
     width: 50px;
 }
-header nav a.facebook {
+header nav a.twitter {
     position: absolute;
     top: 5px;
     right: 30px;
@@ -122,10 +122,10 @@ header nav a.facebook {
     text-indent: -999em;
     background: transparent url('../images/sprites.png') no-repeat 0 -116px;
 }
-header nav a.facebook:hover {
+header nav a.twitter:hover {
     background-position: -34px -116px;
 }
-header nav a.twitter {
+header nav a.facebook {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -135,7 +135,7 @@ header nav a.twitter {
     text-indent: -999em;
     background: transparent url('../images/sprites.png') no-repeat -67px -116px;
 }
-header nav a.twitter:hover {
+header nav a.facebook:hover {
     background-position: -80px -116px;
 }
 
