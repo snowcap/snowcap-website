@@ -1,8 +1,11 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% block meta_title %}{{ "cases.meta.title" | trans }}{% endblock %}
+{% block meta_description %}{{ "cases.meta.description" | trans }}{% endblock %}
+{% block meta_keywords %}{{ "cases.meta.keywords" | trans }}{% endblock %}
 {% set body_class = 'project project-listing' %}
 {% import "SnowcapSiteBundle::macros.html.twig" as helper %}
 {% block body %}
-    <h1 class="main-title">{{ "project.list.title" | trans }}</h1>
+    <h1 class="main-title">{{ "cases.title" | trans }}</h1>
     <div class="full">
         <section class="main content project-overview">
             {% if project %}
@@ -19,7 +22,7 @@
                 <a
                     class="visual visual-preview flipper"
                     href="{{ path('snwcp_site_project_show', {'slug': project.slug}) }}"
-                    title="{{ "project.link.title" | trans({'%title%': project.title}) }}"
+                    title="{{ "cases.link.title" | trans({'%title%': project.title}) }}"
                 >
                     {{ helper.project_image_flipper(project, 'preview') }}
                 </a>

@@ -1,5 +1,5 @@
 imports:
-    - { resource: parameters.yml }
+    - { resource: parameters.ini }
     - { resource: security.yml }
     snowcap_site_bundle:
         resource: @SnowcapSiteBundle/Resources/config/config.yml
@@ -8,14 +8,16 @@ imports:
 
 framework:
     #esi:             ~
-    translator:      { fallback: en_US }
+    translator:      { fallback: en }
     secret:          %secret%
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
     form:            true
     csrf_protection: true
     validation:      { enable_annotations: true }
-    templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
+    templating:
+      engines: ['twig']
+      assets_version: 1.2
     session:
         default_locale: %locale%
         auto_start:     true
@@ -31,10 +33,10 @@ assetic:
     use_controller: false
     filters:
         cssrewrite: ~
-        # closure:
-        #     jar: %kernel.root_dir%/java/compiler.jar
-        # yui_css:
-        #     jar: %kernel.root_dir%/java/yuicompressor-2.4.2.jar
+        yui_css:
+            jar: "%kernel.root_dir%/Resources/java/yuicompressor.jar"
+        yui_js:
+            jar: "%kernel.root_dir%/Resources/java/yuicompressor.jar"
 
 # Doctrine Configuration
 doctrine:
@@ -57,6 +59,7 @@ swiftmailer:
     host:      %mailer_host%
     username:  %mailer_user%
     password:  %mailer_password%
+    port:      %mailer_port%
 
 #jms_security_extra:
 #    secure_controllers:  true
@@ -69,6 +72,9 @@ services:
   twig.extension.text:
     class: Twig_Extensions_Extension_Text
     tags: [ { name: 'twig.extension' } ]
+  twitter:
+    class: TwitterOAuth\Api
+    arguments: [%twitter_consumer_key%, %twitter_consumer_secret%, %twitter_oauth_token%, %twitter_oauth_secret%]
 
 snowcap_admin:
   content:
@@ -97,14 +103,25 @@ snowcap_admin:
           model_class: Snowcap\SiteBundle\Entity\Image
           admin_class: Snowcap\SiteBundle\Admin\Image
 
-avalanche_imagine:
-    filters:
+liip_imagine:
+    filter_sets:
+        post_thumb:
+            quality: 100
+            filters:
+                relative_resize: { widen: 290 }
         preview:
-          type: thumbnail
-          options: { size: [390, 255], mode: outbound }
+            quality: 100
+            filters:
+                thumbnail: { size: [390, 255], mode: outbound }
         thumb:
-          type: thumbnail
-          options: { size: [290, 197], mode: outbound}
+            quality: 90
+            filters:
+                thumbnail: { size: [290, 190], mode: outbound }
         small:
-          type: thumbnail
-          options: { size: [100, 76], mode: outbound }
+            quality: 80
+            filters:
+                thumbnail: { size: [100, 76], mode: outbound }
+
+ornicar_akismet:
+    api_key:        %akismet_api_key%
+    url:            %akismet_url%

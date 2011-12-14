@@ -17,8 +17,11 @@ $loader->registerNamespaces(array(
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
     'Knp'              => __DIR__.'/../vendor/bundles',
+    'TwitterOAuth'     => __DIR__.'/../vendor/twitteroauth',
+    'Liip'             => __DIR__.'/../vendor/bundles',
     'Imagine'          => __DIR__.'/../vendor/imagine/lib',
-    'Avalanche'          => __DIR__.'/../vendor/bundles',
+    'Ornicar'          => __DIR__.'/../vendor/bundles',
+    'Buzz'    => __DIR__.'/../vendor/Buzz/lib',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',

@@ -1,12 +1,12 @@
 {% macro project_image_flipper(project, format) %}
     <img
         class="front"
-        src="{{ project.thumb_front.webPath | apply_filter(format) | static_path }}"
+        src="{{ project.thumb_front.webPath | imagine_filter(format) }}"
         alt="{{ project.thumb_front.alt }}"
     />
     <img
         class="back"
-        src="{{ project.thumb_back.webPath | apply_filter(format) | static_path }}"
+        src="{{ project.thumb_back.webPath | imagine_filter(format) }}"
         alt="{{ project.thumb_back.alt }}"
     />
 {% endmacro %}

@@ -43,7 +43,6 @@ class CoreExtension extends \Twig_Extension
             'safe_truncate' => new \Twig_Filter_Method($this, 'safeTruncate', array('is_safe' => array('html'))),
             'parse_tweet' => new \Twig_Filter_Method($this, 'parseTweet', array('is_safe' => array('html'))),
             'hr_columns' => new \Twig_Filter_Method($this, 'hrColumns', array('is_safe' => array('html'))),
-            'static_path' => new \Twig_Filter_Method($this, 'staticPath', array()),
         );
     }
 
@@ -86,7 +85,13 @@ class CoreExtension extends \Twig_Extension
         if ($years != 0) {
             $ago = $years . ' year(s) ago';
         } else {
-            $ago = ($months == 0 ? $days . ' day(s) ago' : $months . ' month(s) ago');
+            if ($months == 0 && $days == 0) {
+                $ago = 'Today';
+            } elseif ($months == 0 && $days == 1) {
+                $ago = 'Yesterday';
+            } else {
+                $ago = ($months == 0 ? $days . ' day(s) ago' : $months . ' month(s) ago');
+            }
         }
 
         return $ago;
@@ -158,22 +163,25 @@ class CoreExtension extends \Twig_Extension
 
     /**
      * Return true if the menu should be active
-     * @param string $activeController
-     * @param string $controller
-     * @param string $action
+     * @param string $activeRoue
+     * @param string $route
      * @return bool
      */
-    public function isMenuActive($activeController, $controller, $action = null)
+    public function isMenuActive($activeRoute, $route)
     {
-        preg_match('/\\\([^\\\]+)Controller/', $activeController, $matches);
-        $activeControllerName = $matches[1];
-        if ($action !== null) {
-            preg_match('/::([^::]+)Action/', $activeController, $matches);
-            $activeActionName = $matches[1];
-            return $controller == $activeControllerName && $action == $activeActionName;
-
+        switch($activeRoute) {
+            case 'snwcp_site_post_list':
+            case 'snwcp_site_post_show':
+                return $route === 'snwcp_site_post_list';
+                break;
+            case 'snwcp_site_project_index':
+            case 'snwcp_site_project_show':
+                return $route === 'snwcp_site_project_index';
+                break;
+            default:
+                return $activeRoute === $route;
+                break;
         }
-        return $controller == $activeControllerName;
     }
 
     /**
@@ -216,16 +224,6 @@ class CoreExtension extends \Twig_Extension
             str_replace(array('<hr>', '<hr/>', '<hr />'), '</div><div class="column">', $content) .
             '</div>';
         return $content;
-    }
-
-    /**
-     * Returns an absolute path with the static domain
-     */
-    public function staticPath($url)
-    {
-        /** @var $request \Symfony\Component\HttpFoundation\Request */
-        $request = $this->app->getRequest();
-        return $request->getScheme()."://static.".$request->getHost().':'.$request->getPort(). ((substr($url,0,1) === "/")?"":"/") . $url;
     }
 
     /**

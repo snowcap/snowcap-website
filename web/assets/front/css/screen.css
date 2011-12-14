@@ -1,27 +1,28 @@
-/* GLOBALS */
 html, body {
-    height: 100%;
+    min-height: 100%;
 }
 body {
+    min-width: 960px;
     color: #0a0a0a;
-    background-color: #fff;
     margin: 0;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 14px;
+    background-repeat: no-repeat;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: Lato, sans-serif;
+    letter-spacing: -0.01em;
 }
-h1.main-title {
+h1.main-title, h2.main-title {
     background-image: url(../images/main_title.png);
     background-repeat: no-repeat;
     background-position: right top;
     position: absolute;
-    top: 110px;
     height: 55px;
     line-height: 55px;
     left: 0;
+    top: 0;
     margin: 0 0 0 -480px;
     padding: 0 150px 0 50%;
     color: #0a0a0a;
@@ -38,17 +39,16 @@ a:hover {
     text-decoration: underline;
 }
 /* WRAPPERS */
-.wrapper-outer {
+.wrapper {
     position: relative;
-    min-height: 100%;
-}
-.wrapper-inner {
-    padding-bottom: 186px;
+    padding: 1px 0;
 }
 /* HEADER */
 header {
-    background-color: #0a0a0a;
-    height: 40px;
+    position: relative;
+    z-index: 100;
+    height: 180px;
+    background: url(../images/sky_pattern.jpg) #0a0a0a left 40px repeat-x;
 }
 header nav {
     width: 860px;
@@ -60,11 +60,18 @@ header nav {
     font-size: 13px;
     position: relative;
 }
+header nav .handle {
+    position: absolute;
+    bottom: 0;
+    width: 11px;
+    height: 6px;
+    background: url(../images/sprites.png) -3px -419px;
+ }
 header nav h1 {
     margin: 13px 0;
     padding: 0;
     float: left;
-    margin-right: 75px;
+    margin-right: 60px;
 }
 header nav h1 a {
     display: block;
@@ -80,21 +87,12 @@ header nav h1 a:hover {
 header nav > a {
     float: left;
     line-height: 38px;
-    padding: 0 0 2px 0;
+    padding: 0 15px 2px 15px;
     color: #fff;
-    margin-right: 30px;
 }
 header nav a:hover {
     color: #79bd01;
     text-decoration: none;
-}
-header div.fb-like {
-    position: absolute;
-    left: 860px;
-    top: 0;
-    width: 100px;
-    height: 20px;
-    padding: 10px 0;
 }
 /* SECTIONS */
 /* full and splits */
@@ -111,7 +109,8 @@ div.full:after, div.split:after {
 	clear: both;
 	height: 0;
 }
-div.split section {
+div.split section,
+div.split aside {
     float: left;
 }
 div.split-2 section {
@@ -131,6 +130,7 @@ section.content {
     color: #818181;
     font-size: 14px;
     line-height: 18px;
+    margin: 0 0 20px 0;
 }
 section.content h2 {
     margin: 0 0 20px 0;
@@ -141,20 +141,21 @@ section.content h2 {
 section.content p {
     margin: 15px 0;
 }
-section.content p.read-more {
+section p.read-more {
     font-weight: bold;
+    font-size: 14px !important;
 }
-section.content p.read-more a{
+section p.read-more a{
     height: 14px;
     line-height: 14px;
     padding: 0 30px 0 0;
     background-image: url(../images/sprites.png);
     background-repeat: no-repeat;
-    background-position: 90px -148px;
+    background-position: right -148px;
 }
 /* main sections (only used to push content) */
 section.main {
-    margin: 150px 0 20px 0;
+    margin: 75px 0 20px 0;
 }
 /* standard sections (used to provide a few generic styling for simple content sections */
 section.standard {
@@ -176,6 +177,10 @@ section.standard li {
     background:  url(../images/sprites.png) 0 -143px no-repeat;
 }
 /* HOMEPAGE */
+body.home {
+    background-image: url(../images/home.jpg);
+    background-position: center 180px;
+}
 .home div.split-3 img#mask-image {
     position: absolute;
     z-index: 100;
@@ -184,21 +189,25 @@ section.standard li {
     width: 97px;
     height: 105px;
 }
-/* main section */
-.home section.main {
-    padding: 90px 0 0 0;
-    margin: 0 0 50px 0;
+.home h1.home-title,
+.home h2.baseline {
+    position: absolute;
 }
-.home section.main h1 {
+.home h1.home-title {
     text-indent: -10000px;
-    margin: 0;
+    top: -60px;
+    left: 50%;
+    margin: 0 0 0 -480px;
+    z-index: 100;
     padding: 0;
     width: 271px;
     height: 102px;
     background: url(../images/sprites.png) 0 -15px no-repeat;
 }
-.home section.main h2 {
-    margin: 10px 0 0 0;
+.home h2.baseline {
+    top: 40px;
+    left: 50%;
+    margin: 10px 0 0 -480px;
     text-transform: uppercase;
     font-weight: 300;
     letter-spacing: -1px;
@@ -206,6 +215,12 @@ section.standard li {
     padding: 0;
     font-size: 24px;
 }
+/* main section */
+.home section.main {
+    padding: 0;
+    margin: 110px 0 50px 0;
+}
+
 .home section.main p {
     margin: 30px 0 0 0;
     width: 375px;
@@ -215,6 +230,9 @@ section.standard li {
     color: #333332;
 }
 /* projects */
+.home section.projects {
+    margin-top: 270px;
+}
 .home section.projects h2{
     background-position: right 0;
     width: 350px;
@@ -230,6 +248,9 @@ section.standard li {
 .home section.secondary {
     font-size: 12px;
     line-height: 16px;
+}
+.home section.secondary img {
+    margin-top: 15px;
 }
 .home section.secondary h2 {
     margin: 0;
@@ -258,14 +279,15 @@ section.standard li {
 .home section.secondary p.read-more {
     text-align: right;
 }
-.home section.secondary p.read-more a {
-    background-position: 70px -150px;
-}
 /* blog */
 .home section.blog h2 {
     width: 150px;
 }
 /* tweets */
+.home section.tweets {
+    height: 378px;
+    overflow: hidden;
+}
 .home section.tweets h2 {
     width: 270px;
 }
@@ -279,14 +301,19 @@ section.standard li {
 }
 .home section.tweets li {
     list-style-type: none;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    background: url("../../../assets/front/images/sprites.png") repeat-x scroll right bottom;
 }
 .home section.tweets li p.date {
-    color: #a5a5a5;
-    font-size: 14px;
+    color: #818181;
+    font-size: 11px;
 }
 .home section.tweets li p.text {
+    margin-top: 2px;
     font-family: Lato, sans-serif;
-    font-size: 19px;
+    font-size: 18px;
     color: #404040;
     line-height: 24px;
     font-weight: 300;
@@ -294,9 +321,9 @@ section.standard li {
 /* nerds */
 .home section.nerds {
     color: #fff;
-    background: #0a0a0a;
     width: 242px;
     padding: 30px;
+    background-color: #0a0a0a;
 }
 .home section.nerds h2 {
     margin: 0;
@@ -304,15 +331,44 @@ section.standard li {
     font-weight: 300;
     font-size: 32px;
 }
+.home section.nerds p.open-source {
+    font-size: 16px;
+    line-height: 20px;
+}
+.home section.nerds p.open-source strong {
+    font-weight: normal;
+    font-size: 22px;
+}
 .home section.nerds p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 16px;
 }
+.home section.nerds p.read-more {
+    text-align: right;
+}
 /* SERVICES */
+body.services {
+    background-image: url(../images/services.jpg);
+    background-position: bottom center;
+}
+.services .wrapper {
+    min-height: 801px;
+}
 .services section.main {
-    padding-right: 500px;
+    margin-top: 100px;
+    padding-right: 470px;
+}
+.services footer {
+    margin-top: 130px;
 }
 /* COMPANY AND CONTACT */
+body.company {
+    background-image: url(../images/company.jpg);
+    background-position: center bottom;
+}
+.company .wrapper {
+    min-height: 981px;
+}
 .company h1.main-title,
 .contact h1.main-title {
     position: absolute;
@@ -321,7 +377,12 @@ section.standard li {
     margin: 0;
     padding: 0 65px 0 35%;
     width: 480px;
-    top: 210px;
+}
+.company h1.main-title {
+    top: 140px;
+}
+.contact h1.main-title {
+    top: 80px;
 }
 .company h2#mountain,
 .contact h2#mountain {
@@ -331,14 +392,20 @@ section.standard li {
     margin: 0;
     padding: 0 0 0 35%;
     width: 480px;
-    top: 100px;
+    z-index: 100;
     height: 93px;
     text-indent: -10000px;
     background: url(../images/sprites.png) right -171px no-repeat;
 }
+.company h2#mountain {
+    top: 40px;
+}
+.contact h2#mountain {
+    top: -20px;
+}
 /* COMPANY */
 .company section.main {
-    margin-top: 250px;
+    margin-top: 220px;
     padding-left: 500px;
 }
 .company blockquote {
@@ -351,13 +418,20 @@ section.standard li {
     margin: 0 0 0 -490px;
     padding: 15px 125px 15px 50%;
     position: absolute;
-    top: 375px;
+    bottom: 320px;
     right: 50%;
     width: 350px;
     height: 95px;
     background: url(../images/headings.png) right -95px no-repeat;
 }
 /* CONTACT */
+body.contact {
+    background-image: url(../images/contact.jpg);
+    background-position: center 180px;
+}
+.contact .wrapper {
+    min-height: 859px;
+}
 .contact section.main {
     margin-top: 300px;
     padding-left: 500px;
@@ -371,8 +445,15 @@ section.standard li {
     margin: 30px 0;
 }
 /* TEAM */
+body.team {
+    background-position: center 180px;
+    background-image: url(../images/team.jpg);
+}
+.team .wrapper {
+    min-height: 871px;
+}
 .team section.main {
-    margin-top: 300px;
+    margin-top: 450px;
 }
 .team section.main ul {
     margin: 0;
@@ -389,7 +470,7 @@ section.standard li {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
-    line-height: 16px;
+    line-height: 18px;
     height: 32px;
     margin: 0;
     width: 80px;
@@ -414,6 +495,7 @@ section.standard li {
     margin:  0;
 }
 .team section.main .member-details dl {
+    margin: 0;
     padding: 15px;
     position: relative;
     height: 65px;
@@ -459,12 +541,16 @@ section.standard li {
     font-style: oblique;
 }
 .team section.main .member-details p {
-    margin: 30px 15px;
+    margin: 30px 13px;
 }
 .team ul.social {
     margin: 15px !important;
 }
 /* PROJECTS */
+body.project {
+    background-position: center bottom;
+    background-image: url(../images/mountains.jpg);
+}
 /* generic project listing (also used for the homepage) */
 section.projects ul {
     overflow: hidden;
@@ -472,11 +558,29 @@ section.projects ul {
     padding: 0;
 }
 section.projects li {
-    margin: 0 0 20px 0;
+    margin: 24px 0 16px 0;
     list-style-type: none;
     float: left;
     width: 300px;
-    height: 207px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+section.projects li h3 {
+    font-weight: 700;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    margin: 0;
+    width: 280px;
+    color: #a6a6a6;
+    line-height: 20px;
+    font-size: 12px;
+    padding: 0 5px;
+    text-transform: uppercase;
+}
+section.projects li:hover {
+    overflow: visible;
 }
 section.projects li:not(.three) {
     margin-right: 30px;
@@ -522,6 +626,7 @@ section.projects li:not(.three) {
     font-size: 14px;
     line-height: 18px;
     color: #818181;
+    background: url(../images/sprites.png) bottom center;
 }
 .project section.project-story h2 {
     font-size: 14px;
@@ -544,15 +649,105 @@ section.projects li:not(.three) {
 .project-listing section.project-overview {
     background: url(../images/sprites.png) 0 284px repeat-x;
 }
-/* project-detail page */
-.project-detail section.project-overview p.read-more a {
-    background-position: 110px -148px;
-}
 /* BLOG */
+body.blog {
+    background-position: center bottom;
+    background-image: url(../images/mountains.jpg);
+}
+.blog section.main {
+    width: 610px;
+}
 .blog section.main p.published {
     margin: 0 0 10px 0;
     font-size: 11px;
     color: #818181;
+}
+.blog aside {
+    width: 300px;
+    margin-top: 75px;
+}
+.blog aside nav {
+    width: 215px;
+}
+.blog aside nav a {
+    display: block;
+    background: #e6e6e6;
+    line-height: 40px;
+    margin-bottom: 2px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: Lato, sans-serif;
+    color: #cccaca;
+    text-decoration: none;
+    padding-left: 45px;
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+}
+.blog aside nav a.active,
+.blog aside nav a:hover {
+   color: #0a0a0a;
+}
+.blog aside nav a.events {
+    background-position: -961px -425px;
+}
+.blog aside nav a.events.active,
+.blog aside nav a.events:hover {
+    background-position: 5px -425px;
+}
+.blog aside nav a.cases {
+    background-position: -961px -465px;
+}
+.blog aside nav a.cases.active,
+.blog aside nav a.cases:hover {
+    background-position: 5px -465px;
+}
+.blog aside nav a.thoughts {
+    background-position: -961px -505px;
+}
+.blog aside nav a.thoughts.active,
+.blog aside nav a.thoughts:hover {
+    background-position: 5px -505px;
+}
+.blog aside nav a.all {
+    background-position: -961px -545px;
+}
+.blog aside nav a.all.active,
+.blog aside nav a.all:hover {
+    background-position: 5px -545px;
+}
+.blog aside nav a.back {
+    background-position: -961px -585px;
+}
+.blog aside nav a.back.active,
+.blog aside nav a.back:hover {
+    background-position: 5px -585px;
+}
+.blog section.main img.thumb {
+    float: left;
+    margin: 0 20px 10px 0;
+}
+.blog section.main .post-title {
+    margin: 15px 0 0 0;
+    line-height: 24px;
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+.blog section.main .withthumb .post-title,
+.blog section.main .withthumb p.published {
+    margin-left: 310px;
+}
+.blog section.main .thoughts .post-title {
+    background-position: 0 -512px;
+}
+.blog section.main .events .post-title {
+    background-position: 0 -512px;
+}
+.blog section.main .cases .post-title {
+    background-position: 0 -512px;
+}
+.blog section.main p.published {
+    padding-left: 40px;
 }
 /* blog-listing page */
 .blog-listing section.main ul {
@@ -562,19 +757,41 @@ section.projects li:not(.three) {
     line-height: inherit;
 }
 .blog-listing section.main li {
-    margin: 0;
+    margin: 0 0 35px 0;
     padding: 0;
     list-style-type: none;
+    background: url(../images/sprites.png) left bottom repeat-x;
 }
-.blog-listing section.main h2 {
-    margin: 15px 0 0 0;
+.blog-listing section.main li .comments {
+    height: 34px;
+    line-height: 34px;
+    background: url(../images/sprites.png) left -1998px repeat-x;
+    clear: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #0a0a0a;
+}
+/* blog detail page */
+.blog-detail section.main h1 {
+    color: #333333;
+    font-size: 24px;
+    font-weight: 300;
+}
+.blog-detail section.main h2 {
+    font-size: 21px;
+}
+.blog-detail section.main h3 {
+    font-family: Helvetica, Aria, sans-serif;
+    font-size: 16px;
+    color: #0a0a0a;
+    font-weight: normal;
 }
 /* VISUALS */
 .visual {
     display: block;
     position: relative;
     margin: 5px;
-    box-shadow: 0 3px 5px #ccc;
+    box-shadow: 0 1px 3px #999;
 }
 .visual-preview {
     width: 390px;
@@ -582,7 +799,7 @@ section.projects li:not(.three) {
 }
 .visual-thumb {
     width: 290px;
-    height: 197px;
+    height: 190px;
 }
 .visual-small {
     width: 100px;
@@ -624,12 +841,12 @@ section.projects li:not(.three) {
     left: -100px;
 }
 /* TECHNOLOGIES */
-section.technology ul {
+ul.technology  {
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
-section.technology li {
+ul.technology li {
     list-style-type: none;
     float: left;
     line-height: 40px;
@@ -647,11 +864,11 @@ section.technology li {
     background: linear-gradient(top, #4b4b4b 6%,#252525 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b4b4b', endColorstr='#252525',GradientType=0 ); /* IE6-9 */
 }
-section.technology a {
+ul.technology a {
     padding:  0 10px;
     color: #fff;
 }
-section.technology a:hover {
+ul.technology a:hover {
     color: #8bc623;
     text-decoration: none;
 }
@@ -678,14 +895,7 @@ ul.social li {
     border: 1px solid #ccc;
 }
 ul.social li:hover {
-    background: rgb(238,238,238); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* IE10+ */
-    background: linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+    box-shadow: inset 0 0 2px 1px #fff;
 }
 ul.social li a {
     display: block;
@@ -693,8 +903,11 @@ ul.social li a {
     padding: 2px 5px 0 20px;
     background-image: url(../images/sprites.png);
     background-repeat: no-repeat;
-    color: #818181;
     text-decoration: none;
+    color: #a6a6a6;
+}
+ul.social li a:hover {
+    color: #818181;
 }
 ul.social li.twitter a {
     padding-left: 24px;
@@ -735,54 +948,15 @@ ul.social li.facebook a:hover {
 }
 /* FOOTER */
 footer {
-    position: relative;
-    margin-top: -186px;
-    height: 148px;
-    border-top:  8px solid #8bc623;
-    padding: 0 0 30px 0;
-    color: #fff;
-    background-color: #0a0a0a;
+    padding: 5px;
+    margin: 0 auto 10px auto;
+    width: 450px;
+    background: #f6f6f6;
 }
-footer section.contact {
-    width: 265px;
-}
-footer section.contact address {
-    margin: 20px 0 0 0;
-    font-style: normal;
-    font-family: Lato, sans-serif;
-    font-weight: 300;
-}
-footer section.contact p.snowcap {
-    font-size: 25px;
-    margin: 0 0 10px 0;
-    font-weight: 300;
-}
-footer section.contact a.twitter,
-footer section.contact a.facebook {
-    float: left;
-    text-indent: -10000px;
-    height: 25px;
-    background-image: url(../images/sprites.png);
-    background-repeat: no-repeat;
-}
-footer section.contact a.facebook {
-    background-position: -68px -117px;
-    width: 13px;
-    margin-right: 20px;
-}
-footer section.contact a.facebook:hover {
-    background-position: -81px -117px;
-}
-footer section.contact a.twitter {
-    background-position: 0 -117px;
-    width: 34px;
-}
-footer section.contact a.twitter:hover {
-    background-position: -34px -117px;
-}
-footer section.technology {
-    width: 665px;
-}
-footer section.technology ul {
-    margin-top: 60px;
+footer p {
+    margin: 0;
+    color: #818181;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
 }

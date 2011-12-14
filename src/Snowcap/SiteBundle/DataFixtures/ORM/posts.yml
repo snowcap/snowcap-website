@@ -1,68 +1,63 @@
 work1:
-  title: Some AIR
-  slug: some-air
+  title: Getting some AIR
+  slug: getting-some-air
   summary: |
-    We just released a web & desktop application for managing hotel vouchers. Since hotels hotels are located far away in snowy peaks, the Internet connection isn't reliable enough, so
-    we've built a desktop application which allows the hotels to continue working even if the connection fails. When the connection comes back, a full synchronization is done, up-to-dating other hotels around.
-    Unfortunately we can't show you this work since it's an internal application, but wanted to share with you this first Snowcap's release, built with PHP, Symfony, and Adobe AIR.
+    We just released a web & desktop application for a french hotel group. The purpose of this tool is to allow hotel staff to manage vouchers given to privileged
+    customers. Since their internet connection can be unreliable at times we built them a desktop application that can be used in offline mode ; when the connection is back up, the tool performs a full data synchronization
+    between hotels. As it is a purely internal application, you won't be able to see it in action, but we really wanted to share with you our first project made with the Adobe AIR technology.
+  published: true
   publishedAt: '2010-10-02 15:35:00'
-  category: @projects
+  category: @cases
 work2:
-  title: First Symfony project: Moving People
-  slug: first-symfony-project-moving-people
+  title: Our first Symfony project : Moving People
+  slug: our-first-symfony-project-moving-people
   summary: |
-    Snowcap launched his first project under the [Symfony framework](http://www.symfony.com "Symfony Framework"): [Moving People](www.movingpeople.com "Moving People").
-    It was a real pleasure for us to discover and work with this Framework, and surely will continue to do so!
-    This corporate website, designed by [One Million Dollars](http://www.onemd.be "1MD"), runs with 5 languages and his content is completely managed by the client.
+    Snowcap launched his first project based on the [Symfony web framework](http://www.symfony.com "Symfony Website"). The customer is [Moving People](www.movingpeople.com "Moving People website"),
+    a belgian company that specializes in finding medical talent in Eastern Europe and North Africa. Basing ourselves on a clean design by the folks from [One Million Dollars](http://www.onemd.be "1MD"),
+    we delivered them a lightweight and nice-looking corporate website. It was a real pleasure to work with Symfony, and there is no doubt that we will keep on using it in the near future.
+  published: true
   publishedAt: '2010-11-15 09:00:12'
-  category: @projects
+  category: @cases
 work3:
-  title: Proof of concept for Mediargus
+  title: A proof of concept for Mediargus
   slug: proof-of-concept-mediargus
   summary: |
-    Mediargus and Pressbanking, representing all the major Belgian press companies, asked us to build a proof-of-concept for their project. The goal was to centerize and aggregate all the daily Belgian press
-    during the night, to allow third parties to query a webservice to retreive the latest press content. It was a success, both in delivery time and results: the application was fully functional and aggregates
-    the whole press content in less than 4-5 hours, which represents several Giga bytes we had to centerize, aggregate, convert, and store!
-    We achieved this with the Zend Platform, with a huge utilisation of the Factory design pattern to prepare the next level, which concists by using CDN's & No-SQL databases.
-    As we're writing this the final project is still in huge development, but some iPad and iPhone applications will surely soon appear.
+    Mediargus and Pressbanking run a huge press database, that include all the major belgian newspapers and magazines. They asked us to build a proof-of-concept for their project.
+    Its purpose was to aggregate the content of every daily belgian newspaper, in order to make it available to third parties through a webservice. This content can then be used on
+    a wide variety of channels and devices. Based on the Zend framework, the delivered proof of concept was a sucess, both in terms of implementation time and in terms of results :
+    it processes several gigabytes of data every night.
+  published: true
   publishedAt: '2010-12-05 11:03:45'
-  category: @projects
+  category: @cases
 work4:
-  title: New website: Walibi
+  title: A new website for the Walibi brand
   slug: new-website-walibi
   summary: |
-    After 5 months of hard work, the new website of [Walibi](http://www.walibi.com "Walibi website") is online! Made with our partners [One Million Dollars](http://www.1md.be "1md agency") and
-    [Armando Testa](http://www.armandotesta.be "Armando testa agency"), the website is the global platform for a Walibi related parcs, in Belgium,
-    Holland and France. It also has a "Battle Zone" containing music, comics and games, all around their new mascots WAB & SkunX.
-    [Read the case](/cases/walibi "Walibi case")
+    After 5 months of hard work, the new [Walibi website](http://www.walibi.com "Walibi website") is online ! Designed by our friends from [One Million Dollars](http://www.1md.be "1md agency") and under the direction of
+    [Armando Testa Brussels](http://www.armandotesta.be "Armando testa agency"), the platform will be used from now on by every Walibi amusement park in Europe. Created to promote the recent relooking of the Walibi brand, it
+    also contains the "Battle Zone", an interactive section centered on the Walibi universe and full of music, comic strips and games. if you want to learn more about our work on this project, [go on and read the case!](/cases/walibi "Walibi case")
+  published: true
   publishedAt: '2011-01-20 16:20:00'
-  category: @projects
+  category: @cases
 work5:
-  title: New website: Star TV
-  slug: new-website-star-tv
-  summary: |
-    Cine Télé Revue is launching a new TV channel on the VOO Network, so they needed a web presence: that's were we came into play by developing [this brand new website](http://www.startv.be "StarTV"), with [One Million Dollars](http://www.1md.be "1md agency"),
-    offering a bunch of information on famous pop stars. A strong interaction has been made with Social Networks, to become on central place to get all the latest news of your favourite star!
-  publishedAt: '2011-01-27 10:42:00'
-  category: @projects
-work6:
-  title: New eCommerce website: Eurocenter
+  title: Eurocenter just got a new webshop.
   slug: new-ecommerce-website-eurocenter
   summary: |
-    [Eurocenter](http://www.eurocenter.be "Eurocenter"), with his 20 Multimedia and Electro shops, needed to refresh his eCommerce platform. We provided them a full featured eCommerce platform,
-    selling a catalogue of more than 5.000 products. By building a smooth integration with their existing ssystem, the catalogue is automatically updated, and stock information is in real-time!
-    This project was co-operated with our partner Stratenet.
-    [Read the case](/cases/eurocenter "Eurocenter case")
+    [Eurocenter](http://www.eurocenter.be "Eurocenter"), a leading belgian appliance retailer, asked us to revamp their e-commerce website. Smoothly integrated with their existing ERP systems, the new website has a catalogue
+    of more than 5000 products, with a real-time stock management system and automated product imports run every few hours. With a well-thought interface, the shop has already a lot of visits and the sales numbers look more than
+    promising ! This project was a collaboration with the strategy specialists from [Stratenet](http://www.stratenet.com "Stratenet website"). Feel free to check the [full story](/cases/eurocenter "Eurocenter case") in our case section.
+  published: true
   publishedAt: '2011-02-18 11:11:19'
-  category: @projects
-work7:
+  category: @cases
+work6:
   title: New website: Opera Royal de Wallonie
   slug: new-website-opera-royal-wallonie
   summary: |
     We are happy to release a new nice and cultural website: [L'opéra Royal de Wallonie](http://www.operaliege.be "Opera Royal de Wallonie")! Built with Stratenet for the strategy and [Epic](http://epic.net "Epic agency")
     for the design, the website tells you everything you need to know about the Opera's in Wallonia, from the available concerts to the options and price grids.
+  published: true
   publishedAt: '2011-04-27 15:41:04'
-  category: @projects
+  category: @cases
 work8:
   title: New website: Immocitiz
   slug: new-website-immocitiz
@@ -70,48 +65,116 @@ work8:
     We are proud to announce a new release: [Immocitiz](http://www.immocitiz.be "Immocitiz website")! A real estate game based on existing properties on Immovlan. Play with us to generate bricks (aka money) by
     buying properties, selling them right on time to the bank, gain badges, and finally become governor. A real technical challenge and great fun! All this surrounded by the excellent design by [One Million Dollars](http://www.1md.be "1md agency").
     [Read the case](/cases/immocitiz "Immocitiz case")
+  published: true
   publishedAt: '2011-08-08 16:02:54'
-  category: @projects
+  category: @cases
 work9:
   title: Sodexo's summer
   slug: sodexo-summer
   summary: |
     This summer Snowcap will be, for a big part, dedicated to Sodexo. They asked us to support their internal team to achieve a huge international platform aiming to automate to process of ordering
     services and products in shared offices. Guess that our vacations will be delayed a little, but it's a nice challenge Snowcap is willing to take!
+  published: true
   publishedAt: '2011-06-01 09:41:12'
-  category: @projects
+  category: @cases
 work10:
   title: New website: Europabio
   slug: new-website-europabio
   summary: |
     We just released the new website of [EuropaBio](http://www.europabio.org "Europabio website"). EuropaBio is the voice for the biotech industry at the EU level, promoting innovative and dynamic biotechnology-based industry in Europe.
     This is another web project achieved in partnership with [One Million Dollars](http://www.1md.be "1md agency").
+  published: true
   publishedAt: '2011-09-22 10:24:17'
-  category: @projects
+  category: @cases
 work11:
   title: Sodexo's mission
   slug: sodexo-mission
   summary: |
     Our mission for Sodexo reached his end. The project is surely on a right track, ready to accept further development!
     [Read the case](/cases/sodexo "Sodexo case")
+  published: true
   publishedAt: '2011-09-02 13:31:05'
-  category: @projects
+  category: @cases
 out1:
   title: Attenting new conference: SymfonyLive@Paris
   slug: attending-new-conference-symfony-live-paris
   summary: |
     We just bought our tickets to the SymfonyLive conference @ Paris: ready for 3 days of nice talks, learning and discussions! Let us now if you attend too, we'll drink some together :)
+  published: true
   publishedAt: '2011-02-25 13:59:01'
-  category: @activities
+  category: @events
 out2:
   title: Attending new conference: SymfonyDay@Cologne
   slug: attending-new-conference-symfony-day-cologne
   summary: |
     We've bought our tickets to the [SymfonyDay 2011 conference @ Cologne](www.symfonyday.com "SymfonyDay 2011 Cologne website), on the 21th of October: after a successfull Symfony conference @Paris few months ago,
     we couldn't miss this! Let us now if you attend too!
+  published: true
   publishedAt: '2011-07-28 10:41:18'
-  category: @activities
-thought1:
+  category: @events
+
+tought1:
+    title: 13 months and 114598 lines of codes later
+    slug: 13-months-later
+    thumb:
+        name: CMS or Framework ?
+        path: posts/launch.jpg
+        alt: CMS or Framework ?
+    summary:
+        Snowcap was launched in september 2010. We've been very busy since then. Here is a short summary on what we have been doing.
+    body: |
+        A little more than one year ago, the three of us (Edwin, Jérôme and Pierre) left the agency we were working for and created our own company. It was a very exciting time, and there was much to do.
+
+        In fact, we have been so busy that we took about 13 months to launch our own website. Now that it is online, it is time for us to publish a first status report.
+
+        %% The first steps
+
+        When we decided to create our own little agency, we had no name for it yet. We had to find one, and fast. After countless tries, and heated discussions, we finally agreed on Snowcap, for different reasons - the first one being that we liked the sound of it.
+
+        Then, we needed a visual identity so we contacted our friends from 1MD. They came up with the symbol/mountain logo, which, apart from being beautiful, was a perfect fit for the image we wanted to promote :
+        simple yet highly recognizable.
+
+        Of course, at that point, trying to get contracts took the biggest part of our time. I remember us being afraid of sitting in a quiet room with nothing to do, waiting for the phone to ring.
+        Fortunately for us, the phone did ring, and quite a few times. Our planning quickly filled up, week after week, and we never had the time to get bored, or even to give a lot of thought to our business model.
+
+        %% 13 months of code, projects and releases
+
+        Between september 2010 and today, we worked on 20 different projects. E-commerce, institutional or corporate websites, enterprise applications and even some pretty exotic stuff (check the cases section if you want to know
+        the details). To be honest, a few months before, we didn't really think it would go this fast.
+
+        %%% A sort of bet
+
+        In hindsight, what we did was a sort of bet. We were deeply convinced that there was a market for a coders-only web agency, but the only way to know for sure was to build it.
+
+        From that point of view, our first year was a success. There is a solid demand right now for small, highly specialized agencies with a high degree of flexibility. Customers proved to be more comfortable with the approach
+        than expected, and we realized that small shops such as ours can be attractive not only to small and medium businesses, but also to bigger corporate players.
+
+        %%% Development as a first-class citizen
+
+        When we created Snowcap, one of our goal was to convince customers that the technical details of their website did matter. It means that the development team should be included early in the project loop, and be kept in it.
+        Having developers around from the very beginning is the best way to ensure that your business plan will be translated into a fast, solid and secure website. Our clients and partners have proved to be quite receptive to that message.
+
+        %%% New tools, new tricks
+
+        Another one of the motivations behind Snowcap was to be in a position where we could quickly evaluate and adopt new tools or technologies. We are pretty satified on that topic too, as we definitely learned a lot of stuff this year. From
+        performance optimizations to responsive / adaptative web design techniques, we are definitely on the right track.
+
+        %% What's next ?
+
+        2011 is nearly over, and we have already a lot of resolutions for 2012. First, we're going to keep on sharpening our technical skills. There are numerous tools and techniques that we want to explore in 2012. Then, we will try to do less cms-based
+        projects, in favor of custom development (we will write another post on that specific subject shortly). And finally, we have decided to get more involved in the open-source community. We have been free software enthusiasts
+        for several years, and we feel that now is a good time to start contributing.
+
+        Before we get back to code and machines, we would like to thank our customers and our partners, for entrusting us with their projects. Thanks a lot to the guys from One Million Dollars, who, in addition to giving us
+        a great logo, also designed this website. Many thanks as well to Xavier Portela, who took all those cool pictures of us in 80's skiing gear.
+
+        See you next year !
+
+    published: true
+    publishedAt: '2011-12-12 18:30:00'
+    category: @thoughts
+
+thought2:
   title: Why we chose Frameworks
   slug: why-we-chose-frameworks
   summary: |
@@ -120,6 +183,10 @@ thought1:
     But now we took a decision.      
 
     __We'd like to work exclusively with Frameworks.__
+  thumb:
+    name: CMS or Framework ?
+    path: posts/cmsvsframeworks.jpg
+    alt: CMS or Framework ?
   body: |
     %% Context
 
@@ -195,5 +262,6 @@ thought1:
     Let's see why they chose it first, see if they're happy with it, and leads us to our little conclusion:
 
     *If you reached Snowcap to ask for a development, we hope that you don't want the same as your competitor, but that you want something innovative, powerful, and reflecting your business.*
+  published: false
   publishedAt: '2011-10-14 09:25:01'
   category: @thoughts

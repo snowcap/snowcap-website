@@ -90,13 +90,48 @@ class Post extends BaseModel
     protected $images;
 
     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
+     */
+    protected $comments;
+
+    /**
+    * @var bool
+    *
+    * @ORM\Column(name="published", type="boolean")
+    */
+   protected $published;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column("meta_title", type="string", length="255", nullable=true)
+     */
+    protected $meta_title;
+    /**
+     * @var string
+     *
+     * @ORM\Column("meta_description", type="string", length="255", nullable=true)
+     */
+    protected $meta_description;
+    /**
+     * @var string
+     *
+     * @ORM\Column("meta_keywords", type="string", length="255", nullable=true)
+     */
+    protected $meta_keywords;
+
+    /**
      * Class constructor
      * 
      */
     public function __construct()
     {
         $this->technologies = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
         $this->published_at = new \DateTime();
+        $this->published = true;
     }
 
     /**
@@ -275,5 +310,97 @@ class Post extends BaseModel
     public function getThumb()
     {
         return $this->thumb;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\ArrayCollection $comments
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getValidComments()
+    {
+        $comments = $this->comments;
+        foreach($comments as $key => $comment) {
+            if(!$comment->published) {
+                $comments->remove($key);
+            }
+        }
+        return $comments;
+    }
+
+    /**
+     * @param bool $published
+     */
+    public function setPublished($published) {
+        $this->published = $published;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getPublished() {
+        return $this->published;
+    }
+    
+    /**
+     * @param string $meta_description
+     */
+    public function setMetaDescription($meta_description)
+    {
+        $this->meta_description = $meta_description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaDescription()
+    {
+        return ($this->meta_description != null ?: $this->summary);
+    }
+
+    /**
+     * @param string $meta_keywords
+     */
+    public function setMetaKeywords($meta_keywords)
+    {
+        $this->meta_keywords = $meta_keywords;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaKeywords()
+    {
+        return ($this->meta_keywords != null ?: $this->getCategory()->getName());
+    }
+
+    /**
+     * @param string $meta_title
+     */
+    public function setMetaTitle($meta_title)
+    {
+        $this->meta_title = $meta_title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaTitle()
+    {
+        return ($this->meta_title != null ?: $this->title);
     }
 }

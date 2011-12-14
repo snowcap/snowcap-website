@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Maintenance</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+
+        <style>
+        * {
+            font-size: 24px;
+            font-family: Lato, sans-serif;
+            font-weight: 300;
+        }
+        #content {
+            padding-top: 70px;
+        }
+        p {
+            width: 360px;
+            margin:auto;
+        }
+        p.lower {
+            font-size: 18px;
+        }
+        </style>
+
+
+    </head>
+
+    <body>
+
+    <div id="content">
+        <p>We are busy updating this website for you and should be back shortly.</p>
+        <p class="lower">You will be automatically redirected once ready.</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            setTimeout("window.location.reload()", 3000);
+        };
+    </script>
+
+    </body>
+</html>

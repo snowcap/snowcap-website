@@ -2,12 +2,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}SNOWCAP{% endblock %}</title>
-        {% block stylesheets %}
-            <link href="{{ asset('/assets/front/css/screen.css') | static_path }}" type="text/css" rel="stylesheet" />
-            <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
-        {% endblock %}
-        <link rel="shortcut icon" href="http://static.{{ app.request.host }}{{ asset('favicon.ico') }}" />
+        <title>{% block meta_title %}Snowcap{% endblock %}</title>
+        <meta name="description" content="{% block meta_description %}Snowcap is a web agency that specializes in open-source web development (PHP, Drupal, Magento, Zend, Symfony, Python, Django, Adobe AIR, HTML, Javascript, CSS). We also offer functional and technical analysis, as well as Linux IT support{% endblock %}">
+        <meta name="keywords" content="{% block meta_keywords %}development, analysis, IT, support, PHP, Drupal, Magento, Zend, Python, Django, Adobe, AIR, HTML, Javascript, CSS, Linux{% endblock%}" >
+        <meta name="language" content="en">
+        {% stylesheets 'assets/front/css/*' output='static/css/all.css' filter='cssrewrite, ?yui_css' %}
+            <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+        {% endstylesheets %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="alternate" type="application/rss+xml" title="{{ "general.feed.title" | trans }}" href="{{ path('snwcp_site_post_feed') }}" />
     </head>
     <body class="{{ body_class | default('default') }}">
         <div id="fb-root"></div>
@@ -18,31 +21,20 @@
           js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
-        <div class="wrapper-outer">
-            <header>
-                {% block header %}
-                    {% include 'SnowcapSiteBundle::navigation.html.twig' %}
-                {% endblock %}
-            </header>
-            <div class="wrapper-inner">
-                {% block body %}{% endblock %}
-            </div>
+        <header>
+            {% block header %}
+                {% include 'SnowcapSiteBundle::navigation.html.twig' %}
+            {% endblock %}
+        </header>
+        <div class="wrapper">
+            {% block body %}{% endblock %}
         </div>
         <footer>
-            <div class="split split-2">
-                <section class="contact">
-                    {% include "SnowcapSiteBundle:Widget:contact.html.twig" %}
-                </section>
-                <section class="technology">
-                    {% render "SnowcapSiteBundle:Technology:widget" %}
-                </section>
-            </div>
+            {{ "general.footer" | trans({"%date%": "now" | date('Y') }) | markdown }}
         </footer>
-        {% block javascripts %}
-            <script type="text/javascript" src="{{ '/assets/vendors/jquery/jquery-1.6.1.min.js' | static_path }}"></script>
-            <script type="text/javascript" src="{{ '/assets/vendors/jquery/jquery-ui-1.8.13.custom.min.js' | static_path }}"></script>
-			<script type="text/javascript" src="{{ '/assets/front/js/screen.js' | static_path }}"></script>
-			<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
-        {% endblock %}
+        {% javascripts 'assets/vendors/jquery/*' 'assets/front/js/*' output='static/js/all.js' filter='yui_js' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
     </body>
 </html>

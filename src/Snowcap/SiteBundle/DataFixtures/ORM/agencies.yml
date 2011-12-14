@@ -1,12 +1,18 @@
 onemd:
   name: One Million Dollars
   website: http://www.1md.be
+armando:
+  name: Armando Testa Brussels
+  website: http://www.armando-testa.eu/
 stratenet:
   name: Stratenet
-  website: http://www.stratenet.be
+  website: http://www.stratenet.com/
+epic:
+  name: Epic
+  website: http://www.epic.net
 yieldow:
   name: Yieldow
   website: http://www.yieldow.com
-mortierbrigade:
+mortier:
   name: Mortierbrigade
   website: http://www.mortierbrigade.be

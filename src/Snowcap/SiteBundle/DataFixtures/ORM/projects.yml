@@ -1,34 +1,38 @@
+# Immocitiz
 immocitiz:
   title: Immocitiz
   slug: immocitiz
   introduction: |
-    Immocitiz est un jeu qui se greffe sur la plate-forme immobilière [Immovlan](http://www.immovlan.be "Immovlan"). Les joueurs ont pour mission de bâtir un empire immobilier, en achetant les biens proposés par Immovlan à l’aide d’une monnaie virtuelle.
+    Immocitiz is a web-based game that transform the [Immovlan](http://www.immovlan.be "Immovlan website") real-estate website into a social gaming experience. Buy the best properties available on the market and build your very own real estate empire !
   body: |
-    %% Un jeu unique en son genre
+    %% A unique perspective on social gaming
 
-    Immocitiz se présente comme une expérience ludique qui vient se greffer sur le site [Immovlan](http://www.immovlan.be "Immovlan").
+    Immocitiz is a gaming platform built on top of [Immovlan](http://www.immovlan.be "Immovlan website"), one of the most visited real estate websites in Belgium
 
-    Les joueurs ont la possibilité de parcourir les annonces immobilières sur le site, et d’acheter celles qui l’intéressent. Une fois achetée, la propriété génère des revenus virtuels : chaque visite sur la page de la propriété rapporte un certain nombre de “bricks”.
+    ![A dummy image](/uploads/images/projects/ic_content.jpg "A dummy image")
 
-    Au fil de sa progression dans le jeu, le participant est récompensé par une série de badges et de titres honorifiques.
+    Contestants are invited to browse the properties available on the website. Using a virtual money, they can buy the ones that they find the most interesting. Once the property has been bought, it generates revenue, as every visit on the property page brings a little play money to its owner.
 
-    Connecter une plate-forme ludique à un site immobilier qui génère un traffic important ne fût pas une mince affaire, et nous a offer un double challenge.
+    **********************
 
-    *****
+    Properties can be sold to the bank, or can be traded with other players. The player sucess depends on his ability to spot profitable properties that will attract a lot of visitors and then sell them at a higher price.
 
-    Un challenge technique en premier lieu, en raison des interactions avancées entre le jeu et le site immobilier
+    As he progresses through the game, the player is rewarded with various badges and titles. He can also compare his real estate performances with his Facebook friends, and display his activity on his wall (if you want to [try the game](http://www.immocitiz.be "Immocitiz website"), don't worry - this is completely optional).
 
-    Une attention toute particulière a également été apportée aux performances, et de nombreuses optimisations ont été mises en place : accélérateur http, caching RAM, optimisations base de données...
+    %% A twofold challenge
 
-    %% Un projet sur mesure
+    Connecting a game platform to a very serious real estate website might seem like a crazy idea.
 
-    Afin de mener cette mission a bien, nous avons opté pour une solution custom basés sur le framework Symfony. Nous avons également pu compter sur une série d’outils open-source de qualité impressionante, qui nous ont permis d’offrir un résultat stable, robuste et performant.
+    From a technical perspective, it surely was : making two totally different systems interact with each other is no piece of cake. After countless hours of hardcore coding and heated brainstorming, we came up with an elegant yet performant solution.
 
-    *****
+    ***********
 
-    ![A dummy image](http://snowcap.local/media/cache/thumb/uploads/images/projects/ic_front.png "A dummy image")
+    But the real challenge was not about code or servers. It was about the game, and about what it takes to make people enjoy playing it. And from that point of view, Immocitiz has been a terrific experience.
+
+    ![A dummy image](/uploads/images/projects/ic_cash.jpg "A dummy image")
+
   website: http://www.immocitiz.be
-  published_at: '2011-08-08 12:24:00'
+  published_at: '2011-09-08 12:24:00'
   realisation_period: 2010-2011
   client: Immovlan
   collaborations:
@@ -36,52 +40,371 @@ immocitiz:
         project: @immocitiz
         agency: @onemd
         field: Concept & Design
-      -
-        project: @immocitiz
-        agency: @stratenet
-        field: SEO & visibility
   technologies: [@php, @symfony, @varnish, @memcached, @rabbitmq]
   published: true
   available_on_list: true
   thumb_front: @ic_front
   thumb_back: @ic_back
+  images:
+      -
+        name: Immocitiz cash register
+        path: projects/ic_cash.jpg
+        alt: Immocitiz screenshot
+
   highlighted: true
 
+# Walibi
 walibi:
   title: Walibi
   slug: walibi
   introduction: |
-    Nouvelle plate-forme multi-sites pour le groupe Walibi couvrant l’ensemble des parcs du groupe en Belgique, France et Hollande.
+    In 2011, the Walibi franchise underwent a serious relooking operation. In order to spread the word, they needed a new website that could help them reach their customers in Belgium, France, and in the Netherlands.
   body: |
-    Bla bla bla bla bla bla bla
+      %% A story about kangaroos
+
+      If you were born in Belgium, or if you have spent a few years in the country, you know that Walibi is the number one amusement park around.
+
+      Today, Walibi, under the direction of the french group "Compagnie des Alpes", runs four sites in Belgium, in France, and in the Netherlands.
+
+      From the very beginning, Walibi had adopted the bright orange kangaroo as its mascot. When Walibi decided to renew their visual identity a few years ago, they decided that kangaroos were still cool, and gave their favourite animal a modern twist.
+
+      Electric guitars, epic music battles, an evil kangaroo twin brother and a bunch of new funky characters : something has definitely changed in the world of Walibi.
+
+      *****************
+
+      In order to promote this new identity online, Walibi asked its advertisement agency, [Armando Testa Brussels](http://www.armando-testa.eu "Armando Testa website"), to launch a new version of its website. Under the direction of Armando Testa, and with the help of our friends from [One Million Dollars](http://www.1md.be "One Million Dollars website"), we were to take care of the development of the platform.
+
+
+      The new version was designed with three goals in mind : reflect the new identity of the franchise, provide a global platform suitable for managing content in three countries, and offer a very high level of autonomy for the Walibi marketing staff.
+
+
+      %% Who's in charge ?
+
+      Sometimes, customers want everything taken care of for them. And sometimes, they want to be empowered to do most of the work themselves - which was the route chosen by Walibi.
+
+      **********************
+
+      That's why we built the foundations of the new platform, added a few cool features  on top, and then put the enthusiastic Walibi web team in control. And it worked. It worked so well that from times to times, we look at the website, and discover new features, or even a whole new theme.
+
+      ![A dummy image](/uploads/images/projects/wab_themes.jpg "A dummy image")
+
+      For the day to day operations, from content management to graphical interface fine-tuning, Walibi is in charge. And when it comes to the heavy lifting... That's where Snowcap comes in.
+
+
+
   website: http://www.walibi.be
   published_at: '2011-01-20 12:24:00'
   realisation_period: 2010-2011
   client: Compagnie des Alpes
+  collaborations:
+    -
+      project: @walibi
+      agency: @armando
+      field: Direction & Strategy
+    -
+      project: @walibi
+      agency: @onemd
+      field: Design
   technologies: [@php, @drupal]
   published: true
   available_on_list: true
   thumb_front: @wab_front
   thumb_back: @wab_back
+  images:
+      -
+        name: The Skunx
+        path: projects/wab_skunx.jpg
+        alt: Walibi screenshot
   highlighted: false
 
+# Eurocenter
+eurocenter:
+  title: Eurocenter
+  slug: eurocenter
+  introduction: When it comes to E-commerce, there is no in-between. Either it works, either it doesn't, and in any case, the numbers will tell the truth. And for Eurocenter, we are happy to tell that the numbers are good.
+  body: |
+     %% Family business
+
+     Eurocenter started as a family business in 1984. From a single store, it has grown to one of the most well-known appliance retail chain in southern Belgium. It was only natural than a few years ago, they realized that they should be as successful online as they were offline.
+
+     ![A dummy image](/uploads/images/projects/ec_pickup.jpg "A dummy image")
+
+     ********************
+
+     The first version of the Eurocenter e-commerce web shop was functional, but somehow performed poorly in terms of conversion. In 2010 Eurocenter decided to hold a pitch for a new platform, and eventually gave the project the Stratenet, a web marketing agency.
+
+     When Stratenet realized that they needed a solid technical partner that would be able to translate their strategy into code and features, they decided it was time to bring Snowcap to the team.
+
+     %% Not your everyday e-commerce website
+
+     Eurocenter had decided to use the Magento e-commerce software to power their online shop.
+
+     *********************
+
+     But in terms of features, it was clear from the start that Magento was not enough. Eurocenter needed a fully automatic catalog import system, a custom stock management engine, and had a very specific payment and delivery workflow that differed significantly from the one provided by Magento.
+
+     So we started coding, customized a few features, and built the custom parts from the ground up. The end result is a feature-rich eshop, updated daily through a sophisticated import system connected to the Eurocenter ERP.
+
+     And, above all, a very satisfied customer, who saw its gross online revenue tripled in just a few months.
+
+  website: http://www.eurocenter.be
+  published_at: '2011-02-18 09:12:21'
+  realisation_period: 2010-2011
+  client: Eurocenter
+  collaborations:
+    -
+      project: @eurocenter
+      agency: @stratenet
+      field: Strategy
+  technologies: [@php, @zend, @magento]
+  published: true
+  available_on_list: true
+  thumb_front: @ec_front
+  thumb_back: @ec_back
+  images:
+      -
+        name: Eurocenter map
+        path: projects/ec_map.jpg
+        alt: Eurocenter screenshot
+  highlighted: false
+
+# Opera Royal de Wallonie
+orw:
+  title: Opéra Royal de Wallonie
+  slug: opera-royal-wallonie
+  introduction: The Opera Royal de Wallonie has been a major cultural actor in southern Belgium for more than 40 years. From now on, they also have the web presence they need to promote that reputation online.
+  body: |
+
+    %% Some things must be said out loud
+
+    Located in Liège, the Opéra Royal de Wallonie (or ORW for the initate) has been hosting hundreds of representations since 1967. Their audience and is both belgian and international, and the Opera has experienced succesful collaborations with other institutions in neighboring countries.
+
+    Promoting local and international artists, the ORW has built a solid reputation among opera amateurs... but that reputation still had to be translated on the web.
+
+    After a pitch held at the end of 2010, that task was entrusted to the marketing agency Stratenet, who joined forces  with Snowcap and Epic (a Liège-based interactive agency).
+
+    *****************
+
+    ![A dummy image](/uploads/images/projects/orw_list.jpg "A dummy image")
+
+    %% Beauty & Simplicity
+
+    The basic requirements of the soon-to-be launched website were quite simple : delivering a smooth and well-thought user experience, with an elegant design.
+
+    *******************
+
+    The new platform had to be able to cope with a significant amount of content under different forms. Therefore, our first priority was to deliver a solution that offered a great deal of autonomy to the ORW communication staff.
+
+    %% Attention to detail
+
+    We also gave a lot of attention to the main visitor workflows : from browsing productions to ordering tickets or subscriptions, every process has been optimized in order to make the end-user experience as simple and intuitive as possible.
+
+    The new website of the Opera Royal de Wallonie is definitely a success and proves, once again, that cultural institutions can have an ambitous and effective online strategy.
+    
+  website: http://www.operaliege.be
+  published_at: '2011-04-27 09:12:21'
+  realisation_period: April 2011
+  client: Opera Royal de Wallonie
+  collaborations:
+    -
+      project: @orw
+      agency: @stratenet
+      field: Strategy
+    -
+      project: @orw
+      agency: @epic
+      field: Design
+  technologies: [@php, @drupal]
+  published: true
+  available_on_list: true
+  thumb_front: @orw_front
+  thumb_back: @orw_back
+  images:
+    -
+      name: ORW show list
+      path: projects/orw_list.jpg
+      alt: ORW screenshot
+    -
+      name: ORW tickets
+      path: projects/orw_grid.jpg
+      alt: ORW screenshot
+  highlighted: false
+
+# Wilkinson Sword
 wilkinson:
-  title: Wilkinson
+  title: Wilkinson Sword
   slug: wilkinson
   introduction: |
-    Mortier Brigade a confé à Snowcap la réalisation du site Wilkinson Sword pour le Benelux
-  body:
-    Bla bla bla bla bla bla bla
+    Wilkinson Sword is the first project born from the collaboration between Snowcap and the brussels-based advertisement agency [Mortierbrigade](http://www.mortierbrgade.com "Mortierbrigade website"). It is also, of course, a website about shaving.
+  body: |
+
+    ![A dummy image](/uploads/images/projects/wlk_her.jpg "A dummy image")
+
+    ***********************
+
+    %% Sometimes it is that simple
+
+    Everybody is familiar with the Wilkinson Sword brand, although some of you may not know that the company really started as a sword manufacturer.
+
+    The belgian ad agency Mortierbrigade needed to find a good team of web developers to build the new Wilkinson Sword website for the Benelux. We already met them a few months before and this was a perfect occasion to start working together.
+
+    To be honest, the job was simple. What was asked from us was a neat corporate website that would be easy to administer, and fast to browse.
+
+    ***********************
+
+    Instead of installing a heavy ready-to-use CMS, we decided to opt for a custom implementation, built on top of the Symfony2 web framework.
+
+    We also built a small backend interface that would allow both Mortierbrigade and Wilkison Sword to manage the website content.
+
+    %% A straightforward job done right
+
+    The upside of using a web framework, instead of a CMS like Drupal, is that the customer gets exactly what he needs. No unused features, no constraints on what can be done or how it should be done...
+
+    And more importantly, you get a website with a high level of performance, and you don't need a book to understand how to run it.
+
   website: http://www.wilkinson-sword.be
   published_at: '2011-10-25 12:24:00'
   realisation_period: 2010-2011
-  client: Mortier Brigade
+  client: Wilkinson Sword
+  collaborations:
+    -
+      project: @wilkinson
+      agency: @mortier
+      field: Strategy, Design & Concept
   technologies: [@php, @symfony, @varnish]
   published: true
   available_on_list: true
   thumb_front: @wlk_front
   thumb_back: @wlk_back
+  images:
+    -
+      name: Wilkinson Sword screenshot
+      path: projects/wlk_connect.jpg
+      alt: Wilkinson Sword screenshot
   highlighted: false
+
+# Mortierbrigade
+mortierbrigade:
+  title: Mortierbrigade
+  slug: mortierbrigade
+  introduction: Mortierbrigade makes no secret about their ambition : becoming the most influential agency in the world. When they decided to launch a new version of their own website, it was obvious that they had to hire extreme precision developers for the job.
+  body: |
+    %% From influence ...
+
+    We had already worked with Mortierbrigade for the [Wilkinson-Sword project](/cases/wilkinson "Wilkinson Sword project") and it went really well, so when they asked us if we wanted to work on their own website, we were more than enthusiastic.
+
+    So they provided us the design of the new version, and we started coding it. If the backend development was somewhat simple, we knew things would be more of a challenge on the client side.
+
+    First of all, the soon-to-be launched website was meant to work without flash, while keeping a high level of animation and interactivity.
+
+    Then, it needed something special, a feature that would makes it stand out from the everyday agency website.
+
+    *******************************
+
+    Finally, Mortierbrigade wanted to make sure that they would have full control on their content, and that anyone on their side would be able to manage it.
+
+    ![A dummy image](/uploads/images/projects/mbg_cam.jpg "A dummy image")
+
+    *******************************
+
+    %% ... to precision
+
+    As always with advertisement agencies, the job had to be done fast. We knew that in this case, a standard CMS just wouldn't cut it, so we decided to use the Symfony2 web framework.
+
+    We put our frontend skills to good use in order to implement a full screen responsive & adaptive design : we ensured that the website would behave nicely on smartphones, tablets and displays of various sizes.
+
+    We also had a lot of fun implementing the special feature : for each project, visitors have the chance to leave a video comment using their own webcam.
+
+    Needless to say, Snowcap and Mortierbrigade are very happy with the result, and we invite you to [check it out](http://www.mortierbrigade.com "Mortierbrigade website") and leave a lot of video feedback.
+
+  website: http://www.mortierbrigade.com
+  published_at: '2011-11-29 12:24:00'
+  realisation_period: October - November 2011
+  client: Mortierbrigade
+  collaborations:
+    -
+      project: @mortierbrigade
+      agency: @mortier
+      field: Design & Concept
+  technologies: [@php, @symfony, @varnish]
+  published: true
+  available_on_list: true
+  thumb_front:
+    name: Mortierbrigade front thumb
+    path: projects/mbg_front.jpg
+    alt: Mortierbrigade front thumb
+  thumb_back:
+    name: Mortierbrigade back thumb
+    path: projects/mbg_back.jpg
+    alt: Mortierbrigade back thumb
+  images:
+    -
+      name: Mortierbrigade Webcam
+      path: projects/mbg_cam.jpg
+      alt: Mortierbrigade Webcam
+  highlighted: false
+
+#Sodexo
+sodexo:
+  title: Sodexo Circles
+  slug: sodexo-circles
+  introduction: Circles, a Sodexo subsidiary, is a leading international concierge services provider. We helped them build a web application that will manage their hundreds of customers worldwide from a single comprehensive platform.
+  body: |
+    %% Taking employee benefits to a whole new level.
+
+    Sodexo is mostly known (at least in Belgium) for their catering services, as well as for their meal vouchers.
+
+    As time went by, some of their operation centres started providing more personal assistance to employees and managers, and realized that there was a solid demand for concierge services among their existing customers.
+
+    ![Backend login](/uploads/images/projects/sdx_screen.jpg "Backend login")
+
+    **************
+
+    What was at first a side business became a full-fledged commercial activity under the name of "Circles". Today, Circles operates in five countries : Belgium, France, Luxemburg, Sweden and the United States, with probably more to come.
+
+    Each of those countries had its own set of workflows and tools, which was totally fine for a business that was still in its teenage years. But today, Circles is a mature company that needs a comprehensive approach in terms of customer management and follow-up.
+
+    %% The age of reason
+
+    In the beginning of 2011, a small Sodexo team in Belgium laid the foundations of Boost : a web-based interface allowing customers and concierges to manage requests, deliveries, payments, contracts, etc...
+
+    In order to launch a first version of the tool in a relatively tight schedule, Sodexo decided to call in the reinforcements and hired Snowcap as a support team.
+
+    ********************
+
+    We have worked on this project for several month, providing analysis support, IT consultancy, as well as frontend and backend development.
+
+    ![Backend screenshot](/uploads/images/projects/sdx_backend.jpg "Backend screenshot")
+
+    Today, the project is up and running, and we are happy to know that it will be a cornerstone of Circles's international business for the years to come.
+
+  website: http://www.circles.com
+  published_at: '2011-09-01 09:12:21'
+  realisation_period: summer 2011
+  client: Sodexo
+  technologies: [@php, @zend]
+  published: true
+  available_on_list: true
+  thumb_front:
+    name: Sodexo Front Thumb
+    path: projects/sdx_front.jpg
+    alt: Sodexo back thumb
+  thumb_back:
+    name: Sodexo back thumb
+    path: projects/sdx_back.jpg
+    alt: Sodexo back thumb
+  images:
+    -
+      name: Sodexo screenshot
+      path: projects/sdx_screen.jpg
+      alt: Sodexo screenshot
+  highlighted: false
+
+
+
+
+
+
 
 europabio:
   title: Europabio
@@ -99,21 +422,7 @@ europabio:
   thumb_back: @snwcp_front
   highlighted: false
 
-sodexo:
-  title: Sodexo Circles
-  slug: sodexo-circles
-  introduction:
-  body:
-  website: http://www.circles.com
-  published_at: '2011-09-01 09:12:21'
-  realisation_period: summer 2011
-  client: Sodexo
-  technologies: [@php, @zend]
-  published: true
-  available_on_list: false
-  thumb_front: @snwcp_front
-  thumb_back: @snwcp_front
-  highlighted: false
+
 
 movingpeople:
   title: MovingPeople
@@ -159,44 +468,13 @@ startv:
   client: Ciné Télé Revue
   technologies: [@php, @drupal]
   published: true
-  available_on_list: true
+  available_on_list: false
   thumb_front: @star_front
   thumb_back: @star_back
   highlighted: false
 
-eurocenter:
-  title: Eurocenter
-  slug: eurocenter
-  introduction: blabla
-  body: |
-    bli
-  website: http://www.eurocenter.be
-  published_at: '2011-02-18 09:12:21'
-  realisation_period: 2010-2011
-  client: Eurocenter
-  technologies: [@php, @zend, @magento]
-  published: true
-  available_on_list: true
-  thumb_front: @ec_front
-  thumb_back: @ec_back
-  highlighted: false
 
-orw:
-  title: Opéra Royal de Wallonie
-  slug: opera-royal-wallonie
-  introduction: blabla
-  body: |
-    bli
-  website: http://www.operaliege.be
-  published_at: '2011-04-27 09:12:21'
-  realisation_period: April 2011
-  client: Opera Royal de Wallonie
-  technologies: [@php, @drupal]
-  published: true
-  available_on_list: true
-  thumb_front: @orw_front
-  thumb_back: @orw_back
-  highlighted: false
+
 
 mefirst:
   title: Compare your friends
@@ -223,8 +501,7 @@ devenirunelegende:
   published_at: '2011-11-05 05:12:32'
   realisation_period: December 2011
   client: Coca-Cola
-  agency: @onemd
-  technologies: [varnish]
+  technologies: [@varnish]
   published: true
   available_on_list: false
   highlighted: false

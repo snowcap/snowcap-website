@@ -1,24 +1,51 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
+{% block meta_title %}{{ "blog.meta.title" | trans }}{% endblock %}
+{% block meta_description %}{{ "blog.meta.description" | trans }}{% endblock %}
+{% block meta_keywords %}{{ "blog.meta.keywords" | trans }}{% endblock %}
 {% set body_class = 'blog blog-listing' %}
 {% block body %}
-    <h1 class="main-title">{{ "post.list.title" | trans }}</h1>
-    <div class="full">
+    <h1 class="main-title">{{ "blog.title" | trans }}</h1>
+    <div class="split split-2">
         <section class="main content">
-            <ul>
-                {% for post in posts %}
-                    <li>
-                        {% if post.thumb %}
-                            <img class="thumb" src="{{ post.thumb.webPath | apply_filter('thumb') | static_path }}" alt="{{ post.thumb.alt }}" />
-                        {% endif %}
-                        <h2>{{ post.title }}</h2>
-                        <p class="published">{{ post.published_at | time_ago }}</p>
-                        {{ post.summary | markdown }}
-                        {% if post.body %}
-                            <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ 'Read more' | trans }}" class="read-more">{{ 'Read more' | trans }}</a>
-                        {% endif %}
-                    </li>
-                {% endfor %}
-            </ul>
+            {% if posts|length > 0 %}
+                <ul>
+                    {% for post in posts %}
+                        <li class="{{ post.category.slug }}{% if post.thumb %} withthumb{% endif %}">
+                            {% if post.thumb %}
+                                <img class="thumb" src="{{ post.thumb.webPath | imagine_filter('thumb') }}" alt="{{ post.thumb.alt }}" />
+                            {% endif %}
+                            <h2 class="post-title">{{ post.title }}</h2>
+                            <p class="published">
+                                {% trans with {'%on%': post.published_at | time_ago, '%in%': post.category.name, '%in_url%': path('snwcp_site_post_list', {"category_slug": post.category.slug }) } %}
+                                    blog.published_on_in
+                                {% endtrans %}
+                            </p>
+                            {{ post.summary | markdown }}
+                            {% if post.body %}
+                                <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ 'Read more' | trans }}" class="read-more">{{ 'Read more' | trans }}</a>
+                            {% endif %}
+                            <div class="comments">
+                                {{ 'blog.comments.count' | transchoice(post.getValidComments | length) | raw }}
+                                <a href="{{ path('snwcp_site_post_show', {'slug': post.slug }) }}" title="{{ 'blog.comment.post.title' | trans }}" class="post-comment-link">{{ 'blog.comment.post.label' | trans }}</a>
+                            </div>
+
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>{{ "blog.list.empty" | trans }}</p>
+            {% endif %}
         </section>
+        <aside>
+            {% macro category_link(category, current_category) %}
+                <a href="{{ path('snwcp_site_post_list', {'category_slug': category}) }}"  class="{{ category ? category : "all" }}{% if current_category == category %} active{%endif %}">{{ ("blog.category." ~ ( category ? category : "all" ) ~ ".label") | trans }}</a>
+            {% endmacro %}
+            <nav>
+                {{ _self.category_link(null, current_category) }}
+                {{ _self.category_link('thoughts', current_category) }}
+                {{ _self.category_link('cases', current_category) }}
+                {{ _self.category_link('events', current_category) }}
+            </nav>
+        </aside>
     </div>
 {% endblock body %}
