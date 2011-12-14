@@ -541,7 +541,7 @@ body.team {
     font-style: oblique;
 }
 .team section.main .member-details p {
-    margin: 30px 15px;
+    margin: 30px 13px;
 }
 .team ul.social {
     margin: 15px !important;
@@ -683,7 +683,8 @@ body.blog {
     background-image: url(../images/sprites.png);
     background-repeat: no-repeat;
 }
-.blog aside nav a.active {
+.blog aside nav a.active,
+.blog aside nav a:hover {
    color: #0a0a0a;
 }
 .blog aside nav a.events {
@@ -723,7 +724,7 @@ body.blog {
 }
 .blog section.main img.thumb {
     float: left;
-    margin: 0 20px 20px 0;
+    margin: 0 20px 10px 0;
 }
 .blog section.main .post-title {
     margin: 15px 0 0 0;
