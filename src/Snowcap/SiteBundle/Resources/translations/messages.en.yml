@@ -25,7 +25,7 @@ widget:
         empty: No tweets available
         by: By Snowcap
     nerds:
-        title: Hey(,) Nerds !
+        title: Hey Nerds !
         open_source:
         body: |
             <p class="open-source">Because we like to put our money where our mouth is, <strong>the code of this website is open-source</strong> and freely available on Github.</p>
@@ -33,8 +33,6 @@ widget:
             Feel free to [browse the code](https://github.com/snowcap/snowcap-website "Snowcap's github account") so that you can get a feel of the way we work.
 
             And if you have a cool idea to improve our website, just fork the repo and send us a pull request !
-
-
         github:
             title: Follow us on Github
             label: Follow us on Github
@@ -138,8 +136,6 @@ company:
     fast, without having to go through a lenghty decision-making process.
 
     So if you want to work with specialists, who do only one thing but do it right and play well with others, you might just have found your new agency.
-
-
   quote: |
     Don't expect us to deliver what you already have - we would rather hear about the rock-solid, extreme performance web platform you've always wanted.
 team:

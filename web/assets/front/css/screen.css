@@ -94,14 +94,6 @@ header nav a:hover {
     color: #79bd01;
     text-decoration: none;
 }
-header div.fb-like {
-    position: absolute;
-    left: 860px;
-    top: 0;
-    width: 100px;
-    height: 20px;
-    padding: 10px 0;
-}
 /* SECTIONS */
 /* full and splits */
 div.full, div.split {
@@ -159,7 +151,7 @@ section p.read-more a{
     padding: 0 30px 0 0;
     background-image: url(../images/sprites.png);
     background-repeat: no-repeat;
-    background-position: 80px -147px;
+    background-position: right -148px;
 }
 /* main sections (only used to push content) */
 section.main {
@@ -287,9 +279,6 @@ body.home {
 .home section.secondary p.read-more {
     text-align: right;
 }
-.home section.secondary p.read-more a {
-
-}
 /* blog */
 .home section.blog h2 {
     width: 150px;
@@ -334,7 +323,7 @@ body.home {
     color: #fff;
     width: 242px;
     padding: 30px;
-    background: url(../images/octocat.png) #0a0a0a center bottom no-repeat;
+    background-color: #0a0a0a;
 }
 .home section.nerds h2 {
     margin: 0;
@@ -356,9 +345,6 @@ body.home {
 }
 .home section.nerds p.read-more {
     text-align: right;
-}
-.home section.nerds p.read-more a {
-    background-position: 150px -147px;
 }
 /* SERVICES */
 body.services {
@@ -441,7 +427,7 @@ body.company {
 /* CONTACT */
 body.contact {
     background-image: url(../images/contact.jpg);
-    background-position: center bottom;
+    background-position: center 180px;
 }
 .contact .wrapper {
     min-height: 859px;
@@ -467,7 +453,7 @@ body.team {
     min-height: 871px;
 }
 .team section.main {
-    margin-top: 420px;
+    margin-top: 450px;
 }
 .team section.main ul {
     margin: 0;
@@ -657,10 +643,6 @@ section.projects li:not(.three) {
 /* project-listing page */
 .project-listing section.project-overview {
     background: url(../images/sprites.png) 0 284px repeat-x;
-}
-/* project-detail page */
-.project-detail section.project-overview p.read-more a {
-    background-position: 110px -148px;
 }
 /* BLOG */
 .blog section.main {
