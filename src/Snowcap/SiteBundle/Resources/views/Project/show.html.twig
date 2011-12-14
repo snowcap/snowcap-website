@@ -35,12 +35,13 @@
                     alt="{{ project.thumb_front.alt }}"
                 />
             </div>
+            {% include "SnowcapSiteBundle:Project:technologies.html.twig" with { 'technologies': project.technologies } %}
         </section>
         <section class="content project-story">
             {{ project.body | markdown | hr_columns }}
         </section>
-        <section class="technology">
-            {% include "SnowcapSiteBundle:Project:technologies.html.twig" with { 'technologies': project.technologies } %}
+        <section class="content projects">
+            {% render 'SnowcapSiteBundle:Project:list' with {'highlighted': false} %}
         </section>
     </div>
 {% endblock %}
