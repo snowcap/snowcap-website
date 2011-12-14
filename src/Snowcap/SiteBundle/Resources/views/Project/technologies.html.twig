@@ -1,7 +1,7 @@
 {% if technologies|length > 0 %}
     <ul class="technology">
         {% for technology in technologies %}
-            <li><a href="{{ url('snwcp_site_technology_show', { 'slug': technology.slug }) }}">{{ technology.name }}</a></li>
+            <li>{{ technology.name }}</li>
         {% endfor %}
     </ul>
 {% endif %}

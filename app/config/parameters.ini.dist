@@ -28,3 +28,5 @@
 
     akismet_api_key =
     akismet_url     =
+
+    admin_password = somepasswordtochange

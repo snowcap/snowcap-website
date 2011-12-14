@@ -41,7 +41,7 @@
             {{ project.body | markdown | hr_columns }}
         </section>
         <section class="content projects">
-            {% render 'SnowcapSiteBundle:Project:list' with {'highlighted': false} %}
+            {% render 'SnowcapSiteBundle:Project:list' with {'exclude': [project.id]} %}
         </section>
     </div>
 {% endblock %}

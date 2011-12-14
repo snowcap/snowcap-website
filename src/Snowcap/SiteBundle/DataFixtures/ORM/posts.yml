@@ -53,27 +53,26 @@ work6:
   title: New website: Opera Royal de Wallonie
   slug: new-website-opera-royal-wallonie
   summary: |
-    We are happy to release a new nice and cultural website: [L'opéra Royal de Wallonie](http://www.operaliege.be "Opera Royal de Wallonie")! Built with Stratenet for the strategy and [Epic](http://epic.net "Epic agency")
-    for the design, the website tells you everything you need to know about the Opera's in Wallonia, from the available concerts to the options and price grids.
+    We are happy to announce that we just released the new website of the [Opéra Royal de Wallonie](http://www.operaliege.be "Opera Royal de Wallonie")! Built in collaboration with [Stratenet](http://www.stratenet.com "Stratenet website") and [Epic](http://epic.net "Epic website"),
+    the new platform aims to promote the Opera's activities and features a very elegant design. Check out the [case study](/cases/orw "ORW case") if you want more details !
   published: true
   publishedAt: '2011-04-27 15:41:04'
   category: @cases
 work8:
-  title: New website: Immocitiz
-  slug: new-website-immocitiz
+  title: Immocitiz is online
+  slug: immocitiz-is-online
   summary: |
-    We are proud to announce a new release: [Immocitiz](http://www.immocitiz.be "Immocitiz website")! A real estate game based on existing properties on Immovlan. Play with us to generate bricks (aka money) by
-    buying properties, selling them right on time to the bank, gain badges, and finally become governor. A real technical challenge and great fun! All this surrounded by the excellent design by [One Million Dollars](http://www.1md.be "1md agency").
-    [Read the case](/cases/immocitiz "Immocitiz case")
+    We are very proud proud to annouce that [Immocitiz](http://www.immocitiz.be "Immocitiz website") is finally live, after months of development. It is a real-estate game
+    built on top of the Immovlan website, and is truly a one-of-a-kind project in Belgium. [Try it out](http://www.immocitiz.be "Immocitiz website") or [read the case study](/cases/immocitiz "Immocitiz case") for more details.
   published: true
   publishedAt: '2011-08-08 16:02:54'
   category: @cases
 work9:
-  title: Sodexo's summer
+  title: This summer : sun, code, and Sodexo
   slug: sodexo-summer
   summary: |
-    This summer Snowcap will be, for a big part, dedicated to Sodexo. They asked us to support their internal team to achieve a huge international platform aiming to automate to process of ordering
-    services and products in shared offices. Guess that our vacations will be delayed a little, but it's a nice challenge Snowcap is willing to take!
+    This summer, Snowcap will dedicate most of its time to Sodexo. They asked us to help their internal team to build an ambitous web platform that will manage their
+    conciergerie services in several countries. It probably means that our vacations will be somewhat delayed, but it's a nice challenge that we are more than willing to take!
   published: true
   publishedAt: '2011-06-01 09:41:12'
   category: @cases
@@ -81,47 +80,66 @@ work10:
   title: New website: Europabio
   slug: new-website-europabio
   summary: |
-    We just released the new website of [EuropaBio](http://www.europabio.org "Europabio website"). EuropaBio is the voice for the biotech industry at the EU level, promoting innovative and dynamic biotechnology-based industry in Europe.
-    This is another web project achieved in partnership with [One Million Dollars](http://www.1md.be "1md agency").
+    We just released the new website of [EuropaBio](http://www.europabio.org "Europabio website"). EuropaBio is the voice for the biotech industry at the EU level, promoting innovation in the field of biotechnologies in Europe.
+    This project is the fruit of another successful collaboration with [One Million Dollars](http://www.1md.be "One million dollars website").
   published: true
   publishedAt: '2011-09-22 10:24:17'
   category: @cases
 work11:
-  title: Sodexo's mission
-  slug: sodexo-mission
+  title: Sodexo : almost there !
+  slug: sodexo-almost-there
   summary: |
-    Our mission for Sodexo reached his end. The project is surely on a right track, ready to accept further development!
-    [Read the case](/cases/sodexo "Sodexo case")
+    Our mission for Sodexo is reaching its end. The project is definitely on a right track, and will be live shortly.
+    [Read the full story](/cases/sodexo "Sodexo case") if you want to know what we did for them.
   published: true
   publishedAt: '2011-09-02 13:31:05'
   category: @cases
-out1:
-  title: Attenting new conference: SymfonyLive@Paris
-  slug: attending-new-conference-symfony-live-paris
+work12:
+  title: At last, a website for Wilkinson-Sword
+  slug: a-website-for-wilkinson-sword
   summary: |
-    We just bought our tickets to the SymfonyLive conference @ Paris: ready for 3 days of nice talks, learning and discussions! Let us now if you attend too, we'll drink some together :)
+    Believe it or not, Wilkinson-Sword didn't have a proper corporate website for the Benelux... until now. Our first collaboration with the belgian agency [Mortierbrigade](http://www.mortierbrigade.com), it is a great example
+    of a nice corporate website done right. Feel free to visit [the new website](http://www.wilkinson-sword.be "Wilkinson-Sword website") or to read [the full case](/cases/wilkinson "Wilkinson-Sword").
+  published: true
+  publishedAt: '2011-10-02 12:00:01'
+  category: @cases
+work13:
+  title: The new Mortierbrigade is live
+  slug: new-mortierbrigade-live
+  summary: |
+    What happens when extreme precision developers pair up with the agency that wants to be the most influantial in the world ? Short answer : a very cool agency
+    website. Long answer : read the [whole story](/cases/mortierbrigade "Mortierbrigade case").
+  published: true
+  publishedAt: '2011-11-15 13:47:32'
+  category: @cases
+out1:
+  title: SymfonyLive 2011 in Paris
+  slug: symfony-live-2011-paris
+  summary: |
+    We just bought our tickets to the SymfonyLive conference in Paris. The plan : 3 days of talks and workshops about cutting-edge web technologies.
+    Let us now if you will be there too, maybe we can have a few drinks together !
   published: true
   publishedAt: '2011-02-25 13:59:01'
   category: @events
 out2:
-  title: Attending new conference: SymfonyDay@Cologne
-  slug: attending-new-conference-symfony-day-cologne
+  title: SymfonyDay 2011 in Cologne
+  slug: symfony-day-2011-cologne
   summary: |
-    We've bought our tickets to the [SymfonyDay 2011 conference @ Cologne](www.symfonyday.com "SymfonyDay 2011 Cologne website), on the 21th of October: after a successfull Symfony conference @Paris few months ago,
-    we couldn't miss this! Let us now if you attend too!
+    We've bought our tickets to the [SymfonyDay 2011 conference in Cologne](http://www.symfonyday.com "SymfonyDay 2011 Cologne website") on the 21st of October. After a very interesting Symfony conference in Paris a few months ago,
+    there was no way we could miss this one. Let us know if you plan to attend it as well !
   published: true
   publishedAt: '2011-07-28 10:41:18'
   category: @events
 
 tought1:
-    title: 13 months and 114598 lines of codes later
+    title: 13 months and 114.598 lines of codes later
     slug: 13-months-later
     thumb:
         name: CMS or Framework ?
         path: posts/launch.jpg
         alt: CMS or Framework ?
     summary:
-        Snowcap was launched in september 2010. We've been very busy since then. Here is a short summary on what we have been doing.
+        Snowcap was launched in september 2010. We've been very busy since then, to say the least. Here is a short summary on what we have been doing for the last 13 months.
     body: |
         A little more than one year ago, the three of us (Edwin, Jérôme and Pierre) left the agency we were working for and created our own company. It was a very exciting time, and there was much to do.
 
@@ -129,22 +147,22 @@ tought1:
 
         %% The first steps
 
-        When we decided to create our own little agency, we had no name for it yet. We had to find one, and fast. After countless tries, and heated discussions, we finally agreed on Snowcap, for different reasons - the first one being that we liked the sound of it.
+        When we decided to create our own little agency, we had no name for it yet. We had to find one, and fast. After countless propositions and heated discussions, we finally agreed on Snowcap, for different reasons - the first one being that we liked the sound of it.
 
-        Then, we needed a visual identity so we contacted our friends from 1MD. They came up with the symbol/mountain logo, which, apart from being beautiful, was a perfect fit for the image we wanted to promote :
+        Then, we needed a visual identity so we contacted our friends from [1MD](http://www.1md.be "One million dollars website"). They came up with the symbol/mountain logo, which, apart from being beautiful, was a perfect fit for the image we wanted to promote :
         simple yet highly recognizable.
 
         Of course, at that point, trying to get contracts took the biggest part of our time. I remember us being afraid of sitting in a quiet room with nothing to do, waiting for the phone to ring.
-        Fortunately for us, the phone did ring, and quite a few times. Our planning quickly filled up, week after week, and we never had the time to get bored, or even to give a lot of thought to our business model.
+        Fortunately for us, the phone did ring, and quite a few times. Our planning quickly filled up, week after week, and we never had the time to get bored. Or to give a lot of thought to our business model for that matter.
 
         %% 13 months of code, projects and releases
 
-        Between september 2010 and today, we worked on 20 different projects. E-commerce, institutional or corporate websites, enterprise applications and even some pretty exotic stuff (check the cases section if you want to know
+        Between september 2010 and today, we worked on 20 different projects. E-commerce, institutional or corporate websites, enterprise applications and even some pretty exotic stuff (check the [cases section](/cases/ "Snowcap cases") if you want to know
         the details). To be honest, a few months before, we didn't really think it would go this fast.
 
         %%% A sort of bet
 
-        In hindsight, what we did was a sort of bet. We were deeply convinced that there was a market for a coders-only web agency, but the only way to know for sure was to build it.
+        In hindsight, what we did was a sort of bet. We were deeply convinced that there was a market for a "coders-only" web agency, but the only way to know for sure was to build it.
 
         From that point of view, our first year was a success. There is a solid demand right now for small, highly specialized agencies with a high degree of flexibility. Customers proved to be more comfortable with the approach
         than expected, and we realized that small shops such as ours can be attractive not only to small and medium businesses, but also to bigger corporate players.
@@ -156,8 +174,8 @@ tought1:
 
         %%% New tools, new tricks
 
-        Another one of the motivations behind Snowcap was to be in a position where we could quickly evaluate and adopt new tools or technologies. We are pretty satified on that topic too, as we definitely learned a lot of stuff this year. From
-        performance optimizations to responsive / adaptative web design techniques, we are definitely on the right track.
+        Another one of the motivations behind Snowcap was to be in a position where we could quickly evaluate and adopt new tools or technologies. We are pretty satified on that topic too, as we definitely learned a lot of stuff this year (about one new
+        technology per month). From performance optimizations to responsive / adaptative web design techniques, we are definitely on the right track.
 
         %% What's next ?
 
@@ -165,8 +183,8 @@ tought1:
         projects, in favor of custom development (we will write another post on that specific subject shortly). And finally, we have decided to get more involved in the open-source community. We have been free software enthusiasts
         for several years, and we feel that now is a good time to start contributing.
 
-        Before we get back to code and machines, we would like to thank our customers and our partners, for entrusting us with their projects. Thanks a lot to the guys from One Million Dollars, who, in addition to giving us
-        a great logo, also designed this website. Many thanks as well to Xavier Portela, who took all those cool pictures of us in 80's skiing gear.
+        Before we get back to code and machines, we would like to thank our customers and our partners, for entrusting us with their projects. Thanks a lot to the guys from [One Million Dollars](http://www.1md.be "One million dollars website"), who, in addition to giving us
+        a great logo, also designed this website. Many thanks as well to [Xavier Portela](http://sakanadesign.com/ "Sakana design website"), who took all those cool pictures of us in 80's skiing gear.
 
         See you next year !
 
