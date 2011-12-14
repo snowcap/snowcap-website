@@ -51,7 +51,7 @@
          */
         _this.moveTo = function(element, speed) {
             var activeOffset = $(element).position().left;
-            var handleOffset = activeOffset + element.outerWidth() / 2 - 5;
+            var handleOffset = activeOffset + (element.outerWidth() / 2) - 5;
             _handle.animate({'left': handleOffset}, speed);
         };
         /**
@@ -96,8 +96,13 @@
         _this.init = function() {
             _handle = $('<span>').addClass('handle').hide();
             _element.append(_handle);
-            _this.moveToActive(0);
-            _handle.show();
+            setTimeout(
+                function(){
+                    _this.moveToActive(0)
+                    _handle.show();
+                },
+                200
+            );
             _element.find('a').hover(_this.follow, _this.gohome);
         };
         /* INIT */
