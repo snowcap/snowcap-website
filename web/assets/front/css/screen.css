@@ -89,7 +89,56 @@ header nav > a {
     line-height: 38px;
     padding: 0 15px 2px 15px;
     color: #fff;
+    overflow: hidden;
 }
+header nav a.home {
+    width: 35px;
+}
+header nav a.services {
+    width: 50px;
+}
+header nav a.cases {
+    width: 40px;
+}
+header nav a.blog {
+    width: 30px;
+}
+header nav a.company {
+    width: 55px;
+}
+header nav a.team {
+    width: 35px;
+}
+header nav a.contact {
+    width: 50px;
+}
+header nav a.facebook {
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    width: 32px;
+    height: 24px;
+    padding: 0;
+    text-indent: -999em;
+    background: transparent url('../images/sprites.png') no-repeat 0 -116px;
+}
+header nav a.facebook:hover {
+    background-position: -34px -116px;
+}
+header nav a.twitter {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 14px;
+    height: 24px;
+    padding: 0;
+    text-indent: -999em;
+    background: transparent url('../images/sprites.png') no-repeat -67px -116px;
+}
+header nav a.twitter:hover {
+    background-position: -80px -116px;
+}
+
 header nav a:hover {
     color: #79bd01;
     text-decoration: none;
@@ -743,10 +792,10 @@ body.blog {
     background-position: 0 -512px;
 }
 .blog section.main .events .post-title {
-    background-position: 0 -512px;
+    background-position: 0 -432px;
 }
 .blog section.main .cases .post-title {
-    background-position: 0 -512px;
+    background-position: 0 -472px;
 }
 .blog section.main p.published {
     padding-left: 40px;
@@ -764,15 +813,6 @@ body.blog {
     list-style-type: none;
     background: url(../images/sprites.png) left bottom repeat-x;
 }
-.blog-listing section.main li .comments {
-    height: 34px;
-    line-height: 34px;
-    background: url(../images/sprites.png) left -1998px repeat-x;
-    clear: left;
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #0a0a0a;
-}
 /* blog detail page */
 .blog-detail section.main h1 {
     color: #333333;
@@ -788,6 +828,103 @@ body.blog {
     color: #0a0a0a;
     font-weight: normal;
 }
+/* blog comments*/
+.blog section.main .comments {
+    background-color: #f7f7f7;
+}
+.blog section.main .comments-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.blog section.main .comments-list > li {
+    background: url(../images/sprites.png) left bottom repeat-x;
+    padding: 20px;
+    
+}
+.blog section.main .comments-list h3 {
+    color: #4c4c4c;
+    font-size: 11px;
+    line-height: 11px;
+    font-style: italic;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+.blog section.main .comments-list p {
+    margin: 0;
+    padding: 0;
+    color: #4c4c4c;
+    font-style: italic;
+}
+.blog section.main .comments-post-result {
+    margin: 0;
+    padding: 0 0 5px 0;
+    color: #79BD01;
+    font-weight: bold;
+}
+.blog section.main form {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 20px 40px 20px;
+}
+.blog section.main form .form-row {
+    position: relative;
+    padding: 0 0 15px 0;
+}
+.blog section.main form .form-row ul {
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #A33;
+    font-style: italic;
+}
+.blog section.main form label {
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
+    height: 30px;
+}
+.blog section.main form textarea,
+.blog section.main form input[type="text"],
+.blog section.main form input[type="email"] {
+    border: 1px solid #e4e5e7;
+    border-top: 1px solid #adadaf;
+    width: 160px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #4c4c4c;
+}
+.blog section.main form textarea {
+    width: 455px;
+    height: 100px;
+}
+.blog section.main form input[type="submit"] {
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    background-color: #000;
+    border: 0;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: #79bd01;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.blog section.main .comments-count {
+    height: 34px;
+    line-height: 34px;
+    background: url(../images/sprites.png) left -1998px repeat-x;
+    clear: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #0a0a0a;
+}
+
 /* VISUALS */
 .visual {
     display: block;

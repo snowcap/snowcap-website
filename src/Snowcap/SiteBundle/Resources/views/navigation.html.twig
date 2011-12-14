@@ -1,12 +1,14 @@
-{% macro menu_link(label, route_name) %}
-    <a href="{{ url(route_name) }}" {% if is_menu_active(app.request.get('_route'), route_name) %} class="active" {%endif %} >{{ label | trans }}</a>
+{% macro menu_link(label, route_name, class) %}
+    <a href="{{ url(route_name) }}" class="{{ class }}{% if is_menu_active(app.request.get('_route'), route_name) %} active{%endif %}">{{ label | trans }}</a>
 {% endmacro %}
 <nav>
-    <h1>{{ _self.menu_link('general.snowcap', 'snwcp_site_default_index') }}</h1>
-    {{ _self.menu_link('navigation.services', 'snwcp_site_default_services') }}
-    {{ _self.menu_link('navigation.cases', 'snwcp_site_project_index') }}
-    {{ _self.menu_link('navigation.posts', 'snwcp_site_post_list') }}
-    {{ _self.menu_link('navigation.company', 'snwcp_site_default_company') }}
-    {{ _self.menu_link('navigation.team', 'snwcp_site_default_team') }}
-    {{ _self.menu_link('navigation.contact', 'snwcp_site_default_contact') }}
+    <h1>{{ _self.menu_link('general.snowcap', 'snwcp_site_default_index', 'home') }}</h1>
+    {{ _self.menu_link('navigation.services', 'snwcp_site_default_services', 'services') }}
+    {{ _self.menu_link('navigation.cases', 'snwcp_site_project_index', 'cases') }}
+    {{ _self.menu_link('navigation.posts', 'snwcp_site_post_list', 'blog') }}
+    {{ _self.menu_link('navigation.company', 'snwcp_site_default_company', 'company') }}
+    {{ _self.menu_link('navigation.team', 'snwcp_site_default_team', 'team') }}
+    {{ _self.menu_link('navigation.contact', 'snwcp_site_default_contact', 'contact') }}
+    <a class="facebook" href="http://www.facebook.com/snwcp" title="{{ "general.facebook.like.title" | trans }}" rel="external">{{ "general.facebook.like.label" | trans }}</a>
+    <a class="twitter" href="http://twitter.com/snwcp" title="{{ "general.twitter.follow.title" | trans }}" rel="external">{{ "general.twitter.follow.label" | trans }}</a>
 </nav>

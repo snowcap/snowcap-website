@@ -6,8 +6,14 @@ general:
     readmore:
         title: Read more
         label: Read more
-    facebook_link: Our Facebook page
-    twitter_link: @snwcp on Twitter
+    facebook:
+        like:
+            title: Our Facebook page
+            label: Our Facebook page
+    twitter:
+        follow:
+            title: @snwcp on Twitter
+            label: @snwcp on Twitter
     footer: © Snowcap %date% - inquiries, questions, praise and insults : [shoot@snowcap.be](mailto:shoot@snowcap.be)
     feed:
         title: Snowcap feed
@@ -99,10 +105,13 @@ blog:
   published_on_in: Published %on% in <a href="%in_url%">%in%</a>
   comment:
     submit: Send
-    title: %relative_time% by %name%
+    title: %relative_time% by <strong>%name%</strong>
     post:
       title: Post a comment
       label: Post a comment
+    name: Your name
+    email: Your email
+    body: Your post
   empty: No post available
   category:
     all:
