@@ -570,6 +570,10 @@ body.team {
     margin: 15px !important;
 }
 /* PROJECTS */
+body.project {
+    background-position: center bottom;
+    background-image: url(../images/mountains.jpg);
+}
 /* generic project listing (also used for the homepage) */
 section.projects ul {
     overflow: hidden;
@@ -645,6 +649,7 @@ section.projects li:not(.three) {
     font-size: 14px;
     line-height: 18px;
     color: #818181;
+    background: url(../images/sprites.png) bottom center;
 }
 .project section.project-story h2 {
     font-size: 14px;
@@ -668,6 +673,10 @@ section.projects li:not(.three) {
     background: url(../images/sprites.png) 0 284px repeat-x;
 }
 /* BLOG */
+body.blog {
+    background-position: center bottom;
+    background-image: url(../images/mountains.jpg);
+}
 .blog section.main {
     width: 610px;
 }
@@ -778,7 +787,7 @@ section.projects li:not(.three) {
 .blog-listing section.main li .comments {
     height: 34px;
     line-height: 34px;
-    background: url(../images/sprites.png) left -998px repeat-x;
+    background: url(../images/sprites.png) left -1998px repeat-x;
     clear: left;
     font-size: 14px;
     text-transform: uppercase;
@@ -854,12 +863,12 @@ section.projects li:not(.three) {
     left: -100px;
 }
 /* TECHNOLOGIES */
-section.technology ul {
+ul.technology  {
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
-section.technology li {
+ul.technology li {
     list-style-type: none;
     float: left;
     line-height: 40px;
@@ -877,11 +886,11 @@ section.technology li {
     background: linear-gradient(top, #4b4b4b 6%,#252525 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b4b4b', endColorstr='#252525',GradientType=0 ); /* IE6-9 */
 }
-section.technology a {
+ul.technology a {
     padding:  0 10px;
     color: #fff;
 }
-section.technology a:hover {
+ul.technology a:hover {
     color: #8bc623;
     text-decoration: none;
 }
