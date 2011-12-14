@@ -6,8 +6,14 @@ general:
     readmore:
         title: Read more
         label: Read more
-    facebook_link: Our Facebook page
-    twitter_link: @snwcp on Twitter
+    facebook:
+        like:
+            title: Our Facebook page
+            label: Our Facebook page
+    twitter:
+        follow:
+            title: @snwcp on Twitter
+            label: @snwcp on Twitter
     footer: © Snowcap %date% - inquiries, questions, praise and insults : [shoot@snowcap.be](mailto:shoot@snowcap.be)
     feed:
         title: Snowcap feed
