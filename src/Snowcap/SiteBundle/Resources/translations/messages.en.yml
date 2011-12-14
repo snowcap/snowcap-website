@@ -92,7 +92,7 @@ blog:
   title: Blog
   back_to_list: Back to list
   comments:
-    count: '{0}|{1}1 comment \|]1,Inf]%count% comments \'
+    count: '{0}|{1}<strong>1</strong> comment|]1,Inf]<strong>%count%</strong> comments'
     result:
         unpublished: Thank you for your comment, we'll validate it as soon as possible !
         published: Thank you for your comment !
