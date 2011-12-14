@@ -12,15 +12,15 @@
     {{ ("team." ~ member ~ ".body") | trans | markdown }}
     <ul class="social">
         <li class="twitter">
-            <a href="http://twitter.com/{{ ("team." ~ member ~ ".twitter") | trans }}" title="{{ "team.twitter.title" | trans }}">{{ "team.twitter.label" | trans }}</a>
+            <a href="http://twitter.com/{{ ("team." ~ member ~ ".twitter") | trans }}" title="{{ "team.twitter.title" | trans }}" rel="external">{{ "team.twitter.label" | trans }}</a>
         <li class="linkedin">
-            <a href="http://be.linkedin.com/in/{{ ("team." ~ member ~ ".linkedin") | trans }}" title="{{ "team.linkedin.title" | trans }}">{{ "team.linkedin.label" | trans }}</a>
+            <a href="http://be.linkedin.com/in/{{ ("team." ~ member ~ ".linkedin") | trans }}" title="{{ "team.linkedin.title" | trans }}" rel="external">{{ "team.linkedin.label" | trans }}</a>
         </li>
         <li class="forrst">
-            <a href="http://www.forrst.com/people/{{ ("team." ~ member ~ ".forrst") | trans }}" title="{{ "team.forrst.title" | trans }}">{{ "team.forrst.label" | trans }}</a>
+            <a href="http://www.forrst.com/people/{{ ("team." ~ member ~ ".forrst") | trans }}" title="{{ "team.forrst.title" | trans }}" rel="external">{{ "team.forrst.label" | trans }}</a>
         </li>
         <li class="github">
-            <a href="http://github.com/{{ ("team." ~ member ~ ".github") | trans }}" title="{{ "team.github.title" | trans }}">{{ "team.github.label" | trans }}</a>
+            <a href="http://github.com/{{ ("team." ~ member ~ ".github") | trans }}" title="{{ "team.github.title" | trans }}" rel="external">{{ "team.github.label" | trans }}</a>
         </li>
     </ul>
 </div>
