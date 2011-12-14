@@ -25,7 +25,7 @@
                                 <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ 'Read more' | trans }}" class="read-more">{{ 'Read more' | trans }}</a>
                             {% endif %}
                             <div class="comments">
-                                {{ 'blog.comments.count' | transchoice(post.getValidComments | length) | raw }}
+                                {{ 'blog.comments.count' | transchoice(post.getValidComments | length) | raw }} {% if post.getValidComments | length > 0 %}|{% endif%}
                                 <a href="{{ path('snwcp_site_post_show', {'slug': post.slug }) }}" title="{{ 'blog.comment.post.title' | trans }}" class="post-comment-link">{{ 'blog.comment.post.label' | trans }}</a>
                             </div>
 
