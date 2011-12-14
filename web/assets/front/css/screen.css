@@ -547,6 +547,10 @@ body.team {
     margin: 15px !important;
 }
 /* PROJECTS */
+body.project {
+    background-position: center bottom;
+    background-image: url(../images/mountains.jpg);
+}
 /* generic project listing (also used for the homepage) */
 section.projects ul {
     overflow: hidden;
@@ -645,6 +649,10 @@ section.projects li:not(.three) {
     background: url(../images/sprites.png) 0 284px repeat-x;
 }
 /* BLOG */
+body.blog {
+    background-position: center bottom;
+    background-image: url(../images/mountains.jpg);
+}
 .blog section.main {
     width: 610px;
 }
