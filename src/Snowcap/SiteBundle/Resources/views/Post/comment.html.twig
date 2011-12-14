@@ -1,26 +1,20 @@
-{% set comments_count = post.getValidComments()|length %}
 <div class="comments-container">
-    <div class="comments-count">
-        {{ 'blog.comments.count' | transchoice(comments_count) }}
-        <a href="{{ path('snwcp_site_post_comment', {'slug': post.slug }) }}" title="{{ 'blog.comment.post.title' | trans }}" class="post-comment-link">{{ 'blog.comment.post.label' | trans }}</a>
-    </div>
+    {% include 'SnowcapSiteBundle:Post:comments_count.html.twig' %}
     <div class="comments">
-        {% if comments_count > 0 %}
+        {% if (post.getValidComments()|length) > 0 %}
             <ul class="comments-list">
                 {% for comment in post.getComments() %}
                     <li>
-                        <h3>{{ 'blog.comment.title' | trans({'%relative_time%': comment.getPublishedAt()|time_ago, '%name%': comment.getName() })}}</h3>
-                        <p>{{ comment.body }}</p>
+                        <h3>{{ 'blog.comment.title' | trans({'%relative_time%': comment.getPublishedAt()|time_ago, '%name%': comment.getName() }) | raw }}</h3>
+                        <p>{{ comment.body | nl2br }}</p>
                     </li>
                 {% endfor %}
             </ul>
         {% endif %}
-
-        {% if post_result is not null %}
-            <div class="comments-post-result">{{ post_result | trans }}</div>
-        {% endif %}
-
-        <form action="{{ path('snwcp_site_post_comment', {'slug': post.slug }) }}" method="post" {{ form_enctype(form) }}>
+        <form action="{{ path('snwcp_site_post_comment', {'slug': post.slug }) }}" method="post" id="comment" {{ form_enctype(form) }}>
+            {% if post_result is not null %}
+                <p class="comments-post-result">{{ post_result | trans }}</p>
+            {% endif %}
             {{ form_widget(form) }}
 
             <input type="submit" value="{{ "blog.comment.submit" | trans }}" />

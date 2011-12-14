@@ -105,10 +105,13 @@ blog:
   published_on_in: Published %on% in <a href="%in_url%">%in%</a>
   comment:
     submit: Send
-    title: %relative_time% by %name%
+    title: %relative_time% by <strong>%name%</strong>
     post:
       title: Post a comment
       label: Post a comment
+    name: Your name
+    email: Your email
+    body: Your post
   empty: No post available
   category:
     all:
