@@ -11,11 +11,11 @@ immocitiz:
 
     ![A dummy image](/uploads/images/projects/ic_content.jpg "A dummy image")
 
-    Contestants are invited to browse the properties available on the website. Using a virtual money, they can buy the ones that they find the most interesting. Once the property has been bought, it generates revenue, as every visit on the property page brings a little play money to its owner.
+    Contestants are invited to browse the properties available on the website. Using virtual money, they can buy the ones that they find the most interesting. Once a property has been bought, it generates revenue, as every visit on the property page brings a little play money to its owner.
 
     **********************
 
-    Properties can be sold to the bank, or can be traded with other players. The player sucess depends on his ability to spot profitable properties that will attract a lot of visitors and then sell them at a higher price.
+    Properties can be sold to the bank, or can be traded with other players. The player's sucess depends on his ability to spot profitable properties that will attract a lot of visitors and then sell them at a higher price.
 
     As he progresses through the game, the player is rewarded with various badges and titles. He can also compare his real estate performances with his Facebook friends, and display his activity on his wall (if you want to [try the game](http://www.immocitiz.be "Immocitiz website"), don't worry - this is completely optional).
 
@@ -66,7 +66,7 @@ walibi:
 
       Today, Walibi, under the direction of the french group "Compagnie des Alpes", runs four sites in Belgium, in France, and in the Netherlands.
 
-      From the very beginning, Walibi had adopted the bright orange kangaroo as its mascot. When Walibi decided to renew their visual identity a few years ago, they decided that kangaroos were still cool, and gave their favourite animal a modern twist.
+      From the very beginning, Walibi had adopted the bright orange kangaroo as its mascot. When Walibi began to work on the revamp of their visual identity a few years ago, they decided that kangaroos were still cool, and gave their favourite animal a modern twist.
 
       Electric guitars, epic music battles, an evil kangaroo twin brother and a bunch of new funky characters : something has definitely changed in the world of Walibi.
 
@@ -82,9 +82,11 @@ walibi:
 
       Sometimes, customers want everything taken care of for them. And sometimes, they want to be empowered to do most of the work themselves - which was the route chosen by Walibi.
 
+      That's why we built the foundations of the new platform, added a few cool features  on top, and then put the enthusiastic Walibi web team in control.
+
       **********************
 
-      That's why we built the foundations of the new platform, added a few cool features  on top, and then put the enthusiastic Walibi web team in control. And it worked. It worked so well that from times to times, we look at the website, and discover new features, or even a whole new theme.
+      And it worked. It worked so well that from times to times, we look at the website, and discover new features, or even a whole new theme.
 
       ![A dummy image](/uploads/images/projects/wab_themes.jpg "A dummy image")
 
@@ -125,13 +127,13 @@ eurocenter:
   body: |
      %% Family business
 
-     Eurocenter started as a family business in 1984. From a single store, it has grown to one of the most well-known appliance retail chain in southern Belgium. It was only natural than a few years ago, they realized that they should be as successful online as they were offline.
+     Eurocenter started as a family business in 1984. From a single store, it has grown to one of the most well-known appliance retail chain in southern Belgium. It was only natural that a few years ago, they decided that they should be as successful online as they were offline.
 
      ![A dummy image](/uploads/images/projects/ec_pickup.jpg "A dummy image")
 
      ********************
 
-     The first version of the Eurocenter e-commerce web shop was functional, but somehow performed poorly in terms of conversion. In 2010 Eurocenter decided to hold a pitch for a new platform, and eventually gave the project the Stratenet, a web marketing agency.
+     The first version of the Eurocenter e-commerce web shop was functional, but somehow performed poorly in terms of conversion. In 2010 Eurocenter decided to hold a pitch for a new platform, and eventually gave the project to Stratenet, a web marketing agency.
 
      When Stratenet realized that they needed a solid technical partner that would be able to translate their strategy into code and features, they decided it was time to bring Snowcap to the team.
 
@@ -143,7 +145,7 @@ eurocenter:
 
      But in terms of features, it was clear from the start that Magento was not enough. Eurocenter needed a fully automatic catalog import system, a custom stock management engine, and had a very specific payment and delivery workflow that differed significantly from the one provided by Magento.
 
-     So we started coding, customized a few features, and built the custom parts from the ground up. The end result is a feature-rich eshop, updated daily through a sophisticated import system connected to the Eurocenter ERP.
+     So we started coding, tweaked a few features, and built the custom parts from the ground up. The end result is a feature-rich eshop, updated daily through a sophisticated import system connected to the Eurocenter ERP.
 
      And, above all, a very satisfied customer, who saw its gross online revenue tripled in just a few months.
 
@@ -177,7 +179,7 @@ orw:
 
     %% Some things must be said out loud
 
-    Located in Liège, the Opéra Royal de Wallonie (or ORW for the initate) has been hosting hundreds of representations since 1967. Their audience and is both belgian and international, and the Opera has experienced succesful collaborations with other institutions in neighboring countries.
+    Located in Liège, the Opéra Royal de Wallonie (or ORW for the initate) has been hosting hundreds of representations since 1967. Their audience is both belgian and international, and the Opera has experienced succesful collaborations with other institutions in neighboring countries.
 
     Promoting local and international artists, the ORW has built a solid reputation among opera amateurs... but that reputation still had to be translated on the web.
 
@@ -235,7 +237,7 @@ wilkinson:
   title: Wilkinson Sword
   slug: wilkinson
   introduction: |
-    Wilkinson Sword is the first project born from the collaboration between Snowcap and the brussels-based advertisement agency [Mortierbrigade](http://www.mortierbrgade.com "Mortierbrigade website"). It is also, of course, a website about shaving.
+    Wilkinson Sword is the first project born from the collaboration between Snowcap and the brussels-based advertisement agency [Mortierbrigade](http://www.mortierbrigade.com "Mortierbrigade website"). It is also, of course, a website about shaving.
   body: |
 
     ![A dummy image](/uploads/images/projects/wlk_her.jpg "A dummy image")
@@ -287,7 +289,7 @@ wilkinson:
 mortierbrigade:
   title: Mortierbrigade
   slug: mortierbrigade
-  introduction: Mortierbrigade makes no secret about their ambition : becoming the most influential agency in the world. When they decided to launch a new version of their own website, it was obvious that they had to hire extreme precision developers for the job.
+  introduction: Mortierbrigade makes no secret about its ambition : to become the most influential agency in the world. When they decided to launch a new version of their website, it was obvious that they had to hire extreme precision developers for the job.
   body: |
     %% From influence ...
 
@@ -301,7 +303,7 @@ mortierbrigade:
 
     *******************************
 
-    Finally, Mortierbrigade wanted to make sure that they would have full control on their content, and that anyone on their side would be able to manage it.
+    Finally, Mortierbrigade wanted to make sure that they would have full control over their content, and that anyone on their side would be able to manage it.
 
     ![A dummy image](/uploads/images/projects/mbg_cam.jpg "A dummy image")
 
@@ -372,7 +374,7 @@ sodexo:
 
     ********************
 
-    We have worked on this project for several month, providing analysis support, IT consultancy, as well as frontend and backend development.
+    We have worked on this project for several months, providing analysis support, IT consultancy, as well as frontend and backend development.
 
     ![Backend screenshot](/uploads/images/projects/sdx_backend.jpg "Backend screenshot")
 

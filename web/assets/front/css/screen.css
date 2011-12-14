@@ -275,6 +275,8 @@ body.home {
     margin: 15px 0;
     font-weight: 300;
     font-size: 24px;
+    line-height: 24px;
+    color: #0a0a0a;
 }
 .home section.secondary p.read-more {
     text-align: right;
@@ -847,6 +849,8 @@ ul.technology  {
     overflow: hidden;
 }
 ul.technology li {
+    padding:  0 10px;
+    color: #fff;
     list-style-type: none;
     float: left;
     line-height: 40px;
@@ -865,8 +869,6 @@ ul.technology li {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b4b4b', endColorstr='#252525',GradientType=0 ); /* IE6-9 */
 }
 ul.technology a {
-    padding:  0 10px;
-    color: #fff;
 }
 ul.technology a:hover {
     color: #8bc623;
