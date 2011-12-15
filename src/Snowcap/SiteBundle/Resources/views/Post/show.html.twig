@@ -20,7 +20,7 @@
                 {% if post.body != '' %}
                     {{ post.body | markdown }}
                 {% else %}
-                    <p>{{ post.summary }}</p>
+                    <p>{{ post.summary | markdown }}</p>
                 {% endif %}
             </article>
             {% render 'SnowcapSiteBundle:Post:comment' with ({ 'slug': post.slug })%}

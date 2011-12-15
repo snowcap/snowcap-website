@@ -3,7 +3,7 @@
     {% for post in latestPosts %}
         <article>
             {% if post.thumb %}
-                <img src="{{ post.thumb.webPath | imagine_filter('post_thumb') }}"/>
+                <img src="{{ post.thumb.webPath | imagine_filter('post_thumb') }}" alt="{{ post.thumb.alt }}"/>
             {% endif %}
             <h3>{{ post.title }}</h3>
             {{ post.summary | markdown }}

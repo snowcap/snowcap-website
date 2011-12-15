@@ -5,22 +5,16 @@
         <title>{% block meta_title %}Snowcap{% endblock %}</title>
         <meta name="description" content="{% block meta_description %}Snowcap is a web agency that specializes in open-source web development (PHP, Drupal, Magento, Zend, Symfony, Python, Django, Adobe AIR, HTML, Javascript, CSS). We also offer functional and technical analysis, as well as Linux IT support{% endblock %}">
         <meta name="keywords" content="{% block meta_keywords %}development, analysis, IT, support, PHP, Drupal, Magento, Zend, Python, Django, Adobe, AIR, HTML, Javascript, CSS, Linux{% endblock%}" >
-        <meta name="language" content="en">
         {% stylesheets 'assets/front/css/*' output='static/css/all.css' filter='cssrewrite, ?yui_css' %}
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
         {% endstylesheets %}
+        <!--[if lt IE 9]>
+            <script src="{{ asset('assets/front/js/html5.js') }}"></script>
+        <![endif]-->
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
         <link rel="alternate" type="application/rss+xml" title="{{ "general.feed.title" | trans }}" href="{{ path('snwcp_site_post_feed') }}" />
     </head>
     <body class="{{ body_class | default('default') }}">
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) {return;}
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
         <header>
             {% block header %}
                 {% include 'SnowcapSiteBundle::navigation.html.twig' %}
@@ -32,7 +26,7 @@
         <footer>
             {{ "general.footer" | trans({"%date%": "now" | date('Y') }) | markdown }}
         </footer>
-        <script type="text/javascript" charset="utf-8">
+        <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-18973609-2']);
             _gaq.push(['_trackPageview']);
@@ -45,9 +39,8 @@
                 s.parentNode.insertBefore(ga, s);
             })();
         </script>
-        {% javascripts 'assets/vendors/jquery/*' 'assets/front/js/*' output='static/js/all.js' filter='yui_js' %}
+        {% javascripts 'assets/vendors/jquery/*' 'assets/front/js/screen.js' output='static/js/all.js' filter='yui_js' %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
-        <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
     </body>
 </html>

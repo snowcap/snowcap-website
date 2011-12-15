@@ -1,3 +1,19 @@
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
 html, body {
     min-height: 100%;
 }
@@ -41,9 +57,11 @@ a:hover {
 /* WRAPPERS */
 .wrapper {
     min-width: 960px;
-    overflow: hidden;
     position: relative;
     padding: 1px 0;
+}
+.home .wrapper {
+    overflow: hidden;
 }
 /* HEADER */
 header {
@@ -597,7 +615,7 @@ body.team {
     margin: 30px 13px;
 }
 .team ul.social {
-    margin: 15px !important;
+    margin: 15px 40px !important;
 }
 /* PROJECTS */
 body.project {
@@ -946,6 +964,18 @@ body.blog {
     width: 100px;
     height: 76px;
 }
+.visual img.front {
+    left: 0;
+}
+.visual-preview img.back {
+    left: -390px;
+}
+.visual-thumb img.back {
+    left: -290px;
+}
+.visual-small img.back {
+    left: -100px;
+}
 /* flipper */
 .flipper {
     overflow: hidden;
@@ -968,18 +998,6 @@ body.blog {
 .flipper img {
     position: absolute;
     top: 0;
-}
-.visual img.front {
-    left: 0;
-}
-.visual-preview img.back {
-    left: -390px;
-}
-.visual-thumb img.back {
-    left: -290px;
-}
-.visual-small img.back {
-    left: -100px;
 }
 /* TECHNOLOGIES */
 ul.technology  {
