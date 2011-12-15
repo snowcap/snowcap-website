@@ -20,7 +20,7 @@ framework:
       assets_version: 1.2
     session:
         default_locale: %locale%
-        auto_start:     true
+        auto_start:     false
 
 # Twig Configuration
 twig:
