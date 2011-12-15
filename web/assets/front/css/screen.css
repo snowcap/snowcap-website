@@ -40,6 +40,8 @@ a:hover {
 }
 /* WRAPPERS */
 .wrapper {
+    min-width: 960px;
+    overflow: hidden;
     position: relative;
     padding: 1px 0;
 }
