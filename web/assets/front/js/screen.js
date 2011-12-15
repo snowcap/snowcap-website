@@ -151,6 +151,9 @@
          */
         _this.init = function () {
             _element.submit(function () {
+                $(':submit', this).click(function () {
+                    return false;
+                });
                 $.post(_element.attr('action'), _element.serialize(), function (data, response, xhr) {
                     var html = $(data);
                     _container.replaceWith(html);

@@ -19,4 +19,5 @@ use Symfony\Component\HttpFoundation\Request;
 $kernel = new AppKernel('dev', true);
 $kernel->loadClassCache();
 //$kernel = new AppCache($kernel);
+//error_log($kernel->getLog());
 $kernel->handle(Request::createFromGlobals())->send();

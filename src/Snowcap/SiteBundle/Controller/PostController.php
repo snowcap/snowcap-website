@@ -17,6 +17,20 @@ use Snowcap\SiteBundle\Form\CommentType;
 class PostController extends BaseController
 {
     /**
+     * @Route("/feed.rss", name="snwcp_site_post_feed", defaults={"_format"="rss"})
+     * @Template()
+     * @return array
+     */
+    public function feedAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $posts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(10);
+
+        return array('posts' => $posts);
+    }
+
+    /**
      *
      * @Route("/{category_slug}", name="snwcp_site_post_list", defaults={"category_slug"=null})
      * @Template()
@@ -30,20 +44,6 @@ class PostController extends BaseController
             'posts' => $posts,
             'current_category' => $category_slug
         );
-    }
-
-    /**
-     * @Route("/feed.rss", name="snwcp_site_post_feed", defaults={"_format"="rss"})
-     * @Template()
-     * @return array
-     */
-    public function feedAction()
-    {
-        $em = $this->getDoctrine()->getEntityManager();
-
-        $posts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(10);
-
-        return array('posts' => $posts);
     }
 
     /**
