@@ -5,9 +5,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
 use Snowcap\SiteBundle\Entity\Post;
-
+/**
+ * @Cache(expires="tomorrow", maxage="600")
+ */
 class DefaultController extends Controller
 {
     /**
