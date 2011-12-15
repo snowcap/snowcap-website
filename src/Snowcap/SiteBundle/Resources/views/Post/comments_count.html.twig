@@ -1,6 +1,8 @@
 {% set comment_string = ('blog.comments.count' | transchoice(post.getValidComments() | length)) %}
 <div class="comments-count">
-    {{ comment_string | raw }}
-    {% if comment_string|length > 0 %}|{% endif %}
+    <a href="{{ path('snwcp_site_post_show', {'slug': post.slug }) ~ '#comment' }}" title="{{ 'blog.comment.post.title' | trans }}" class="post-comment-count">
+        {{ comment_string | raw }}
+    </a>
+    {% if comment_string|length > 0 %} | {% endif %}
     <a href="{{ path('snwcp_site_post_show', {'slug': post.slug }) ~ '#comment' }}" title="{{ 'blog.comment.post.title' | trans }}" class="post-comment-link">{{ 'blog.comment.post.label' | trans }}</a>
 </div>

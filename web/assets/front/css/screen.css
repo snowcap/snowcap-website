@@ -755,7 +755,8 @@ body.blog {
     background-repeat: no-repeat;
 }
 .blog aside nav a.active,
-.blog aside nav a:hover {
+.blog aside nav a:hover,
+.blog-detail aside nav a {
    color: #0a0a0a;
 }
 .blog aside nav a.events {
@@ -790,7 +791,8 @@ body.blog {
     background-position: -961px -585px;
 }
 .blog aside nav a.back.active,
-.blog aside nav a.back:hover {
+.blog aside nav a.back:hover,
+.blog-detail aside nav a.back {
     background-position: 5px -585px;
 }
 .blog section.main img.thumb {
@@ -944,7 +946,10 @@ body.blog {
     text-transform: uppercase;
     color: #0a0a0a;
 }
-
+.blog section.main .comments-count .post-comment-count {
+    text-decoration: none;
+    color: #0a0a0a;
+}
 /* VISUALS */
 .visual {
     display: block;

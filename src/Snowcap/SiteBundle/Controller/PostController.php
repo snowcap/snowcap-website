@@ -129,7 +129,10 @@ class PostController extends BaseController
                         ->setBody($this->renderView('SnowcapSiteBundle:Email:newcomment.txt.twig', array('comment' => $comment, 'isSpam' => $isSpam)))
                         ->addPart($this->renderView('SnowcapSiteBundle:Email:newcomment.html.twig', array('comment' => $comment, 'isSpam' => $isSpam)), 'text/html')
                     ;
-                $this->get('mailer')->send($message);
+                try {
+                    $this->get('mailer')->send($message);
+                }
+                catch(\Exception $e){}
 
             }
         }
