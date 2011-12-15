@@ -8,9 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
 use Snowcap\SiteBundle\Entity\Post;
-/**
- * @Cache(expires="tomorrow", maxage="600")
- */
+
 class DefaultController extends Controller
 {
     /**
