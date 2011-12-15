@@ -8,8 +8,10 @@
         {% stylesheets 'assets/front/css/*' output='static/css/all.css' filter='cssrewrite, ?yui_css' %}
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
         {% endstylesheets %}
-        <!--[if lt IE 9]>
-            <script src="{{ asset('assets/front/js/html5.js') }}"></script>
+        <!--[if (gte IE 6)&(lte IE 8)]>
+            {% javascripts 'assets/front/js/modernizr.js' 'assets/front/js/selectivizr.js' output='static/js/ie.js' filter='yui_js' %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
         <![endif]-->
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
         <link rel="alternate" type="application/rss+xml" title="{{ "general.feed.title" | trans }}" href="{{ path('snwcp_site_post_feed') }}" />
@@ -39,7 +41,7 @@
                 s.parentNode.insertBefore(ga, s);
             })();
         </script>
-        {% javascripts 'assets/vendors/jquery/*' 'assets/front/js/screen.js' output='static/js/all.js' filter='yui_js' %}
+        {% javascripts 'assets/vendors/jquery/jquery-1.7.js' 'assets/front/js/screen.js' output='static/js/all.js' filter='yui_js' %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
     </body>

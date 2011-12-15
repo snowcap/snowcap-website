@@ -27,7 +27,8 @@ body {
     background-repeat: no-repeat;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: Lato, sans-serif;
+    font-family: 'DINLight', sans-serif;
+    font-weight: normal;
     letter-spacing: -0.01em;
 }
 h1.main-title, h2.main-title {
@@ -35,12 +36,12 @@ h1.main-title, h2.main-title {
     background-repeat: no-repeat;
     background-position: right top;
     position: absolute;
-    height: 55px;
-    line-height: 55px;
+    height: 50px;
+    line-height: 50px;
     left: 0;
     top: 0;
     margin: 0 0 0 -480px;
-    padding: 0 150px 0 50%;
+    padding: 5px 150px 0 50%;
     color: #0a0a0a;
     font-size: 30px;
     font-weight: 300;
@@ -72,10 +73,11 @@ header {
 }
 header nav {
     width: 860px;
+    height: 40px;
     margin: 0 auto;
     padding: 0 100px 0 0;
     overflow: hidden;
-    font-family: Lato, sans-serif;
+    font-family: 'DINLight', sans-serif;
     font-weight: 300;
     font-size: 13px;
     position: relative;
@@ -134,7 +136,7 @@ header nav a.contact {
 }
 header nav a.twitter {
     position: absolute;
-    top: 5px;
+    top: 7px;
     right: 30px;
     width: 32px;
     height: 24px;
@@ -147,7 +149,7 @@ header nav a.twitter:hover {
 }
 header nav a.facebook {
     position: absolute;
-    top: 5px;
+    top: 7px;
     right: 5px;
     width: 14px;
     height: 24px;
@@ -305,11 +307,11 @@ body.home {
 .home section.projects h2{
     background-position: right 0;
     width: 350px;
-    line-height: 55px;
+    line-height: 50px;
     font-size: 30px;
     margin: 0 0 20px 0;
     text-transform: uppercase;
-    padding: 0 0 0 10px;
+    padding: 5px 0 0 10px;
     background-image: url(../images/headings.png);
     background-repeat: no-repeat;
 }
@@ -324,11 +326,11 @@ body.home {
 .home section.secondary h2 {
     margin: 0;
     text-transform: uppercase;
-    padding: 0 0 0 10px;
+    padding: 3px 0 0 10px;
     background-image: url(../images/headings.png);
     background-repeat: no-repeat;
     background-position: right -55px;
-    line-height: 35px;
+    line-height: 32px;
     font-size: 24px;
 }
 .home section.secondary h2 a {
@@ -383,11 +385,11 @@ body.home {
 }
 .home section.tweets li p.text {
     margin-top: 2px;
-    font-family: Lato, sans-serif;
+    font-family: 'DINLight', sans-serif;
+    font-weight: normal;
     font-size: 18px;
     color: #404040;
     line-height: 24px;
-    font-weight: 300;
 }
 /* nerds */
 .home section.nerds {
@@ -446,7 +448,7 @@ body.company {
     left: 0;
     right: 50%;
     margin: 0;
-    padding: 0 65px 0 35%;
+    padding: 5px 65px 0 35%;
     width: 480px;
 }
 .company h1.main-title {
@@ -583,7 +585,7 @@ body.team {
     top: 15px;
 }
 .team section.main .member-details dd.age {
-    font-family: Lato, sans-serif;
+    font-family: 'DINLight', sans-serif;
     font-size: 45px;
     font-weight: 300;
     left: 15px;
@@ -595,7 +597,7 @@ body.team {
 }
 .team section.main .member-details dd.skills {
     font-weight: 300;
-    font-family: Lato, sans-serif;
+    font-family: 'DINLight', sans-serif;
     text-transform: uppercase;
     left: 90px;
     top: 35px;
@@ -638,7 +640,8 @@ section.projects li {
     overflow: hidden;
 }
 section.projects li h3 {
-    font-weight: 700;
+    font-family: 'DINRegular', sans-serif;
+    font-weight: normal;
     position: absolute;
     top: -20px;
     left: 0;
@@ -747,7 +750,7 @@ body.blog {
     margin-bottom: 2px;
     font-size: 18px;
     text-transform: uppercase;
-    font-family: Lato, sans-serif;
+    font-family: 'DINLight', sans-serif;
     color: #cccaca;
     text-decoration: none;
     padding-left: 45px;
@@ -930,7 +933,7 @@ body.blog {
     bottom: 20px;
     background-color: #000;
     border: 0;
-    font-family: Lato, sans-serif;
+    font-family: 'DINLight', sans-serif;
     font-size: 14px;
     line-height: 18px;
     color: #79bd01;
