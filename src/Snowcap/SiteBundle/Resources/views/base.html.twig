@@ -26,7 +26,7 @@
             {% block body %}{% endblock %}
         </div>
         <footer>
-            {{ "general.footer" | trans({"%date%": "now" | date('Y') }) | markdown }}
+            {% include 'SnowcapSiteBundle::footer.html.twig' %}
         </footer>
         <script type="text/javascript">
             var _gaq = _gaq || [];
