@@ -90,6 +90,9 @@ cases:
   list:
     title: Cases
     empty: No case available
+  technology:
+    title: View technology used
+    label: Technology
 blog:
   meta:
     title: Blog - Snowcap

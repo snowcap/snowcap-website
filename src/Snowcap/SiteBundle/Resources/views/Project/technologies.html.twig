@@ -1,7 +1,13 @@
 {% if technologies|length > 0 %}
-    <ul class="technology">
-        {% for technology in technologies %}
-            <li>{{ technology.name }}</li>
-        {% endfor %}
-    </ul>
+    <div class="technology-overview">
+        <p class="read-technology"><a href="#technology" title="{{ "cases.technonology.title" | trans }}" class="rounded-black">{{ "cases.technology.label" | trans }}</a></p>
+        <ul class="technology">
+            {% for technology in technologies %}
+                <li>
+                    <h3 class="rounded-black">{{ technology.name }}</h3>
+                    {{ technology.description | markdown }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endif %}

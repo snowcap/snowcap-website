@@ -661,7 +661,6 @@ section.projects li:not(.three) {
     padding-right: 480px;
     position: relative;
     height: 285px;
-    overflow:  hidden;
     color: #a6a6a6;
 }
 .project section.project-overview p {
@@ -1005,22 +1004,62 @@ body.blog {
     top: 0;
 }
 /* TECHNOLOGIES */
-ul.technology  {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+div.technology-overview {
+    position: relative;
 }
-ul.technology li {
+p.read-technology a {
+    display: inline-block;
     padding:  0 10px;
     color: #fff;
-    list-style-type: none;
-    float: left;
     line-height: 40px;
-    border-radius: 2px;
-    margin-right: 3px;
     font-size: 13px;
     font-weight: 700;
-    font-style: italic;
+    text-transform: uppercase;
+}
+.project section.project-overview .technology-overview p {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 100;
+    color: #818181;
+}
+ul.technology  {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    width: 385px;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    border: 1px solid #bdbdbd;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+ul.technology li {
+    list-style-type: none;
+    clear: left;
+    padding: 20px;
+}
+ul.technology li h3{
+    float: left;
+    width: 52px;
+    height: 50px;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 50px;
+}
+ul.technology a {
+}
+ul.technology a:hover {
+    color: #8bc623;
+    text-decoration: none;
+}
+.rounded-black {
+    text-align: center;
+    text-shadow: 0 -2px #202020;
+    border-radius: 2px;
     background: #4b4b4b; /* Old browsers */
     background: -moz-linear-gradient(top, #4b4b4b 6%, #252525 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,#4b4b4b), color-stop(100%,#252525)); /* Chrome,Safari4+ */
@@ -1029,12 +1068,6 @@ ul.technology li {
     background: -ms-linear-gradient(top, #4b4b4b 6%,#252525 100%); /* IE10+ */
     background: linear-gradient(top, #4b4b4b 6%,#252525 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b4b4b', endColorstr='#252525',GradientType=0 ); /* IE6-9 */
-}
-ul.technology a {
-}
-ul.technology a:hover {
-    color: #8bc623;
-    text-decoration: none;
 }
 /* SOCIAL */
 ul.social {
