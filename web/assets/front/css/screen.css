@@ -1007,52 +1007,17 @@ body.blog {
     top: 0;
 }
 /* TECHNOLOGIES */
-div.technology-overview {
+ul.technology-list {
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul.technology-list li {
+    float: left;
     position: relative;
 }
-p.read-technology a {
-    display: inline-block;
-    padding:  0 10px;
-    color: #fff;
-    line-height: 40px;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-span.technology-arrow {
-    display: block;
-    position: absolute;
-    top: 28px;
-    left: -5px;
-    z-index: 11;
-    background: transparent url(../images/sprites.png) no-repeat -40px -400px;
-    width: 5px;
-    height: 10px;
-}
-#technology  {
-    position: absolute;
-    display: none;
-    top: -15px;
-    left: 110px;
-    width: 385px;
-    z-index: 10;
-    border-radius: 5px;
-    background-color: #f4f4f4;
-    border: 1px solid #bdbdbd;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-}
-#technology ul {
-    margin: 0;
-    padding: 0 0 20px 0;
-}
-#technology li {
-    list-style-type: none;
-    clear: left;
-    padding: 20px;
-    height: 35px;
-}
-#technology li h3{
+ul.technology-list li h3{
     float: left;
     width: 52px;
     height: 50px;
@@ -1060,8 +1025,9 @@ span.technology-arrow {
     color: #fff;
     font-family: 'DINRegular', sans-serif;
     font-size: 10px;
+    cursor: pointer;
 }
-#technology li h3 span {
+ul.technology-list li h3 span {
     display: block;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -1069,21 +1035,43 @@ span.technology-arrow {
     width: 52px;
     height: 50px;
 }
-#technology p {
+.technology  {
+    position: absolute;
+    display: none;
+    bottom: -80px;
+    left: 0;
+    width: 385px;
+    z-index: 10;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    border: 1px solid #bdbdbd;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+span.technology-arrow {
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 20px;
+    z-index: 11;
+    background: transparent url(../images/sprites.png) no-repeat -40px -400px;
+    width: 10px;
+    height: 5px;
+}
+.project section.project-overview .technology p {
     display: table-cell;
     font-size: 14px;
     margin: 0;
-    padding: 0;
+    padding: 10px 20px;
     line-height: 18px;
     font-weight: 100;
     color: #818181;
     vertical-align: middle;
     height: 54px;
 }
-#technology a {
+.technology a {
     font-weight: bold;
 }
-#technology a:hover {
+.technology a:hover {
     color: #8bc623;
     text-decoration: none;
 }
