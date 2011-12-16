@@ -179,32 +179,35 @@
          * CommentForm init
          */
         _this.init = function () {
-            var qtip = $(_element.attr('href'));
+            var trigger = _element.prev();
+            _element.addClass('qtip');
             var quit;
-            _element.mouseenter(function(event) {
-                qtip.show();
-                qtip.mouseenter(function(event) {
+            trigger.mouseenter(function(event) {
+                $('.qtip').hide();
+                _element.show();
+                _element.mouseenter(function(event) {
                     clearTimeout(quit);
                 });
-                qtip.mouseleave(function(event) {
+                _element.mouseleave(function(event) {
                     quit = setTimeout(function() {
-                        qtip.fadeOut(500);
+                        _element.fadeOut(500);
                     }, 500);
                 });
             });
-            _element.mouseleave(function(event) {
+            trigger.mouseleave(function(event) {
                 quit = setTimeout(function() {
-                    qtip.fadeOut(500);
+                    _element.fadeOut(500);
                 }, 500);
             });
-            _element.click(function(event) {
+            trigger.click(function(event) {
                 event.preventDefault();
                 event.stopPropagation();
-                qtip.fadeIn(500);
+                $('.qtip').fadeOut(500);
+                _element.fadeToggle(500);
             });
             $('body').click(function(event) {
-                qtip.fadeOut(500);
-            })
+                _element.fadeOut(500);
+            });
         };
         /* INIT */
         _this.init();
@@ -227,7 +230,7 @@
         $('section.tweets ul').twitterFeed();
         // Ajaxify comments posts
         $('.comments form').commentForm();
-        $('.read-technology a').technoTip();
+        $('.technology').technoTip();
         // Observer external links
         $('a[rel*=external]').click(function (event) {
             event.preventDefault();
