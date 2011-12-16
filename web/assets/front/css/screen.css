@@ -1166,15 +1166,30 @@ ul.social li.facebook a:hover {
 }
 /* FOOTER */
 footer {
-    padding: 5px;
-    margin: 0 auto 10px auto;
-    width: 450px;
-    background: #f6f6f6;
+    position: relative;
 }
 footer p {
-    margin: 0;
+    padding: 5px 10px;
+    margin: 0 auto 10px auto;
+    width: 600px;
+    background: #f6f6f6;
     color: #818181;
-    text-align: center;
     font-size: 11px;
     font-weight: bold;
+    text-align: center;
+}
+footer #onemd {
+    position: absolute;
+    display:block;
+    text-indent: -999em;
+    top: 5px;
+    right: 15px;
+    height: 16px;
+    background: transparent url(../images/1md.png) no-repeat;
+    width: 20px;
+}
+
+/* VCARD */
+footer .vcard .tel .type {
+    display: none;
 }
