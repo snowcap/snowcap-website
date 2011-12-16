@@ -1018,27 +1018,41 @@ p.read-technology a {
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
+    text-decoration: none;
 }
-ul.technology  {
+span.technology-arrow {
+    display: block;
     position: absolute;
-    top: -20px;
-    right: -30px;
+    top: 28px;
+    left: -5px;
+    z-index: 11;
+    background: transparent url(../images/sprites.png) no-repeat -40px -400px;
+    width: 5px;
+    height: 10px;
+}
+#technology  {
+    position: absolute;
+    display: none;
+    top: -15px;
+    left: 110px;
     width: 385px;
-    margin: 0;
-    padding: 0 0 20px 0;
     z-index: 10;
     border-radius: 5px;
     background-color: #f4f4f4;
     border: 1px solid #bdbdbd;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
-ul.technology li {
+#technology ul {
+    margin: 0;
+    padding: 0 0 20px 0;
+}
+#technology li {
     list-style-type: none;
     clear: left;
     padding: 20px;
     height: 35px;
 }
-ul.technology li h3{
+#technology li h3{
     float: left;
     width: 52px;
     height: 50px;
@@ -1047,7 +1061,7 @@ ul.technology li h3{
     font-family: 'DINRegular', sans-serif;
     font-size: 10px;
 }
-ul.technology li h3 span {
+#technology li h3 span {
     display: block;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -1055,7 +1069,7 @@ ul.technology li h3 span {
     width: 52px;
     height: 50px;
 }
-.project section.project-overview .technology-overview p {
+#technology p {
     display: table-cell;
     font-size: 14px;
     margin: 0;
@@ -1066,10 +1080,10 @@ ul.technology li h3 span {
     vertical-align: middle;
     height: 54px;
 }
-ul.technology a {
+#technology a {
     font-weight: bold;
 }
-ul.technology a:hover {
+#technology a:hover {
     color: #8bc623;
     text-decoration: none;
 }

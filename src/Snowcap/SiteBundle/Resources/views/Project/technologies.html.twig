@@ -1,13 +1,16 @@
 {% if technologies|length > 0 %}
     <div class="technology-overview">
-        <p class="read-technology"><a href="#technology" title="{{ "cases.technonology.title" | trans }}" class="rounded-black">{{ "cases.technology.label" | trans }}</a></p>
-        <ul class="technology">
-            {% for technology in technologies %}
-                <li>
-                    <h3 class="rounded-black"><span style="background-image: url({{ asset('assets/front/images/technology/' ~ technology.getSlug() ~ '.png') }});">{{ technology.name }}</span></h3>
-                    {{ technology.description | markdown }}
-                </li>
-            {% endfor %}
-        </ul>
+        <p class="read-technology"><a href="#technology" title="{{ "cases.technology.title" | trans }}" class="rounded-black">{{ "cases.technology.label" | trans }}</a></p>
+        <div id="technology">
+            <ul class="technology-list">
+                {% for technology in technologies %}
+                    <li>
+                        <h3 class="rounded-black"><span style="background-image: url({{ asset('assets/front/images/technology/' ~ technology.getSlug() ~ '.png') }});">{{ technology.name }}</span></h3>
+                        {{ technology.description | markdown }}
+                    </li>
+                {% endfor %}
+            </ul>
+            <span class="technology-arrow"></span>
+        </div>
     </div>
 {% endif %}

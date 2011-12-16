@@ -171,6 +171,41 @@
             new CommentForm(this);
         });
     };
+    var TechnoTip = function (element) {
+        var _this = this;
+        var _element = $(element);
+
+        /**
+         * CommentForm init
+         */
+        _this.init = function () {
+            var qtip = $(_element.attr('href'));
+            var quit;
+            _element.mouseenter(function(event) {
+                qtip.show();
+                qtip.mouseenter(function(event) {
+                    clearTimeout(quit);
+                });
+                qtip.mouseleave(function(event) {
+                    quit = setTimeout(function() {
+                        qtip.fadeOut(500);
+                    }, 500);
+                });
+            });
+            _element.mouseleave(function(event) {
+                quit = setTimeout(function() {
+                    qtip.fadeOut(500);
+                }, 500);
+            });
+        };
+        /* INIT */
+        _this.init();
+    };
+    $.fn.technoTip = function () {
+        return this.each(function () {
+            new TechnoTip(this);
+        });
+    };
 
     /* DOMREADY */
     $(document).ready(function (event) {
@@ -178,9 +213,13 @@
         $('.flipper').flipper();
         // Remove title on latest project for homepage links
         $(".home .projects li a").attr('title', '');
+        // Apply active menu styles
         $('header nav').navigation();
+        // Autoscroll twitter feed
         $('section.tweets ul').twitterFeed();
+        // Ajaxify comments posts
         $('.comments form').commentForm();
+        $('.read-technology a').technoTip();
         // Observer external links
         $('a[rel*=external]').click(function (event) {
             event.preventDefault();
