@@ -197,6 +197,14 @@
                     qtip.fadeOut(500);
                 }, 500);
             });
+            _element.click(function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                qtip.fadeIn(500);
+            });
+            $('body').click(function(event) {
+                qtip.fadeOut(500);
+            })
         };
         /* INIT */
         _this.init();
