@@ -4,7 +4,7 @@
         <ul class="technology">
             {% for technology in technologies %}
                 <li>
-                    <h3 class="rounded-black">{{ technology.name }}</h3>
+                    <h3 class="rounded-black"><span style="background-image: url({{ asset('assets/front/images/technology/' ~ technology.getSlug() ~ '.png') }});">{{ technology.name }}</span></h3>
                     {{ technology.description | markdown }}
                 </li>
             {% endfor %}
