@@ -43,23 +43,44 @@ class Technology extends BaseModel
     /**
      * @var string
      *
+     * @ORM\Column(name="short_description", type="string", length=255)
+     */
+    protected $shortDescription;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="description", type="text")
      */
-    private $description;
+    protected $description;
+
+    /**
+     * @var  string
+     *
+     * @ORM\Column(name="website", type="string", length=255)
+     */
+    protected $website;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      *
      * @ORM\ManyToMany(targetEntity="Project", mappedBy="technologies")
      */
-    private $projects;
+    protected $projects;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      *
      * @ORM\ManyToMany(targetEntity="Post", mappedBy="technologies")
      */
-    private $posts;
+    protected $posts;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="highlight", type="boolean")
+     */
+    protected $highlight;
 
     /**
      * Class constructor
@@ -122,6 +143,38 @@ class Technology extends BaseModel
     }
 
     /**
+     * @param string $shortDescription
+     */
+    public function setShortDescription($shortDescription)
+    {
+        $this->shortDescription = $shortDescription;
+    }
+
+    /**
+     * @return string
+     */
+    public function getShortDescription()
+    {
+        return $this->shortDescription;
+    }
+
+    /**
+     * @param string $website
+     */
+    public function setWebsite($website)
+    {
+        $this->website = $website;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->website;
+    }
+
+    /**
      * Set Posts
      *
      * @param \Doctrine\Common\Collections\ArrayCollection $posts
@@ -175,5 +228,21 @@ class Technology extends BaseModel
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * @param string $highlight
+     */
+    public function setHighlight($highlight)
+    {
+        $this->highlight = $highlight;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHighlight()
+    {
+        return $this->highlight;
     }
 }

@@ -36,8 +36,8 @@ class DefaultController extends Controller
      * @Template()
      */
     public function servicesAction() {
-
-        return array();
+        $technologies = $this->getDoctrine()->getEntityManager()->getRepository('SnowcapSiteBundle:Technology')->findBy(array('highlight' => true));
+        return array('technologies' => $technologies);
     }
     /**
      * @Route("/team", name="snwcp_site_default_team")

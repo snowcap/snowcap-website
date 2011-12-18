@@ -1,40 +1,70 @@
 php:
   name: PHP
   slug: php
+  short_description: Server-side scripting language
   description: |
-    Our core language, [php.net](http://www.php.net "PHP website")
+    Invented in 1995 by Rasmus Ledorf, PHP is probably the most famous web programming language. Fast, open-source and widely spread, it is a
+    very handy tool that powers millions of website.
+  website: http://www.php.net
+  highlight: true
 symfony:
   name: Symfony
   slug: symfony
+  short_description: PHP web application framework
   description: |
-    Our favourite PHP Framework! [symfony.com](http://www.symfony.com "Symfony website")
+    Symfony is a web application framework written in PHP. It allows us to quickly build powerful, performant and robust websites / web applications
+    without reinventing the wheel.
+  website: http://www.symfony.com
+  highlight: true
 zend:
-  name: Zend
-  slug: zend
+  name: Zend Framework
+  slug: zend-framework
+  short_description: PHP web application framework
   description: |
-    PHP Framework, [zend.com](http://www.zend.com "Zend website")
+    The Zend Framework is a PHP MVC framework. With the support of the firm behind php itself, this framework is robust and feature-rich. It can be used for
+    a wide range of applications.
+  website: http://framework.zend.com
+  highlight: false
 varnish:
   name: Varnish
   slug: varnish
+  short_description: HTTP accelerator
   description: |
-    HTTP Accelerator. [Varnish Cache](http://www.varnish-cache.org "Varnish website") is an open source, state of the art web application accelerator. We use it a lot!
+    Varnish is a HTTP accelerator. Free and open-source, this technology can drastically improve your website performance. We use it for nearly every web project
+    that we work on.
+  website: http://www.varnish-cache.org/
+  highlight: true
 memcached:
   name: Memcached
   slug: memcached
+  short_description: RAM cache engine
   description: |
-    [Memcached](http://www.memcached.org "Memcached website") is a high-performance, distributed memory object caching system
+    Memcached actually stores your data in the server's RAM memory, and can deliver it in a matter of milliseconds. We use this tool to cache data that takes a lot of resources to
+    compute.
+  website: http://www.memcached.org
+  highlight: true
 rabbitmq:
   name: RabbitMQ
   slug: rabbitmq
+  short_description: Messages and queues
   description: |
-    [RabbitMQ](http://www.rabbitmq.com "RabbitMQ website") is a complete and highly reliable messaging system. It allows us to decouple huge/many/long requests from the browser
+    RabbitMQ is a high performance distributed messaging engine written in Erlang. It allows us to build decoupled message queues that handle some of the most heavy
+    tasks behind the scene.
+  website: http://www.rabbitmq.com
+  highlight: true
 drupal:
   name: Drupal
   slug: drupal
+  short_description: Open-source Content Management System
   description: |
-    [Drupal](http://www.drupal.org "Drupal website") is an open source content management platform. If we must use a CMS, we'll choose Drupal
+    Drupal is a free and open-source Content Management System. It is a mature tool, with a huge community and countless add-ons.
+  website: http://www.drupal.org
+  highlight: false
 magento:
   name: Magento
   slug: magento
+  short_description: PHP E-commerce platform
   description: |
-    Complete eCommerce platform, [magentocommerce.com](http://www.magentocommerce.com "Magento website")
+    Magento is a PHP, Zend Framework-based e-commerce platform. It has an open-source edition and a wide set of features.
+  website: http://www.magentocommerce.com
+  highlight: false

@@ -8,6 +8,7 @@
     <div class="full">
         <section class="main content standard">
             {{ 'services.body' | trans | markdown }}
+            {% include "SnowcapSiteBundle:widget:technologies.html.twig" with { 'technologies': technologies } %}
         </section>
     </div>
 {% endblock %}

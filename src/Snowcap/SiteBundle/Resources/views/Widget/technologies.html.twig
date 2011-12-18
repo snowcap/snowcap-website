@@ -4,7 +4,9 @@
             <li>
                 <h3 class="rounded-black"><span style="background-image: url({{ asset('assets/front/images/technology/' ~ technology.getSlug() ~ '.png') }});">{{ technology.name }}</span></h3>
                 <div class="technology">
+                    <h4><strong>{{ technology.name }}</strong> | <em>{{ technology.short_description }}</em></h4>
                     {{ technology.description | markdown }}
+                    <p class="website"><a href="{{ technology.website }}" rel="external">{{ technology.website }}</a></p>
                     <span class="technology-arrow"></span>
                 </div>
             </li>
