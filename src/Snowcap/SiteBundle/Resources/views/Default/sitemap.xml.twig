@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+    <loc>http://www.snowcap.be</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>http://www.snowcap.be/services</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.snowcap.be/cases</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.snowcap.be/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.snowcap.be/company</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>http://www.snowcap.be/team</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>http://www.snowcap.be/contact</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+{% for case in cases %}
+<url>
+    <loc>http://www.snowcap.be/cases/{{ case.slug }}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>{% if case.highlighted %}0.7{% else %}0.6{% endif %}</priority>
+</url>
+{% endfor %}
+
+{% for post in posts %}
+<url>
+    <loc>http://www.snowcap.be/blog/{{ post.slug }}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>{% if post.category.slug == 'thoughts'%}0.7{% elseif post.category.slug == 'cases'%}0.6{% else %}0.4{% endif %}</priority>
+</url>
+{% endfor %}
+
+</urlset>

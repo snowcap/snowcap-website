@@ -57,4 +57,21 @@ class DefaultController extends Controller
         return array();
     }
 
+    /**
+     * @Route("/sitemap.xml", defaults={"_format"="xml"}, name="snwcp_site_default_sitemap")
+     * @Template()
+     */
+    public function sitemapAction() {
+
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $cases = $em->getRepository('SnowcapSiteBundle:Project')->getList(10000, null, true);
+        $posts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(10000);
+
+        return array(
+            "cases" => $cases,
+            "posts" => $posts,
+        );
+    }
+
 }
