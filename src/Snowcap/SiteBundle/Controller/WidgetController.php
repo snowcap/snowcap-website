@@ -28,8 +28,9 @@ class WidgetController extends Controller
         $tweets = array();
         if (is_object($result) && count($result->results)) {
             foreach ($result->results as $tweet) {
+                $date = new \DateTime($tweet->created_at);
                 $tweets[] = array(
-                    'date' => new \DateTime($tweet->created_at),
+                    'date' => $date->format('U'),
                     'text' => $tweet->text,
                     'from_user' => $tweet->from_user,
                 );

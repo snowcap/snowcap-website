@@ -1,14 +1,14 @@
 <h2><a href="">{{ "widget.tweets.title" | trans }}</a></h2>
 {% if tweets|length > 0 %}
-<ul>
-    {% for tweet in tweets %}
-        <li>
-            <p class="date">{{ tweet.date | date('F Y') }} by {{ ('@' ~ tweet.from_user) | parse_tweet }}</p>
+    <ul>
+        {% for tweet in tweets %}
+            <li>
+                <p class="date">{{ tweet.date | date('F Y') }} by {{ ('@' ~ tweet.from_user) | parse_tweet }}</p>
 
-            <p class="text">{{ tweet.text | parse_tweet }}</p>
-        </li>
-    {% endfor %}
-</ul>
+                <p class="text">{{ tweet.text | parse_tweet }}</p>
+            </li>
+        {% endfor %}
+    </ul>
 {% else %}
     <p>{{ "widget.tweets.empty" | trans }}</p>
 {% endif %}
