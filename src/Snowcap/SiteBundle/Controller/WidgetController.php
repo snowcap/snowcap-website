@@ -17,27 +17,31 @@ class WidgetController extends Controller
      */
     public function tweetsAction()
     {
-        $relative_filename = __DIR__ . '/../../../../web/uploads/twitter.json';
-        $filename = realpath($relative_filename);
-        if (!$filename) {
-            touch($relative_filename);
-            $filename = realpath($relative_filename);
-        }
-        $twitter = $this->get('twitter');
-        $result = $twitter->get('search.json?q=snwcp&rpp='.  $this->container->getParameter('twitter_limit') .'&');
         $tweets = array();
-        if (is_object($result) && count($result->results)) {
-            foreach ($result->results as $tweet) {
-                $date = new \DateTime($tweet->created_at);
-                $tweets[] = array(
-                    'date' => $date->format('U'),
-                    'text' => $tweet->text,
-                    'from_user' => $tweet->from_user,
-                );
+        try {
+            $relative_filename = __DIR__ . '/../../../../web/uploads/twitter.json';
+            $filename = realpath($relative_filename);
+            if (!$filename) {
+                touch($relative_filename);
+                $filename = realpath($relative_filename);
             }
-            file_put_contents($filename, json_encode($tweets));
-        } else {
-            $tweets = json_decode(file_get_contents($filename), false);
+            $twitter = $this->get('twitter');
+            $result = $twitter->get('search.json?q=snwcp&rpp='.  $this->container->getParameter('twitter_limit') .'&');
+            if (is_object($result) && count($result->results)) {
+                foreach ($result->results as $tweet) {
+                    $date = new \DateTime($tweet->created_at);
+                    $tweets[] = array(
+                        'date' => $date->format('U'),
+                        'text' => $tweet->text,
+                        'from_user' => $tweet->from_user,
+                    );
+                }
+                file_put_contents($filename, json_encode($tweets));
+            } else {
+                $tweets = json_decode(file_get_contents($filename), false);
+            }
+        } catch(\Exception $e) {
+            error_log($e);
         }
         return array('tweets' => $tweets);
     }
