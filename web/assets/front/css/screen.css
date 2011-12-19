@@ -521,17 +521,37 @@ body.contact {
 .contact .wrapper {
     min-height: 859px;
 }
-.contact section.main {
+.contact div.split {
     margin-top: 300px;
-    padding-left: 500px;
+}
+.contact section.content {
+    width: 500px;
+}
+.contact section.content address {
+    font-style: normal;
+    font-size: 16px;
+}
+.contact section.content address h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: normal;
+}
+.contact section.content p.geo {
+    text-transform: uppercase;
+    color: #cccaca;
+    font-size: 10px;
+}
+.contact section.map {
+    width: 430px;
 }
 .contact .snowcap-map {
     width: 100%;
     height: 300px;
-    margin:  30px 0;
+    margin:  55px 0 0 0;
 }
 .contact ul.social {
-    margin: 30px 0;
+    margin: 30px 0 0 0;
 }
 /* TEAM */
 body.team {
@@ -1178,11 +1198,17 @@ ul.social li.facebook a {
 ul.social li.facebook a:hover {
     background-position: 1px -367px;
 }
+ul.social li.phone a {
+     background-position: -440px -267px;
+}
+ul.social li.phone a:hover {
+     background-position: -293px -267px;
+}
 /* FOOTER */
 footer {
     position: relative;
 }
-footer p {
+footer address {
     padding: 5px 10px;
     margin: 0 auto 10px auto;
     width: 600px;
@@ -1191,6 +1217,7 @@ footer p {
     font-size: 11px;
     font-weight: bold;
     text-align: center;
+    font-style: normal;
 }
 footer #onemd {
     position: absolute;

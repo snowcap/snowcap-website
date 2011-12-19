@@ -6,15 +6,28 @@
 {% block body %}
     <h1 class="main-title">{{ "contact.title" | trans }}</h1>
     <h2 id="mountain">{{ "general.snowcap" | trans }}</h2>
-    <div class="full">
-        <section class="main content standard">
-            {{ "contact.body" | trans | markdown }}
+    <div class="split split-2">
+        <section class="content standard">
+            <address>
+                <h2>{{ "contact.official_name" | trans }}</h2>
+                <p>
+                    {{ "contact.address.street" | trans }}<br/>
+                    {{ "contact.address.zip" | trans }} - {{ "contact.address.city" | trans }}<br/>
+                    {{ "contact.address.country" | trans }}
+                </p>
+            </address>
+            <p class="geo">
+                <strong>{{ "contact.latitude" | trans }}</strong> <span class="latitude">{{ "contact.address.latitude" | trans }}</span> <strong>{{ "contact.longitude" | trans }}</strong> <span class="longitude">{{ "contact.address.longitude" | trans }}</span>
+            </p>
             <ul class="social">
                 <li class="mail"><a href="mailto:shoot@snowcap.be">shoot@snowcap.be</a></li>
-                <li class="facebook"><a class="facebook" href="http://www.facebook.com/snwcp" title="{{ "general.facebook.like.title" | trans }}" rel="external">{{ "general.facebook.like.label" | trans }}</a></li>
-                <li class="twitter"><a class="twitter" href="http://twitter.com/snwcp" title="{{ "general.twitter.follow.title" | trans }}" rel="external">{{ "general.twitter.follow.label" | trans }}</a></li>
+                <li class="phone"><a href="#" onclick="return false;" title="{{ "contact.phone.type" | trans }}">{{ "contact.phone.number" | trans }}</a></li>
+                <li class="twitter"><a href="http://twitter.com/snwcp" title="{{ "contact.twitter" | trans }}" rel="external">{{ "contact.twitter" | trans }}</a></li>
+                <li class="facebook"><a href="http://www.facebook.com/snwcp" title="{{ "contact.facebook" | trans }}" rel="external">{{ "contact.facebook" | trans }}</a></li>
             </ul>
-            <!--<div class="snowcap-map"></div>-->
+        </section>
+        <section class="map">
+            <div class="snowcap-map"></div>
         </section>
     </div>
 {% endblock %}

@@ -1,14 +1,14 @@
-<p class="vcard">
-        &copy; <span class="fn org">Snowcap sprl</span> {{ "now" | date('Y') }}
+<address class="vcard">
+        &copy; <span class="fn org">{{ "contact.official_name" | trans }}</span> {{ "now" | date('Y') }}
         |
-        <span class="tel"><span class="type">work</span>+32 2 808 22 29</span>
+        <span class="tel"><span class="type">{{ "contact.phone.type" | trans }}</span>{{ "contact.phone.number" | trans }}</span>
         |
         <span class="adr">
-            <span class="street-address">Boulevard Saint-Michel 75</span>,
-            <span class="postal-code">1040</span>
-            <span class="locality">Etterbeek</span>
+            <span class="street-address">{{ "contact.address.street" | trans }}</span>
+            <span class="postal-code">{{ "contact.address.zip" | trans }}</span>
+            <span class="locality">{{ "contact.address.city" | trans }}</span>
         </span>
         |
         <a href="mailto:shoot@snowcap.be" class="email">shoot@snowcap.be</a>
-</p>
+</address>
 <a href="http://1md.be" id="onemd" rel="external" title="Design made by 1MD">Design made by 1MD</a>

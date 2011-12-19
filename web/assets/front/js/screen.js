@@ -171,41 +171,42 @@
             new CommentForm(this);
         });
     };
+
     var TechnoTip = function (element) {
         var _this = this;
         var _element = $(element);
 
         /**
-         * CommentForm init
+         * Technotip init
          */
         _this.init = function () {
             var trigger = _element.prev();
             _element.addClass('qtip');
             var quit;
-            trigger.mouseenter(function(event) {
+            trigger.mouseenter(function (event) {
                 $('.qtip').hide();
                 _element.show();
-                _element.mouseenter(function(event) {
+                _element.mouseenter(function (event) {
                     clearTimeout(quit);
                 });
-                _element.mouseleave(function(event) {
-                    quit = setTimeout(function() {
+                _element.mouseleave(function (event) {
+                    quit = setTimeout(function () {
                         _element.fadeOut(500);
                     }, 500);
                 });
             });
-            trigger.mouseleave(function(event) {
-                quit = setTimeout(function() {
+            trigger.mouseleave(function (event) {
+                quit = setTimeout(function () {
                     _element.fadeOut(500);
                 }, 500);
             });
-            trigger.click(function(event) {
+            trigger.click(function (event) {
                 event.preventDefault();
                 event.stopPropagation();
                 $('.qtip').fadeOut(500);
                 _element.fadeToggle(500);
             });
-            $('body').click(function(event) {
+            $('body').click(function (event) {
                 _element.fadeOut(500);
             });
         };
@@ -215,6 +216,83 @@
     $.fn.technoTip = function () {
         return this.each(function () {
             new TechnoTip(this);
+        });
+    };
+
+
+    /**
+     * Map class constructor
+     *
+     * @param DOMElement element
+     */
+    var SnowMap = function (element) {
+        var _bareElement = element;
+        var _element = $(element);
+        var _this = this;
+        var _map;
+        /**
+         * Map init
+         *
+         */
+        this.init = function () {
+            var latlng = new google.maps.LatLng(50.8337136336712, 4.4054032858797);
+            var options = {
+                'zoom':13,
+                'center':latlng,
+                'mapTypeId':google.maps.MapTypeId.TERRAIN,
+                'disableDefaultUI':true,
+                'zoomControlOptions':{
+                    'style':google.maps.ZoomControlStyle.SMALL
+                }
+            };
+            _map = new google.maps.Map(_bareElement, options);
+            var image = new google.maps.MarkerImage(
+                'assets/front/images/marker_front.png',
+                new google.maps.Size(40, 15),
+                new google.maps.Point(0, 0),
+                new google.maps.Point(20, 15)
+            );
+            var shadow = new google.maps.MarkerImage(
+                'assets/front/images/marker_shadow.png',
+                new google.maps.Size(52, 15),
+                new google.maps.Point(0, 0),
+                new google.maps.Point(20, 15)
+            );
+            var shape = {
+                coord:[25, 0, 26, 1, 27, 2, 28, 3, 29, 4, 30, 5, 31, 6, 32, 7, 33, 8, 34, 9, 35, 10, 36, 11, 37, 12, 38, 13, 39, 14, 14, 14, 13, 13, 12, 12, 11, 11, 10, 10, 9, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1, 0, 0, 25, 0],
+                type:'poly'
+            };
+            var marker = new google.maps.Marker({
+                'icon': image,
+                'shadow': shadow,
+                'shape': shape,
+                'map': _map,
+                'position': latlng
+            });
+        };
+        /**
+         * Google maps async load
+         */
+        if (window.snowcap_map_init === undefined) {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            window.snowcap_map_init = function () {
+                _this.init();
+            };
+            script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=snowcap_map_init";
+            document.body.appendChild(script);
+        }
+        else {
+            _this.init();
+        }
+    };
+    /**
+     * Namespace Map in jQuery
+     *
+     */
+    $.fn.snowMap = function() {
+        return this.each(function(){
+            new SnowMap(this);
         });
     };
 
@@ -236,5 +314,6 @@
             event.preventDefault();
             window.open(this.href);
         });
+        $('.snowcap-map').snowMap();
     });
 })(jQuery);

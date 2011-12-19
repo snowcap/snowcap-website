@@ -4,7 +4,7 @@ php:
   short_description: Server-side scripting language
   description: |
     Invented in 1995 by Rasmus Ledorf, PHP is probably the most famous web programming language. Fast, open-source and widely spread, it is a
-    very handy tool that powers millions of website.
+    very handy tool that powers millions of websites.
   website: http://www.php.net
   highlight: true
 symfony:
