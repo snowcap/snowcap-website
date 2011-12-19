@@ -238,9 +238,9 @@
         this.init = function () {
             var latlng = new google.maps.LatLng(50.8337136336712, 4.4054032858797);
             var options = {
-                'zoom': 12,
-                'center': latlng,
-                'mapTypeId': google.maps.MapTypeId.TERRAIN,
+                'zoom':12,
+                'center':latlng,
+                'mapTypeId':google.maps.MapTypeId.TERRAIN,
                 'disableDefaultUI':true,
                 'zoomControlOptions':{
                     'style':google.maps.ZoomControlStyle.SMALL
@@ -249,26 +249,26 @@
             _map = new google.maps.Map(_bareElement, options);
             var image = new google.maps.MarkerImage(
                 'assets/front/images/marker_front.png',
-                new google.maps.Size(40, 15),
+                new google.maps.Size(50, 49),
                 new google.maps.Point(0, 0),
-                new google.maps.Point(20, 15)
+                new google.maps.Point(25, 49)
             );
             var shadow = new google.maps.MarkerImage(
                 'assets/front/images/marker_shadow.png',
-                new google.maps.Size(52, 15),
+                new google.maps.Size(78, 49),
                 new google.maps.Point(0, 0),
-                new google.maps.Point(20, 15)
+                new google.maps.Point(25, 49)
             );
             var shape = {
-                'coord': [25, 0, 26, 1, 27, 2, 28, 3, 29, 4, 30, 5, 31, 6, 32, 7, 33, 8, 34, 9, 35, 10, 36, 11, 37, 12, 38, 13, 39, 14, 14, 14, 13, 13, 12, 12, 11, 11, 10, 10, 9, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1, 0, 0, 25, 0],
+                'coord': [49, 0, 49, 1, 49, 2, 49, 3, 49, 4, 49, 5, 49, 6, 49, 7, 49, 8, 49, 9, 49, 10, 49, 11, 49, 12, 49, 13, 49, 14, 49, 15, 49, 16, 49, 17, 49, 18, 49, 19, 49, 20, 49, 21, 49, 22, 49, 23, 49, 24, 49, 25, 49, 26, 49, 27, 49, 28, 49, 29, 49, 30, 49, 31, 49, 32, 49, 33, 49, 34, 49, 35, 49, 36, 49, 37, 49, 38, 49, 39, 49, 40, 49, 41, 28, 42, 28, 43, 27, 44, 26, 45, 26, 46, 25, 47, 25, 48, 24, 48, 23, 47, 23, 46, 22, 45, 21, 44, 21, 43, 20, 42, 0, 41, 0, 40, 0, 39, 0, 38, 0, 37, 0, 36, 0, 35, 0, 34, 0, 33, 0, 32, 0, 31, 0, 30, 0, 29, 0, 28, 0, 27, 0, 26, 0, 25, 0, 24, 0, 23, 0, 22, 0, 21, 0, 20, 0, 19, 0, 18, 0, 17, 0, 16, 0, 15, 0, 14, 0, 13, 0, 12, 0, 11, 0, 10, 0, 9, 0, 8, 0, 7, 0, 6, 0, 5, 0, 4, 0, 3, 0, 2, 0, 1, 0, 0, 49, 0],
                 'type': 'poly'
             };
             var marker = new google.maps.Marker({
-                'icon': image,
-                'shadow': shadow,
-                'shape': shape,
-                'map': _map,
-                'position': latlng
+                'icon':image,
+                'shadow':shadow,
+                'shape':shape,
+                'map':_map,
+                'position':latlng
             });
         };
         /**
@@ -291,8 +291,8 @@
      * Namespace Map in jQuery
      *
      */
-    $.fn.snowMap = function() {
-        return this.each(function(){
+    $.fn.snowMap = function () {
+        return this.each(function () {
             new SnowMap(this);
         });
     };
