@@ -521,11 +521,13 @@ body.contact {
 .contact .wrapper {
     min-height: 859px;
 }
-.contact div.split {
-    margin-top: 300px;
-}
 .contact section.content {
-    width: 500px;
+    margin-top: 200px;
+    padding-left: 520px;
+    width: 440px;
+}
+.contact section.content address {
+    margin-top: 55px;
 }
 .contact section.content address p {
     font-style: normal;
@@ -544,9 +546,6 @@ body.contact {
     text-transform: uppercase;
     color: #cccaca;
     font-size: 10px;
-}
-.contact section.map {
-    width: 430px;
 }
 .contact .snowcap-map {
     width: 100%;
@@ -973,7 +972,8 @@ body.blog {
     border: 0;
     font-family: 'DINLight', sans-serif;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 14px;
+    padding-top: 4px;
     color: #79bd01;
     text-transform: uppercase;
     cursor: pointer;

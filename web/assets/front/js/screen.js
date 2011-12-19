@@ -237,7 +237,7 @@
         this.init = function () {
             var latlng = new google.maps.LatLng(50.8337136336712, 4.4054032858797);
             var options = {
-                'zoom':13,
+                'zoom':12,
                 'center':latlng,
                 'mapTypeId':google.maps.MapTypeId.TERRAIN,
                 'disableDefaultUI':true,
