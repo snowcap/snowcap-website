@@ -204,7 +204,7 @@
             trigger.click(function (event) {
                 event.preventDefault();
                 event.stopPropagation();
-                $('.qtip').fadeOut(500);
+                $('.qtip').hide();
                 _element.fadeToggle(500);
             });
             $('body').click(function (event) {
