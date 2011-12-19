@@ -37,7 +37,7 @@ body {
     background-repeat: no-repeat;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'DINLight', sans-serif;
+    font-family: 'DINLight', Helvetica, Arial, sans-serif;
     font-weight: normal;
     letter-spacing: -0.01em;
 }
@@ -54,7 +54,7 @@ h1.main-title, h2.main-title {
     padding: 5px 150px 0 50%;
     color: #0a0a0a;
     font-size: 30px;
-    font-weight: 300;
+    font-weight: normal;
     text-align: right;
     text-transform: uppercase;
 }
@@ -102,7 +102,7 @@ header nav {
     margin: 0 auto;
     padding: 0 100px 0 0;
     overflow: hidden;
-    font-family: 'DINLight', sans-serif;
+    font-family: 'DINLight', Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-size: 13px;
     position: relative;
@@ -231,7 +231,6 @@ section.content {
 section.content h2 {
     margin: 0 0 20px 0;
     font-size: 24px;
-    font-weight: 300;
     color: #333;
 }
 section.content p {
@@ -305,7 +304,7 @@ body.home {
     left: 50%;
     margin: 10px 0 0 -480px;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: normal;
     letter-spacing: -1px;
     background: none;
     padding: 0;
@@ -369,7 +368,6 @@ body.home {
 }
 .home section.secondary h3 {
     margin: 15px 0;
-    font-weight: 300;
     font-size: 24px;
     line-height: 24px;
     color: #0a0a0a;
@@ -410,7 +408,7 @@ body.home {
 }
 .home section.tweets li p.text {
     margin-top: 2px;
-    font-family: 'DINLight', sans-serif;
+    font-family: 'DINLight', Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-size: 18px;
     color: #404040;
@@ -426,7 +424,6 @@ body.home {
 .home section.nerds h2 {
     margin: 0;
     text-transform: uppercase;
-    font-weight: 300;
     font-size: 32px;
 }
 .home section.nerds p.open-source {
@@ -544,12 +541,10 @@ body.contact {
 }
 .contact section.content p.name {
     color: #0a0a0a;
-    font-family: 'DINLight', sans-serif;
-    font-weight: normal;
+    font-family: 'DINLight', Helvetica, Arial, sans-serif;
     font-size: 24px;
     text-transform: uppercase;
     font-style: normal;
-    font-weight: normal;
 }
 .contact section.content p.geo {
     text-transform: uppercase;
@@ -588,7 +583,7 @@ body.team {
 }
 .team section.main li h2 {
     text-transform: uppercase;
-    font-weight: bold;
+    font-family: 'DINRegular', Helvetica, Arial, sans-serif;
     font-size: 20px;
     line-height: 18px;
     height: 32px;
@@ -632,9 +627,8 @@ body.team {
     top: 15px;
 }
 .team section.main .member-details dd.age {
-    font-family: 'DINLight', sans-serif;
+    font-family: 'DINLight', Helvetica, Arial, sans-serif;
     font-size: 45px;
-    font-weight: 300;
     left: 15px;
     top: 35px;
 }
@@ -643,8 +637,7 @@ body.team {
     top: 15px;
 }
 .team section.main .member-details dd.skills {
-    font-weight: 300;
-    font-family: 'DINLight', sans-serif;
+    font-family: 'DINLight', Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     left: 90px;
     top: 35px;
@@ -687,8 +680,7 @@ section.projects li {
     overflow: hidden;
 }
 section.projects li h3 {
-    font-family: 'DINRegular', sans-serif;
-    font-weight: normal;
+    font-family: 'DINRegular', Helvetica, Arial, sans-serif;
     position: absolute;
     top: -20px;
     left: 0;
@@ -796,7 +788,7 @@ body.blog {
     margin-bottom: 2px;
     font-size: 18px;
     text-transform: uppercase;
-    font-family: 'DINLight', sans-serif;
+    font-family: 'DINLight', Helvetica, Arial, sans-serif;
     color: #cccaca;
     text-decoration: none;
     padding-left: 45px;
@@ -897,7 +889,6 @@ body.blog {
     font-family: Helvetica, Aria, sans-serif;
     font-size: 16px;
     color: #0a0a0a;
-    font-weight: normal;
 }
 /* blog comments*/
 .blog section.main .comments {
@@ -918,7 +909,6 @@ body.blog {
     font-size: 11px;
     line-height: 11px;
     font-style: italic;
-    font-weight: normal;
     margin: 0;
     padding: 0;
 }
@@ -979,7 +969,7 @@ body.blog {
     bottom: 20px;
     background-color: #000;
     border: 0;
-    font-family: 'DINLight', sans-serif;
+    font-family: 'DINLight', Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 14px;
     padding-top: 4px;
@@ -1073,7 +1063,7 @@ ul.technology-list li h3{
     height: 50px;
     margin: 1px 8px 1px 0;
     color: #fff;
-    font-family: 'DINRegular', sans-serif;
+    font-family: 'DINRegular', Helvetica, Arial, sans-serif;
     font-size: 10px;
     cursor: pointer;
 }
@@ -1114,8 +1104,8 @@ ul.technology-list .technology p {
     margin: 0 0 10px 0;
 }
 ul.technology-list .technology h4 {
+    font-family: 'DINRegular', Helvetica, Arial, sans-serif;
     font-size: 14px;
-    font-weight: normal;
     text-transform: uppercase;
     color: #818181;
 }
@@ -1129,7 +1119,7 @@ ul.technology-list .technology h4 em{
 ul.technology-list .technology p {
     font-size: 12px;
     line-height: 18px;
-    font-weight: 100;
+    font-weight: normal;
     color: #818181;
 }
 ul.technology-list p.website {
