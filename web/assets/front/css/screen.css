@@ -14,6 +14,15 @@ audio:not([controls]) { display: none; }
 
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 
+/**
+ * Fix for font rendering in safari
+ */
+
+* {
+    -webkit-font-smoothing: subpixel-antialiased !important;
+    -webkit-transform: none !important;
+}
+
 html, body {
     min-height: 100%;
 }
@@ -94,7 +103,7 @@ header nav {
     padding: 0 100px 0 0;
     overflow: hidden;
     font-family: 'DINLight', sans-serif;
-    font-weight: 300;
+    font-weight: normal;
     font-size: 13px;
     position: relative;
 }

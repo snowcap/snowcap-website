@@ -238,9 +238,9 @@
         this.init = function () {
             var latlng = new google.maps.LatLng(50.8337136336712, 4.4054032858797);
             var options = {
-                'zoom':12,
-                'center':latlng,
-                'mapTypeId':google.maps.MapTypeId.TERRAIN,
+                'zoom': 12,
+                'center': latlng,
+                'mapTypeId': google.maps.MapTypeId.TERRAIN,
                 'disableDefaultUI':true,
                 'zoomControlOptions':{
                     'style':google.maps.ZoomControlStyle.SMALL
@@ -260,8 +260,8 @@
                 new google.maps.Point(20, 15)
             );
             var shape = {
-                coord:[25, 0, 26, 1, 27, 2, 28, 3, 29, 4, 30, 5, 31, 6, 32, 7, 33, 8, 34, 9, 35, 10, 36, 11, 37, 12, 38, 13, 39, 14, 14, 14, 13, 13, 12, 12, 11, 11, 10, 10, 9, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1, 0, 0, 25, 0],
-                type:'poly'
+                'coord': [25, 0, 26, 1, 27, 2, 28, 3, 29, 4, 30, 5, 31, 6, 32, 7, 33, 8, 34, 9, 35, 10, 36, 11, 37, 12, 38, 13, 39, 14, 14, 14, 13, 13, 12, 12, 11, 11, 10, 10, 9, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1, 0, 0, 25, 0],
+                'type': 'poly'
             };
             var marker = new google.maps.Marker({
                 'icon': image,
@@ -280,7 +280,7 @@
             window.snowcap_map_init = function () {
                 _this.init();
             };
-            script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=snowcap_map_init";
+            script.src = "http://maps.googleapis.com/maps/api/js?v=3.7&sensor=false&callback=snowcap_map_init";
             document.body.appendChild(script);
         }
         else {
