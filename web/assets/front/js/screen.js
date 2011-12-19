@@ -185,8 +185,9 @@
             _element.addClass('qtip');
             var quit;
             trigger.mouseenter(function (event) {
-                $('.qtip').hide();
-                _element.show();
+                clearTimeout(quit);
+                _element.fadeIn(500);
+                $('.qtip').not(_element).hide();
                 _element.mouseenter(function (event) {
                     clearTimeout(quit);
                 });
@@ -204,7 +205,7 @@
             trigger.click(function (event) {
                 event.preventDefault();
                 event.stopPropagation();
-                $('.qtip').hide();
+                $('.qtip').not(_element).hide();
                 _element.fadeToggle(500);
             });
             $('body').click(function (event) {
