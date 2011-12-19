@@ -6,8 +6,9 @@
 {% block body %}
     <h1 class="main-title">{{ "contact.title" | trans }}</h1>
     <h2 id="mountain">{{ "general.snowcap" | trans }}</h2>
-    <div class="split split-2">
+    <div class="full">
         <section class="content standard">
+            {{ "contact.body" | trans | markdown }}
             <address>
                 <p class="name">{{ "contact.official_name" | trans }}</p>
                 <p>
@@ -25,8 +26,6 @@
                 <li class="twitter"><a href="http://twitter.com/snwcp" title="{{ "contact.twitter" | trans }}" rel="external">{{ "contact.twitter" | trans }}</a></li>
                 <li class="facebook"><a href="http://www.facebook.com/snwcp" title="{{ "contact.facebook" | trans }}" rel="external">{{ "contact.facebook" | trans }}</a></li>
             </ul>
-        </section>
-        <section class="map">
             <div class="snowcap-map"></div>
         </section>
     </div>

@@ -217,6 +217,10 @@ contact:
     description: We are a Brussels-based agency.
     keywords: brussels, agency, contact, email, facebook, twitter
   title: Contact
+  body: |
+    <p class="intro">When we are not coding in our secret mountain chalet, we work in (almost) regular offices in the heart of Belgium</p>
+
+    You have a project to discuss, or a crazy idea to share ? Feel free to call, drop an email or simply pay us a little visit.
   latitude: lat
   longitude: long
   facebook: Facebook
