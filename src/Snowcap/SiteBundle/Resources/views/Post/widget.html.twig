@@ -3,7 +3,7 @@
     {% for post in latestPosts %}
         <article>
             {% if post.thumb %}
-                <img src="{{ post.thumb.webPath | imagine_filter('post_thumb') }}" alt="{{ post.thumb.alt }}"/>
+            <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ "general.readmore.title" | trans }}"><img src="{{ post.thumb.webPath | imagine_filter('post_thumb') }}" alt="{{ post.thumb.alt }}"/></a>
             {% endif %}
             <h3>{{ post.title }}</h3>
             {{ post.summary | markdown }}
