@@ -527,11 +527,14 @@ body.contact {
 .contact section.content {
     width: 500px;
 }
-.contact section.content address {
+.contact section.content address p {
     font-style: normal;
     font-size: 16px;
 }
-.contact section.content address h2 {
+.contact section.content p.name {
+    color: #0a0a0a;
+    font-family: 'DINLight', sans-serif;
+    font-weight: normal;
     font-size: 24px;
     text-transform: uppercase;
     font-style: normal;
