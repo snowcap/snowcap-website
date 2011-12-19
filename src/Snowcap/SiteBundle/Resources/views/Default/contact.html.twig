@@ -17,9 +17,6 @@
                     {{ "contact.address.country" | trans }}
                 </p>
             </address>
-            <p class="geo">
-                <strong>{{ "contact.latitude" | trans }}</strong> <span class="latitude">{{ "contact.address.latitude" | trans }}</span> <strong>{{ "contact.longitude" | trans }}</strong> <span class="longitude">{{ "contact.address.longitude" | trans }}</span>
-            </p>
             <ul class="social">
                 <li class="mail"><a href="mailto:shoot@snowcap.be">shoot@snowcap.be</a></li>
                 <li class="phone"><a href="#" onclick="return false;" title="{{ "contact.phone.type" | trans }}">{{ "contact.phone.number" | trans }}</a></li>
@@ -27,6 +24,9 @@
                 <li class="facebook"><a href="http://www.facebook.com/snwcp" title="{{ "contact.facebook" | trans }}" rel="external">{{ "contact.facebook" | trans }}</a></li>
             </ul>
             <div class="snowcap-map"></div>
+            <p class="geo">
+                <strong>{{ "contact.latitude" | trans }}</strong> <span class="latitude">{{ "contact.address.latitude" | trans }}</span> <strong>{{ "contact.longitude" | trans }}</strong> <span class="longitude">{{ "contact.address.longitude" | trans }}</span>
+            </p>
         </section>
     </div>
 {% endblock %}
