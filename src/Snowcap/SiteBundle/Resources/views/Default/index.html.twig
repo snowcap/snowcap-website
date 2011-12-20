@@ -7,7 +7,7 @@
         <section class="main content">
             {{ "general.nutshell" | trans | markdown }}
         </section>
-        <section class="content projects">
+        <section class="content projects last">
             <h2>{{ "cases.title" | trans }}</h2>
             {% render "SnowcapSiteBundle:Project:list" with {'limit': 3} %}
         </section>
@@ -20,7 +20,7 @@
         <section class="secondary content tweets">
             {% render "SnowcapSiteBundle:Widget:tweets" %}
         </section>
-        <section class="nerds">
+        <section class="nerds last">
             {% include "SnowcapSiteBundle:Widget:nerds.html.twig" %}
         </section>
     </div>

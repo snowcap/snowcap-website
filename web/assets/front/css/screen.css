@@ -83,6 +83,7 @@ a:hover {
     min-width: 960px;
     position: relative;
     padding: 1px 0;
+    z-index: 50;
 }
 .home .wrapper {
     overflow: hidden;
@@ -90,7 +91,7 @@ a:hover {
 /* HEADER */
 header {
     position: relative;
-    z-index: 100;
+    z-index: 10;
     height: 180px;
     margin: 0;
     padding: 0;
@@ -211,15 +212,17 @@ div.split aside {
 }
 div.split-2 section {
     width: 465px;
-}
-div.split-2 section:not(:last-child) {
     margin-right: 30px;
+}
+div.split-2 section.last {
+    margin-right: 0;
 }
 div.split-3 section {
     width: 302px;
-}
-div.split-3 section:not(:last-child) {
     margin-right: 27px;
+}
+div.split-3 section.last {
+    margin-right: 0;
 }
 /* content sections (content sections are just content) */
 section.content {
@@ -671,13 +674,19 @@ section.projects ul {
     padding: 0;
 }
 section.projects li {
-    margin: 24px 0 16px 0;
+    margin: 24px 30px 16px 0;
     list-style-type: none;
     float: left;
     width: 300px;
     height: 200px;
     position: relative;
     overflow: hidden;
+}
+section.projects li:hover {
+    overflow: visible;
+}
+section.projects li.three {
+    margin-right: 0;
 }
 section.projects li h3 {
     font-family: 'DINRegular', Helvetica, Arial, sans-serif;
@@ -691,12 +700,6 @@ section.projects li h3 {
     font-size: 12px;
     padding: 0 5px;
     text-transform: uppercase;
-}
-section.projects li:hover {
-    overflow: visible;
-}
-section.projects li:not(.three) {
-    margin-right: 30px;
 }
 /* project-detail (top of the list or in detail page) */
 .project section.project-overview {
@@ -753,9 +756,10 @@ section.projects li:not(.three) {
 .project section.project-story .column {
     width: 300px;
     float: left;
-}
-.project section.project-story .column:not(:last-child) {
     margin-right: 30px;
+}
+.project section.project-story .last {
+    margin-right: 0;
 }
 /* project-listing page */
 .project-listing section.project-overview {

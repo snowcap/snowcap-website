@@ -220,10 +220,16 @@ class CoreExtension extends \Twig_Extension
      */
     public function hrColumns($content)
     {
-        $content = '<div class="column">' .
-            str_replace(array('<hr>', '<hr/>', '<hr />'), '</div><div class="column">', $content) .
-            '</div>';
-        return $content;
+        $pieces = preg_split('/<hr ?\/?>/', $content);
+        $transformedContent = '';
+        foreach($pieces as $offset => $piece){
+            $class = 'column';
+            if($offset === count($pieces) -1) {
+                $class .= ' last';
+            }
+            $transformedContent .= '<div class="' . $class . '">' . $piece . '</div>';
+        }
+        return $transformedContent;
     }
 
     /**
