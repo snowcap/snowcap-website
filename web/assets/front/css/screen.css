@@ -268,10 +268,9 @@ section.standard ul {
     list-style-type: none;
     margin: 30px 0;
     padding: 0;
-    line-height: 26px;
 }
 section.standard li {
-    padding-left: 30px;
+    padding: 5px 0 5px 30px;
     background:  url(../images/sprites.png) 0 -143px no-repeat;
 }
 /* HOMEPAGE */
