@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.01em;
 }
 h1.main-title, h2.main-title {
-    background-image: url(../images/main_title.png);
+    background-image: url(../images/headings.png);
     background-repeat: no-repeat;
     background-position: right top;
     position: absolute;
@@ -268,11 +268,10 @@ section.standard ul {
     list-style-type: none;
     margin: 30px 0;
     padding: 0;
-    line-height: 26px;
 }
 section.standard li {
-    padding-left: 30px;
-    background: url(../images/sprites.png) 0 -143px no-repeat;
+    padding: 5px 0 5px 30px;
+    background:  url(../images/sprites.png) 0 -143px no-repeat;
 }
 /* HOMEPAGE */
 body.home {
@@ -331,7 +330,7 @@ body.home {
 .home section.projects {
     margin-top: 270px;
 }
-.home section.projects h2{
+.home section.projects h2 {
     background-position: right 0;
     width: 350px;
     line-height: 50px;
@@ -356,7 +355,7 @@ body.home {
     padding: 3px 0 0 10px;
     background-image: url(../images/headings.png);
     background-repeat: no-repeat;
-    background-position: right -55px;
+    background-position: right -60px;
     line-height: 32px;
     font-size: 24px;
 }
@@ -520,7 +519,7 @@ body.company {
     right: 50%;
     width: 350px;
     height: 95px;
-    background: url(../images/headings.png) right -95px no-repeat;
+    background: url(../images/headings.png) right -105px no-repeat;
 }
 /* CONTACT */
 body.contact {
@@ -528,7 +527,7 @@ body.contact {
     background-position: center 180px;
 }
 .contact .wrapper {
-    min-height: 859px;
+    min-height: 899px;
 }
 .contact section.content {
     margin-top: 200px;
@@ -593,7 +592,7 @@ body.team {
     margin: 0;
     width: 80px;
     padding: 10px 110px 10px 10px;
-    background: url(../images/headings.png) right -220px;
+    background: url(../images/headings.png) right -235px;
 }
 .team section.main li .member-details {
     background-color: #eeeff1;
