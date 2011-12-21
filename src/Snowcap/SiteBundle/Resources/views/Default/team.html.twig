@@ -1,7 +1,13 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
-{% block meta_title %}{{ "team.meta.title" | trans }}{% endblock %}
-{% block meta_description %}{{ "team.meta.description" | trans }}{% endblock %}
-{% block meta_keywords %}{{ "team.meta.keywords" | trans }}{% endblock %}
+{% block meta %}
+    {{
+        macro.meta(
+            "team.meta.title" | trans,
+            "team.meta.description" | trans,
+            "team.meta.keywords" | trans
+        )
+    }}
+{% endblock meta %}
 {% set body_class = 'team' %}
 {% block body %}
     <h1 class="main-title">{{ "team.title" | trans }}</h1>

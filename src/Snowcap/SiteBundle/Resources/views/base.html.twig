@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block meta_title %}Snowcap{% endblock %}</title>
-        <meta name="description" content="{% block meta_description %}Snowcap is a web agency that specializes in open-source web development (PHP, Symfony, Zend, Python, HTML, Javascript, CSS, ..). We also offer functional and technical analysis, as well as Linux IT support{% endblock %}">
-        <meta name="keywords" content="{% block meta_keywords %}web, agency, development, analysis, open-source, IT, PHP, Symfony, Zend, Python, HTML, Javascript, CSS, Linux{% endblock%}" >
-        {% stylesheets 'assets/front/css/*' output='static/css/all.css' filter='cssrewrite, ?yui_css' %}
+        {% import "SnowcapSiteBundle::macros.html.twig" as macro %}
+        {% block meta %}
+            {{
+                macro.meta(
+                    'Snowcap',
+                    'Snowcap is a web agency that specializes in open-source web development (PHP, Symfony, Zend, Python, HTML, Javascript, CSS, ..). We also offer functional and technical analysis, as well as Linux IT support',
+                    'web, agency, development, analysis, open-source, IT, PHP, Symfony, Zend, Python, HTML, Javascript, CSS, Linux'
+                )
+            }}
+        {% endblock meta %}
+         {% stylesheets 'assets/front/css/*' output='static/css/all.css' filter='cssrewrite, ?yui_css' %}
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
         {% endstylesheets %}
         <!--[if (gte IE 6)&(lte IE 8)]>
@@ -15,7 +21,6 @@
         <![endif]-->
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
         <link rel="alternate" type="application/rss+xml" title="{{ "general.feed.title" | trans }}" href="{{ path('snwcp_site_post_feed') }}" />
-        <link rel="image_src" href="{{ asset('assets/front/images/snowcap.png') }}"/>
     </head>
     <body class="{{ body_class | default('default') }}">
         <header>

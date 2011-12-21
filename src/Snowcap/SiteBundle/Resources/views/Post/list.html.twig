@@ -1,7 +1,13 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
-{% block meta_title %}{{ "blog.meta.title" | trans }}{% endblock %}
-{% block meta_description %}{{ "blog.meta.description" | trans }}{% endblock %}
-{% block meta_keywords %}{{ "blog.meta.keywords" | trans }}{% endblock %}
+{% block meta %}
+    {{
+        macro.meta(
+            "blog.meta.title" | trans,
+            "blog.meta.keywords" | trans,
+            "blog.meta.keywords" | trans
+        )
+    }}
+{% endblock meta %}
 {% set body_class = 'blog blog-listing' %}
 {% block body %}
     <h1 class="main-title">{{ "blog.title" | trans }}</h1>

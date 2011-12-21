@@ -1,7 +1,13 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
-{% block meta_title %}{{ post.getMetaTitle() }} - Blog - Snowcap{% endblock%}
-{% block meta_description %}{{ post.getMetaDescription() }}{% endblock%}
-{% block meta_keywords %}{{ post.getMetaKeywords() }}{% endblock%}
+{% block meta %}
+    {{
+        macro.meta(
+            post.getMetaTitle() ~ " - Blog - Snowcap",
+            post.getMetaDescription(),
+            post.getMetaKeywords()
+        )
+    }}
+{% endblock meta %}
 {% set body_class = 'blog blog-detail' %}
 {% block body %}
     <h2 class="main-title">{{ "blog.title" | trans }}</h2>

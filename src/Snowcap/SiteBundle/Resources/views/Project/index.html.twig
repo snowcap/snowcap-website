@@ -1,7 +1,13 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
-{% block meta_title %}{{ "cases.meta.title" | trans }}{% endblock %}
-{% block meta_description %}{{ "cases.meta.description" | trans }}{% endblock %}
-{% block meta_keywords %}{{ "cases.meta.keywords" | trans }}{% endblock %}
+{% block meta %}
+    {{
+        macro.meta(
+            "cases.meta.title" | trans,
+            "cases.meta.description" | trans,
+            "cases.meta.keywords" | trans
+        )
+    }}
+{% endblock meta %}
 {% set body_class = 'project project-listing' %}
 {% import "SnowcapSiteBundle::macros.html.twig" as helper %}
 {% block body %}

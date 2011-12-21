@@ -1,8 +1,14 @@
 {% extends "SnowcapSiteBundle::base.html.twig" %}
 {% set body_class = 'project project-detail' %}
-{% block meta_title %}{{ project.getMetaTitle() }} - Cases - Snowcap{% endblock%}
-{% block meta_description %}{{ project.getMetaDescription() }}{% endblock%}
-{% block meta_keywords %}{{ project.getMetaKeywords() }}{% endblock%}
+{% block meta %}
+    {{
+        macro.meta(
+            project.getMetaTitle() ~ " - Cases - Snowcap",
+            project.getMetaDescription(),
+            project.getMetaKeywords()
+        )
+    }}
+{% endblock meta %}
 {% import "SnowcapSiteBundle::macros.html.twig" as helper %}
 {% block body %}
     <h1 class="main-title">{{ project.title }}</h1>
