@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
+use Symfony\Component\HttpFoundation\Response;
 
 use Snowcap\SiteBundle\Entity\Post;
 
@@ -17,16 +18,17 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-		$em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getEntityManager();
         $latestPosts = $em->getRepository('SnowcapSiteBundle:Post')->getLatest(2);
-        return array('latestPosts' => $latestPosts);    
-	}
+        return array('latestPosts' => $latestPosts);
+    }
 
     /**
      * @Route("/company", name="snwcp_site_default_company")
      * @Template()
      */
-    public function companyAction() {
+    public function companyAction()
+    {
 
         return array();
     }
@@ -35,15 +37,18 @@ class DefaultController extends Controller
      * @Route("/services", name="snwcp_site_default_services")
      * @Template()
      */
-    public function servicesAction() {
+    public function servicesAction()
+    {
         $technologies = $this->getDoctrine()->getEntityManager()->getRepository('SnowcapSiteBundle:Technology')->findBy(array('highlight' => true));
         return array('technologies' => $technologies);
     }
+
     /**
      * @Route("/team", name="snwcp_site_default_team")
      * @Template()
      */
-    public function teamAction() {
+    public function teamAction()
+    {
 
         return array();
     }
@@ -52,7 +57,8 @@ class DefaultController extends Controller
      * @Route("/contact", name="snwcp_site_default_contact")
      * @Template()
      */
-    public function contactAction() {
+    public function contactAction()
+    {
 
         return array();
     }
@@ -61,7 +67,8 @@ class DefaultController extends Controller
      * @Route("/sitemap.xml", defaults={"_format"="xml"}, name="snwcp_site_default_sitemap")
      * @Template()
      */
-    public function sitemapAction() {
+    public function sitemapAction()
+    {
 
         $em = $this->getDoctrine()->getEntityManager();
 
@@ -72,6 +79,18 @@ class DefaultController extends Controller
             "cases" => $cases,
             "posts" => $posts,
         );
+    }
+
+    /**
+     * @Route("/test", name="snwcp_site_default_test")
+     * @template
+     * @Cache(maxage="10")
+     * @Cache(smaxage="10")
+     */
+    public function testAction()
+    {
+
+        return array('rand' => rand()); //this twig renders a random number to test that the response is actually cached.
     }
 
 }
