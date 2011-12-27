@@ -10,7 +10,6 @@ body {
 }
 .container {
     background: transparent url(../images/error.jpg) no-repeat center top;
-    min-height: 304px;
     width: 858px;
     margin: 0 auto;
     padding: 570px 50px 0 50px;
