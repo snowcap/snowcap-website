@@ -19,7 +19,6 @@ $loader->registerNamespaces(array(
     'Knp'              => __DIR__.'/../vendor/bundles',
     'TwitterOAuth'     => __DIR__.'/../vendor/twitteroauth',
     'Liip'             => __DIR__.'/../vendor/bundles',
-    'Imagine'          => __DIR__.'/../vendor/imagine/lib',
     'Ornicar'          => __DIR__.'/../vendor/bundles',
     'Buzz'    => __DIR__.'/../vendor/Buzz/lib',
 ));
