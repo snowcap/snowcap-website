@@ -80,14 +80,4 @@ class DefaultController extends Controller
             "posts" => $posts,
         );
     }
-
-    /**
-     * @Route("/error", name="snwcp_site_default_error")
-     * @Template
-     *
-     * @return array
-     */
-    public function errorAction() {
-        return array('status_code' => 'Status Code', 'status_text' => 'Status Text');
-    }
 }
