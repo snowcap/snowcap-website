@@ -82,15 +82,12 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/test", name="snwcp_site_default_test")
-     * @template
-     * @Cache(maxage="10")
-     * @Cache(smaxage="10")
+     * @Route("/error", name="snwcp_site_default_error")
+     * @Template
+     *
+     * @return array
      */
-    public function testAction()
-    {
-
-        return array('rand' => rand()); //this twig renders a random number to test that the response is actually cached.
+    public function errorAction() {
+        return array('status_code' => 'Status Code', 'status_text' => 'Status Text');
     }
-
 }
