@@ -102,6 +102,9 @@ class PostController extends BaseController
 
                 $akismet = $this->container->get('ornicar_akismet');
 
+                $logger = $this->get('logger');
+                $logger->debug('Akismet call client IP used : ' . $this->getRequest()->getClientIp(true));
+
                 try {
                     $isSpam = $akismet->isSpam(array(
                         'comment_author'  => $comment->getName(),
