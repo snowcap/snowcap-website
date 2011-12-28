@@ -26,14 +26,18 @@ class WidgetController extends Controller
                 $filename = realpath($relative_filename);
             }
             $twitter = $this->get('twitter');
-            $result = $twitter->get('search.json?q=snwcp&rpp='.  $this->container->getParameter('twitter_limit') .'&');
-            if (is_object($result) && count($result->results)) {
-                foreach ($result->results as $tweet) {
+            //$result = $twitter->get('search.json?q=snwcp&rpp='.  $this->container->getParameter('twitter_limit') .'&');
+            $result = $twitter->get('statuses/mentions');
+
+            if (count($result) > 0) {
+                foreach ($result as $tweet) {
+                    //$this->get('logger')->info(var_export($tweet, true));
                     $date = new \DateTime($tweet->created_at);
+                    $this->get('logger')->info(var_export($result, true));
                     $tweets[] = array(
                         'date' => $date->format('U'),
                         'text' => $tweet->text,
-                        'from_user' => $tweet->from_user,
+                        'from_user' => $tweet->user->name,
                     );
                 }
                 file_put_contents($filename, json_encode($tweets));
