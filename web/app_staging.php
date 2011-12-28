@@ -9,4 +9,5 @@ use Symfony\Component\HttpFoundation\Request;
 $kernel = new AppKernel('staging', false);
 $kernel->loadClassCache();
 $kernel = new AppCache($kernel);
+Request::trustProxyData();
 $kernel->handle(Request::createFromGlobals())->send();

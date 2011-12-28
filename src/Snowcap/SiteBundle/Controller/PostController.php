@@ -107,6 +107,7 @@ class PostController extends BaseController
                         'comment_author'  => $comment->getName(),
                         'comment_author_email' => $comment->getEmail(),
                         'comment_content' => $comment->getBody(),
+                        'user_ip' => $this->getRequest()->getClientIp(true),
                     ));
                 } catch(\Exception $e) {
                     $isSpam = null;
