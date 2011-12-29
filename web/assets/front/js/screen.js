@@ -63,7 +63,9 @@
             var activeElement = _element.find('.active');
             if (activeElement.length > 0) {
                 _this.moveTo(activeElement, speed);
+                return true;
             }
+            return false;
         };
         /**
          * Follow (on mouseenter)
@@ -96,12 +98,13 @@
         _this.init = function () {
             _handle = $('<span>').addClass('handle').hide();
             _element.append(_handle);
-            _this.moveToActive(0)
-            _handle.show();
-            _element.find('a').hover(_this.follow, _this.gohome);
-            _element.find('a').click(function (event) {
-                $(this).unbind('hover');
-            });
+            if (_this.moveToActive(0)) {
+                _handle.show();
+                _element.find('a').hover(_this.follow, _this.gohome);
+                _element.find('a').click(function (event) {
+                    $(this).unbind('hover');
+                });
+            }
         };
         /* INIT */
         _this.init();

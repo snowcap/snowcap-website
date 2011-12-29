@@ -1209,6 +1209,13 @@ ul.social li.phone a {
 ul.social li.phone a:hover {
      background-position: -293px -267px;
 }
+
+body.error {
+    background: transparent url(../images/error.jpg) no-repeat right bottom;
+}
+body.error .wrapper {
+    min-height: 530px;
+}
 /* FOOTER */
 footer {
     position: relative;

@@ -10,7 +10,7 @@
 {% endblock meta %}
 {% set body_class = 'blog blog-detail' %}
 {% block body %}
-    <h2 class="main-title">{{ "blog.title" | trans }}</h2>
+    <h1 class="main-title">{{ "blog.title" | trans }}</h1>
     <div class="split split-2">
         <section class="main content primary">
             <article class="{{ post.category.slug }}{% if post.thumb %} withthumb{% endif %}">

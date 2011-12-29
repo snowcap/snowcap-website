@@ -1,0 +1,10 @@
+{% extends 'SnowcapSiteBundle::base.html.twig' %}
+{% set body_class = 'error' %}
+{% block body %}
+    <h1 class="main-title">{{ "error404.title" | trans }}</h1>
+    <div class="full">
+        <section class="main content">
+            <p>{{ "error404.text" | trans({ '%path%': path('snwcp_site_default_index') }) | raw }}</p>
+        </section>
+    </div>
+{% endblock body %}

@@ -239,3 +239,6 @@ contact:
 technology:
   title: Technologies
   projects: Used, among other, in the following projects
+error404:
+  title: Page not found
+  text: Lost in the mist ?<br/> Click <a href="%path%" title="Find your way home">here</a>, we will help you find your way back.

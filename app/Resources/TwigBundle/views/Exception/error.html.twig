@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>An Error Occurred: {{ status_text }}</title>
-        {% stylesheets
-            'assets/front/css/fonts.css'
-            'assets/front/css/error.css'
-            output='static/css/error.css'
-            filter='cssrewrite, ?yui_css'
-        %}
-           <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
-       {% endstylesheets %}
-
-    </head>
-    <body>
-        <div class="container">
-            <h1>Oops! An Error Occurred</h1>
+{% extends 'SnowcapSiteBundle::base.html.twig' %}
+{% set body_class = 'error' %}
+{% block body %}
+    <h1 class="main-title">Oops! An Error Occurred</h1>
+    <div class="full">
+        <section class="main content">
             <h2>The server returned a "{{ status_code }} {{ status_text }}".</h2>
 
             <p>
-                Something is broken ? Please e-mail us at <a href="mailto:shoot@snowcap.be">shoot@snowcap.be</a> and let us know
-                what you were doing when this error occurred. We will fix it as soon
-                as possible. Sorry for any inconvenience caused.
+                Something is broken ?<br/>
+                Please e-mail us at <a href="mailto:shoot@snowcap.be">shoot@snowcap.be</a> and let us know<br/>
+                what you were doing when this error occurred. We will fix it as soon<br/>
+                as possible. Sorry for any inconvenience caused.<br/>
             </p>
-        </div>
-    </body>
-</html>
+        </section>
+    </div>
+{% endblock body %}

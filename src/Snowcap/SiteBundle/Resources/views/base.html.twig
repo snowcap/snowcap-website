@@ -11,12 +11,7 @@
                 )
             }}
         {% endblock meta %}
-         {% stylesheets
-            'assets/front/css/fonts.css'
-            'assets/front/css/screen.css'
-            output='static/css/all.css'
-            filter='cssrewrite, ?yui_css'
-         %}
+         {% stylesheets 'assets/front/css/*.css' output='static/css/all.css' filter='cssrewrite, ?yui_css' %}
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
         {% endstylesheets %}
         <!--[if (gte IE 6)&(lte IE 8)]>
