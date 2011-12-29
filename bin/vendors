@@ -10,6 +10,8 @@
  * file that was distributed with this source code.
  */
 
+set_time_limit(0);
+
 $rootDir = dirname(__DIR__);
 $vendorDir = $rootDir.'/vendor';
 
@@ -100,6 +102,15 @@ foreach ($deps as $name => $dep) {
         system(sprintf('git clone %s %s', escapeshellarg($url), escapeshellarg($installDir)));
     }
 
+    $status = system(sprintf('cd %s && git status --porcelain -uno', escapeshellarg($installDir)));
+    if (!empty($status)) {
+        exit(sprintf('"%s" has local modifications. Please revert or commit/push them before running this command again.', $name));
+    }
+    $current_rev = system(sprintf('cd %s && git rev-list --max-count=1 HEAD', escapeshellarg($installDir)));
+    if ($current_rev === $rev) {
+        continue;
+    }
+
     system(sprintf('cd %s && git fetch origin && git reset --hard %s', escapeshellarg($installDir), escapeshellarg($rev)));
 
     if ('update' === $command) {
@@ -118,7 +129,7 @@ if ('update' === $command) {
 $interpreter = PHP_OS == 'WINNT' ? 'php.exe' : '';
 
 // Update the bootstrap files
-system(sprintf('%s %s', $interpreter, escapeshellarg($rootDir.'/vendor/bundles/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php')));
+system(sprintf('%s %s %s', $interpreter, escapeshellarg($rootDir.'/vendor/bundles/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php'), escapeshellarg($rootDir)));
 
 // Update assets
 system(sprintf('%s %s assets:install %s', $interpreter, escapeshellarg($rootDir.'/app/console'), escapeshellarg($rootDir.'/web/')));
