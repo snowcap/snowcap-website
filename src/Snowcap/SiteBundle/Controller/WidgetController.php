@@ -27,19 +27,34 @@ class WidgetController extends Controller
             }
             $twitter = $this->get('twitter');
             //$result = $twitter->get('search.json?q=snwcp&rpp='.  $this->container->getParameter('twitter_limit') .'&');
-            $result = $twitter->get('statuses/mentions');
+            $mentions = $twitter->get('statuses/mentions');
 
-            if (count($result) > 0) {
-                foreach ($result as $tweet) {
-                    //$this->get('logger')->info(var_export($tweet, true));
+            if (count($mentions) > 0) {
+                foreach ($mentions as $tweet) {
                     $date = new \DateTime($tweet->created_at);
-                    $this->get('logger')->info(var_export($result, true));
-                    $tweets[] = array(
+                    $tweets[$date->format('U')] = array(
                         'date' => $date->format('U'),
                         'text' => $tweet->text,
                         'from_user' => $tweet->user->name,
                     );
                 }
+            }
+
+            $timeline = $twitter->get('statuses/user_timeline');
+            if (count($timeline) > 0) {
+                foreach ($timeline as $tweet) {
+                    $date = new \DateTime($tweet->created_at);
+                    $tweets[$date->format('U')] = array(
+                        'date' => $date->format('U'),
+                        'text' => $tweet->text,
+                        'from_user' => $tweet->user->name,
+                    );
+                }
+            }
+
+
+            if (count($tweets) > 0) {
+                krsort($tweets);
                 file_put_contents($filename, json_encode($tweets));
             } else {
                 $tweets = json_decode(file_get_contents($filename), false);
