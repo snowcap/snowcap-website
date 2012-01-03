@@ -320,5 +320,11 @@
             window.open(this.href);
         });
         $('.snowcap-map').snowMap();
+
+        $('a.obem').each(function(){
+            a = "sh"; b = "@"; e = "snowcap"; c = "oot";  d = "."; f = "be"; x = "ma"; y = "il"; z = "to"; m = a+c+b+e+d+f; mm = x+y+z + ":" + m;
+            $(this).html(m);
+            $(this).attr("href", mm);
+        });
     });
 })(jQuery);
