@@ -386,6 +386,9 @@ body.home {
     height: 378px;
     overflow: hidden;
 }
+.home section.tweets a.ajax-loader {
+    display: none;
+}
 .home section.tweets h2 {
     width: 270px;
 }

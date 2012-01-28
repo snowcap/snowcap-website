@@ -21,6 +21,8 @@ widget:
         title: Last tweets
         empty: No tweets available
         by: By Snowcap
+        ajax:
+            loader: Loading tweets...
     nerds:
         title: Hey Nerds !
         open_source:

@@ -19,6 +19,7 @@
         </section>
         <section class="secondary content tweets">
             {% render "SnowcapSiteBundle:Widget:tweets" %}
+            <a href="{{ path('snwcp_widget_tweets') }}" title="{{ "widget.tweets.ajax.loader" | trans }}" class="ajax-loader">{{ "widget.tweets.ajax.loader" | trans }}</a>
         </section>
         <section class="nerds last">
             {% include "SnowcapSiteBundle:Widget:nerds.html.twig" %}

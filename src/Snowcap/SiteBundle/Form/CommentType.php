@@ -11,13 +11,19 @@ class CommentType extends AbstractType
     {
         $builder
             ->add('name', 'text', array('label' => 'blog.comment.name'))
-			->add('email', 'email', array('label' => 'blog.comment.email'))
-            ->add('body', 'textarea', array('label' => 'blog.comment.body'))
-        ;
+            ->add('email', 'email', array('label' => 'blog.comment.email'))
+            ->add('body', 'textarea', array('label' => 'blog.comment.body'));
     }
-	
-	public function getName()
-	{
-		return 'comment';
-	}
+
+    public function getName()
+    {
+        return 'comment';
+    }
+
+    public function getDefaultOptions(array $options)
+    {
+        return array(
+            'data_class' => 'Snowcap\SiteBundle\Entity\Comment',
+        );
+    }
 }
