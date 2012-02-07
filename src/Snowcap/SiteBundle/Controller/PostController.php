@@ -125,18 +125,19 @@ class PostController extends BaseController
 
                 $em->persist($comment);
                 $em->flush();
-
-                $message = \Swift_Message::newInstance()
-                        ->setSubject('New comment on a Snowcap post')
-                        ->setFrom('website@snowcap.be','Snowcap ' . $this->get('kernel')->getEnvironment() .  ' website')
-                        ->setTo($this->container->getParameter('mailer_to'))
-                        ->setBody($this->renderView('SnowcapSiteBundle:Email:newcomment.txt.twig', array('comment' => $comment, 'isSpam' => $isSpam)))
-                        ->addPart($this->renderView('SnowcapSiteBundle:Email:newcomment.html.twig', array('comment' => $comment, 'isSpam' => $isSpam)), 'text/html')
-                    ;
-                try {
-                    $this->get('mailer')->send($message);
+                if (!$isSpam) {
+                    $message = \Swift_Message::newInstance()
+                            ->setSubject('New comment on a Snowcap post')
+                            ->setFrom('website@snowcap.be','Snowcap ' . $this->get('kernel')->getEnvironment() .  ' website')
+                            ->setTo($this->container->getParameter('mailer_to'))
+                            ->setBody($this->renderView('SnowcapSiteBundle:Email:newcomment.txt.twig', array('comment' => $comment, 'isSpam' => $isSpam)))
+                            ->addPart($this->renderView('SnowcapSiteBundle:Email:newcomment.html.twig', array('comment' => $comment, 'isSpam' => $isSpam)), 'text/html')
+                        ;
+                    try {
+                        $this->get('mailer')->send($message);
+                    }
+                    catch(\Exception $e){}
                 }
-                catch(\Exception $e){}
 
             }
         }
