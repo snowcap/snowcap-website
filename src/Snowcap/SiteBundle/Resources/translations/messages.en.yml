@@ -241,10 +241,52 @@ contact:
     longitude: 4.4054032858797
 jobs:
   meta:
-    title: Open Jobs
-    description: Our curently open jobs
-    keywords: job, jobs, php, symfony, brussels, agency, inteurnship
-  title: Our current open jobs
+    title: Job opportunities
+    description: Snowcap has a couple of job opportunities.
+    keywords: job, jobs, career, php, symfony, brussels, agency, internship
+  title: Job opportunities
+  intro: |
+    <p class="intro">
+        As our business grows every day, we are currently on the lookout for skilled and passionated web professionals. If you think you can help us build
+        cool websites and web applications, then you are in the right place.
+    </p>
+  environment: |
+    Our pretty offices are located in southern Brussels and are easily accessible by car or using public transportation. We offer a very cool and open working
+    environment, a competitive salary package, free coffee... and as you would be our first employee, a lot of opportunities for the future.
+  currently: |
+    **We have two open positions at the moment :**
+  required_skills: You need
+  desired_skills: It would be cool if you had
+  open_positions:
+    web_developer_full:
+        title: Web developer (full time)
+        description: |
+            You are proficient with the **LAMP** stack. You are comfortable with **object-oriented development** and you don't care whether it happens on the backend
+            or on the frontend. You're **curious** about web technologies in general, and you play nice with others.
+        required_skills: |
+            * A very good PHP level
+            * A very good working knowledge of relational databases
+            * Experience with at least one modern MVC web framework (or even better, Symfony2)
+            * Solid frontend development skills (HTML, CSS, Javascript)
+            * French or English as your first language
+        desired_skills: |
+            * Some basic IT skills (linux)
+            * Experience with non-relational databases
+            * Some experience with mobile development
+            * Some knowledge about other programming languages (Python for example)
+            * A good Dutch level
+    web_developer_intern:
+        title: Web developer / web designer (intern)
+        description: |
+            You are currently studying web development or web design, you are **autonomous** and you are looking for an internship ? Drop us a line, we might have
+            something for you (hint : it is NOT a copy machine).
+        required_skills: |
+            * Some programming knowledge ...
+            * ... or some application design skills
+            * French or English as your first language
+        desired_skills: |
+            * The same as above, but replace "some" by "solid"
+  apply: Sounds interesting ? Send us a mail at
 technology:
   title: Technologies
   projects: Used, among other, in the following projects

@@ -12,37 +12,19 @@
 {% block body %}
     <h1 class="main-title">{{ "jobs.title" | trans }}</h1>
     <div class="full">
-        <section class="main content">
-
-            <h2>Web developer</h2>
-            <p>
-                You are hungry for learning how to become a PHP guru ?<br/>
-                Long hours doens't care you ?
-            </p>
-
-            <h3>Required skills</h3>
-            <ul>
-                <li>PHP 5.3</li>
-                <li>Symfony</li>
-                <li>...</li>
-            </ul>
-
-            <div class="apply">Apply by poking us at <a href="#" class="obem"></a></div>
-
-            <h2>Web developer inteurnship</h2>
-            <p>
-                You are sexy blablablalba
-            </p>
-
-            <h3>Required skills</h3>
-            <ul>
-                <li>PHP 5.3</li>
-                <li>Symfony</li>
-                <li>...</li>
-            </ul>
-
-            <div class="apply">Apply by poking us at <a href="#" class="obem"></a></div>
-
+        <section class="main standard content">
+            {{ "jobs.intro" | trans | markdown }}
+            {{ "jobs.environment" | trans | markdown }}
+            {{ "jobs.currently" | trans | markdown }}
+            {% for job in ["web_developer_full", "web_developer_intern"] %}
+                <h2>{{ ("jobs.open_positions." ~ job ~ ".title") | trans }}</h2>
+                {{ ("jobs.open_positions." ~ job ~ ".description") | trans | markdown }}
+                <h3>{{ "jobs.required_skills" | trans }}</h3>
+                {{ ("jobs.open_positions." ~ job ~ ".required_skills") | trans | markdown }}
+                <h3>{{ "jobs.desired_skills" | trans }}</h3>
+                {{ ("jobs.open_positions." ~ job ~ ".desired_skills") | trans | markdown }}
+                <p class="apply">{{ "jobs.apply" | trans }} <a href="#" class="obem"></a></p>
+            {% endfor %}
         </section>
     </div>
 {% endblock %}

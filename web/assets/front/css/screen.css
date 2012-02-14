@@ -1007,6 +1007,10 @@ body.jobs {
 }
 .jobs h3 {
     font-weight: bold;
+    margin: 20px 0 0 0 ;
+}
+.jobs section.standard ul {
+    margin: 10px 0;
 }
 .jobs section.main .apply {
     height: 34px;
