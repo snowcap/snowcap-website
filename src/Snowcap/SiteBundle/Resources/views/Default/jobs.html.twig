@@ -1,0 +1,48 @@
+{% extends "SnowcapSiteBundle::base.html.twig" %}
+{% block meta %}
+    {{
+        macro.meta(
+            "jobs.meta.title" | trans,
+            "jobs.meta.description" | trans,
+            "jobs.meta.keywords" | trans
+        )
+    }}
+{% endblock meta %}
+{% set body_class = 'jobs' %}
+{% block body %}
+    <h1 class="main-title">{{ "jobs.title" | trans }}</h1>
+    <div class="full">
+        <section class="main content">
+
+            <h2>Web developer</h2>
+            <p>
+                You are hungry for learning how to become a PHP guru ?<br/>
+                Long hours doens't care you ?
+            </p>
+
+            <h3>Required skills</h3>
+            <ul>
+                <li>PHP 5.3</li>
+                <li>Symfony</li>
+                <li>...</li>
+            </ul>
+
+            <div class="apply">Apply by poking us at <a href="#" class="obem"></a></div>
+
+            <h2>Web developer inteurnship</h2>
+            <p>
+                You are sexy blablablalba
+            </p>
+
+            <h3>Required skills</h3>
+            <ul>
+                <li>PHP 5.3</li>
+                <li>Symfony</li>
+                <li>...</li>
+            </ul>
+
+            <div class="apply">Apply by poking us at <a href="#" class="obem"></a></div>
+
+        </section>
+    </div>
+{% endblock %}

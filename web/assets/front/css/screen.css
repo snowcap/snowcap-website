@@ -996,6 +996,29 @@ body.blog {
     text-decoration: none;
     color: #0a0a0a;
 }
+
+/* JOBS */
+body.jobs {
+    background-position: center bottom;
+    background-image: url(../images/mountains.jpg);
+}
+.jobs h2 {
+    padding-top: 20px;
+}
+.jobs h3 {
+    font-weight: bold;
+}
+.jobs section.main .apply {
+    height: 34px;
+    line-height: 34px;
+    background: url(../images/sprites.png) left -1998px repeat-x;
+    clear: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #0a0a0a;
+    padding-bottom: 15px;
+}
+
 /* VISUALS */
 .visual {
     display: block;

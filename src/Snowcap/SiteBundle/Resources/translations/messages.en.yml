@@ -16,6 +16,7 @@ navigation:
   posts: Blog
   cases: Cases
   contact: Contact
+  jobs: Jobs
 widget:
     tweets:
         title: Last tweets
@@ -238,6 +239,12 @@ contact:
     country: Belgium
     latitude: 50.8337136336712
     longitude: 4.4054032858797
+jobs:
+  meta:
+    title: Open Jobs
+    description: Our curently open jobs
+    keywords: job, jobs, php, symfony, brussels, agency, inteurnship
+  title: Our current open jobs
 technology:
   title: Technologies
   projects: Used, among other, in the following projects

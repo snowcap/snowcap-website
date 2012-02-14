@@ -64,6 +64,15 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/jobs", name="snwcp_site_default_jobs")
+     * @Template()
+     */
+    public function jobsAction()
+    {
+        return array();
+    }
+
+    /**
      * @Route("/sitemap.xml", defaults={"_format"="xml"}, name="snwcp_site_default_sitemap")
      * @Template()
      */
