@@ -40,6 +40,7 @@ class WidgetController extends Controller
                             'date' => $date->format('U'),
                             'text' => $tweet->text,
                             'from_user' => $tweet->user->name,
+                            'from_username' => $tweet->user->screen_name,
                         );
                     }
                 }
@@ -52,6 +53,7 @@ class WidgetController extends Controller
                             'date' => $date->format('U'),
                             'text' => $tweet->text,
                             'from_user' => $tweet->user->name,
+                            'from_username' => $tweet->user->screen_name,
                         );
                     }
                 }

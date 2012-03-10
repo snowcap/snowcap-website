@@ -3,7 +3,7 @@
     <ul>
         {% for tweet in tweets %}
             <li>
-                <p class="date">{{ tweet.date | date('F Y') }} by {{ ('@' ~ tweet.from_user) | parse_tweet }}</p>
+                <p class="date">{{ tweet.date | date('F Y') }} by {{ tweet.from_user }} - {{ ('@' ~ tweet.from_username) | parse_tweet }}</p>
 
                 <p class="text">{{ tweet.text | parse_tweet }}</p>
             </li>
