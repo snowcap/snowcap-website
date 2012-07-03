@@ -18,7 +18,7 @@
                     {% for post in posts %}
                         <li class="{{ post.category.slug }}{% if post.thumb %} withthumb{% endif %}">
                             {% if post.thumb %}
-                            <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ "general.readmore.title" | trans }}"><img class="thumb" src="{{ post.thumb.webPath | imagine_filter('thumb') }}" alt="{{ post.thumb.alt }}" /></a>
+                            <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ "general.readmore.title" | trans }}"><img class="thumb" src="{{ post.thumb.path|imresize('thumb') }}" alt="{{ post.thumb.alt }}" /></a>
                             {% endif %}
                             <h2 class="post-title">{{ post.title }}</h2>
                             <p class="published">

@@ -9,7 +9,3 @@ snowcap_admin_bundle:
 
 snowcap_im:
   resource: "@SnowcapImBundle/Resources/config/routing.yml"
-
-_imagine:
-    resource: .
-    type: imagine

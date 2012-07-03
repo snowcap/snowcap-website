@@ -21,7 +21,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
             new Snowcap\SiteBundle\SnowcapSiteBundle(),
             new Snowcap\YamlFixturesBundle\SnowcapYamlFixturesBundle(),
-            new Liip\ImagineBundle\LiipImagineBundle(),
             new Ornicar\AkismetBundle\OrnicarAkismetBundle(),
             new Snowcap\AdminBundle\SnowcapAdminBundle(),
             new Snowcap\CoreBundle\SnowcapCoreBundle(),

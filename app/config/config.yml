@@ -78,24 +78,26 @@ services:
     class: TwitterOAuth\Api
     arguments: [%twitter_consumer_key%, %twitter_consumer_secret%, %twitter_oauth_token%, %twitter_oauth_secret%]
 
-liip_imagine:
-    filter_sets:
+snowcap_im:
+    formats:
         post_thumb:
-            quality: 100
-            filters:
-                relative_resize: { widen: 290 }
+            resize: 290x
+            quality: 95
         preview:
-            quality: 100
-            filters:
-                thumbnail: { size: [390, 255], mode: outbound }
+            resize: 390x255^
+            gravity: center
+            crop: 390x255+0+0
+            quality: 95
         thumb:
+            resize: 290x190^
+            gravity: center
+            crop: 290x190+0+0
             quality: 90
-            filters:
-                thumbnail: { size: [290, 190], mode: outbound }
         small:
-            quality: 80
-            filters:
-                thumbnail: { size: [100, 76], mode: outbound }
+            resize: 100x76^
+            gravity: center
+            crop: 100x76+0+0
+            quality: 90
 
 ornicar_akismet:
     api_key:        %akismet_api_key%

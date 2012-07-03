@@ -11,7 +11,7 @@
                 )
             }}
         {% endblock meta %}
-         {% stylesheets 'assets/front/css/*.css' output='static/css/all.css' filter='cssrewrite, ?yui_css' %}
+         {% stylesheets 'assets/front/css/*.css' output='cache/assetic/css/all.css' filter='cssrewrite, ?yui_css' %}
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
         {% endstylesheets %}
         <!--[if (gte IE 6)&(lte IE 8)]>
@@ -47,7 +47,7 @@
                 s.parentNode.insertBefore(ga, s);
             })();
         </script>
-        {% javascripts 'assets/vendors/jquery/jquery-1.7.js' 'assets/front/js/screen.js' output='static/js/all.js' filter='yui_js' %}
+        {% javascripts 'assets/vendors/jquery/jquery-1.7.js' 'assets/front/js/screen.js' output='cache/assetic/js/all.js' filter='yui_js' %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
     </body>
