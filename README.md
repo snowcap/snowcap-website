@@ -115,11 +115,10 @@ playing with it, you can remove it by following these steps:
 * remove the routing entries referencing AcmeBundle in ``app/config/routing_dev.yml``;
 * remove the AcmeBundle from the registered bundles in ``app/AppKernel.php``;
 
-
 What's inside?
 ---------------
 The Symfony Standard Edition comes pre-configured with the following bundles:
-	
+
 * **FrameworkBundle** - The core Symfony framework bundle
 * **SensioFrameworkExtraBundle** - Adds several enhancements, including template
   and routing annotation capability ([documentation](http://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html))

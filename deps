@@ -1,10 +1,10 @@
 [symfony]
     git=http://github.com/symfony/symfony.git
-    version=v2.0.8
+    version=v2.0.15
 
 [twig]
     git=http://github.com/fabpot/Twig.git
-    version=v1.4.0
+    version=v1.8.2
 
 [monolog]
     git=http://github.com/Seldaek/monolog.git
@@ -16,19 +16,19 @@
 
 [doctrine-dbal]
     git=http://github.com/doctrine/dbal.git
-    version=2.1.5
+    version=2.1.7
 
 [doctrine]
     git=http://github.com/doctrine/doctrine2.git
-    version=2.1.5
+    version=2.1.7
 
 [swiftmailer]
     git=http://github.com/swiftmailer/swiftmailer.git
-    version=v4.1.4
+    version=v4.1.7
 
 [assetic]
     git=http://github.com/kriswallsmith/assetic.git
-    version=v1.0.2
+    version=v1.0.3
 
 [twig-extensions]
     git=http://github.com/fabpot/Twig-extensions.git
@@ -55,6 +55,7 @@
 [SensioGeneratorBundle]
     git=http://github.com/sensio/SensioGeneratorBundle.git
     target=/bundles/Sensio/Bundle/GeneratorBundle
+    version=origin/2.0
 
 [AsseticBundle]
     git=http://github.com/symfony/AsseticBundle.git
@@ -66,11 +67,12 @@
     target=/bundles/Knp/Bundle/MarkdownBundle
 
 [doctrine-fixtures]
-    git=http://github.com/doctrine/data-fixtures.git
+    git=git://github.com/doctrine/data-fixtures.git
 
 [DoctrineFixturesBundle]
-    git=http://github.com/symfony/DoctrineFixturesBundle.git
+    git=git://github.com/doctrine/DoctrineFixturesBundle.git
     target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
+    version=origin/2.0
 
 [Imagine]
     git=http://github.com/avalanche123/Imagine.git
