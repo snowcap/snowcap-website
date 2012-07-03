@@ -85,13 +85,6 @@ class Post extends BaseModel
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Image")
-     */
-    protected $images;
-
-    /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
-     *
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
      */
     protected $comments;
@@ -281,22 +274,6 @@ class Post extends BaseModel
     }
 
     /**
-     * @param \Doctrine\Common\Collections\ArrayCollection $images
-     */
-    public function setImages($images)
-    {
-        $this->images = $images;
-    }
-
-    /**
-     * @return \Doctrine\Common\Collections\ArrayCollection
-     */
-    public function getImages()
-    {
-        return $this->images;
-    }
-
-    /**
      * @param \Snowcap\SiteBundle\Entity\Image $thumb
      */
     public function setThumb($thumb)
@@ -369,7 +346,7 @@ class Post extends BaseModel
      */
     public function getMetaDescription()
     {
-        return ($this->meta_description != null ?: $this->summary);
+        return $this->meta_description;
     }
 
     /**
@@ -385,7 +362,7 @@ class Post extends BaseModel
      */
     public function getMetaKeywords()
     {
-        return ($this->meta_keywords != null ?: $this->getCategory()->getName());
+        return $this->meta_keywords;
     }
 
     /**
@@ -401,6 +378,6 @@ class Post extends BaseModel
      */
     public function getMetaTitle()
     {
-        return ($this->meta_title != null ?: $this->title);
+        return $this->meta_title;
     }
 }

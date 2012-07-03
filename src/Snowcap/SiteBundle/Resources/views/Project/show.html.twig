@@ -3,9 +3,9 @@
 {% block meta %}
     {{
         macro.meta(
-            project.getMetaTitle() ~ " - Cases - Snowcap",
-            project.getMetaDescription(),
-            project.getMetaKeywords()
+            project.metaTitle|default(project.title) ~ " - Cases - Snowcap",
+            project.metaDescription|default(project.introduction),
+            project.extendedMetaKeyWords
         )
     }}
 {% endblock meta %}

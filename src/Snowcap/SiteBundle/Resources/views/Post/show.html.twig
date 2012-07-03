@@ -2,9 +2,9 @@
 {% block meta %}
     {{
         macro.meta(
-            post.getMetaTitle() ~ " - Blog - Snowcap",
-            post.getMetaDescription(),
-            post.getMetaKeywords()
+            post.metaTitle|default(post.title) ~ " - Blog - Snowcap",
+            post.metaDescription|default(post.summary),
+            post.metaKeyWords|default(post.category.name)
         )
     }}
 {% endblock meta %}

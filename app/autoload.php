@@ -21,6 +21,8 @@ $loader->registerNamespaces(array(
     'Imagine'          => __DIR__.'/../vendor/imagine/lib',
     'Ornicar'          => __DIR__.'/../vendor/bundles',
     'Buzz'    => __DIR__.'/../vendor/Buzz/lib',
+    'Snowcap' => __DIR__ . '/../vendor/bundles',
+    'DoctrineExtensions' => __DIR__.'/../vendor/DoctrineExtensions/lib',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',

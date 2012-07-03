@@ -20,10 +20,15 @@ class AppKernel extends Kernel
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
             new Snowcap\SiteBundle\SnowcapSiteBundle(),
-            new Snowcap\AdminBundle\SnowcapAdminBundle(),
             new Snowcap\YamlFixturesBundle\SnowcapYamlFixturesBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Ornicar\AkismetBundle\OrnicarAkismetBundle(),
+            new Snowcap\AdminBundle\SnowcapAdminBundle(),
+            new Snowcap\CoreBundle\SnowcapCoreBundle(),
+            new Snowcap\BootstrapBundle\SnowcapBootstrapBundle(),
+            new Snowcap\ImBundle\SnowcapImBundle(),
+            new Snowcap\SiteAdminBundle\SnowcapSiteAdminBundle(),
+            new Snowcap\I18nBundle\SnowcapI18nBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

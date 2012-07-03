@@ -91,3 +91,26 @@
 
 [Buzz]
     git=http://github.com/kriswallsmith/Buzz.git
+
+[DoctrineExtensions]
+    git=git://github.com/beberlei/DoctrineExtensions.git
+
+[SnowcapCoreBundle]
+    git=git://github.com/snowcap/SnowcapCoreBundle.git
+    target=/bundles/Snowcap/CoreBundle
+
+[SnowcapBootstrapBundle]
+    git=git://github.com/snowcap/SnowcapBootstrapBundle.git
+    target=/bundles/Snowcap/BootstrapBundle
+
+[SnowcapAdminBundle]
+    git=git://github.com/snowcap/SnowcapAdminBundle.git
+    target=/bundles/Snowcap/AdminBundle
+
+[SnowcapImBundle]
+    git=git://github.com/snowcap/SnowcapImBundle.git
+    target=/bundles/Snowcap/ImBundle
+
+[SnowcapI18nBundle]
+    git=git://github.com/snowcap/SnowcapI18nBundle.git
+    target=/bundles/Snowcap/I18nBundle

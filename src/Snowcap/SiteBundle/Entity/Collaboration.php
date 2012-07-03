@@ -45,7 +45,7 @@ class Collaboration extends BaseModel
     /**
      * @var string
      *
-     * @ORM\Column(type="text", length=64)
+     * @ORM\Column(name="field", type="string")
      */
     protected $field;
 

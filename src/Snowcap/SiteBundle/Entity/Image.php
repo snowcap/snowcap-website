@@ -1,18 +1,18 @@
 <?php
 namespace Snowcap\SiteBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM,
-    Symfony\Component\Validator\Constraints as Assert,
-    Symfony\Component\HttpFoundation\File\UploadedFile;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 use Snowcap\SiteBundle\Model\Base as BaseModel;
+use Snowcap\CoreBundle\Doctrine\Mapping as SnowcapCore;
 
 /**
  * Image entity class
  *
  * @ORM\Table(name="image")
  * @ORM\Entity
- * @ORM\HasLifecycleCallbacks
  */
 class Image extends BaseModel
 {
@@ -26,11 +26,17 @@ class Image extends BaseModel
     protected $id;
 
     /**
-     * @var string
+     * @var string $path
      *
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(name="path", type="string")
      */
-    public $path;
+    protected $path;
+
+    /**
+     * @Assert\Image(maxSize="6000000")
+     * @SnowcapCore\File(path="uploads/images", mappedBy="path")
+     */
+    public $file;
 
     /**
      * @var string
@@ -53,11 +59,6 @@ class Image extends BaseModel
      */
     protected $updated_at;
 
-    /**
-     * @Assert\File(maxSize="6000000")
-     */
-    public $file;
-
     public function __construct() {
         $this->updated_at = new \DateTime('now');
     }
@@ -70,28 +71,6 @@ class Image extends BaseModel
     public function getId()
     {
         return $this->id;
-    }
-
-    public function getAbsolutePath()
-    {
-        return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path;
-    }
-
-    public function getWebPath()
-    {
-        return null === $this->path ? null : $this->getUploadDir().'/'.$this->path;
-    }
-
-    protected function getUploadRootDir()
-    {
-        // the absolute directory path where uploaded documents should be saved
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    protected function getUploadDir()
-    {
-        // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
-        return '/uploads/images';
     }
 
     /**
@@ -171,48 +150,4 @@ class Image extends BaseModel
         return $this->updated_at;
     }
 
-    /**
-     * @ORM\PrePersist()
-     * @ORM\PreUpdate()
-     */
-    public function preUpload()
-    {
-        if (null !== $this->file) {
-            $this->setPath(uniqid().'.'.$this->file->guessExtension());
-        }
-    }
-
-    /**
-     * @ORM\PostPersist()
-     * @ORM\PostUpdate()
-     */
-    public function upload()
-    {
-        if (null === $this->file) {
-            return;
-        }
-
-        $this->file->move($this->getUploadRootDir(), $this->path);
-
-        unset($this->file);
-    }
-
-    /**
-     * @ORM\PostRemove()
-     */
-    public function removeUpload()
-    {
-        if ($file = $this->getAbsolutePath()) {
-            @unlink($file);
-        }
-    }
-
-    public function setFile($file) {
-        if($this->path !== NULL) {
-            $this->removeUpload();
-            $this->path = null;
-        }
-        $this->file = $file;
-        $this->setUpdatedAt(new \DateTime('now'));
-    }
 }

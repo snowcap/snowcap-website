@@ -1,10 +1,8 @@
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
-    snowcap_site_bundle:
-        resource: @SnowcapSiteBundle/Resources/config/config.yml
-    snowcap_admin_bundle:
-        resource: @SnowcapAdminBundle/Resources/config/config.yml
+    - { resource: "@SnowcapSiteBundle/Resources/config/config.yml" }
+    - { resource: "@SnowcapAdminBundle/Resources/config/config.yml" }
 
 framework:
     #esi:             ~
@@ -13,7 +11,8 @@ framework:
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
     form:            true
-    csrf_protection: false
+    csrf_protection:
+        enabled: false
     validation:      { enable_annotations: true }
     templating:
       engines: ['twig']
@@ -65,6 +64,9 @@ swiftmailer:
 #    secure_controllers:  true
 #    secure_all_services: false
 
+parameters:
+    locales: [en]
+
 services:
   twig.extension.debug:
     class: Twig_Extensions_Extension_Debug
@@ -75,33 +77,6 @@ services:
   twitter:
     class: TwitterOAuth\Api
     arguments: [%twitter_consumer_key%, %twitter_consumer_secret%, %twitter_oauth_token%, %twitter_oauth_secret%]
-
-snowcap_admin:
-  content:
-      post:
-          label: Post
-          model_class: Snowcap\SiteBundle\Entity\Post
-          admin_class: Snowcap\SiteBundle\Admin\Post
-      postCategory:
-          label: Post Category
-          model_class: Snowcap\SiteBundle\Entity\PostCategory
-          admin_class: Snowcap\SiteBundle\Admin\PostCategory
-      project:
-          label: Case
-          model_class: Snowcap\SiteBundle\Entity\Project
-          admin_class: Snowcap\SiteBundle\Admin\Project
-      agency:
-          label: Agency
-          model_class: Snowcap\SiteBundle\Entity\Agency
-          admin_class: Snowcap\SiteBundle\Admin\Agency
-      technology:
-          label: Technology
-          model_class: Snowcap\SiteBundle\Entity\Technology
-          admin_class: Snowcap\SiteBundle\Admin\Technology
-      image:
-          label: Image
-          model_class: Snowcap\SiteBundle\Entity\Image
-          admin_class: Snowcap\SiteBundle\Admin\Image
 
 liip_imagine:
     filter_sets:
@@ -125,3 +100,31 @@ liip_imagine:
 ornicar_akismet:
     api_key:        %akismet_api_key%
     url:            %akismet_url%
+
+snowcap_admin:
+    bundle: SnowcapSiteAdminBundle
+    sections:
+        posts:
+            label: section_posts
+            admin_class: Snowcap\SiteAdminBundle\Admin\PostAdmin
+            entity_class: Snowcap\SiteBundle\Entity\Post
+        post_categories:
+            label: section_post_categories
+            admin_class: Snowcap\SiteAdminBundle\Admin\PostCategoryAdmin
+            entity_class: Snowcap\SiteBundle\Entity\PostCategory
+        agencies:
+            label: section_agencies
+            admin_class: Snowcap\SiteAdminBundle\Admin\AgencyAdmin
+            entity_class: Snowcap\SiteBundle\Entity\Agency
+        technologies:
+            label: section_technologies
+            admin_class: Snowcap\SiteAdminBundle\Admin\TechnologyAdmin
+            entity_class: Snowcap\SiteBundle\Entity\Technology
+        images:
+            label: section_images
+            admin_class: Snowcap\SiteAdminBundle\Admin\ImageAdmin
+            entity_class: Snowcap\SiteBundle\Entity\Image
+        projects:
+            label: section_projects
+            admin_class: Snowcap\SiteAdminBundle\Admin\ProjectAdmin
+            entity_class: Snowcap\SiteBundle\Entity\Project

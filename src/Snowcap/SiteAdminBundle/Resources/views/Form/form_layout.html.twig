@@ -1,0 +1,12 @@
+{% extends 'SnowcapAdminBundle:Form:widgets.html.twig' %}
+
+{% block snwcp_admin_collaboration_row %}
+    <div class="well">
+        {{ form_widget(form) }}
+    </div>
+{% endblock snwcp_admin_collaboration_row %}
+
+{% block snwcp_admin_collaboration_widget %}
+    <a class="close remove-element">×</a>
+    {{ form_widget(form) }}
+{% endblock snwcp_admin_collaboration_widget %}

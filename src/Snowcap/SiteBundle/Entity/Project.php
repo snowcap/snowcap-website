@@ -1,13 +1,13 @@
 <?php
 namespace Snowcap\SiteBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM,
-    Doctrine\Common\Collections\ArrayCollection,
-    Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
-use Snowcap\SiteBundle\Model\Base as BaseModel,
-    Snowcap\SiteBundle\Entity\Agency,
-    Snowcap\SiteBundle\Entity\Image;
+use Snowcap\SiteBundle\Model\Base as BaseModel;
+use Snowcap\SiteBundle\Entity\Agency;
+use Snowcap\SiteBundle\Entity\Image;
 
 
 /**
@@ -86,7 +86,7 @@ class Project extends BaseModel
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="Collaboration", mappedBy="project")
+     * @ORM\OneToMany(targetEntity="Collaboration", mappedBy="project", cascade={"persist", "remove"})
      */
     protected $collaborations;
 
@@ -134,21 +134,6 @@ class Project extends BaseModel
     protected $highlighted;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
-     *
-     * @ORM\ManyToMany(targetEntity="Image", cascade={"persist"})
-     * @ORM\JoinTable(name="project_image")
-     */
-    protected $images;
-
-    /**
-     * @var Agency
-     *
-     * @ORM\ManyToOne(targetEntity="Agency", inversedBy="project")
-     */
-    protected $agency;
-
-    /**
      * @var string
      *
      * @ORM\Column("meta_title", type="string", length="255", nullable=true)
@@ -176,8 +161,8 @@ class Project extends BaseModel
         $this->technologies = new ArrayCollection();
         $this->published_at = new \DateTime();
         $this->published = true;
+        $this->collaborations = new ArrayCollection();
         $this->available_on_list = true;
-        $this->images = new ArrayCollection();
     }
 
     /**
@@ -275,8 +260,11 @@ class Project extends BaseModel
      *
      * @param \Doctrine\Common\Collections\ArrayCollection $collaborations
      */
-    public function SetCollaborations(ArrayCollection $collaborations)
+    public function SetCollaborations($collaborations)
     {
+        foreach($collaborations as $collaboration) {
+            $collaboration->setProject($this);
+        }
         $this->collaborations = $collaborations;
     }
 
@@ -391,38 +379,6 @@ class Project extends BaseModel
     }
 
     /**
-     * Set images
-     *
-     * @param \Doctrine\Common\Collections\ArrayCollection $images
-     */
-    public function setImages($images)
-    {
-        $this->images = new \Doctrine\Common\Collections\ArrayCollection();
-        
-        foreach($images as $image) {
-            if(is_array($image)) {
-                $im = new Image();
-                $im->setAlt($image['alt']);
-                $im->setFile($image['file']);
-                $im->setName($image['name']);
-            } else {
-                $im = $image;
-            }
-            $this->images[] = $im;
-        }
-    }
-
-    /**
-     * Get images
-     *
-     * @return \Doctrine\Common\Collections\ArrayCollection
-     */
-    public function getImages()
-    {
-        return $this->images;
-    }
-
-    /**
      * Set thumb_front
      *
      * @param \Snowcap\SiteBundle\Entity\Image $thumb_front
@@ -531,7 +487,7 @@ class Project extends BaseModel
      */
     public function getMetaDescription()
     {
-        return ($this->meta_description != null ?: $this->introduction);
+        return $this->meta_description;
     }
 
     /**
@@ -547,11 +503,16 @@ class Project extends BaseModel
      */
     public function getMetaKeywords()
     {
+        return $this->meta_keywords;
+    }
+
+    public function getExtendedMetaKeywords()
+    {
         if ($this->meta_keywords != null) {
             return $this->meta_keywords;
         } else {
             $meta_keywords = array();
-            foreach($this->getTechnologies() as $technolgy) {
+            foreach ($this->getTechnologies() as $technolgy) {
                 $meta_keywords[] = $technolgy->getName();
             }
             return implode(', ', $meta_keywords);
@@ -571,7 +532,7 @@ class Project extends BaseModel
      */
     public function getMetaTitle()
     {
-        return ($this->meta_title != null ?: $this->title);
+        return $this->meta_title;
     }
 
     /**

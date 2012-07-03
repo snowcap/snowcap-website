@@ -1,12 +1,14 @@
-SnowcapAdminBundle:
-    resource: "@SnowcapAdminBundle/Controller/"
-    type:     annotation
-    prefix:   /admin
-
 SnowcapSiteBundleFront:
     resource: "@SnowcapSiteBundle/Controller/"
     type:     annotation
     prefix:   /
+
+snowcap_admin_bundle:
+    resource: "@SnowcapAdminBundle/Resources/config/routing.yml"
+    prefix: /admin
+
+snowcap_im:
+  resource: "@SnowcapImBundle/Resources/config/routing.yml"
 
 _imagine:
     resource: .
