@@ -20,7 +20,7 @@
                             {% if post.thumb %}
                             <a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ "general.readmore.title" | trans }}"><img class="thumb" src="{{ post.thumb.path|imresize('thumb') }}" alt="{{ post.thumb.alt }}" /></a>
                             {% endif %}
-                            <h2 class="post-title">{{ post.title }}</h2>
+                            <h2 class="post-title"><span class="icon"></span>{{ post.title }}</h2>
                             <p class="published">
                                 {% trans with {'%on%': post.published_at | time_ago, '%in%': post.category.name, '%in_url%': path('snwcp_site_post_list', {"category_slug": post.category.slug }) } %}
                                     blog.published_on_in

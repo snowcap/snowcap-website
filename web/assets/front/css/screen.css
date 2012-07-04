@@ -849,21 +849,26 @@ body.blog {
 .blog section.main .post-title {
     margin: 15px 0 0 0;
     line-height: 24px;
-    background-image: url(../images/sprites.png);
-    background-repeat: no-repeat;
-    padding-left: 40px;
 }
 .blog section.main .withthumb .post-title,
 .blog section.main .withthumb p.published {
     margin-left: 310px;
 }
-.blog section.main .thoughts .post-title {
+.blog section.main .post-title .icon {
+    width: 34px;
+    height: 41px;
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+    float: left;
+    margin-right: 6px;
+}
+.blog section.main .thoughts .post-title .icon {
     background-position: 0 -512px;
 }
-.blog section.main .events .post-title {
+.blog section.main .events .post-title .icon {
     background-position: 0 -432px;
 }
-.blog section.main .cases .post-title {
+.blog section.main .cases .post-title .icon {
     background-position: 0 -472px;
 }
 .blog section.main p.published {
