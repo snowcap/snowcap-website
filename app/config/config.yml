@@ -80,9 +80,6 @@ services:
 
 snowcap_im:
     formats:
-        post_thumb:
-            resize: 290x
-            quality: 95
         preview:
             resize: 390x255^
             gravity: center
