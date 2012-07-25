@@ -11,7 +11,7 @@
     />
 {% endmacro %}
 
-{% macro meta(title, description, keywords) %}
+{% macro meta(title, description, keywords, image) %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>{{ title }}</title>
     <link rel="image_src" href="{{ asset('assets/front/images/snowcap.png') }}"/>
@@ -22,6 +22,9 @@
     <meta property="og:title" content="{{ title }}"/>
     <meta property="og:description" content="{{ description }}"/>
     <meta property="og:type" content="website"/>
+    {% if image is not null %}
+        <meta property="og:image" content="{{ image }}"/>
+    {% endif %}
     <meta property="og:image" content="{{ asset('assets/front/images/snowcap.png') }}"/>
     <meta property="og:image" content="{{ asset('assets/front/images/snowcap_faces.jpg') }}"/>
 

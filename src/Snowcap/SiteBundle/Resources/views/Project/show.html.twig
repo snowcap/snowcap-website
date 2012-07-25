@@ -5,7 +5,8 @@
         macro.meta(
             project.metaTitle|default(project.title) ~ " - Cases - Snowcap",
             project.metaDescription|default(project.introduction),
-            project.extendedMetaKeyWords
+            project.extendedMetaKeyWords,
+            project.thumb_front.path|imresize('preview')
         )
     }}
 {% endblock meta %}
