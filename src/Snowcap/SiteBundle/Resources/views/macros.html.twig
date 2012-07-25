@@ -14,16 +14,16 @@
 {% macro meta(title, description, keywords) %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>{{ title }}</title>
+    <link rel="image_src" href="{{ asset('assets/front/images/snowcap.png') }}"/>
     <meta name="description" content="{{ description}}">
     <meta name="keywords" content="{{ keywords}}">
-    <link rel="image_src" href="{{ asset('assets/front/images/snowcap.png') }}"/>
+    <meta property="og:site_name" content="Snowcap"/>
+    <meta property="og:url" content="{{ app.request.uri }}"/>
     <meta property="og:title" content="{{ title }}"/>
+    <meta property="og:description" content="{{ description }}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:image" content="{{ asset('assets/front/images/snowcap.png') }}"/>
     <meta property="og:image" content="{{ asset('assets/front/images/snowcap_faces.jpg') }}"/>
-    <meta property="og:url" content="{{ url('snwcp_site_default_index') }}"/>
-    <meta property="og:site_name" content="Snowcap"/>
-    <meta property="og:description" content="{{ description }}"/>
 
     <meta property="og:latitude" content="50.833713633671"/>
     <meta property="og:longitude" content="4.4054032858797"/>
