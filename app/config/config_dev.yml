@@ -5,7 +5,7 @@ framework:
     router:   { resource: "%kernel.root_dir%/config/routing_dev.yml" }
     profiler: { only_exceptions: false }
     templating:
-      assets_base_url: http://static.snowcap.local
+      assets_base_url: http://snowcap.local
 
 web_profiler:
     toolbar: true

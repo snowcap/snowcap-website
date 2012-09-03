@@ -16,7 +16,7 @@ $loader->registerNamespaces(array(
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
     'Knp'              => __DIR__.'/../vendor/bundles',
-    'TwitterOAuth'     => __DIR__.'/../vendor/twitteroauth',
+    'TwitterOAuth'     => __DIR__.'/../vendor/twitteroauth/src',
     'Liip'             => __DIR__.'/../vendor/bundles',
     'Ornicar'          => __DIR__.'/../vendor/bundles',
     'Buzz'    => __DIR__.'/../vendor/Buzz/lib',

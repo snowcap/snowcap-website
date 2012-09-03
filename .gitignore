@@ -1,11 +1,26 @@
+# Symfony recommandations
 /web/bundles/
+/web/uploads/*
 /app/bootstrap*
-/app/config/parameters.ini
 /app/cache/*
 /app/logs/*
-/app/Resources/translations
-/web/uploads/*
-/web/cache/*
 /vendor/
-.idea
+/app/config/parameters.ini
+
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Snowcap needs
+web/cache
+app/Resources/translations
+.idea
+
+# Project-specific
+/src/Primento/LplBundle/DataFixtures/ORM/data/*
