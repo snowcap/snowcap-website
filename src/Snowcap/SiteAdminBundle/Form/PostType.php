@@ -25,6 +25,7 @@ class PostType extends AbstractType {
                 'class' => 'Snowcap\SiteBundle\Entity\Technology'
             ))
             ->add('thumb', 'entity', array(
+                'empty_value' => '---',
                 'class' => 'Snowcap\SiteBundle\Entity\Image',
                 'property' => 'name'
             ))
