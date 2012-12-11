@@ -85,13 +85,6 @@
 [twitteroauth]
     git=http://github.com/ruudk/twitteroauth.git
 
-[OrnicarAkismetBundle]
-    git=http://github.com/ornicar/OrnicarAkismetBundle.git
-    target=bundles/Ornicar/AkismetBundle
-
-[Buzz]
-    git=http://github.com/kriswallsmith/Buzz.git
-
 [DoctrineExtensions]
     git=git://github.com/beberlei/DoctrineExtensions.git
 

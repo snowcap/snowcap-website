@@ -30,7 +30,6 @@
                             {% if post.body %}
                                 <p class="read-more"><a href="{{ url('snwcp_site_post_show', { 'slug': post.slug }) }}" title="{{ 'Read more' | trans }}" class="read-more">{{ 'Read more' | trans }}</a></p>
                             {% endif %}
-                            {% include 'SnowcapSiteBundle:Post:comments_count.html.twig' %}
                         </li>
                     {% endfor %}
                 </ul>

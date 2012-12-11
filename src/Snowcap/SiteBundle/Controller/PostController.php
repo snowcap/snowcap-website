@@ -6,8 +6,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 use Snowcap\SiteBundle\Controller\BaseController;
-use Snowcap\SiteBundle\Entity\Comment;
-use Snowcap\SiteBundle\Form\CommentType;
 
 /**
  * Post controller.
@@ -73,77 +71,4 @@ class PostController extends BaseController
 
         return array('latestPosts' => $latestPosts);
     }
-
-    /**
-     * @Route("/comment/{slug}", name="snwcp_site_post_comment")
-     * @Template()
-     *
-     * @param int $post_id
-     * @return array
-     */
-    public function commentAction($slug)
-    {
-        $em = $this->getDoctrine()->getEntityManager();
-        $request = $this->getRequest();
-
-        $post = $em->getRepository('SnowcapSiteBundle:Post')->findOneBySlug($slug);
-
-        $comment = new Comment();
-        $comment->setPost($post);
-
-        $form = $this->createForm(new CommentType(), $comment);
-
-        $post_result = null;
-
-        if ($request->getMethod() == 'POST') {
-            $form->bindRequest($request);
-
-            if ($form->isValid()) {
-
-                $akismet = $this->container->get('ornicar_akismet');
-
-                $logger = $this->get('logger');
-                $logger->debug('Akismet call client IP used : ' . $this->getRequest()->getClientIp(true));
-
-                try {
-                    $isSpam = $akismet->isSpam(array(
-                        'comment_author'  => $comment->getName(),
-                        'comment_author_email' => $comment->getEmail(),
-                        'comment_content' => $comment->getBody(),
-                        'user_ip' => $this->getRequest()->getClientIp(true),
-                    ));
-                } catch(\Exception $e) {
-                    $isSpam = null;
-                }
-
-                if($isSpam === true) {
-                    $comment->setPublished(0);
-                    $post_result = "blog.comments.result.unpublished";
-                } else {
-                    $post_result = "blog.comments.result.published";
-                }
-
-                $em->persist($comment);
-                $em->flush();
-                if (!$isSpam) {
-                    $message = \Swift_Message::newInstance()
-                            ->setSubject('New comment on a Snowcap post')
-                            ->setFrom('website@snowcap.be','Snowcap ' . $this->get('kernel')->getEnvironment() .  ' website')
-                            ->setTo($this->container->getParameter('mailer_to'))
-                            ->setBody($this->renderView('SnowcapSiteBundle:Email:newcomment.txt.twig', array('comment' => $comment, 'isSpam' => $isSpam)))
-                            ->addPart($this->renderView('SnowcapSiteBundle:Email:newcomment.html.twig', array('comment' => $comment, 'isSpam' => $isSpam)), 'text/html')
-                        ;
-                    try {
-                        $this->get('mailer')->send($message);
-                    }
-                    catch(\Exception $e){}
-                }
-
-            }
-        }
-
-        return array('form' => $form->createView(), 'post' => $post, 'post_result' => $post_result);
-    }
-
-
 }

@@ -158,37 +158,6 @@
         });
     };
 
-    var CommentForm = function (element) {
-        var _this = this;
-        var _element = $(element);
-        var _container = _element.parents('.comments-container');
-
-        /**
-         * CommentForm init
-         */
-        _this.init = function () {
-            _element.submit(function () {
-                $(':submit', this).click(function () {
-                    return false;
-                });
-                $.post(_element.attr('action'), _element.serialize(), function (data, response, xhr) {
-                    var html = $(data);
-                    _container.replaceWith(html);
-                    $('form', html).commentForm();
-                });
-
-                return false;
-            });
-        };
-        /* INIT */
-        _this.init();
-    };
-    $.fn.commentForm = function () {
-        return this.each(function () {
-            new CommentForm(this);
-        });
-    };
-
     var TechnoTip = function (element) {
         var _this = this;
         var _element = $(element);
@@ -324,8 +293,6 @@
         $('header nav').navigation();
         // Load and autoscroll twitter feed
         $('section.tweets').twitterFeed();
-        // Ajaxify comments posts
-        $('.comments form').commentForm();
         $('.technology').technoTip();
         // Observer external links
         $('a[rel*=external]').live('click', function (event) {

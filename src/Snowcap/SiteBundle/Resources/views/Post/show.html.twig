@@ -30,7 +30,6 @@
                     <p>{{ post.summary | markdown }}</p>
                 {% endif %}
             </article>
-            {% render 'SnowcapSiteBundle:Post:comment' with ({ 'slug': post.slug })%}
         </section>
         <aside>
             <nav>
