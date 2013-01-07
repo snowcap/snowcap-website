@@ -16,15 +16,19 @@
             {{ "jobs.intro" | trans | markdown }}
             {{ "jobs.environment" | trans | markdown }}
             {{ "jobs.currently" | trans | markdown }}
-            {% for job in ["web_developer_full", "web_developer_intern"] %}
-                <h2>{{ ("jobs.open_positions." ~ job ~ ".title") | trans }}</h2>
-                {{ ("jobs.open_positions." ~ job ~ ".description") | trans | markdown }}
-                <h3>{{ "jobs.required_skills" | trans }}</h3>
-                {{ ("jobs.open_positions." ~ job ~ ".required_skills") | trans | markdown }}
-                <h3>{{ "jobs.desired_skills" | trans }}</h3>
-                {{ ("jobs.open_positions." ~ job ~ ".desired_skills") | trans | markdown }}
-                <p class="apply">{{ "jobs.apply" | trans }} <a href="#" class="obem"></a></p>
+            <section class="section-jobs">
+            {% for job in ["php_developer", "frontend_developer"] %}
+                <div class="column{{ loop.last ? " column-last": "" }}">
+                    <h2>{{ ("jobs.open_positions." ~ job ~ ".title") | trans }}</h2>
+                    {{ ("jobs.open_positions." ~ job ~ ".description") | trans | markdown }}
+                    <h3>{{ "jobs.required_skills" | trans }}</h3>
+                    {{ ("jobs.open_positions." ~ job ~ ".required_skills") | trans | markdown }}
+                    <h3>{{ "jobs.desired_skills" | trans }}</h3>
+                    {{ ("jobs.open_positions." ~ job ~ ".desired_skills") | trans | markdown }}
+                    <p class="apply">{{ "jobs.apply" | trans }} <a href="#" class="obem"></a></p>
+                </div>
             {% endfor %}
+            </section>
         </section>
     </div>
 {% endblock %}

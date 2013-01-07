@@ -922,13 +922,23 @@ body.jobs {
 .jobs section.main .apply {
     height: 34px;
     line-height: 34px;
-    background: url(../images/sprites.png) left -1998px repeat-x;
     clear: left;
     font-size: 14px;
-    text-transform: uppercase;
-    color: #0a0a0a;
+    font-weight: bold;
     padding-bottom: 15px;
 }
+.jobs.section section-jobs {
+    overflow: hidden;
+}
+.jobs section.main .column {
+    width: 460px;
+    float: left;
+    margin-right: 40px;
+}
+.jobs section.main .column-last {
+    margin-right: 0;
+}
+
 
 /* VISUALS */
 .visual {

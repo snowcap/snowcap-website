@@ -233,46 +233,52 @@ jobs:
   title: Job opportunities
   intro: |
     <p class="intro">
-        As our business grows every day, we are currently on the lookout for skilled and passionated web professionals. If you think you can help us build
-        cool websites and web applications, then you are in the right place.
+        As our business grows every day, we are currently on the lookout for skilled and passionate web professionals.
+        If you think you can help us build cool websites and web applications, then you are in the right place.
     </p>
   environment: |
-    Our pretty offices are located in southern Brussels and are easily accessible by car or using public transportation. We offer a very cool and open working
-    environment, a competitive salary package, free coffee... and as you would be our first employee, a lot of opportunities for the future.
+    Our pretty offices are located in southern Brussels and are easily accessible by car or using public transportation.
+    We offer a very cool and open working environment, transportation allowance, free coffee, and above all, the opportunity to work on challenging projects and to experiment with interesting technologies.
+    As one of our first employees, you will also have a lot of opportunities for the future, both on a professional and on a financial level.
   currently: |
     **We have two open positions at the moment :**
   required_skills: You need
   desired_skills: It would be cool if you had
   open_positions:
-    web_developer_full:
-        title: Web developer (full time)
+    php_developer:
+        title: PHP developer
         description: |
-            You are proficient with the **LAMP** stack. You are comfortable with **object-oriented development** and you don't care whether it happens on the backend
-            or on the frontend. You're **curious** about web technologies in general, and you play nice with others.
+            You are an experimented LAMP developer. You have strong analytical skills and you are comfortable with object-oriented development. You are curious about web technologies in general, and you play well with others.
         required_skills: |
             * A very good PHP level
             * A very good working knowledge of relational databases
             * Experience with at least one modern MVC web framework (or even better, Symfony2)
-            * Solid frontend development skills (HTML, CSS, Javascript)
+            * Some experience with API-related work
             * French or English as your first language
         desired_skills: |
             * Some basic IT skills (linux)
             * Experience with non-relational databases
             * Some experience with mobile development
+            * Reasonable frontend development skills (HTML, CSS, Javascript)
             * Some knowledge about other programming languages (Python for example)
             * A good Dutch level
-    web_developer_intern:
-        title: Web developer / web designer (intern)
+    frontend_developer:
+        title: Frontend web developer
         description: |
-            You are currently studying web development or web design, you are **autonomous** and you are looking for an internship ? Drop us a line, we might have
-            something for you (hint : it is NOT a copy machine).
+            You are an expert in HTML, CSS and Javascript. You care about performance, impeccable semantics and accessibility. You are curious about web technologies in general, and you play well with others.
         required_skills: |
-            * Some programming knowledge ...
-            * ... or some application design skills
+            * A high degree of expertise in HTML, CSS & Javascript
+            * A very good knowledge of web standards
+            * A good understanding of browser-related issues
+            * Basic Photoshop skills
+            * Some experience with PHP
             * French or English as your first language
         desired_skills: |
-            * The same as above, but replace "some" by "solid"
-  apply: Sounds interesting ? Send us a mail at
+            * Some experience with responsive web design techniques
+            * Some experience with a PHP MVC framework
+            * Basic database skills
+            * A good Dutch level
+  apply: Sounds interesting? Just
 technology:
   title: Technologies
   projects: Used, among other, in the following projects
