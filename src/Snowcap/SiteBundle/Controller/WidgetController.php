@@ -18,6 +18,7 @@ class WidgetController extends Controller
      */
     public function tweetsAction()
     {
+        $blacklist = array('348182244243939328', '348170109648519168', '348169956657082368');
         $tweets = array();
         try {
             $relative_filename = __DIR__ . '/../../../../web/uploads/twitter.json';
@@ -35,6 +36,9 @@ class WidgetController extends Controller
 
                 if (count($mentions) > 0) {
                     foreach ($mentions as $tweet) {
+                        if (in_array($tweet->id, $blacklist)) {
+                            continue;
+                        }
                         $date = new \DateTime($tweet->created_at);
                         $tweets[$date->format('U')] = array(
                             'date' => $date->format('U'),
@@ -48,6 +52,9 @@ class WidgetController extends Controller
                 $timeline = $twitter->get('statuses/user_timeline');
                 if (count($timeline) > 0) {
                     foreach ($timeline as $tweet) {
+                        if (in_array($tweet->id, $blacklist)) {
+                            continue;
+                        }
                         $date = new \DateTime($tweet->created_at);
                         $tweets[$date->format('U')] = array(
                             'date' => $date->format('U'),
