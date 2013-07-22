@@ -15,6 +15,7 @@ $loader->registerNamespaces(array(
     'Monolog'          => __DIR__.'/../vendor/monolog/src',
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
+    'dflydev'           => __DIR__.'/../vendor/dflydev-markdown/src',
     'Knp'              => __DIR__.'/../vendor/bundles',
     'TwitterOAuth'     => __DIR__.'/../vendor/twitteroauth/src',
     'Liip'             => __DIR__.'/../vendor/bundles',

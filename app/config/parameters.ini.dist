@@ -5,9 +5,9 @@
     database_driver   = pdo_mysql
     database_host     = localhost
     database_port     =
-    database_name     = symfony
-    database_user     = root
-    database_password =
+    database_name     = snowcap
+    database_user     = dev
+    database_password = dev
 
     mailer_transport  = smtp
     mailer_host       = localhost
@@ -25,8 +25,5 @@
     twitter_oauth_token =
     twitter_oauth_secret =
     twitter_limit = 10
-
-    akismet_api_key =
-    akismet_url     =
 
     admin_password = somepasswordtochange

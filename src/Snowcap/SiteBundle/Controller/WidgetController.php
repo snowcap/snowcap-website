@@ -26,12 +26,12 @@ class WidgetController extends Controller
                 touch($relative_filename);
                 $filename = realpath($relative_filename);
             }
-            if (!$this->getRequest()->isXmlHttpRequest()) {
+            /*if (!$this->getRequest()->isXmlHttpRequest()) {
                 $tweets = json_decode(file_get_contents($filename), true);
-            } else {
+            } else {*/
                 $twitter = $this->get('twitter');
                 //$result = $twitter->get('search.json?q=snwcp&rpp='.  $this->container->getParameter('twitter_limit') .'&');
-                $mentions = $twitter->get('statuses/mentions');
+                $mentions = $twitter->get('statuses/mentions_timeline');
 
                 if (count($mentions) > 0) {
                     foreach ($mentions as $tweet) {
@@ -65,7 +65,7 @@ class WidgetController extends Controller
                 } else {
                     $tweets = json_decode(file_get_contents($filename), true);
                 }
-            }
+            //}
         } catch(\Exception $e) {
             error_log($e);
         }

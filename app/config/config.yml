@@ -96,10 +96,6 @@ snowcap_im:
             crop: 100x76+0+0
             quality: 90
 
-ornicar_akismet:
-    api_key:        %akismet_api_key%
-    url:            %akismet_url%
-
 snowcap_admin:
     bundle: SnowcapSiteAdminBundle
     sections:
