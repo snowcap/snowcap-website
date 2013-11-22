@@ -238,13 +238,30 @@ jobs:
     </p>
   environment: |
     Our pretty offices are located in southern Brussels and are easily accessible by car or using public transportation.
-    We offer a very cool and open working environment, transportation allowance, free coffee, and above all, the opportunity to work on challenging projects and to experiment with interesting technologies.
-    As one of our first employees, you will also have a lot of opportunities for the future, both on a professional and on a financial level.
+    We offer a relaxed and open working environment, transportation allowance, free coffee, and above all, the opportunity to work on challenging projects and to experiment with interesting technologies.
   currently: |
-    **We have two open positions at the moment :**
+    **We have one open position at the moment :**
   required_skills: You need
   desired_skills: It would be cool if you had
   open_positions:
+    junior_php_developer:
+        title: Junior web developer
+        description: |
+            <p>You have hands-on experience with PHP programming. You have strong analytical skills and you are comfortable with object-oriented programming. You are curious about web technologies in general, and you play well with others.</p>
+            <p>You will be developing websites and web applications for our customers and for our own projects. You will work with PHP, mostly with the Symfony2 Framework, and with the MySQL database server.</p>
+        required_skills: |
+            * A good PHP level
+            * A good working knowledge of relational databases
+            * Experience with at least one modern MVC web framework (or even better, Symfony2)
+            * Ideally, some experience with API-related work
+            * French as your first language (or at least, you speak it fluently)
+        desired_skills: |
+            * Some basic IT skills (Linux)
+            * Experience with Redis, Memcached, Elasticsearch or Git
+            * Some experience with responsive web design techniques
+            * Frontend development skills (HTML, CSS, Javascript)
+            * Some knowledge about other programming languages (Python for example)
+            * A good Dutch level
     php_developer:
         title: PHP developer
         description: |
