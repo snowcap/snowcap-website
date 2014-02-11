@@ -33,9 +33,11 @@
                 <dt>{{ "cases.realisation_period.label" | trans }} :</dt>
                 <dd>{{ project.realisation_period }}</dd>
             </dl>
-            <p class="read-more">
-                <a href="{{ project.website }}" title="{{ 'cases.website.title' | trans }}" rel="external">{{ "cases.website.label" | trans }}</a>
-            </p>
+            {% if project.website %}
+                <p class="read-more">
+                    <a href="{{ project.website }}" title="{{ 'cases.website.title' | trans }}" rel="external">{{ "cases.website.label" | trans }}</a>
+                </p>
+            {% endif %}
             <div class="visual visual-preview">
                 <img
                     src="{{ project.thumb_front.path|imresize('preview') }}"
