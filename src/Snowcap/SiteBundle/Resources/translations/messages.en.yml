@@ -240,10 +240,27 @@ jobs:
     Our pretty offices are located in southern Brussels and are easily accessible by car or using public transportation.
     We offer a relaxed and open working environment, transportation allowance, free coffee, and above all, the opportunity to work on challenging projects and to experiment with interesting technologies.
   currently: |
-    **We have one open position at the moment :**
+    **We have two open positions at the moment :**
   required_skills: You need
   desired_skills: It would be cool if you had
   open_positions:
+    project_manager:
+        title: Project manager
+        description: |
+            <p>You have at least 1 year of experience managing web projects. You have strong organisational and planning skills. You can handle stress, and you are not afraid of deadlines. You are interested in web technologies.</p>
+            <p>You will be managing the work of a small development team (between 5 and 7 people), meet with our customers and make sure everything go as planned, from the initial project briefing to its successful delivery.</p>
+        required_skills: |
+            * Strong organisational and planning skills
+            * A good understanding of web technologies - you won’t have to code but you should know what it’s about
+            * Experience with bug tracking and task management software
+            * French as your first language (or at least, you speak it fluently)
+            * A very good English level
+        desired_skills: |
+            * Experience with sprint-based project management
+            * Experience with functional analysis
+            * Some basic knowledge about programming
+            * A driving license
+            * A good Dutch level
     junior_php_developer:
         title: Junior web developer
         description: |
@@ -261,7 +278,6 @@ jobs:
             * Some experience with responsive web design techniques
             * Frontend development skills (HTML, CSS, Javascript)
             * Some knowledge about other programming languages (Python for example)
-            * A good Dutch level
     php_developer:
         title: PHP developer
         description: |

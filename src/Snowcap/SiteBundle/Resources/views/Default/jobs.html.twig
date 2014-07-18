@@ -17,7 +17,7 @@
             {{ "jobs.environment" | trans | markdown }}
             {{ "jobs.currently" | trans | markdown }}
             <section class="section-jobs">
-            {% for job in ["junior_php_developer"] %}
+            {% for job in ["project_manager", "junior_php_developer"] %}
                 <div class="column{{ loop.last ? " column-last": "" }}">
                     <h2>{{ ("jobs.open_positions." ~ job ~ ".title") | trans }}</h2>
                     {{ ("jobs.open_positions." ~ job ~ ".description") | trans | markdown }}
