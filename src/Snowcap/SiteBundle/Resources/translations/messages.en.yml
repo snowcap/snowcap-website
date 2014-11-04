@@ -223,8 +223,8 @@ contact:
     zip: 1150
     city: Brussels
     country: Belgium
-    latitude: 50.8337136336712
-    longitude: 4.4054032858797
+    latitude: 50.842657
+    longitude: 4.455208
 jobs:
   meta:
     title: Job opportunities
