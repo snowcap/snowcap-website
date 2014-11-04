@@ -213,8 +213,7 @@
      * @param DOMElement element
      */
     var SnowMap = function (element) {
-        var _bareElement = element;
-        var _element = $(element);
+        var $element = $(element);
         var _this = this;
         var _map;
         /**
@@ -222,9 +221,9 @@
          *
          */
         this.init = function () {
-            var latlng = new google.maps.LatLng(50.8337136336712, 4.4054032858797);
+            var latlng = new google.maps.LatLng($element.data('latitude'), $element.data('longitude'));
             var options = {
-                'zoom':12,
+                'zoom':13,
                 'center':latlng,
                 'mapTypeId':google.maps.MapTypeId.TERRAIN,
                 'disableDefaultUI':true,
@@ -232,7 +231,7 @@
                     'style':google.maps.ZoomControlStyle.SMALL
                 }
             };
-            _map = new google.maps.Map(_bareElement, options);
+            _map = new google.maps.Map(element, options);
             var image = new google.maps.MarkerImage(
                 'assets/front/images/marker_front.png',
                 new google.maps.Size(50, 49),
